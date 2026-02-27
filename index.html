@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABC-Nature</title>
+    <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <!-- Logo -->
+    <div class="logo">
+      <img src="ASSETS/logo.png" alt="Logo">
+    </div>
+
+    <!-- Nav Links -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">Contacts</a></li>
+
+
+      <!-- Dropdown -->
+      <li class="dropdown">
+        <a href="#" class="dropbtn">Services ▾</a>
+      <ul class="dropdown-content">
+      <li><a href="#">Seedling Supply &amp; Nursery Operations</a></li>
+      <li><a href="#">Planting, Maintenance &amp; Field Management</a></li>
+      <li><a href="#">Operational Monitoring &amp; Project Management</a></li>
+    </ul>
+      </li>
+    </ul>
+
+    <!-- Hamburger -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Africa's Operational Partner for Landscape Restoration</h1>
+    <p>ABC Nature-Based Solutions is a trusted outsourcing partner for afforestation, reforestation and assisted natural
+       regeneration projects across Africa.</p>
+    <a href="#services" class="btn">Our Services</a>
+  </div>
+</section>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  const dropBtn = document.querySelector('.dropbtn');
+
+  // Hamburger toggle
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    hamburger.classList.toggle('active'); // animate lines
+  });
+
+  // Dropdown toggle on mobile
+  dropBtn.addEventListener('click', function (e) {
+    if (window.innerWidth <= 900) {
+      e.preventDefault();
+      this.parentElement.classList.toggle('open');
+    }
+  });
+</script>
+
+<!-- Problem Section -->
+<section class="section-dark">
+  <h2>Why Projects Struggle in Execution</h2>
+  <div class="cards-container">
+    <div class="card">
+      <i class="fa-solid fa-seedling"></i>
+      <h3>Poor Seedling Quality</h3>
+      <p>Low-quality seedlings reduce survival rates and lead to repeated replanting.</p>
+    </div>
+    <div class="card">
+      <i class="fa-solid fa-people-arrows"></i>
+      <h3>Fragmented Contracting</h3>
+      <p>Multiple contractors without central oversight cause inconsistent results.</p>
+    </div>
+    <div class="card">
+      <i class="fa-solid fa-hand-holding-droplet"></i>
+      <h3>Insufficient Maintenance</h3>
+      <p>Inadequate care and follow-up affect long-term project success.</p>
+    </div>
+    <div class="card">
+      <i class="fa-solid fa-eye"></i>
+      <h3>Lack of Supervision</h3>
+      <p>Low monitoring leads to unpredictable outcomes, especially in drylands.</p>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <i class="fa-solid fa-shield-halved"></i>
+    <p><strong>Our Solution:</strong> ABC removes execution risk by taking full operational responsibility for your projects.</p>
+  </div>
+</section>
+
+<section class="section-earth">
+  <div class="container">
+    <h2>What We Deliver</h2>
+    <p class="lead">Operational delivery you can outsource</p>
+    <p class="subtitle">
+      ABC enables clients to outsource major components of project execution, allowing them to focus on project development, finance, certification and stakeholder engagement.
+    </p>
+
+    <div class="services-grid">
+      <!-- Seedling Supply Card -->
+      <div class="service-card">
+        <img src="ASSETS/Working-09.jpg" 
+             alt="Rows of healthy, dryland-adapted seedlings growing in ABC's nursery" 
+             class="card-image" loading="lazy">
+        <div class="icon-wrapper">
+          <i class="fa-solid fa-seedling"></i>
+        </div>
+        <h3>Seedling Supply and Nursery Operations</h3>
+        <p>ABC produces and supplies high-quality, dryland-adapted seedlings through its own nurseries. Clients do not need to design, finance or manage nurseries themselves. We deliver planting material that meets project specifications, volumes and timelines.</p>
+      </div>
+      <!-- Planting & Maintenance Card -->
+      <div class="service-card">
+        <img src="ASSETS/Planting-3.jpg" 
+             alt="Trained ABC field team planting drought-resistant trees in arid Kenyan landscape" 
+             class="card-image" loading="lazy">
+        <div class="icon-wrapper">
+          <i class="fa-solid fa-hand-holding-water"></i>
+        </div>
+        <h3>Planting, Maintenance and Field Management</h3>
+        <p>ABC manages planting campaigns, early establishment and long-term maintenance using trained field teams, appropriate mechanisation, and site-specific water and protection systems. We take responsibility for survival optimisation across planting seasons and years.</p>
+      </div>
+
+      <!-- Monitoring Card -->
+      <div class="service-card">
+        <img src="ASSETS/Working-07.jpg" 
+             alt="ABC supervisors monitoring tree growth and collecting data in a dryland agroforestry project" 
+             class="card-image" loading="lazy">
+        <div class="icon-wrapper">
+          <i class="fa-solid fa-binoculars"></i>
+        </div>
+        <h3>Operational Monitoring and Supervision</h3>
+        <p>Field supervision and operational data collection are integrated into daily operations. ABC manages on-the-ground monitoring to support project management and client reporting requirements.</p>
+      </div>
+    </div>
+
+    <!-- Impact Gallery -->
+    <div class="gallery">
+      <h3>Real Results from the Ground</h3>
+      <div class="gallery-grid">
+        <figure>
+          <img src="ASSETS/koromifarmbefore.jpeg" 
+               alt="Before: Degraded dryland site prior to restoration" 
+               class="gallery-image" loading="lazy">
+          <figcaption>Before</figcaption>
+        </figure>
+        <figure>
+          <img src="ASSETS/koromifarmafter.jpg" 
+               alt="After: Regenerated agroforestry landscape with established trees and improved soil" 
+               class="gallery-image" loading="lazy">
+          <figcaption>After</figcaption>
+        </figure>
+        <figure>
+          <img src="ASSETS/Koromi-16.jpg" 
+               alt="One year after planting: Healthy tree establishment in dry conditions" 
+               class="gallery-image" loading="lazy">
+        </figure>
+        <figure>
+          <img src="ASSETS/Planting-5.jpg" 
+               alt="Community and ABC team during a successful planting day" 
+               class="gallery-image" loading="lazy">
+        </figure>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <i class="fa-solid fa-leaf"></i>
+      <p>From fragile seedling to thriving ecosystem <br> We handle the hard ground work so your vision can grow.</p>
+      <a href="#contact" class="cta-button"> Projects</a>
+    </div>
+  </div>
+</section>
+<!--Team Section -->
+<section class="team-section">
+  <div class="team-container">
+    <div class="team-header">
+      <h2>Hands-on Expertise</h2>
+      <p>ABC is led by practitioners with deep operational experience:</p>
+    </div>
+    <div class="team-members">
+      <div class="team-member">
+        <div class="photo-wrapper">
+          <img src="ASSETS/Bob pic.jpg" alt="Bob van der Bijl">
+          <div class="leaf-icon"></div>
+        </div>
+        <h3>Bob van der Bijl</h3>
+        <p>CEO, operations and project development</p>
+      </div>
+      <div class="team-member">
+        <div class="photo-wrapper">
+          <img src="ASSETS/Bob pic.jpg" alt="Jaap van den Beukel">
+          <div class="leaf-icon"></div>
+        </div>
+        <h3>Jaap van den Beukel</h3>
+        <p>Propagation and nursery systems</p>
+      </div>
+      <div class="team-member">
+        <div class="photo-wrapper">
+          <img src="ASSETS/Bob pic.jpg" alt="Marc Parren">
+          <div class="leaf-icon"></div>
+        </div>
+        <h3>Marc Parren</h3>
+        <p>Forestry and assisted natural regeneration</p>
+      </div>
+      <div class="team-member">
+        <div class="photo-wrapper">
+          <img src="ASSETS/Bob pic.jpg" alt="Albert Vrolijk">
+          <div class="leaf-icon"></div>
+        </div>
+        <h3>Albert Vrolijk</h3>
+        <p>Nursery establishment and management (affiliate)</p>
+      </div>
+    </div>
+
+    <p class="team-footer">
+      The core team is supported by locally recruited nursery technicians, field supervisors and operational staff in project locations.
+    </p>
+  </div>
+</section>
+<footer class="footer-luxury">
+  <div class="footer-container">
+    
+    <div class="footer-brand">
+      <h2>ABC Nature-Based Solutions</h2>
+      <p class="tagline">Agroforestry · Biodiversity · Carbon</p>
+      <p class="subtext">Operational Delivery Across Africa</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="#">Contact</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Projects</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 ABC Nature-Based Solutions. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>
