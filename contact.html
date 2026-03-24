@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Contact Us | Crescendo.green - Nature-Based Solutions</title>
+  <meta name="description" content="Get in touch with Crescendo.green for seedling supply, planting operations, or dryland restoration projects in East Africa.">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* ===== SAME RESET & STYLES AS YOUR MAIN SITE ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    :root {
+      --soil: #4e3d2c;
+      --leaf: #5e8c41;
+      --accent-green: #8bc34a;
+      --deep-earth: #0d1a0d;
+      --text: #2d2d2d;
+      --muted: #707070;
+    }
+
+    body {
+      font-family: 'Arial', system-ui, sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    /* ===== IDENTICAL NAVBAR ===== */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 5%;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .logo img {
+      height: 50px;
+      border-radius: 50%;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 10px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover { color: #a9f7e0; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 25px;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      height: 4px;
+      background: #fff;
+      border-radius: 2px;
+    }
+
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* CONTACT HERO */
+    .contact-hero {
+      height: 55vh;
+      min-height: 420px;
+      background: linear-gradient(rgba(13,26,13,0.75), rgba(13,26,13,0.75)), 
+                  url('ASSETS/hero image.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      margin-top: 70px;
+    }
+
+    .contact-hero h1 {
+      font-size: clamp(2.8rem, 6vw, 3.8rem);
+      font-weight: 700;
+    }
+
+    /* MAIN CONTACT SECTION */
+    .contact-section {
+      padding: 100px 5% 120px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+    }
+
+    .contact-info h2 {
+      font-size: 2.6rem;
+      color: var(--soil);
+      margin-bottom: 2rem;
+      font-family: "Playfair Display", serif;
+    }
+
+    .contact-details {
+      font-size: 1.15rem;
+    }
+
+    .contact-details div {
+      margin-bottom: 1.8rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    .contact-details i {
+      color: var(--leaf);
+      font-size: 1.5rem;
+      margin-top: 3px;
+    }
+
+    /* Contact Form */
+    .contact-form {
+      background: white;
+      padding: 45px;
+      border-radius: 16px;
+      box-shadow: 0 15px 45px rgba(0,0,0,0.08);
+    }
+
+    .form-group {
+      margin-bottom: 1.8rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1.02rem;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--leaf);
+      box-shadow: 0 0 0 3px rgba(94, 140, 65, 0.15);
+    }
+
+    .form-group textarea {
+      min-height: 160px;
+      resize: vertical;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 68px;
+      justify-content: center;
+      align-items: center;
+      margin-top: 25px;
+    }
+
+    .social-icons a {
+      color: var(--leaf);
+      font-size: 2rem;
+      transition: all 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #4caf50;
+      transform: translateY(-3px);
+    }
+
+    .submit-btn {
+      background: linear-gradient(90deg, #8bc34a, #4caf50);
+      color: #0d1a0d;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 15px 40px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.3s;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(139, 195, 74, 0.4);
+    }
+
+    /* Simple Map Placeholder */
+    .map-placeholder {
+      margin-top: 30px;
+      height: 280px;
+      background: #e8f5e9;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: #555;
+      border: 2px dashed var(--leaf);
+    }
+
+    @media (max-width: 900px) {
+      .contact-container {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 5%;
+        background: rgba(0,0,0,0.95);
+        width: 240px;
+        padding: 25px;
+        border-radius: 10px;
+      }
+      .nav-links.active { display: flex; }
+      .hamburger { display: flex; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SAME NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="ASSETS/ChatGPT Image Mar 11, 2026, 12_19_29 PM.png" alt="Crescendo.green Logo">
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="contact-hero">
+    <div>
+      <h1>Contact Us</h1>
+    </div>
+  </section>
+
+  <!-- CONTACT CONTENT -->
+     <div class="contact-info">
+         <div class="social-icons">
+          <a href="https://linkedin.com/company/crescendo-green" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://twitter.com/crescendogreen" target="_blank" title="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://facebook.com/crescendogreen" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://instagram.com/crescendogreen" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+  <section class="contact-section">
+    <div class="contact-container">
+
+      <!-- Left: Info -->
+        <h2>Let's Grow Together</h2>
+        <!-- Social Media Icons -->
+        <p style="font-size:1.15rem; margin-bottom:2.5rem; color:#555;">
+          Ready to discuss your project? We’d love to hear from you.
+        </p>
+
+        <div class="contact-details">
+          <div>
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+              <strong>Email</strong><br>
+              info@crescendo.green
+            </div>
+          </div>
+          
+          <div>
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <strong>Phone</strong><br>
+              +254 700 123 456
+            </div>
+          </div>
+          
+          <div>
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <strong>Location</strong><br>
+              Nairobi, Kenya<br>
+              East Africa
+            </div>
+          </div>
+        </div>
+
+        <!-- Simple Map Placeholder -->
+        <div class="map-placeholder">
+          📍 Nairobi, Kenya (Interactive map coming soon)
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="contact-form">
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="company">Organization / Company</label>
+            <input type="text" id="company">
+          </div>
+
+          <div class="form-group">
+            <label for="service">Interested In</label>
+            <select id="service">
+              <option value="">Choose a service...</option>
+              <option value="seedling">Seedling Supply & Nursery</option>
+              <option value="planting">Planting & Maintenance</option>
+              <option value="monitoring">Operational Monitoring</option>
+              <option value="other">General Inquiry</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" required placeholder="Tell us about your project..."></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-luxury">
+  <div class="footer-container">
+    
+    <div class="footer-brand">
+      <h2>Crescendo.green</h2>
+      <p class="tagline">From nursery to landscape</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="#">Contact</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Projects</a>
+    </div>
+    
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 ABC Nature-Based Solutions. All rights reserved.</p>
+  </div>
+</footer>
+
+  <script>
+    // Hamburger Menu (same as all other pages)
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+      });
+    });
+
+    // Simple form submission feedback
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert("✅ Thank you! Your message has been received. We'll reply within 1-2 business days.");
+      this.reset();
+    });
+  </script>
+</body>
+</html>
