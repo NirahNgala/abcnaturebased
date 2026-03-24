@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>  
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ABC-Nature</title>
-    <link rel="stylesheet" href="style.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-<body>
+  
+  <!-- Improved SEO Meta Tags -->
+  <title>Crescendo.green | Nature-Based Solutions | Dryland Restoration Africa</title>
+  <meta name="description" content="Crescendo.green delivers high-quality seedling supply, planting, maintenance, and operational monitoring for nature-based restoration projects across East Africa. Trusted partner for dryland agroforestry and land restoration.">
+  <meta name="keywords" content="dryland restoration, tree planting Kenya, seedling nursery Africa, agroforestry, nature-based solutions, carbon projects, land restoration East Africa, indigenous seedlings">
+  <meta name="author" content="Crescendo.green">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Crescendo.green | From Nursery to Landscape">
+  <meta property="og:description" content="Operational delivery for nature-based restoration projects in East Africa. Seedling supply, planting, maintenance & monitoring.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://crescendo.green">
+  <meta property="og:image" content="ASSETS/hero image.jpg">
+  <meta property="og:site_name" content="Crescendo.green">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Crescendo.green | Nature-Based Solutions">
+  <meta name="twitter:description" content="High-quality seedling supply, planting and operational support for restoration projects across East Africa.">
+  <meta name="twitter:image" content="ASSETS/hero image.jpg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <header>
   <nav class="navbar">
@@ -19,9 +36,9 @@
 
     <!-- Nav Links -->
     <ul class="nav-links" id="navLinks">
-      <li><a href="#">About</a></li>
-      <li><a href="#">Projects</a></li>
-      <li><a href="#">Contacts</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contacts</a></li>
 
 
       <!-- Dropdown -->
@@ -47,33 +64,40 @@
 <!-- Hero Section -->
 <section class="hero">
   <div class="hero-content">
-    <h1>From nursery to landscape</h1>
-    <p> <b>Crescendo.green</b> specialises in plant propagation and nursery services, producing high quality seedlings that support
-      environmental & nature-based projects across Africa
+    <h1> From Nursery to Landscape</h1>
+    <p class="hero-sub">
+      Operational delivery for nature-based projects across Africa
     </p>
+    <p class="hero-tagline">Tree and plant propagation · Project development · Operational delivery</p>
     <a href="#services" class="btn">Our Services</a>
   </div>
 </section>
+<section class="trust">
+  <p>Trusted by project developers, landowners, and restoration partners across East Africa</p>
+</section>
+<div class="metrics">
 
-<script>
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('navLinks');
-  const dropBtn = document.querySelector('.dropbtn');
+<div class="metric">
+<strong>52,340</strong><br>
+Seedlings Planted (2025)
+</div>
 
-  // Hamburger toggle
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    hamburger.classList.toggle('active'); // animate lines
-  });
+<div class="metric">
+<strong>127 ha</strong><br>
+Land Restored
+</div>
 
-  // Dropdown toggle on mobile
-  dropBtn.addEventListener('click', function (e) {
-    if (window.innerWidth <= 900) {
-      e.preventDefault();
-      this.parentElement.classList.toggle('open');
-    }
-  });
-</script>
+<div class="metric">
+<strong>82%</strong><br>
+Survival Rate (Year 1)
+</div>
+
+<div class="metric">
+<strong>3</strong><br>
+Seasons Managed
+</div>
+
+</div>
 
 <!-- Problem Section -->
 
@@ -129,7 +153,7 @@
           <i class="fa-solid fa-seedling"></i>
         </div>
         <h3>Seedling Supply and Nursery Operations</h3>
-        <p>We produce and supplies high-quality, dryland-adapted seedlings through its own nurseries. Clients do not need to design, finance or manage nurseries themselves. We deliver planting material that meets project specifications, volumes and timelines.</p>
+        <p>We produce and supply high-quality, dryland-adapted seedlings through its own nurseries. Clients do not need to design, finance or manage nurseries themselves. We deliver planting material that meets project specifications, volumes and timelines.</p>
       </div>
       <!-- Planting & Maintenance Card -->
       <div class="service-card">
@@ -188,7 +212,7 @@
     <div class="highlight-box">
       <i class="fa-solid fa-leaf"></i>
       <p>From fragile seedling to thriving ecosystem <br> We handle the hard ground work so your vision can grow.</p>
-      <a href="#contact" class="cta-button"> Projects</a>
+      <a href="#contact" class="cta-button">Start a Project With Us</a>
     </div>
   </div>
 </section>
@@ -212,6 +236,15 @@ Drylands and sub-humid landscapes are where most restoration efforts quietly fai
 </div>
 
 </div>
+<section class="process">
+  <h2>How We Work</h2>
+  <div class="steps">
+    <div>1. Propagation</div>
+    <div>2. Planting</div>
+    <div>3. Management</div>
+    <div>4. Monitoring</div>
+  </div>
+</section>
 <!--Team Section -->
 <section class="team-section">
   <div class="team-container">
@@ -259,13 +292,13 @@ Drylands and sub-humid landscapes are where most restoration efforts quietly fai
     </p>
   </div>
 </section>
+<script src="script.js"></script>
 <footer class="footer-luxury">
   <div class="footer-container">
     
     <div class="footer-brand">
-      <h2>ABC Nature-Based Solutions</h2>
-      <p class="tagline">Agroforestry · Biodiversity · Carbon</p>
-      <p class="subtext">Operational Delivery Across Africa</p>
+      <h2>Crescendo.green</h2>
+      <p class="tagline">From nursery to landscape</p>
     </div>
 
     <div class="footer-links">
@@ -282,5 +315,4 @@ Drylands and sub-humid landscapes are where most restoration efforts quietly fai
   </div>
 </footer>
 </body>
-</html>
 </html>

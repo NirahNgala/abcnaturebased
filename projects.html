@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Projects | Crescendo.green</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+
+/* HERO */
+.projects-hero {
+height: 60vh;
+background: linear-gradient(rgba(13,26,13,0.8), rgba(13,26,13,0.8)),
+url('ASSETS/Planting-5.jpg') center/cover no-repeat;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+color: white;
+margin-top: 70px;
+}
+
+.projects-hero h1 {
+font-size: 3rem;
+}
+
+/* SECTION */
+.projects-section {
+padding: 80px 5%;
+max-width: 1200px;
+margin: auto;
+}
+
+/* CARD */
+.project-card {
+background: white;
+border-radius: 14px;
+overflow: hidden;
+box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+margin-bottom: 50px;
+transition: 0.3s;
+}
+
+.project-card:hover {
+transform: translateY(-6px);
+}
+
+.project-img {
+width: 100%;
+height: 260px;
+object-fit: cover;
+}
+
+.project-content {
+padding: 25px;
+}
+
+.project-content h3 {
+font-size: 1.6rem;
+margin-bottom: 10px;
+}
+
+.project-meta {
+font-size: 0.9rem;
+color: #777;
+margin-bottom: 12px;
+}
+
+/* METRICS */
+.metrics {
+margin-top: 20px;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+gap: 15px;
+}
+
+.metric {
+background: #f1f8e9;
+padding: 15px;
+border-radius: 10px;
+text-align: center;
+font-size: 0.85rem;
+}
+
+.metric strong {
+display: block;
+font-size: 1.4rem;
+color: #1B5E20;
+margin-bottom: 5px;
+}
+
+/* BEFORE AFTER */
+.before-after {
+position: relative;
+width: 100%;
+height: 300px;
+overflow: hidden;
+border-radius: 12px;
+margin-top: 20px;
+}
+
+.before-after img {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.before-after .after {
+clip-path: inset(0 50% 0 0);
+transition: clip-path 0.2s ease;
+}
+
+.slider {
+position: absolute;
+top: 0;
+left: 50%;
+width: 3px;
+height: 100%;
+background: #fff;
+cursor: ew-resize;
+z-index: 10;
+}
+
+/* CTA */
+.projects-cta {
+text-align: center;
+padding: 70px 20px;
+background: #0d1a0d;
+color: white;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+<div class="logo">
+<img src="ASSETS/logo.png" alt="Logo">
+</div>
+
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="index.html#services">Services</a></li>
+<li><a href="index.html#contact">Contact</a></li>
+</ul>
+
+<div class="hamburger" id="hamburger">
+<span></span><span></span><span></span>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="projects-hero">
+<div>
+<h1>Projects & Field Work</h1>
+<p>Real execution on the ground</p>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects-section">
+
+<!-- PROJECT 1 -->
+<div class="project-card">
+
+<img src="ASSETS/Planting-5.jpg" class="project-img">
+
+<div class="project-content">
+
+<h3>Dryland Agroforestry — Kwale County</h3>
+<p class="project-meta">Kenya • 2025 • Ongoing</p>
+
+<p>
+Large-scale restoration designed for dryland survival, combining
+agroforestry, water management, and community engagement.
+</p>
+
+<!-- METRICS -->
+<div class="metrics">
+
+<div class="metric">
+<strong>52,340</strong>
+Seedlings Planted
+</div>
+
+<div class="metric">
+<strong>127 ha</strong>
+Land Restored
+</div>
+
+<div class="metric">
+<strong>82%</strong>
+Survival Rate
+</div>
+
+<div class="metric">
+<strong>3</strong>
+Seasons Managed
+</div>
+
+</div>
+
+<!-- BEFORE AFTER -->
+<div class="before-after">
+
+<img src="ASSETS/koromifarmbefore.jpeg" class="before">
+<img src="ASSETS/koromifarmafter.jpg" class="after">
+
+<div class="slider"></div>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- PROJECT 2 -->
+<div class="project-card">
+
+<img src="ASSETS/Koromi-16.jpg" class="project-img">
+
+<div class="project-content">
+
+<h3>Assisted Natural Regeneration Program</h3>
+<p class="project-meta">East Africa • Landscape Recovery</p>
+
+<p>
+Restoration using natural seedbanks and ecological processes
+to regenerate degraded land efficiently.
+</p>
+
+<div class="metrics">
+
+<div class="metric">
+<strong>80+ ha</strong>
+Regenerated
+</div>
+
+<div class="metric">
+<strong>Low Cost</strong>
+Approach
+</div>
+
+<div class="metric">
+<strong>Native</strong>
+Species Focus
+</div>
+
+<div class="metric">
+<strong>Ongoing</strong>
+Monitoring
+</div>
+
+</div>
+
+</div>
+</div>
+
+</section>
+
+<!-- CTA -->
+<section class="projects-cta">
+<h2>Want results like this?</h2>
+<p>We partner with developers and organisations to deliver real outcomes.</p>
+<a href="index.html#contact" class="cta-button">Start a Project</a>
+</section>
+
+<!-- SCRIPT -->
+<script>
+
+// NAV
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+
+hamburger.addEventListener('click', () => {
+hamburger.classList.toggle('active');
+navLinks.classList.toggle('active');
+});
+
+// BEFORE/AFTER SLIDER
+document.querySelectorAll('.before-after').forEach(container => {
+
+const slider = container.querySelector('.slider');
+const afterImg = container.querySelector('.after');
+
+let isDragging = false;
+
+slider.addEventListener('mousedown', () => isDragging = true);
+window.addEventListener('mouseup', () => isDragging = false);
+
+window.addEventListener('mousemove', (e) => {
+if (!isDragging) return;
+
+const rect = container.getBoundingClientRect();
+let x = e.clientX - rect.left;
+
+if (x < 0) x = 0;
+if (x > rect.width) x = rect.width;
+
+const percent = (x / rect.width) * 100;
+
+afterImg.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
+slider.style.left = percent + "%";
+});
+
+});
+
+</script>
+
+</body>
+</html>
