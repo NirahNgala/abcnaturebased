@@ -196,22 +196,22 @@ section {
   opacity: 0.9;
 }
 .trust {
-  background: #fff;
   text-align: center;
-  padding: 20px;
+  padding: 0px;
   font-weight: 500;
   color: #555;
 }
 .metrics {
 margin-top: 20px;
 display: grid;
+margin: 30px;
 grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
 gap: 15px;
 }
 
 .metric {
-background: #f1f8e9;
-padding: 15px;
+
+padding: px;
 border-radius: 10px;
 text-align: center;
 font-size: 0.85rem;
