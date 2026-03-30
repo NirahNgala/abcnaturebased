@@ -616,8 +616,8 @@ margin-bottom: 5px;
 
 /* Highlight Box */
 .highlight-box {
-  background: rgba(255,255,255,0.95);
-  color: #1f2937;
+  background: transparent;
+  color: #ffffff;
   padding: 60px 40px;
   border-radius: 24px;
   text-align: center;
