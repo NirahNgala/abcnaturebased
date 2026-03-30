@@ -577,7 +577,7 @@ margin-bottom: 5px;
 
 .service-card {
   background: #ffffff;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #29b31c;
   backdrop-filter: none;
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
@@ -619,14 +619,14 @@ margin-bottom: 5px;
 
 .service-card h3 {
   font-size: clamp(1.35rem, 3.5vw, 1.65rem);
-  color: #fffde7;
+  color: #000000;
   margin: 0 1.8rem 1rem;
 }
 
 .service-card p {
   font-size: clamp(1rem, 2.8vw, 1.12rem);
   line-height: 1.7;
-  color: #b2dfdb;
+  color: #6f7c7b;
   padding: 0 1.8rem 2rem;
 }
 
@@ -685,7 +685,6 @@ margin-bottom: 5px;
 /* === HIGHLIGHT + CTA === */
 .highlight-box {
 
-  border: 1px solid #c5e1a5;
   box-shadow: none;
   color: black;
 }
