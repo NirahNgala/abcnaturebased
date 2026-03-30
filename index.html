@@ -1,546 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>  
-   <meta charset="UTF-8">
+<head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Improved SEO Meta Tags -->
   <title>Crescendo.green | Nature-Based Solutions | Dryland Restoration Africa</title>
-  <meta name="description" content="Crescendo.green delivers high-quality seedling supply, planting, maintenance, and operational monitoring for nature-based restoration projects across East Africa. Trusted partner for dryland agroforestry and land restoration.">
-  <meta name="keywords" content="dryland restoration, tree planting Kenya, seedling nursery Africa, agroforestry, nature-based solutions, carbon projects, land restoration East Africa, indigenous seedlings">
-  <meta name="author" content="Crescendo.green">
-  <meta name="robots" content="index, follow">
-
-  <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Crescendo.green | From Nursery to Landscape">
-  <meta property="og:description" content="Operational delivery for nature-based restoration projects in East Africa. Seedling supply, planting, maintenance & monitoring.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://crescendo.green">
-  <meta property="og:image" content="ASSETS/hero image.jpg">
-  <meta property="og:site_name" content="Crescendo.green">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Crescendo.green | Nature-Based Solutions">
-  <meta name="twitter:description" content="High-quality seedling supply, planting and operational support for restoration projects across East Africa.">
-  <meta name="twitter:image" content="ASSETS/hero image.jpg">
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Crescendo.green delivers high-quality seedling supply, planting, maintenance, and operational monitoring for nature-based restoration projects across East Africa.">
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-<header>
-  <nav class="navbar">
-    <!-- Logo -->
-    <div class="logo">
-      <img src="ASSETS/ChatGPT Image Mar 11, 2026, 12_19_29 PM.png" alt="Logo">
-    </div>
-
-    <!-- Nav Links -->
-    <ul class="nav-links" id="navLinks">
-      <li><a href="about.html">About</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="contact.html">Contacts</a></li>
-
-
-      <!-- Dropdown -->
-      <li class="dropdown">
-        <a href="#" class="dropbtn">Services ▾</a>
-      <ul class="dropdown-content">
-      <li><a href="#">Seedling Supply &amp; Nursery Operations</a></li>
-      <li><a href="#">Planting, Maintenance &amp; Field Management</a></li>
-      <li><a href="#">Operational Monitoring &amp; Project Management</a></li>
-    </ul>
-      </li>
-    </ul>
-
-    <!-- Hamburger -->
-    <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </nav>
-</header>
-
-<!-- Hero Section -->
-<section class="hero">
-  <div class="hero-content">
-    <h1>From Nursery to Landscape</h1>
-    <p class="hero-sub">
-      Operational delivery for nature-based projects across Africa
-    </p>
-    <p class="hero-tagline">
-      Tree and plant propagation · Project development · Operational delivery
-    </p>
-    
-    <div class="hero-buttons">
-      <a href="#services" class="btn primary">Services</a>
-      <a href="#operations" class="btn secondary">Our operations</a>
-    </div>
-  </div>
-</section>
-<!--section class="trust">
-  <p>Trusted by project developers, landowners, and restoration partners across East Africa</p>
-</!--section-->
-<div class="metrics">
-
-<div class="metric">
-<strong>52,340</strong><br>
-Seedlings Planted (2025)
-</div>
-
-<div class="metric">
-<strong>127 ha</strong><br>
-Land Restored
-</div>
-
-<div class="metric">
-<strong>82%</strong><br>
-Survival Rate (Year 1)
-</div>
-
-<div class="metric">
-<strong>3</strong><br>
-Seasons Managed
-</div>
-
-</div>
-
-<!-- Problem Section -->
-<section class="section-dark">
-  <h2>Challenges in Producing Quality Planting Material</h2>
   
-  <div class="cards-container">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap');
 
-    <div class="card">
-      <i class="fa-solid fa-seedling"></i>
-      <h3>Low-Quality Seedlings</h3>
-      <p>Poor propagation techniques and weak nursery practices produce seedlings with low survival rates.</p>
-    </div>
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+    .heading-font {
+      font-family: 'Playfair Display', sans-serif;
+    }
 
-    <div class="card">
-      <i class="fa-solid fa-flask"></i>
-      <h3>Limited Propagation Expertise</h3>
-      <p>Many projects lack the technical knowledge required to propagate indigenous and climate-resilient species.</p>
-    </div>
+    .leaf-bg {
+      background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.78)),
+        url('https://picsum.photos/id/1015/2000/1200');
+      background-size: cover;
+      background-position: center;
+    }
 
-    <div class="card">
-      <i class="fa-solid fa-tree"></i>
-      <h3>Shortage of Indigenous Plants</h3>
-      <p>Restoration projects often struggle to source sufficient quantities of native species.</p>
-    </div>
+    .navbar {
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(10px);
+    }
 
-    <div class="card">
-      <i class="fa-solid fa-clipboard-check"></i>
-      <h3>Poor Nursery Management</h3>
-      <p>Inadequate monitoring and nursery practices reduce plant health and overall project success.</p>
-    </div>
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), 
+                  url('ASSETS/Planting-3.jpg') center/cover no-repeat;
+      min-height: 85vh;
+    }
+  </style>
+</head>
+<body class="bg-neutral-50 text-gray-800">
 
-  </div>
-
-</section>
-<!-- Solution Section -->
-<section class="why">
-  <h2>Why Crescendo.green</h2>
-
-  <div class="why-grid">
-
-    <div class="why-card">
-      <i class="fa-solid fa-seedling"></i>
-      <h3>Higher Survival Rates</h3>
-      <p>Optimized propagation and field management improve long-term results.</p>
-    </div>
-
-    <div class="why-card">
-      <i class="fa-solid fa-coins"></i>
-      <h3>Lower Project Costs</h3>
-      <p>Efficient operations reduce replanting and operational inefficiencies.</p>
-    </div>
-
-    <div class="why-card">
-      <i class="fa-solid fa-location-dot"></i>
-      <h3>Local Presence</h3>
-      <p>We establish operational hubs close to project sites.</p>
-    </div>
-
-    <div class="why-card">
-      <i class="fa-solid fa-layer-group"></i>
-      <h3>End-to-End Delivery</h3>
-      <p>From nursery to landscape one partner, full execution.</p>
-    </div>
-
-  </div>
-</section>
-<section class="section-earth">
-  <div class="container">
-    <h2>What We Deliver</h2>
-    <p class="lead">Operational delivery you can outsource</p>
-    <p class="subtitle">
-      We enables clients to outsource major components of project execution, allowing them to focus on project development, finance, certification and stakeholder engagement.
-    </p>
-
-    <div class="services-grid">
-      <!-- Seedling Supply Card-->
-      <div class="service-card">
-        <img src="ASSETS/Working-07.jpg" class="card-image"
-             alt="Rows of healthy, dryland-adapted seedlings growing in ABC's nursery" 
-             class="card-image" loading="lazy">
-        <div class="icon-wrapper">
-          <i class="fa-solid fa-seedling"></i>
-        </div>
-        <h3>Seedling Supply and Nursery Operations</h3>
-        <p>We produce and supply high-quality, dryland-adapted seedlings through its own nurseries. Clients do not need to design, finance or manage nurseries themselves. We deliver planting material that meets project specifications, volumes and timelines.</p>
-      </div>
-      <!-- Planting & Maintenance Card-->
-      <div class="service-card">
-        <img src="ASSETS/Planting-3.jpg" 
-             alt="Trained ABC field team planting drought-resistant trees in arid Kenyan landscape" 
-             class="card-image" loading="lazy">
-        <div class="icon-wrapper">
-          <i class="fa-solid fa-hand-holding-water"></i>
-        </div>
-        <h3>Planting, Maintenance and Field Management</h3>
-        <p>We manage planting campaigns, early establishment and long-term maintenance using trained field teams, appropriate mechanisation, and site-specific water and protection systems. We take responsibility for survival optimisation across planting seasons and years.</p>
+  <!-- ==================== NAVBAR ==================== -->
+  <header>
+    <nav class="navbar fixed top-0 left-0 w-full z-50 py-5 px-6 md:px-12 flex items-center justify-between text-white">
+      <div class="logo">
+        <img src="ASSETS/ChatGPT Image Mar 11, 2026, 12_19_29 PM.png" alt="Crescendo.green Logo" class="h-12">
       </div>
 
-      <!-- Monitoring Card-->
-      <div class="service-card">
-        <img src="ASSETS/Working-07.jpg" 
-             alt="ABC supervisors monitoring tree growth and collecting data in a dryland agroforestry project" 
-             class="card-image" loading="lazy">
-        <div class="icon-wrapper">
-          <i class="fa-solid fa-binoculars"></i>
-        </div>
-        <h3>Operational Monitoring and Supervision</h3>
-        <p>Field supervision and operational data collection are integrated into daily operations. ABC manages on-the-ground monitoring to support project management and client reporting requirements.</p>
+      <ul class="nav-links hidden md:flex gap-8 text-sm font-medium" id="navLinks">
+        <li><a href="#" class="hover:text-emerald-300 transition">About</a></li>
+        <li><a href="#" class="hover:text-emerald-300 transition">Projects</a></li>
+        <li><a href="#partners" class="hover:text-emerald-300 transition"></a></li>
+        <li class="relative group">
+          <a href="#" class="hover:text-emerald-300 transition flex items-center gap-1">Services ▾</a>
+          <ul class="absolute hidden group-hover:block bg-white text-black shadow-xl rounded-xl py-3 w-64 mt-2">
+            <li><a href="#" class="block px-6 py-2 hover:bg-emerald-50">Seedling Supply & Nursery</a></li>
+            <li><a href="#" class="block px-6 py-2 hover:bg-emerald-50">Planting & Field Management</a></li>
+            <li><a href="#" class="block px-6 py-2 hover:bg-emerald-50">Monitoring & Supervision</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html" class="hover:text-emerald-300 transition">Contact</a></li>
+      </ul>
+
+      <div class="hamburger md:hidden cursor-pointer" id="hamburger">
+        <span class="block w-7 h-0.5 bg-white mb-1.5"></span>
+        <span class="block w-7 h-0.5 bg-white mb-1.5"></span>
+        <span class="block w-7 h-0.5 bg-white"></span>
       </div>
-    </div>
+    </nav>
+  </header>
 
-    <!-- Impact Gallery -->
-    <div class="gallery">
-      <h3>Real Results from the Ground</h3>
-      <div class="gallery-grid">
-        <figure>
-          <img src="ASSETS/koromifarmbefore.jpeg" 
-               alt="Before: Degraded dryland site prior to restoration" 
-               class="gallery-image" loading="lazy">
-          <figcaption>Before</figcaption>
-        </figure>
-        <figure>
-          <img src="ASSETS/koromifarmafter.jpg" 
-               alt="After: Regenerated agroforestry landscape with established trees and improved soil" 
-               class="gallery-image" loading="lazy">
-          <figcaption>After</figcaption>
-        </figure>
-        <figure>
-          <img src="ASSETS/Koromi-16.jpg" 
-               alt="One year after planting: Healthy tree establishment in dry conditions" 
-               class="gallery-image" loading="lazy">
-        </figure>
-        <figure>
-          <img src="ASSETS/Planting-5.jpg" 
-               alt="Community and ABC team during a successful planting day" 
-               class="gallery-image" loading="lazy">
-        </figure>
-      </div>
-    </div>
-
-    <div class="highlight-box">
-      <i class="fa-solid fa-leaf"></i>
-      <p>From fragile seedling to thriving ecosystem <br> We handle the hard ground work so your vision can grow.</p>
-      <a href="#contact" class="cta-button">Start a Project With Us</a>
-    </div>
-  </div>
-</section>
-<div class="header-with-line">
-  <div class="line"></div>
-  <p><b>How we deliver projects</b></p>
-</div>
-
-<div class="diagram-wrapper">
-
-  <div class="step">
-    <div class="icon-box">
-      <i class="fas fa-seedling"></i>
-    </div>
-    <h3>Propagation</h3>
-    <p>Tree & Plant<br>Seedling Production</p>
-  </div>
-
-  <div class="arrow"></div>
-
-  <div class="step">
-    <div class="icon-box">
-      <i class="fas fa-tree"></i>
-    </div>
-    <h3>Experimentation</h3>
-    <p>Testing Species<br>& Systems</p>
-  </div>
-
-  <div class="arrow"></div>
-
-  <div class="step">
-    <div class="icon-box">
-      <i class="fas fa-clipboard-list"></i>
-    </div>
-    <h3>Project Development</h3>
-    <p>Design & Planning</p>
-  </div>
-
-  <div class="arrow"></div>
-
-  <div class="step">
-    <div class="icon-box">
-      <i class="fas fa-person-digging"></i>
-    </div>
-    <h3>Operational Delivery</h3>
-    <p>Planting & Management</p>
-  </div>
-
-  <div class="arrow"></div>
-
-  <div class="step">
-    <div class="icon-box">
-      <i class="fas fa-earth-africa"></i>
-    </div>
-    <h3>Landscape Impact</h3>
-    <p>Restoration & Carbon Benefits</p>
-  </div>
-
-</div>
-
-<div class="container">
-
-  <!-- TEXT CONTENT -->
-  <div class="story">
-
-    <div class="step" data-lat="-3.94" data-lng="39.74" data-zoom="11">
-      <h3>Mtwapa — Propagation Hub</h3>
-      <p>
-        Our nursery operations produce high-quality tree and plant seedlings,
-        forming the foundation for all landscape projects.
-      </p>
-    </div>
-
-    <div class="step" data-lat="-3.27" data-lng="39.95" data-zoom="11">
-      <h3>Kakuyuni (Arabuko Farm) — Experimental Farm</h3>
-      <p>
-        At Arabuko Farm, we test drought-resistant crops, trees and systems
-        suited to semi-arid environments.
-      </p>
-    </div>
-
-    <div class="step" data-lat="-2.8" data-lng="39.7" data-zoom="10">
-      <h3>Koromi Farm — Agroforestry Demonstration</h3>
-      <p>
-        Koromi Farm demonstrates how agroforestry and forestry systems
-        scale into productive landscapes.
-      </p>
-    </div>
-
-  </div>
-
-  <!-- MAP -->
-  <div id="map"></div>
-
-</div>
-<!-- Main Section -->
-  <section class="leaf-bg text-white py-24">
-    <div class="max-w-6xl mx-auto px-6">
+  <!-- ==================== HERO ==================== -->
+  <section class="hero flex items-center justify-center text-white text-center">
+    <div class="max-w-4xl px-6">
+      <h1 class="heading-font text-5xl md:text-7xl font-bold leading-tight mb-6">
+        From Nursery to Landscape
+      </h1>
+      <p class="text-xl md:text-2xl mb-3">Operational delivery for nature-based projects across Africa</p>
+      <p class="text-lg opacity-90">Tree and plant propagation · Project development · Operational delivery</p>
       
-      <!-- Header -->
+      <div class="mt-10 flex flex-wrap gap-4 justify-center">
+        <a href="#services" class="btn bg-emerald-600 hover:bg-emerald-700 px-8 py-4 rounded-full text-white font-semibold">Our Services</a>
+        <a href="#partners" class="btn border-2 border-white hover:bg-white hover:text-black px-8 py-4 rounded-full font-semibold">Who We Work With</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CHALLENGES ==================== -->
+  <section class="py-20 bg-emerald-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-12 text-emerald-900">Challenges in Producing Quality Planting Material</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition">
+          <i class="fas fa-seedling text-4xl text-emerald-600 mb-4"></i>
+          <h3 class="font-semibold text-xl mb-3">Low-Quality Seedlings</h3>
+          <p class="text-gray-600">Poor propagation techniques lead to low survival rates.</p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition">
+          <i class="fas fa-flask text-4xl text-emerald-600 mb-4"></i>
+          <h3 class="font-semibold text-xl mb-3">Limited Propagation Expertise</h3>
+          <p class="text-gray-600">Lack of technical knowledge for indigenous species.</p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition">
+          <i class="fas fa-tree text-4xl text-emerald-600 mb-4"></i>
+          <h3 class="font-semibold text-xl mb-3">Shortage of Indigenous Plants</h3>
+          <p class="text-gray-600">Difficulty sourcing sufficient native species.</p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition">
+          <i class="fas fa-clipboard-check text-4xl text-emerald-600 mb-4"></i>
+          <h3 class="font-semibold text-xl mb-3">Poor Nursery Management</h3>
+          <p class="text-gray-600">Inadequate monitoring reduces overall success.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== WHY CRESCENDO ==================== -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-12 text-emerald-900">Why Crescendo.green</h2>
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="p-8">
+          <i class="fas fa-seedling text-5xl text-emerald-600 mb-6"></i>
+          <h3 class="font-semibold text-xl mb-3">Higher Survival Rates</h3>
+          <p>Optimized propagation and field management.</p>
+        </div>
+        <div class="p-8">
+          <i class="fas fa-coins text-5xl text-emerald-600 mb-6"></i>
+          <h3 class="font-semibold text-xl mb-3">Lower Project Costs</h3>
+          <p>Efficient operations reduce replanting needs.</p>
+        </div>
+        <div class="p-8">
+          <i class="fas fa-location-dot text-5xl text-emerald-600 mb-6"></i>
+          <h3 class="font-semibold text-xl mb-3">Local Presence</h3>
+          <p>Operational hubs close to project sites.</p>
+        </div>
+        <div class="p-8">
+          <i class="fas fa-layer-group text-5xl text-emerald-600 mb-6"></i>
+          <h3 class="font-semibold text-xl mb-3">End-to-End Delivery</h3>
+          <p>One reliable partner from nursery to landscape.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ==================== METRICS ==================== -->
+  <div class="metrics bg-white py-8 shadow-sm">
+    <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 px-6 text-center">
+      <div><strong class="block text-3xl text-emerald-700">52,340</strong><span class="text-sm">Seedlings Planted (2025)</span></div>
+      <div><strong class="block text-3xl text-emerald-700">127 ha</strong><span class="text-sm">Land Restored</span></div>
+      <div><strong class="block text-3xl text-emerald-700">82%</strong><span class="text-sm">Survival Rate (Year 1)</span></div>
+      <div><strong class="block text-3xl text-emerald-700">3</strong><span class="text-sm">Seasons Managed</span></div>
+    </div>
+  </div>
+
+
+  <!-- ==================== WHO WE WORK WITH ==================== -->
+  <section id="partners" class="leaf-bg text-white py-24">
+    <div class="max-w-6xl mx-auto px-6">
       <div class="text-center mb-16">
         <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-6 py-2 rounded-full mb-6">
           <i class="fas fa-handshake text-emerald-400"></i>
           <span class="uppercase tracking-widest text-sm font-medium">B2B Partnerships</span>
         </div>
-        <h1 class="heading-font text-6xl md:text-7xl font-bold leading-tight mb-4">
-          Who We Work With
-        </h1>
+        <h1 class="heading-font text-6xl md:text-7xl font-bold leading-tight mb-4">Who We Work With</h1>
         <div class="w-24 h-1 bg-emerald-500 mx-auto rounded-full"></div>
       </div>
 
       <div class="max-w-4xl mx-auto">
-        
-        <!-- Main Content -->
         <div class="bg-white/10 backdrop-blur-xl rounded-3xl p-10 md:p-16 border border-white/20">
-          
-          <h2 class="text-emerald-300 text-2xl font-semibold mb-6 flex items-center gap-3">
-            <span class="w-8 h-px bg-emerald-400"></span>
-            Our B2B Focus
-          </h2>
-          
-          <p class="text-xl leading-relaxed text-neutral-100 mb-12">
+          <h2 class="text-emerald-300 text-2xl font-semibold mb-6">Our B2B Focus</h2>
+          <p class="text-xl leading-relaxed mb-12">
             Crescendo.green works primarily with organisations that develop, finance or manage 
             <span class="text-emerald-300 font-medium">nature-based projects</span>.
           </p>
 
-          <!-- Partners Grid -->
-          <div class="mb-12">
-            <h3 class="uppercase tracking-widest text-sm text-emerald-300 font-medium mb-6">Typical Partners Include:</h3>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div class="flex items-start gap-4 group">
-                <div class="w-10 h-10 rounded-2xl bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-1 group-hover:scale-110 transition-transform">
-                  <i class="fas fa-leaf text-emerald-400"></i>
-                </div>
-                <div>
-                  <p class="font-medium text-white">Carbon project developers</p>
-                </div>
-              </div>
-              
-              <div class="flex items-start gap-4 group">
-                <div class="w-10 h-10 rounded-2xl bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-1 group-hover:scale-110 transition-transform">
-                  <i class="fas fa-hands-helping text-emerald-400"></i>
-                </div>
-                <div>
-                  <p class="font-medium text-white">NGOs implementing restoration programs</p>
-                </div>
-              </div>
-              
-              <div class="flex items-start gap-4 group">
-                <div class="w-10 h-10 rounded-2xl bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-1 group-hover:scale-110 transition-transform">
-                  <i class="fas fa-landmark text-emerald-400"></i>
-                </div>
-                <div>
-                  <p class="font-medium text-white">Governments and public agencies</p>
-                </div>
-              </div>
-              
-              <div class="flex items-start gap-4 group">
-                <div class="w-10 h-10 rounded-2xl bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-1 group-hover:scale-110 transition-transform">
-                  <i class="fas fa-globe text-emerald-400"></i>
-                </div>
-                <div>
-                  <p class="font-medium text-white">Donor-funded landscape initiatives</p>
-                </div>
-              </div>
-              
-              <div class="flex items-start gap-4 group">
-                <div class="w-10 h-10 rounded-2xl bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-1 group-hover:scale-110 transition-transform">
-                  <i class="fas fa-tree text-emerald-400"></i>
-                </div>
-                <div>
-                  <p class="font-medium text-white">Agroforestry and forestry investors</p>
-                </div>
-              </div>
-              
-              <div class="flex items-start gap-4 group">
-                <div class="w-10 h-10 rounded-2xl bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-1 group-hover:scale-110 transition-transform">
-                  <i class="fas fa-tractor text-emerald-400"></i>
-                </div>
-                <div>
-                  <p class="font-medium text-white">Agribusiness companies</p>
-                </div>
-              </div>
+          <h3 class="uppercase tracking-widest text-sm text-emerald-300 font-medium mb-8">Typical Partners Include:</h3>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+            <div class="flex gap-4">
+              <div class="w-10 h-10 bg-emerald-500/20 rounded-2xl flex items-center justify-center flex-shrink-0"><i class="fas fa-leaf text-emerald-400"></i></div>
+              <p class="pt-1 font-medium">Carbon project developers</p>
+            </div>
+            <div class="flex gap-4">
+              <div class="w-10 h-10 bg-emerald-500/20 rounded-2xl flex items-center justify-center flex-shrink-0"><i class="fas fa-hands-helping text-emerald-400"></i></div>
+              <p class="pt-1 font-medium">NGOs implementing restoration programs</p>
+            </div>
+            <div class="flex gap-4">
+              <div class="w-10 h-10 bg-emerald-500/20 rounded-2xl flex items-center justify-center flex-shrink-0"><i class="fas fa-landmark text-emerald-400"></i></div>
+              <p class="pt-1 font-medium">Governments and public agencies</p>
+            </div>
+            <div class="flex gap-4">
+              <div class="w-10 h-10 bg-emerald-500/20 rounded-2xl flex items-center justify-center flex-shrink-0"><i class="fas fa-globe text-emerald-400"></i></div>
+              <p class="pt-1 font-medium">Donor-funded landscape initiatives</p>
+            </div>
+            <div class="flex gap-4">
+              <div class="w-10 h-10 bg-emerald-500/20 rounded-2xl flex items-center justify-center flex-shrink-0"><i class="fas fa-tree text-emerald-400"></i></div>
+              <p class="pt-1 font-medium">Agroforestry and forestry investors</p>
+            </div>
+            <div class="flex gap-4">
+              <div class="w-10 h-10 bg-emerald-500/20 rounded-2xl flex items-center justify-center flex-shrink-0"><i class="fas fa-tractor text-emerald-400"></i></div>
+              <p class="pt-1 font-medium">Agribusiness companies</p>
             </div>
           </div>
 
-          <!-- Bottom Paragraph -->
-          <div class="border-t border-white/20 pt-10">
-            <p class="text-lg leading-relaxed text-neutral-200">
+          <div class="border-t border-white/20 mt-12 pt-10">
+            <p class="text-lg leading-relaxed">
               Our clients typically manage project financing, certification and stakeholder relationships, 
               while <span class="text-emerald-300 font-semibold">Crescendo.green</span> provides operational capacity 
               for propagation, planting and field management.
             </p>
           </div>
         </div>
-
-        <!-- Trust Bar -->
-        <div class="flex flex-wrap justify-center items-center gap-x-10 gap-y-6 mt-16 opacity-75">
-          <div class="text-center">
-            <i class="fas fa-seedling text-4xl text-emerald-400"></i>
-          </div>
-          <div class="text-center">
-            <i class="fas fa-globe-africa text-4xl text-emerald-400"></i>
-          </div>
-          <div class="text-center">
-            <i class="fas fa-hand-holding-dollar text-4xl text-emerald-400"></i>
-          </div>
-          <div class="text-center">
-            <i class="fas fa-users text-4xl text-emerald-400"></i>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
-<!--Team Section -->
-<section class="team-section">
-  <div class="team-container">
-    <div class="team-header">
-      <h2>Hands-on Expertise</h2>
-      <p>ABC is led by practitioners with deep operational experience:</p>
-    </div>
-    <div class="team-members">
-      <div class="team-member">
-        <div class="photo-wrapper">
-          <img src="ASSETS/Bob pic.jpg" alt="Bob van der Bijl">
-          <div class="leaf-icon"></div>
+  <!-- ==================== TEAM ==================== -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-4">Hands-on Expertise</h2>
+      <p class="mb-12 text-gray-600">Led by practitioners with deep operational experience</p>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div class="text-center">
+          <img src="ASSETS/Bob pic.jpg" alt="Bob van der Bijl" class="w-32 h-32 mx-auto rounded-full border-4 border-emerald-200 mb-4">
+          <h3 class="font-semibold">Bob van der Bijl</h3>
+          <p class="text-sm text-gray-600">CEO, Operations & Project Development</p>
         </div>
-        <h3>Bob van der Bijl</h3>
-        <p>CEO, operations and project development</p>
-      </div>
-      <div class="team-member">
-        <div class="photo-wrapper">
-          <img src="ASSETS/Bob pic.jpg" alt="Jaap van den Beukel">
-          <div class="leaf-icon"></div>
+        <div class="text-center">
+          <img src="ASSETS/Bob pic.jpg" alt="Jaap van den Beukel" class="w-32 h-32 mx-auto rounded-full border-4 border-emerald-200 mb-4">
+          <h3 class="font-semibold">Jaap van den Beukel</h3>
+          <p class="text-sm text-gray-600">Propagation and Nursery Systems</p>
         </div>
-        <h3>Jaap van den Beukel</h3>
-        <p>Propagation and nursery systems</p>
-      </div>
-      <div class="team-member">
-        <div class="photo-wrapper">
-          <img src="ASSETS/Bob pic.jpg" alt="Marc Parren">
-          <div class="leaf-icon"></div>
+        <div class="text-center">
+          <img src="ASSETS/Bob pic.jpg" alt="Marc Parren" class="w-32 h-32 mx-auto rounded-full border-4 border-emerald-200 mb-4">
+          <h3 class="font-semibold">Marc Parren</h3>
+          <p class="text-sm text-gray-600">Forestry & Assisted Natural Regeneration</p>
         </div>
-        <h3>Marc Parren</h3>
-        <p>Forestry and assisted natural regeneration</p>
-      </div>
-      <div class="team-member">
-        <div class="photo-wrapper">
-          <img src="ASSETS/Bob pic.jpg" alt="Albert Vrolijk">
-          <div class="leaf-icon"></div>
+        <div class="text-center">
+          <img src="ASSETS/Bob pic.jpg" alt="Albert Vrolijk" class="w-32 h-32 mx-auto rounded-full border-4 border-emerald-200 mb-4">
+          <h3 class="font-semibold">Albert Vrolijk</h3>
+          <p class="text-sm text-gray-600">Nursery Establishment & Management</p>
         </div>
-        <h3>Albert Vrolijk</h3>
-        <p>Nursery establishment and management (affiliate)</p>
       </div>
     </div>
+  </section>
 
-    <p class="team-footer">
-      The core team is supported by locally recruited nursery technicians, field supervisors and operational staff in project locations.
-    </p>
-  </div>
-</section>
-<script src="script.js"></script>
-<footer class="footer-luxury">
-  <div class="footer-container">
-    
-    <div class="footer-brand">
-      <h2>Crescendo.green</h2>
-      <p class="tagline">From nursery to landscape</p>
-    </div>
-
-    <div class="footer-links">
-      <a href="#">Contact</a>
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Projects</a>
-    </div>
-  </div>
-  <div class="contact-info">
-         <div class="social-icons">
-          <a href="https://linkedin.com/company/crescendo-green" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="https://twitter.com/crescendogreen" target="_blank" title="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="https://facebook.com/crescendogreen" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
-          <a href="https://instagram.com/crescendogreen" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-emerald-950 text-white py-16">
+    <div class="max-w-6xl mx-auto px-6 text-center md:text-left">
+      <h2 class="text-3xl font-bold text-emerald-400 mb-2">Crescendo.green</h2>
+      <p class="text-emerald-300">From nursery to landscape</p>
+      
+      <div class="mt-12 flex flex-wrap justify-center md:justify-between gap-8">
+        <div class="flex gap-8 text-sm">
+          <a href="#" class="hover:text-emerald-400">About</a>
+          <a href="#" class="hover:text-emerald-400">Services</a>
+          <a href="#" class="hover:text-emerald-400">Projects</a>
+          <a href="#" class="hover:text-emerald-400">Contact</a>
         </div>
+        
+        <div class="flex gap-6 text-2xl">
+          <a href="#" class="hover:text-emerald-400"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="hover:text-emerald-400"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" class="hover:text-emerald-400"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="hover:text-emerald-400"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      
+      <p class="text-xs opacity-60 mt-16">© 2026 Crescendo.green • All rights reserved.</p>
+    </div>
+  </footer>
 
-  <div class="footer-bottom">
-    <p>© 2026 Crescendo.green All rights reserved.</p>
-  </div>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
-</footer>
+  <script>
+    // Hamburger Menu
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('hidden');
+      navLinks.classList.toggle('flex');
+      navLinks.classList.toggle('flex-col');
+      navLinks.classList.toggle('absolute');
+      navLinks.classList.toggle('top-20');
+      navLinks.classList.toggle('left-0');
+      navLinks.classList.toggle('w-full');
+      navLinks.classList.toggle('bg-emerald-950');
+      navLinks.classList.toggle('p-6');
+    });
+  </script>
 </body>
 </html>
