@@ -927,6 +927,17 @@ font-size:2.2rem;
     width: 100%;
   }
 }
+  .heading-font {
+      font-family: 'Playfair Display', sans-serif;
+    }
+
+    .leaf-bg {
+      background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+        url('https://picsum.photos/id/1015/2000/1200');
+      background-size: cover;
+      background-position: center;
+    }
 
 /* CAPTION */
 .caption {
