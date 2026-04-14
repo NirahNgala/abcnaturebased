@@ -941,7 +941,7 @@ font-size:2.2rem;
   }
 }
 /* team */
-.team-section {
+  .team-section {
   background-color: #ffffff;
   color: #000000;
   padding: 80px 8%;
@@ -1001,7 +1001,7 @@ font-size:2.2rem;
   margin-bottom: 6px;
   font-size: 1.1rem;
   font-weight: 600;
-}
+  }
 
 .team-member p {
   font-size: 0.95rem;
@@ -1032,6 +1032,7 @@ font-size:2.2rem;
     gap: 10px;
   }
 }
+
 /* FOOTER */
 .footer-luxury {
   background-color: #000000;
