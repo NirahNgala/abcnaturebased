@@ -273,6 +273,187 @@ section {
   }
 }
 
+/* SECTION */
+.section-earth {
+  background: #1f3d2b;
+  padding: 100px 20px;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* HEADER */
+.services-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.services-header h2 {
+  font-size: 52px;
+  margin-bottom: 10px;
+}
+
+.lead {
+  font-size: 20px;
+  color: #bde5c8;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: #9ecfb0;
+  margin-top: 10px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+/* SERVICES */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px 40px;
+}
+
+.service-card {
+  position: relative;
+  padding-left: 60px;
+}
+
+.num {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 42px;
+  font-weight: bold;
+  color: rgba(159, 232, 112, 0.25);
+}
+
+.service-card h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.service-card p {
+  font-size: 14px;
+  color: #cfe9d7;
+  line-height: 1.6;
+}
+
+/* TRANSITION */
+.impact-transition {
+  margin-top: 110px;
+  text-align: center;
+}
+
+.connector-line {
+  width: 2px;
+  height: 60px;
+  background: linear-gradient(to bottom, #5e8c41, transparent);
+  margin: 0 auto 25px;
+}
+
+.impact-intro {
+  font-size: 18px;
+  color: #bde5c8;
+  margin-bottom: 40px;
+}
+
+/* SLIDER */
+.before-after-slider {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+.before-after-slider img {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+}
+
+.after-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* RANGE INPUT */
+#slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: ew-resize;
+  z-index: 5;
+}
+
+/* LINE */
+.slider-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: white;
+  z-index: 4;
+}
+
+/* HANDLE */
+.slider-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 42px;
+  height: 42px;
+  background: #9FE870;
+  border-radius: 50%;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+
+/* LABELS */
+.labels {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.labels span {
+  background: rgba(0,0,0,0.6);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .before-after-slider img {
+    height: 260px;
+  }
+
+  .services-header h2 {
+    font-size: 34px;
+  }
+}
+
 /* ====================== KEY METRICS SECTION ====================== */
 .metrics-section {
   background-color: #6cc24a2c;
@@ -319,358 +500,77 @@ section {
   text-align: center;
 }
 
-.why h2 {
-  font-size: 2.5rem;
-  color: #1B5E20;
-  margin-bottom: 10px;
-}
-
-.why-sub {
+.subtitle {
+  font-size: 15px;
+  color: #9ecfb0;
+  margin-top: 12px;
   max-width: 600px;
-  margin: 50px;
-  color: #666;
-  font-size: 1.1rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
 }
 
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 30px;
-}
-
-.why-card {
-  background: #f9f9f9;
-  padding: 30px 25px;
-  border-radius: 14px;
-  transition: all 0.3s ease;
-  border: 1px solid #e0e0e0;
-}
-
-.why-card i {
-  font-size: 2.5rem;
-  color: #2e7d32;
-  margin-bottom: 15px;
-}
-
-.why-card h3 {
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-}
-
-.why-card p {
-  font-size: 0.95rem;
-  color: #555;
-  line-height: 1.5;
-}
-
-/* Hover effect */
-.why-card:hover {
-  transform: translateY(-8px);
-  background: #ffffff;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-}
-
-/* problem section*/
-
-/* Dark section base 
-.section-dark {
-  background-color: #f1f8e9;       
-  color: #e0e0e0;                 
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
-.section-dark h2 {
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: #1B5E20;
-  position: relative;
-  display: inline-block;
-}
-
-.section-dark h2::after {
-  content: '';
-  position: absolute;
-  bottom: -0.8rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(90deg, #1B5E20, #69ca48); 
-  border-radius: 2px;
-}*/
-
-/* Responsive card grid 
-.cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto 4rem;
-}
-
-/* Glassmorphism-inspired card
-.card {
-  background: white;         
-  backdrop-filter: blur(12px);               
-  -webkit-backdrop-filter: blur(12px);      
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 1.2rem;
-  padding: 2.5rem 1.8rem;
-  transition: all 0.35s ease;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
-  position: relative;
-  overflow: hidden;
-}
-
-.card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(80, 180, 255, 0.06), transparent 60%);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: none;
-}
-
-.card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-}
-
-.card:hover::before {
-  opacity: 1;
-}
-
-.card i {
-  font-size: 3.2rem;
-  color: #1B5E20;                    
-  margin-bottom: 1.2rem;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.card:hover i {
-  transform: scale(1.15) rotate(5deg);
-}
-
-.card h3 {
-  font-size: 1.4rem;
-  margin: 0.8rem 0 1rem;
-  color: #090000;
-}
-
-.card p {
-  font-size: 1.05rem;
-  line-height: 1.6;
-  color: #989898;
-  margin: 0;
-} */
-
-/* Highlight box 
-.highlight {
-  background: rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(77, 163, 255, 0.2);
-  border-radius: 1.2rem;
-  padding: 2.5rem;
-  max-width: 800px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-  transition: all 0.3s ease;
-}
-
-
-.highlight i {
-  font-size: 2.5rem;
-  color: #043917;
-  flex-shrink: 0;
-}
-
-.highlight p {
-  justify-content: center;
-  font-size: 1.3rem;
-  line-height: 1.5;
-  margin: 0;
-  color: #082845;
-}
-
-.highlight strong {
-  color: #0f492a;
-}*/
-
-/* Responsive adjustments 
-@media (max-width: 768px) {
-  .section-dark {
-    padding: 3rem 1.5rem;
-  }
-  
-  .section-dark h2 {
-    font-size: 2rem;
-  }
-  
-  .highlight {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .highlight i {
-    margin-bottom: 1rem;
-  }
-}*/
-
-.section-earth {
-  background-color: #1F4D3A;
-              url('ASSETS/your-wide-dryland-planting-or-restored-landscape.jpg') center/cover no-repeat;
-  color: white;
-  padding: 80px 0;
-}
-
-.section-earth h2 {
-  font-size: clamp(2rem, 3vw, 2.25rem);
-}
-
-/* Services Grid */
+/* GRID */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.75rem;
-  margin-top: 2.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px 40px;
 }
 
-@media (min-width: 1024px) {
-  .services-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media (max-width: 1023px) {
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
+/* CARD */
 .service-card {
-  background: white;
-  color: #1f2937;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  padding-left: 60px;
 }
 
-.service-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.18);
+/* NUMBER (MAIN VISUAL ELEMENT) */
+.num {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 42px;
+  font-weight: 700;
+  color: rgba(159, 232, 112, 0.25); /* faded big number */
 }
 
-.card-image {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-}
-
-.icon-wrapper {
-  width: 88px;
-  height: 88px;
-  background: #166534;
-  color: #86efac;
-  font-size: 2.7rem;
-  margin: -44px auto 18px;
-  border-radius: 9999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-  flex-shrink: 0;
-}
-
+/* TITLE */
 .service-card h3 {
-  font-size: 1.4rem;
-  padding: 0 24px 10px;
-  margin: 0;
-  font-weight: 700;
-  line-height: 1.3;
+  font-size: 20px;
+  margin-bottom: 8px;
 }
 
+/* TEXT */
 .service-card p {
-  padding: 0 24px 28px;
-  line-height: 1.7;
-  color: #374151;
-  flex-grow: 1;
+  font-size: 14px;
+  color: #cfe9d7;
+  line-height: 1.6;
 }
 
-/* Gallery */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.25rem;
-}
-
-.gallery-image {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 16px;
-  transition: transform 0.5s ease;
-}
-
-.gallery-grid figure:hover .gallery-image {
-  transform: scale(1.06);
-}
-
-.gallery figcaption {
-  text-align: center;
-  margin-top: 8px;
-  font-weight: 600;
-  color: #7aa0ec;
-}
-
-/* Highlight Box */
-.highlight-box {
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.15);
-  color: white;
-  padding: 48px 36px;
-  border-radius: 28px;
-  text-align: center;
-  max-width: 820px;
-  margin: 60px auto 0;
-}
-
-.highlight-box i {
-  font-size: 4.5rem;
-  color: #0d7aff;
-  margin-bottom: 20px;
+/* SUBTLE DIVIDER LINE BETWEEN ITEMS */
+.service-card::after {
+  content: "";
   display: block;
+  width: 40px;
+  height: 2px;
+  background: #5e8c41;
+  margin-top: 15px;
+  opacity: 0.5;
 }
 
-.cta-button {
-  display: inline-block;
-  margin-top: 28px;
-  background-color: #2D8CFF;
-  color: #000000;
-  font-weight: 700;
-  padding: 14px 32px;
-  border-radius: 9999px;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: all 0.3s ease;
+/* MOBILE */
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-header h2 {
+    font-size: 34px;
+  }
 }
 
-.cta-button:hover {
-  background-color: #0067e5;
-  transform: translateY(-3px);
-}
+
+
+
 
 /* EXPERTISE SECTION 
 
@@ -723,98 +623,137 @@ font-size:2.2rem;
 }
 }
 /* DIAGRAM WRAPPER */
-.diagram-wrapper {
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 20px;
-  overflow-x: auto; /* allows scroll on mobile */
-  scrollbar-width: none;
+/* MAIN SECTION */
+.how-we-deliver {
+  padding: 80px 20px;
+  font-family: Arial, sans-serif;
 }
 
-.header-with-line p{
+/* TITLE AREA (CENTERED) */
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+/* small line above title */
+.section-header .line {
+  width: 60px;
+  height: 3px;
+  background: #5e8c41;
+  margin: auto;
+  border-radius: 10px;
+}
+
+/* DIAGRAM */
+.diagram-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
-}
-.diagram-wrapper::-webkit-scrollbar {
-  display: none;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 80px;
 }
 
 /* STEP */
 .step {
   text-align: center;
-  min-width: 110px;
+  width: 160px;
 }
 
-/* ICON */
 .icon-box {
-  height: 50px;
-  margin-bottom: 8px;
-}
-
-.icon-box i {
-  font-size: 30px;
+  width: 60px;
+  height: 60px;
+  margin: auto;
+  background: #5e8c41;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
 .step h3 {
-  font-size: 1rem;
-  margin-bottom: 3px;
+  font-size: 14px;
+  margin-bottom: 5px;
 }
 
-/* SUBTEXT */
 .step p {
-  align-items: center;
-  justify-content: center;
-  font-size: 0.7rem;
-  line-height: 1.2;
+  font-size: 12px;
+  color: #555;
 }
 
-/* ARROW */
+/* ARROWS */
 .arrow {
-  width: 40px;
-  height: 4px;
-  background: linear-gradient(to right, #8bbf64, #5f9c43);
-  border-radius: 10px;
-  position: relative;
-  flex-shrink: 0;
+  width: 30px;
+  height: 2px;
+  background: #aaa;
 }
 
-.arrow::after {
-  content: "";
-  position: absolute;
-  right: -6px;
-  top: -4px;
-  border-left: 8px solid #5f9c43;
-  border-top: 6px solid transparent;
-  border-bottom: 6px solid transparent;
-}
-.container {
-  display: flex;
-}
-
-/* Map Section */
+/* MAP SECTION */
 .map-section {
   display: flex;
-  flex-wrap: wrap;
   gap: 40px;
-  margin: 40px auto;
-  max-width: 1200px;
-  padding: 0 20px;
+  align-items: flex-start;
 }
-.story { flex: 1; min-width: 300px; }
-#map { flex: 1; min-width: 300px; height: 480px; border-radius: 16px; }
+
+/* STORY */
+.story {
+  flex: 1;
+}
+
+.story h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
 
 .location-step {
-  margin-bottom: 30px;
-  padding-left: 20px;
-  border-left: 5px solid #10b981;
+  margin-bottom: 15px;
 }
 
-/* ====================== WHO WE WORK WITH SECTION ====================== */
+.location-step h3 {
+  font-size: 16px;
+}
+
+.location-step p {
+  font-size: 13px;
+  color: #666;
+}
+
+/* MAP */
+#map {
+  flex: 1;
+  height: 350px;
+  background: #ddd;
+  border-radius: 12px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .diagram-wrapper {
+    flex-direction: column;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  .map-section {
+    flex-direction: column;
+  }
+
+  .section-header h2 {
+    font-size: 28px;
+  }
+}
+/* ====================== WHO WE WORK WITH SECTION ======================
 .who-we-work-with {
   background: linear-gradient(rgba(13, 26, 13, 0.88), rgba(13, 26, 13, 0.95)),
               url('ASSETS/your-wide-dryland-planting-or-restored-landscape.jpg') center/cover no-repeat;
@@ -866,7 +805,7 @@ font-size:2.2rem;
   font-size: 1.02rem;
 }
 
-/* Responsive */
+/* Responsive 
 @media (max-width: 768px) {
   .content-card {
     padding: 40px 24px;
@@ -874,74 +813,131 @@ font-size:2.2rem;
   .partners-grid {
     grid-template-columns: 1fr;
   }
-}
+} */
+
 /* ====================== OUR PARTNERS - SCROLLING MARQUEE ====================== */
-.our-partners {
-  background: linear-gradient(rgba(13, 26, 13, 0.9), rgba(13, 26, 13, 0.95)),
-              url('ASSETS/your-wide-dryland-planting-or-restored-landscape.jpg') center/cover no-repeat;
-  color: white;
+
+.partners-section {
+  background: white;
+  padding: 50px 20px;
+  color: #1f3d2b;
 }
 
-.marquee-wrapper {
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* HEADER */
+.partners-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.partners-header h2 {
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.partners-sub {
+  font-size: 14px;
+  color: #5f6f7a;
+  margin-top: 10px;
+}
+
+/* CARD (this is key to your screenshot look) */
+.partners-card {
+  background: transparent;
+  padding: 30px 20px;
+  margin: 30px auto;
   overflow: hidden;
-  padding: 20px 0;
 }
 
+/* MARQUEE */
+.marquee {
+  overflow: hidden;
+  position: relative;
+}
+
+/* fade edges like modern agency sites */
+.marquee::before,
+.marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 2;
+}
+
+.marquee::before {
+  left: 0;
+  background: linear-gradient(to right, white, transparent);
+}
+
+.marquee::after {
+  right: 0;
+  background: linear-gradient(to left, white, transparent);
+}
+
+/* TRACK */
 .marquee-track {
   display: flex;
-  align-items: center;
-  gap: 50px;
-  animation: marquee-scroll 35s linear infinite;
+  gap: 70px;
   width: max-content;
-}
-
-.partner-logo {
-  width: 160px;
-  height: 90px;
-  display: flex;
+  animation: scroll 22s linear infinite;
   align-items: center;
-  justify-content: center;
-  padding: 16px;
-  flex-shrink: 0;
-  transition: all 0.4s ease;
 }
 
-.partner-logo:hover {
-  transform: scale(1.1);
-
-}
-
-.partner-logo img {
-  max-height: 60px;
-  max-width: 100%;
-  border-radius: 50%;
+/* LOGOS */
+.logo img {
+  height: 45px;
+  width: auto;
   object-fit: contain;
-  filter: brightness(1.1) contrast(1.1);
+  opacity: 0.7;
+  transition: 0.3s ease;
+  filter: grayscale(100%);
 }
 
-/* Infinite Scroll Animation */
-@keyframes marquee-scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+.logo img:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+  transform: scale(1.05);
 }
 
-/* Pause on hover */
-.marquee-wrapper:hover .marquee-track {
-  animation-play-state: paused;
+/* SCROLL */
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
-/* Responsive */
+/* TAGLINE */
+.partners-footer {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.partners-footer p {
+  font-size: 14px;
+  color: #6b7c86;
+  max-width: 600px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+/* MOBILE */
 @media (max-width: 768px) {
-  .partner-logo {
-    width: 130px;
-    height: 75px;
+  .partners-header h2 {
+    font-size: 28px;
   }
-  .partner-logo img {
-    max-height: 48px;
+
+  .logo img {
+    height: 35px;
+  }
+
+  .marquee-track {
+    gap: 40px;
   }
 }
 /* team */

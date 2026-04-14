@@ -44,7 +44,6 @@ slider.style.left = percent + "%";
 });
 
 });
-
 // INIT MAP
 var map = L.map('map', { zoomControl: false }).setView([-3.6, 39.8], 9);
 
