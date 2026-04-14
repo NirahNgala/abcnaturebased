@@ -1088,7 +1088,33 @@ font-size:2.2rem;
   color: #ffffff;
   transform: translateY(-2px);
 }
- 
+.footer-links-group h4,
+.footer-contact h4 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.footer-contact p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 6px;
+}
+
+.legal-links {
+  margin-top: 10px;
+}
+
+.legal-links a {
+  color: #d4af37;
+  margin: 0 10px;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.legal-links a:hover {
+  color: #ffffff;
+}
 .footer-bottom {
   margin-top: 50px;
   border-top: 1px solid rgba(212, 175, 55, 0.3);
