@@ -3,179 +3,310 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us | Crescendo.green</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <title>About Us</title>
+  <link rel="stylesheet" href="about.css">
   <link rel="stylesheet" href="style.css">
-
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-    .heading-font { font-family: 'Playfair Display', sans-serif; }
-    
-    .top-banner {
-      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('ASSETS/Planting-3.jpg') center/cover no-repeat;
-    }
-  </style>
 </head>
-<body class="bg-neutral-50">
+<body>
 
- <!-- Back Button -->
-<div class="max-w-7xl mx-auto px-6 pt-8">
-  <a href="index.html" class="inline-flex items-left text-emerald-700 hover:text-emerald-800 font-medium">
-    ← Back
-  </a>
-</div>
+<!-- ================= HERO ================= -->
+<section class="about-hero">
+  <button class="back-batn" onclick="goBack()">
+  <span class="arrow">←</span>
+  <span class="back-text">Back</span>
+</button>
+  <div class="container">
+    <h1>About Us</h1>
+    
+</section>
 
-  <!-- Hero Banner -->
-  <div class="top-banner text-white py-24 md:py-32 text-center">
-    <div class="max-w-4xl mx-auto px-6">
-      <h1 class="heading-font text-5xl md:text-6xl font-bold mb-4">Crescendo.green</h1>
-      <p class="text-2xl md:text-3xl font-light opacity-90">From Nursery to Landscape</p>
-      <p class="mt-6 text-lg max-w-2xl mx-auto opacity-90">
-        Operational partner for nature-based projects across Africa
-      </p>
+<!-- ================= STORY ================= -->
+<section class="about-section">
+  <div class="container">
+    <h2>Our Story</h2>
+
+    <p>
+      Founded in <b>2019</b>, our journey began with the development of a 200-hectare agroforestry project in <b> Koromi, Kilifi County</b>. Over time, the project evolved into a focused effort on forestry, reforestation, and sustainable land restoration.
+    </p>
+
+    <p>
+      In <b>2022</b>, we expanded with a 4-hectare nursery and experimental farm in <b>Kakuyuni</b>, producing indigenous and fruit trees while supporting ongoing research and field planting.
+    </p>
+
+    <p>
+      In <b>2024</b>, our nursery was selected under JICA’s SFS-CORECC program to produce <b>improved Melia volkensii seedlings</b>. This partnership enabled demonstration plots, research trials, and water harvesting systems.
+    </p>
+
+    <p>
+      In <b>2026</b>, we launched a large-scale nursery in Mtwapa with a 7,500m² shadehouse capable of producing millions of seedlings annually, currently focused on moringa production for a carbon project.
+    </p>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section class="gallery-section">
+  <div class="container">
+    <h2>Our Work in the Field</h2>
+    <p class="gallery-subtitle">
+      A glimpse into our nurseries, forestry sites, and restoration work.
+    </p>
+
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="ASSETS/koromifarmafter.jpg" alt="Tree nursery seedlings">
+      </div>
+      <div class="gallery-item">
+        <img src="ASSETS/DJI_0961.JPG" alt="Shadehouse production">
+      </div>
+      <div class="gallery-item">
+        <img src="ASSETS/Planting-3.jpg"alt="Field planting">
+      </div>
+      <div class="gallery-item">
+        <img src="ASSETS/moringa seedlings.jpeg" alt="Moringa seedlings">
+      </div>
+      <div class="gallery-item">
+        <img src="ASSETS/Koromi-16.jpg" alt="Agroforestry system">
+      </div>
+      <div class="gallery-item">
+        <img src="ASSETS/Working-09.jpg" alt
+        ="Research plots">
+      </div>
     </div>
   </div>
+</section>
 
-  <div class="max-w-5xl mx-auto px-6 py-16 space-y-20">
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="close">&times;</span>
+  <img class="lightbox-img" id="lightbox-img">
+</div>
 
-    <!-- Who We Are -->
-    <section>
-      <h2 class="heading-font text-4xl font-semibold text-emerald-900 mb-8">Who We Are</h2>
-      <div class="prose prose-lg text-gray-700">
-        <p>Crescendo.green is a Kenya-based operational partner that supports developers, NGOs, investors, and institutions in successfully implementing nature-based projects across Africa.</p>
-        <p>We allow our partners to outsource the most critical and difficult parts of their projects — large-scale plant propagation, project development support, and hands-on operational delivery in the field.</p>
-      </div>
-    </section>
+<!-- ================= STATS ================= -->
+<section class="stats-section">
+  <div class="container stats-grid">
+    <div class="stat">
+      <h3>200+</h3>
+      <p>Hectares</p>
+    </div>
+    <div class="stat">
+      <h3>7,500m²</h3>
+      <p>Shadehouse Capacity</p>
+    </div>
+    <div class="stat">
+      <h3>500,000</h3>
+      <p>Seedlings per Year</p>
+    </div>
+    <div class="stat">
+      <h3>3</h3>
+      <p>Core Systems</p>
+    </div>
+  </div>
+</section>
 
-    <!-- Our Story -->
-    <section class="bg-emerald-50 rounded-3xl p-10 md:p-16">
-      <h2 class="heading-font text-4xl font-semibold text-emerald-900 mb-8">Our Story</h2>
-      <div class="prose prose-lg text-gray-700">
-        <p>Built on practical, hands-on experience in Kenya, our team has established nurseries, managed large planting operations, and developed resilient agroforestry and forestry systems in challenging dryland environments.</p>
-        <p>We noticed that many well-designed restoration, agroforestry, and carbon projects struggle or fail during the implementation phase. Crescendo.green was created specifically to close this gap by providing reliable, experienced operational delivery from nursery to landscape.</p>
-      </div>
-    </section>
+<!-- ================= APPROACH ================= -->
+<section class="about-section">
+  <div class="container">
+    <h2>Our Approach</h2>
 
-    <!-- Our Focus -->
-    <section>
-      <h2 class="heading-font text-4xl font-semibold text-emerald-900 mb-8">Our Focus</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="flex gap-4">
-          <div class="w-8 h-8 bg-emerald-100 text-emerald-700 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">🌱</div>
-          <p class="text-lg">Agroforestry systems that combine trees with crops and livestock</p>
-        </div>
-        <div class="flex gap-4">
-          <div class="w-8 h-8 bg-emerald-100 text-emerald-700 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">🏜️</div>
-          <p class="text-lg">Dryland and sub-humid forestry adapted to water-scarce regions</p>
-        </div>
-        <div class="flex gap-4">
-          <div class="w-8 h-8 bg-emerald-100 text-emerald-700 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">🌳</div>
-          <p class="text-lg">Landscape restoration and large-scale reforestation</p>
-        </div>
-        <div class="flex gap-4">
-          <div class="w-8 h-8 bg-emerald-100 text-emerald-700 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">📈</div>
-          <p class="text-lg">Carbon-aligned land-use and sequestration projects</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Our Operations -->
-    <section class="bg-white rounded-3xl shadow-sm p-10 md:p-16">
-      <h2 class="heading-font text-4xl font-semibold text-emerald-900 mb-10">Our Operations</h2>
-      <div class="grid md:grid-cols-3 gap-10">
-        <div>
-          <h3 class="text-xl font-semibold text-emerald-800 mb-3">Mtwapa — Propagation Hub</h3>
-          <p class="text-gray-600">Large-scale production of high-quality tree seedlings and plants for forestry, agroforestry, and restoration projects.</p>
-        </div>
-        <div>
-          <h3 class="text-xl font-semibold text-emerald-800 mb-3">Arabuko Farm — Experimental Site</h3>
-          <p class="text-gray-600">Testing drought-resistant crops, plants, and tree species suitable for semi-arid African landscapes.</p>
-        </div>
-        <div>
-          <h3 class="text-xl font-semibold text-emerald-800 mb-3">Koromi Farm — Demonstration Site</h3>
-          <p class="text-gray-600">Showcasing practical dryland agroforestry and forestry systems, including Melia volkensii plantations.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Our Approach -->
-    <section>
-      <h2 class="heading-font text-4xl font-semibold text-emerald-900 mb-8">Our Approach</h2>
-      <div class="bg-emerald-900 text-white rounded-3xl p-12 text-center">
-        <p class="text-2xl leading-relaxed max-w-3xl mx-auto">
-          We are not a consultancy. We are implementers.<br>
-          Everything we do is grounded in real-world experience rather than theory.
+    <div class="approach-grid">
+      <div class="card fade-in">
+        <h3>Commercial Forestry</h3>
+        <p>
+          Focused on Melia volkensii as a high-value timber species forming the economic backbone of our model.
         </p>
       </div>
-    </section>
 
-    <!-- Impact -->
-    <section>
-      <h2 class="heading-font text-4xl font-semibold text-emerald-900 mb-8">Our Impact</h2>
-      <div class="grid md:grid-cols-2 gap-x-12 gap-y-8 text-lg">
-        <div class="flex gap-4">
-          <span class="text-emerald-600 text-2xl">→</span>
-          <p>Significantly improved tree survival and successful landscape restoration</p>
-        </div>
-        <div class="flex gap-4">
-          <span class="text-emerald-600 text-2xl">→</span>
-          <p>Increased carbon sequestration through well-executed projects</p>
-        </div>
-        <div class="flex gap-4">
-          <span class="text-emerald-600 text-2xl">→</span>
-          <p>Creation of sustainable and productive land-use systems</p>
-        </div>
-        <div class="flex gap-4">
-          <span class="text-emerald-600 text-2xl">→</span>
-          <p>Rural employment, skills development, and local capacity building</p>
+      <div class="card fade-in">
+        <h3>Ecosystem Restoration</h3>
+        <p>
+          Enrichment planting and assisted natural regeneration to restore biodiversity and ecosystem health.
+        </p>
+      </div>
+
+      <div class="card fade-in">
+        <h3>Agroforestry</h3>
+        <p>
+          Integrating drought-resistant crops like moringa and cashew with forestry systems for resilience and productivity.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="team-section">
+  <div class="team-container">
+
+    <!-- HEADER -->
+    <div class="team-header">
+      <h2>Our Team</h2>
+      <p><b>Crescendo.green</b> is led by practitioners with deep operational experience:</p>
+    </div>
+
+    <!-- CORE LEADERSHIP -->
+    <div class="team-group">
+      <h3 class="team-group-title">Core Leadership</h3>
+
+      <div class="team-members">
+        <div class="team-member">
+          <div class="photo-wrapper">
+            <img src="ASSETS/Bob pic.jpg" alt="Bob van der Bijl">
+            <div class="leaf-icon"></div>
+          </div>
+          <h3>Bob van der Bijl</h3>
+          <p>CEO, operations and project development</p>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- CTA -->
-    <div class="bg-gradient-to-br from-emerald-700 to-emerald-900 text-white rounded-3xl p-16 text-center">
-      <h2 class="text-4xl font-semibold mb-6">Ready to work together?</h2>
-      <p class="text-xl max-w-xl mx-auto mb-10">
-        Whether you need reliable seedling supply, operational support, or a full implementation partner — we’d love to help your project succeed.
+    <!-- AFFILIATES -->
+    <div class="team-group">
+      <h3 class="team-group-title">Affiliates</h3>
+
+      <div class="team-members">
+        <div class="team-member">
+          <div class="photo-wrapper">
+            <img src="ASSETS/image.png" alt="Jaap van den Beukel">
+            <div class="leaf-icon"></div>
+          </div>
+          <h3>Jaap van den Beukel</h3>
+          <p>Propagation and nursery systems</p>
+        </div>
+
+        <div class="team-member">
+          <div class="photo-wrapper">
+            <img src="ASSETS/logo.png" alt="Albert Vrolijk">
+            <div class="leaf-icon"></div>
+          </div>
+          <h3>Albert Vrolijk</h3>
+          <p>Nursery establishment and management</p>
+        </div>
+
+        <div class="team-member">
+          <div class="photo-wrapper">
+            <img src="ASSETS/logo.png" alt="Peter">
+            <div class="leaf-icon"></div>
+          </div>
+          <h3>Peter</h3>
+          <p>Field support and operations</p>
+        </div>
+
+        <div class="team-member">
+          <div class="photo-wrapper">
+            <img src="ASSETS/logo.pngc:\Users\faith\Pictures\_+254 746 907737_ 20181019_131739.jpg" alt="Marc Parren">
+            <div class="leaf-icon"></div>
+          </div>
+          <h3>Marc Parren</h3>
+          <p>Forestry and assisted natural regeneration</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPERATIONS TEAM -->
+    <div class="team-group">
+      <h3 class="team-group-title">Operations Team</h3>
+
+      <div class="team-members">
+
+        <div class="team-member">
+          <div class="photo-wrapper">
+            <img src="ASSETS/jilo.png" alt="Jilo Robert">
+            <div class="leaf-icon"></div>
+          </div>
+          <h3>Jilo Robert</h3>
+          <p>Foreman</p>
+        </div>
+
+        <div class="team-member">
+          <div class="photo-wrapper">
+            <img src="ASSETS/logo.png" alt="Catherine">
+            <div class="leaf-icon"></div>
+          </div>
+          <h3>Catherine</h3>
+          <p>Supervisor</p>
+        </div>
+
+        <div class="team-member">
+          <div class="photo-wrapper">
+            <img src="ASSETS/_+254 746 907737_ 20181019_131739.jpg" alt="Faith Ngala">
+            <div class="leaf-icon"></div>
+          </div>
+          <h3>Faith</h3>
+          <p>Admin / Developer</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FOOTER NOTE -->
+    <p class="team-footer">
+      The core team is supported by locally recruited nursery technicians, field supervisors and operational staff in project locations.
+    </p>
+
+  </div>
+</section>
+<!-- ================= VISION ================= -->
+<section class="vision-section">
+  <div class="container">
+    <h2>Our Vision</h2>
+    <p>
+      To build scalable, climate-smart forestry systems that restore ecosystems, generate sustainable income, and contribute to global carbon reduction.
+    </p>
+  </div>
+</section>
+<footer class="footer-luxury">
+  <div class="footer-overlay"></div>
+
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-brand">
+      <h2>Crescendo.green</h2>
+      <p class="tagline">From nursery to landscape</p>
+      <p class="subtext">
+        Sustainable forestry, restoration, and nursery systems across landscapes.
       </p>
-      <a href="mailto:info@crescendo.green" 
-         class="inline-block bg-white text-emerald-900 font-semibold px-10 py-4 rounded-full hover:bg-emerald-100 transition text-lg">
-        Get in touch → info@crescendo.green
-      </a>
+    </div>
+
+    <!-- NAV -->
+    <div class="footer-block">
+      <h4>Explore</h4>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Projects</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="footer-block">
+      <h4>Contact</h4>
+      <p>info@crescendogreen.com</p>
+      <p>+254 XXX XXX XXX</p>
+      <p>Kenya / East Africa</p>
     </div>
 
   </div>
 
-  <!-- Footer -->
-  <footer class="footer-luxury">
-  <div class="footer-container">  
-<div class="footer-brand">
-  <h2>Crescendo.green</h2>
-  <p class="tagline">From nursery to landscape</p>
-</div>
-
-<div class="footer-links">
-  <a href="#">Contact</a>
-  <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Projects</a>
-</div>  </div>
-  <div class="contact-info">
-         <div class="social-icons">
-          <a href="https://linkedin.com/company/crescendo-green" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="https://twitter.com/crescendogreen" target="_blank" title="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="https://facebook.com/crescendogreen" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
-          <a href="https://instagram.com/crescendogreen" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        </div>
-
-  <div class="footer-bottom">
-    <p>© 2026 Crescendo.green All rights reserved.</p>
+   <!-- SOCIAL -->
+  <div class="footer-social">
+    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+    <a href="#"><i class="fa-brands fa-instagram"></i></a>
   </div>
-  
-  
+
+  <!-- DIVIDER -->
+  <div class="footer-divider"></div>
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+    <p>© 2026 Crescendo.green. All rights reserved.</p>
+    <div class="legal-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
 </footer>
 
+<script src="about.js"></script>
 </body>
 </html>
