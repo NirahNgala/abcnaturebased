@@ -16,6 +16,14 @@ const hamburger = document.getElementById('hamburger');
     }
   });
 
+window.addEventListener("scroll", () => {
+  const scrolled = window.scrollY;
+  const video = document.querySelector(".hero-video");
+
+  video.style.transform =
+    `translate(-50%, calc(-50% + ${scrolled * 0.25}px))`;
+});
+
 counters.forEach(counter => observer.observe(counter));
 // INIT MAP
 var map = L.map('map', { zoomControl: false }).setView([-3.6, 39.8], 9);
