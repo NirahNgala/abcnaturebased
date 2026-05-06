@@ -60,11 +60,12 @@
 </header>
 
 <!-- Hero Section -->
+   <div class="hero-overlay"></div>
 <section class="hero">
 <!-- Slideshow Background -->
 <div class="hero-slideshow">
   <div class="slide active" style="background-image:url('ASSETS/Nursery at night.jpeg')"></div>
-   <div class="slide active" style="background-image:url('ASSETS/WhatsApp Image 2026-04-08 at 11.26.49 AM.jpeg')"></div>
+  <div class="slide" style="background-image:url('ASSETS/WhatsApp Image 2026-04-08 at 11.26.49 AM.jpeg')"></div>
   <div class="slide" style="background-image:url('ASSETS/Moringa seedlings packed in crates.jpeg')"></div>
 </div>
 
@@ -599,5 +600,24 @@ if (galleryContainer) {
   });
 }
 </script>
+   <script>
+      document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelectorAll(".hero-slideshow .slide");
+  let current = 0;
+
+  function showSlide(index) {
+    slides.forEach((s, i) => {
+      s.classList.toggle("active", i === index);
+    });
+  }
+
+  function nextSlide() {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  }
+
+  setInterval(nextSlide, 5000);
+});
+   </script>
 </body>
 </html>
