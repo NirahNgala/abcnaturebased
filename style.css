@@ -179,7 +179,7 @@ section {
 
 /* Hero Section */
 .hero {
-  min-height: 90vh;
+  min-height: 100vh;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -188,12 +188,6 @@ section {
   text-align: center;
   position: relative;
   padding-top: 80px;
-}
-
-.hero-content {
-  max-width: 900px;
-  padding: 0 20px;
-  z-index: 2;
 }
 
 .hero h1 {
@@ -215,6 +209,8 @@ section {
   z-index: 2;
 
 }
+ 
+
 .hero-sub {
   font-size: clamp(1.25rem, 3vw, 1.6rem);
   font-weight: 400;
