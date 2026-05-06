@@ -76,3 +76,23 @@ var observer = new IntersectionObserver((entries) => {
 });
 
 steps.forEach(step => observer.observe(step));
+
+
+const slides = document.querySelectorAll(".hero-slideshow .slide");
+let current = 0;
+
+function showSlide(index) {
+  slides.forEach((s, i) => {
+    s.classList.remove("active");
+    if (i === index) s.classList.add("active");
+  });
+}
+
+function nextSlide() {
+  current = (current + 1) % slides.length;
+  showSlide(current);
+}
+
+setInterval(nextSlide, 5000); // change every 5s
+
+
