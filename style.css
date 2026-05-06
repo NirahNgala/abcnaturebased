@@ -179,16 +179,14 @@ section {
 
 /* Hero Section */
 .hero {
-  min-height: 100vh;
-  padding-top: 90px;
-  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)),
-              url('ASSETS/DJI_0961 (1).jpg') center/cover no-repeat;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   text-align: center;
   position: relative;
+  padding-top: 80px;
 }
 
 .hero-content {
@@ -204,35 +202,7 @@ section {
   margin-bottom: 1rem;
   letter-spacing: -0.02em;
 }
-.hero {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 80px; /* prevents navbar overlap */
-}
 
-/* VIDEO BACKGROUND */
-.hero-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 120%;
-  height: 120%;
-  object-fit: cover;
-  transform: translate(-50%, -50%);
-  z-index: -2;
-}
-
-/* DARK OVERLAY */
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  z-index: -1;
-}
 
 /* CONTENT */
 .hero-content {
@@ -254,7 +224,35 @@ section {
   opacity: 0.85;
   font-weight: 500;
 }
+/* Slideshow container */
+.hero-slideshow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
 
+/* Each slide */
+.hero-slideshow .slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  transform: scale(1.05);
+}
+
+/* Active slide */
+.hero-slideshow .slide.active {
+  opacity: 1;
+}
+
+/* Keep content above slideshow */
+.hero-overlay,
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
 /* Buttons */
 .hero-buttons {
   display: flex;
