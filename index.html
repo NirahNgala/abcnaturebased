@@ -27,7 +27,6 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <header>
@@ -504,22 +503,6 @@
   </div>
 </footer>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-<script>
-
-  // ===== MAP =====
-  const map = L.map('map').setView([-3.4, 39.8], 9);
-
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap contributors'
-  }).addTo(map);
-
-  L.marker([-3.94, 39.74]).addTo(map).bindPopup("<b>Mtwapa — Propagation Hub</b>");
-  L.marker([-3.27, 39.95]).addTo(map).bindPopup("<b>Kakuyuni (Arabuko Farm)</b>");
-  L.marker([-2.80, 39.70]).addTo(map).bindPopup("<b>Koromi Farm</b>");
-
-</script>
 <script>
 // Automatic 3-Column Gallery with your 18 images
 const imageSets = [
