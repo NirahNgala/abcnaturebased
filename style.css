@@ -179,7 +179,7 @@ section {
 
 /* Hero Section */
 .hero {
-  min-height: 60vh;
+  min-height: 80vh;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -396,7 +396,7 @@ section {
 
 .cta-inline a {
   display: inline-flex;
-  align-items: center;
+  align-items:right;
   gap: 10px;
   text-decoration: none;
   color: #015eaf;
