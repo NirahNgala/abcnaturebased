@@ -19,7 +19,7 @@ body {
 /* HERO */
 .about-hero {
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-              url('https://images.unsplash.com/photo-forest') center/cover;
+              url('ASSETS/Girl with moringa seedlings.jpeg') center/cover;
   color: #fff;
   text-align: center;
   padding: 80px 20px;
