@@ -469,6 +469,50 @@ section {
     font-size: 34px;
   }
 }
+.carbon-section {
+  padding: 80px 20px;
+  background: #0f1f17;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+.carbon-section .container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.carbon-section h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.carbon-section h3 {
+  font-size: 20px;
+  color: #9ad3b0;
+  margin-bottom: 20px;
+}
+
+.carbon-section h4 {
+  font-size: 18px;
+  margin-top: 25px;
+  color: #b7e4c7;
+}
+
+.carbon-section p {
+  line-height: 1.7;
+  margin-bottom: 15px;
+  color: #e6e6e6;
+}
+
+.carbon-section .intro,
+.carbon-section .initiative {
+  margin-bottom: 40px;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
 
 .clients{
   padding: 90px 20px;
