@@ -11,12 +11,13 @@
 <!-- NAVBAR -->
 <nav class="navbar">
   <div class="nav-container">
-    <!-- Logo -->
+    
+    <!-- Logo - Far Left -->
     <div class="nav-logo">
       <a href="index.html">Crescendo.green</a>
     </div>
 
-    <!-- Desktop Menu -->
+    <!-- Menu Links - Center -->
     <div class="nav-menu">
       <a href="index.html">Home</a>
       <a href="#">About</a>
@@ -26,7 +27,7 @@
       <a href="contact.html">Contact</a>
     </div>
 
-    <!-- CTA Button -->
+    <!-- CTA Button - Far Right -->
     <div class="nav-cta">
       <a href="contact.html" class="nav-cta-btn">Book Consultation</a>
     </div>
@@ -39,8 +40,6 @@
     </div>
   </div>
 </nav>
-<section class="services-section">
-  <div class="container">
 
     <!-- TITLE -->
     <div class="section-header">
@@ -325,14 +324,16 @@ document.querySelectorAll('.service-row, .project-card').forEach(el => {
 </script>
 
 <script>
-// Navbar slide down on scroll
+// Navbar slide down
 const navbar = document.querySelector('.navbar');
 
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 150) {
+  if (window.scrollY > 120) {
     navbar.classList.add('visible', 'scrolled');
   } else {
     navbar.classList.remove('scrolled');
+    // Optional: Keep it visible once shown
+    // navbar.classList.add('visible');
   }
 });
 
@@ -343,13 +344,6 @@ const navMenu = document.querySelector('.nav-menu');
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active');
   navMenu.classList.toggle('active');
-  
-  // Optional: Animate hamburger into X
-  if (hamburger.classList.contains('active')) {
-    hamburger.style.gap = '0';
-  } else {
-    hamburger.style.gap = '5px';
-  }
 });
 </script>
 </body>
