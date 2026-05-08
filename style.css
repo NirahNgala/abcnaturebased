@@ -252,7 +252,7 @@ section {
 /* Buttons */
 .hero-buttons {
   display: flex;
-  gap: 1rem;
+  gap: 2.5rem;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -298,12 +298,12 @@ section {
 /* Responsive */
 @media (max-width: 640px) {
   .hero-buttons {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
   }
   
   .btn {
-    min-width: 260px;
+    min-width: 100px;
   }
 }
 
@@ -318,6 +318,7 @@ section {
 .services-header h2 {
   font-size: 52px;
   margin-bottom: 10px;
+  margin-top: 30px;
   color: #000;
 }
 
@@ -375,7 +376,7 @@ section {
 
 .cta-inline {
   display: flex;
-  justify-content: center;
+  justify-content: right;
   margin-top: 40px;
 }
 
