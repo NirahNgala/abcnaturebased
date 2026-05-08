@@ -229,3 +229,725 @@ footer {
     font-size: 1.45rem;
   }
 }
+  <!-- TITLE -->
+    <div class="section-header">
+      <h2>What We Deliver</h2>
+  
+    </div>
+
+  <!-- SERVICE 1 -->
+<div class="service-row">
+  <div class="service-image">
+    <img src="ASSETS/WhatsApp Image 2026-04-08 at 11.26.49 AM.jpeg" alt="Tree nursery">
+  </div>
+
+  <div class="service-content">
+    <h3>High Quality Tree Seedlings</h3>
+
+    <p class="service-desc">
+      We produce healthy, climate-resilient tree seedlings tailored for restoration, commercial forestry,
+      agroforestry, landscaping, and conservation initiatives. Our nursery systems are designed to ensure
+      strong root development, high survival rates, and adaptability to different ecological zones.
+    </p>
+
+    <p class="service-desc">
+      From indigenous species restoration to fruit tree propagation and hardwood production, we support
+      projects of all sizes with reliable planting material and technical guidance for successful establishment.
+    </p>
+
+    <div class="tags">
+      <span>Hardwood</span>
+      <span>Fruit Trees</span>
+      <span>Indigenous Species</span>
+      <span>Landscaping</span>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICE 2 -->
+<div class="service-row reverse">
+  <div class="service-image">
+    <img src="ASSETS/Bob pic.jpg" alt="Consultancy work">
+  </div>
+
+  <div class="service-content">
+    <h3>Consultancy & Management</h3>
+
+    <p class="service-desc">
+      We provide strategic and technical consultancy services for forestry, agroforestry,
+      environmental restoration, and land-use projects. Our support includes planning,
+      feasibility assessments, implementation strategies, operational coordination, and
+      long-term management systems.
+    </p>
+
+    <p class="service-desc">
+      By combining field experience with research-based approaches, we help organizations,
+      communities, and private investors develop sustainable systems that improve productivity,
+      environmental impact, and long-term project success.
+    </p>
+
+    <div class="tags">
+      <span>Market Research</span>
+      <span>Value Chains</span>
+      <span>Project Design</span>
+      <span>Field Management</span>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICE 3 -->
+<div class="service-row">
+  <div class="service-image">
+    <img src="ASSETS/koromifarmafter.jpg" alt="Forestry project">
+  </div>
+
+<div class="service-content">
+  <h3>Project Development & Operational Management</h3>
+
+  <p class="service-desc">
+    We develop and manage integrated forestry, agroforestry, and landscape restoration
+    projects focused on sustainability, carbon outcomes, and long-term land productivity.
+  </p>
+
+  <p class="service-desc">
+    From planning and field execution to <b>ongoing supervision and monitoring<b>, we support
+    projects through <b>every stage<b> to ensure reliable implementation and measurable impact.
+  </p>
+
+  <div class="tags">
+    <span>Forestry</span>
+    <span>Agroforestry</span>
+    <span>Reforestation</span>
+    <span>Field Management</span>
+    <span>Operational Monitoring</span>
+  </div>
+</div>
+</div>
+
+<!-- SERVICE 4 -->
+<div class="service-row reverse">
+  <div class="service-image">
+    <img src="ASSETS/Working-07.jpg" alt="Research trials">
+  </div>
+
+  <div class="service-content">
+    <h3>Research & Innovation</h3>
+
+    <p class="service-desc">
+      Our research and innovation initiatives focus on improving plant performance,
+      landscape resilience, and sustainable production systems. We explore practical
+      solutions that enhance restoration outcomes while responding to changing climate conditions.
+    </p>
+
+    <p class="service-desc">
+      Through field trials, breeding programs, irrigation improvements, mechanisation,
+      and adaptive land management practices, we continuously test and refine systems
+      that increase efficiency, survival rates, and long-term sustainability.
+    </p>
+
+    <div class="tags">
+      <span>Plant Trials</span>
+      <span>Breeding</span>
+      <span>Water Systems</span>
+      <span>Mechanisation</span>
+    </div>
+  </div>
+</div>
+
+    <!-- SERVICE 5 -->
+<div class="service-row">
+  <div class="service-image">
+    <img src="ASSETS/koromifarmafter.jpg" alt="Forestry project">
+  </div>
+
+  <div class="service-content">
+    <h3>Project Development</h3>
+
+    <p class="service-desc">
+      We design and implement integrated forestry and landscape restoration projects that
+      balance ecological sustainability with economic value. Our work focuses on creating
+      scalable systems that support environmental recovery, carbon capture, biodiversity,
+      and community livelihoods.
+    </p>
+
+    <p class="service-desc">
+      From site preparation and species selection to operational execution and monitoring,
+      we manage projects through every stage to ensure effective delivery and measurable impact.
+    </p>
+
+    <div class="tags">
+      <span>Forestry</span>
+      <span>Agroforestry</span>
+      <span>Reforestation</span>
+    </div>
+  </div>
+</div>
+
+  </div>
+</section>
+<!-- PROJECT SHOWCASE (IMAGE GRID HEAVY) -->
+<section class="projects-section">
+  <div class="container">
+    <h2>Project Highlights</h2>
+
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="ASSETS/pexels-454811840-26672466.jpg">
+        <div class="project-overlay">High Density Mango Plantation</div>
+      </div>
+
+      <div class="project-card">
+        <img src="ASSETS/hero image.jpg">
+        <div class="project-overlay">Professional Forestry Plantation</div>
+      </div>
+
+      <div class="project-card">
+        <img src="ASSETS/sarangib-cashew-633921_1920.jpg">
+        <div class="project-overlay">Cashew Intensification</div>
+      </div>
+
+      <div class="project-card">
+        <img src="ASSETS/DJI_0961 (1).jpg">
+        <div class="project-overlay">Value Chain Development</div>
+      </div>
+
+      <div class="project-card">
+        <img src="ASSETS/Moringa Seeds for Planting.jpeg">
+        <div class="project-overlay">Modern Propagation Methods</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="services-cta">
+  <div class="cta-inner">
+
+    <h2>Let’s Bring Your Project to Life</h2>
+
+    <p>
+      Whether you're planning a restoration initiative, nursery expansion,
+      agroforestry system, or large-scale landscape project, our team is ready
+      to support you from strategy to on-ground execution.
+    </p>
+
+    <a href="contact.html" class="cta-link">
+      <span>Book a Consultation</span>
+      <span class="arrow">→</span>
+    </a>
+
+  </div>
+</section>
+
+<footer class="footer-luxury">
+  <div class="footer-overlay"></div>
+
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-brand">
+      <h2>Crescendo.green</h2>
+      <p class="tagline">From nursery to landscape</p>
+      <p class="subtext">
+        Sustainable forestry, restoration, and nursery systems across landscapes.
+      </p>
+    </div>
+
+    <!-- NAV -->
+    <div class="footer-block">
+      <h4>Explore</h4>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Projects</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="footer-block">
+      <h4>Contact</h4>
+      <p>info@crescendogreen.com</p>
+      <p>+254 XXX XXX XXX</p>
+      <p>Kenya / East Africa</p>
+    </div>
+
+  </div>
+
+   <!-- SOCIAL -->
+  <div class="footer-social">
+    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+  </div>
+
+  <!-- DIVIDER -->
+  <div class="footer-divider"></div>
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+    <p>© 2026 Crescendo.green. All rights reserved.</p>
+    <div class="legal-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+</footer>
+      <script>
+// Intersection Observer for fade-in animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, {
+  threshold: 0.15,
+  rootMargin: "0px 0px -50px 0px"
+});
+
+// Observe all animated elements
+document.querySelectorAll('.service-row, .project-card').forEach(el => {
+  observer.observe(el);
+});
+</script>
+
+<script>
+// Navbar slide down
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 120) {
+    navbar.classList.add('visible', 'scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+    // Optional: Keep it visible once shown
+    // navbar.classList.add('visible');
+  }
+});
+
+// Hamburger Menu
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navMenu.classList.toggle('active');
+});
+</script>
+</body>
+</html>* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', system-ui, sans-serif;
+  line-height: 1.7;
+  color: #333;
+}
+
+/* ==================== CONTAINER ==================== */
+.container {
+  width: 92%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+/* ==================== NAVBAR ==================== */
+.navbar {
+  position: fixed;
+  top: -100px;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.navbar.visible {
+  top: 0;
+}
+
+.nav-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 5%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo a {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #1e3a2f;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Center Links */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 42px;           /* Increased spacing */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-menu a {
+  color: #2e3f38;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.02rem;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: #2e7d32;
+}
+
+/* Far Right CTA */
+.nav-cta-btn {
+  background: #2e7d32;
+  color: white;
+  padding: 13px 26px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: all 0.4s ease;
+}
+
+.nav-cta-btn:hover {
+  background: #1e5c24;
+  transform: translateY(-3px);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 30px;
+  height: 3px;
+  background: #1e3a2f;
+  transition: 0.4s;
+}
+
+/* Scroll Effect */
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.99);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* ==================== MOBILE MENU ==================== */
+@media (max-width: 992px) {
+  .nav-menu {
+    position: fixed;
+    top: 90px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 90px);
+    background: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    transition: 0.5s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hamburger Animation to X */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  .nav-cta {
+    display: none; /* Hide desktop CTA on mobile */
+  }
+}
+
+/* Very Small Screens */
+@media (max-width: 480px) {
+  .nav-logo a {
+    font-size: 1.5rem;
+  }
+  
+  .nav-menu a {
+    font-size: 1.1rem;
+  }
+}
+/* ==================== SERVICES SECTION ==================== */
+.services-section {
+  background: linear-gradient(to bottom, #f8fbf8, #f1f6f2);
+  padding: 40px 0 120px;
+}
+
+.section-header {
+  padding: 120px 0 80px;
+  text-align: center;
+}
+
+.section-header h2 {
+  font-size: clamp(2.4rem, 5vw, 3.2rem);
+  font-weight: 700;
+  color: #1e3a2f;
+  margin-bottom: 12px;
+}
+
+/* ==================== SERVICE ROWS ==================== */
+.service-row {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  margin-bottom: 120px;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.9s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.service-row.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-row.reverse {
+  grid-template-columns: 1fr 1.1fr;
+}
+
+.service-image {
+  overflow: hidden;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.service-image img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-row:hover .service-image img {
+  transform: scale(1.08);
+}
+
+.service-content h3 {
+  font-size: 1.85rem;
+  margin-bottom: 16px;
+  color: #1e3a2f;
+}
+
+.service-desc {
+  color: #555;
+  margin-bottom: 28px;
+  font-size: 1.02rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tags span {
+  background: transparent;
+  border: 1px solid #c8d6cc;
+  color: #2e7d32;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.tags span:hover {
+  background: #2e7d32;
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* ==================== PROJECTS SECTION ==================== */
+.projects-section {
+  background: #f5f7f6;
+  padding: 100px 0;
+}
+
+.projects-section h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 70px;
+  color: #1e3a2f;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.project-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.1);
+}
+
+.project-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30px 20px 20px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.85));
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* ==================== STATS BAR (New) ==================== */
+.stats-bar {
+  background: #1e3a2f;
+  color: white;
+  padding: 60px 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 40px;
+  text-align: center;
+}
+
+.stats-grid strong {
+  display: block;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+/* ==================== CTA ==================== */
+.services-cta {
+  padding: 140px 20px;
+  background: linear-gradient(rgba(0,0,0,0.68), rgba(0,0,0,0.68)),
+              url("ASSETS/Nursery at night.jpeg") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.cta-inner {
+  max-width: 820px;
+  color: white;
+  padding: 60px 50px;
+  border-radius: 28px;
+  background: rgba(255,255,255,0.09);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.cta-inner h2 {
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  margin-bottom: 24px;
+  line-height: 1.15;
+}
+
+.cta-inner p {
+  font-size: 1.15rem;
+  margin-bottom: 40px;
+  opacity: 0.95;
+}
+
+.cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 36px;
+  border-radius: 50px;
+  text-decoration: none;
+  background: white;
+  color: #111;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.4s ease;
+}
+
+.cta-link:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  gap: 20px;
+}
+
+/* ==================== FOOTER ==================== */
+.footer-luxury {
+  background: #0f2a22;
+  color: #ddd;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ==================== MOBILE ==================== */
+@media (max-width: 992px) {
+  .service-row, .service-row.reverse {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  
+  .service-image img {
+    height: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-header {
+    padding: 80px 0 60px;
+  }
+  
+  .service-row {
+    margin-bottom: 80px;
+  }
