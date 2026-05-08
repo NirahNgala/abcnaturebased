@@ -2,248 +2,268 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
 }
 
+body {
+  font-family: 'Arial', system-ui, sans-serif;
+  line-height: 1.7;
+  color: #333;
+}
+
+/* ==================== CONTAINER ==================== */
 .container {
-  width: 90%;
-  max-width: 1100px;
-  margin: auto;
+  width: 92%;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
-
-
-/* CONTENT */
-
-.reveal-text {
-  font-size: 3.2rem;
-  font-weight: 600;
-  letter-spacing: 1px;
+/* ==================== SERVICES SECTION ==================== */
+.services-section {
+  background: linear-gradient(to bottom, #f8fbf8, #f1f6f2);
+  padding: 40px 0 120px;
 }
 
-.fade-in-text {
-  margin-top: 12px;
-  font-size: 1.2rem;
-  opacity: 0.9;
-}
-/* PROJECTS */
-.projects-section {
-  background: #f5f7f6;
-  padding: 60px 0;
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 15px;
-}
-.project-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px;
-}
-
-.project-card img {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-
-.project-card:hover img {
-  transform: scale(1.08);
-}
-
-.project-overlay {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 14px;
-  background: linear-gradient(transparent, rgba(0,0,0,0.8));
-  color: #fff;
-  font-size: 14px;
-}
 .section-header {
-  padding: 100px 0 60px;
+  padding: 120px 0 80px;
   text-align: center;
-  margin-bottom: 60px;
 }
 
 .section-header h2 {
-  font-size: 2.4rem;
-  margin-bottom: 10px;
+  font-size: clamp(2.4rem, 5vw, 3.2rem);
+  font-weight: 700;
+  color: #1e3a2f;
+  margin-bottom: 12px;
 }
 
-.section-header p {
-  color: #666;
-  max-width: 600px;
-  margin: auto;
-}
-
-/* SERVICE ROW */
+/* ==================== SERVICE ROWS ==================== */
 .service-row {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
-  gap: 60px;
+  gap: 80px;
   align-items: center;
-  margin-bottom: 100px;
+  margin-bottom: 120px;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.9s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.service-row.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .service-row.reverse {
   grid-template-columns: 1fr 1.1fr;
 }
-/* subtle hover zoom */
-.service-row:hover img {
-  transform: scale(1.04);
+
+.service-image {
+  overflow: hidden;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
 .service-image img {
   width: 100%;
-  height: 380px;
+  height: 420px;
   object-fit: cover;
-  border-radius: 20px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* TEXT */
+.service-row:hover .service-image img {
+  transform: scale(1.08);
+}
+
 .service-content h3 {
-  font-size: 1.8rem;
-  margin-bottom: 12px;
+  font-size: 1.85rem;
+  margin-bottom: 16px;
+  color: #1e3a2f;
 }
 
 .service-desc {
   color: #555;
-  margin-bottom: 25px;
-  line-height: 1.7;
-  max-width: 480px;
+  margin-bottom: 28px;
+  font-size: 1.02rem;
 }
 
-/* TAGS  */
 .tags {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
+
 .tags span {
   background: transparent;
-  border: 1px solid #dfe7e2;
+  border: 1px solid #c8d6cc;
   color: #2e7d32;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 12px;
-  transition: 0.3s;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  transition: all 0.4s ease;
+  cursor: pointer;
 }
 
 .tags span:hover {
   background: #2e7d32;
-  color: #fff;
-}
-.service-row {
-  border-bottom: 1px solid #eee;
-  padding-bottom: 60px;
+  color: white;
+  transform: translateY(-3px);
 }
 
-.services-cta{
-    padding: 100px 20px;
-    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-                url("ASSETS/Nursery at night.jpeg") center/cover no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+/* ==================== PROJECTS SECTION ==================== */
+.projects-section {
+  background: #f5f7f6;
+  padding: 100px 0;
 }
 
-.cta-inner{
-    max-width: 800px;
-    color: white;
-    padding: 50px 40px;
-    border-radius: 24px;
-    background: rgba(255,255,255,0.08);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255,255,255,0.15);
+.projects-section h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 70px;
+  color: #1e3a2f;
 }
 
-.cta-inner h2{
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    margin-bottom: 20px;
-    font-weight: 700;
-    line-height: 1.2;
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
 }
 
-.cta-inner p{
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: rgba(255,255,255,0.9);
-    margin-bottom: 35px;
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
-/* CTA Button */
-.cta-link{
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding: 16px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    background: white;
-    color: #111;
-    font-weight: 600;
-    transition: all 0.3s ease;
+.project-card.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.cta-link:hover{
-    transform: translateY(-4px);
-    gap: 18px;
+.project-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  transition: transform 0.7s ease;
 }
 
-.cta-link .arrow{
-    transition: transform 0.3s ease;
+.project-card:hover img {
+  transform: scale(1.1);
 }
 
-.cta-link:hover .arrow{
-    transform: translateX(4px);
+.project-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30px 20px 20px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.85));
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 
-/* Mobile */
-@media (max-width:768px){
-
-    .services-cta{
-        padding: 70px 20px;
-    }
-
-    .cta-inner{
-        padding: 40px 25px;
-    }
-
-    .cta-inner p{
-        font-size: 1rem;
-    }
-
-    .cta-link{
-        width: 100%;
-        justify-content: center;
-    }
+/* ==================== STATS BAR (New) ==================== */
+.stats-bar {
+  background: #1e3a2f;
+  color: white;
+  padding: 60px 0;
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-  .service-row,
-  .service-row.reverse {
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 40px;
+  text-align: center;
+}
+
+.stats-grid strong {
+  display: block;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+/* ==================== CTA ==================== */
+.services-cta {
+  padding: 140px 20px;
+  background: linear-gradient(rgba(0,0,0,0.68), rgba(0,0,0,0.68)),
+              url("ASSETS/Nursery at night.jpeg") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.cta-inner {
+  max-width: 820px;
+  color: white;
+  padding: 60px 50px;
+  border-radius: 28px;
+  background: rgba(255,255,255,0.09);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.cta-inner h2 {
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  margin-bottom: 24px;
+  line-height: 1.15;
+}
+
+.cta-inner p {
+  font-size: 1.15rem;
+  margin-bottom: 40px;
+  opacity: 0.95;
+}
+
+.cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 36px;
+  border-radius: 50px;
+  text-decoration: none;
+  background: white;
+  color: #111;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.4s ease;
+}
+
+.cta-link:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  gap: 20px;
+}
+
+/* ==================== FOOTER ==================== */
+.footer-luxury {
+  background: #0f2a22;
+  color: #ddd;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ==================== MOBILE ==================== */
+@media (max-width: 992px) {
+  .service-row, .service-row.reverse {
     grid-template-columns: 1fr;
+    gap: 50px;
   }
-
+  
   .service-image img {
-    height: 240px;
+    height: 320px;
   }
 }
 
-/* CTA */
-
-
-/* MOBILE */
-@media(max-width: 768px) {
+@media (max-width: 768px) {
+  .section-header {
+    padding: 80px 0 60px;
+  }
+  
   .service-row {
-    flex-direction: column;
+    margin-bottom: 80px;
   }
 }
