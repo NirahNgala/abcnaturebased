@@ -19,48 +19,55 @@ body {
 /* ==================== NAVBAR ==================== */
 .navbar {
   position: fixed;
-  top: -100px;           /* Starts hidden above the viewport */
+  top: -100px;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(46, 125, 50, 0.1);
   z-index: 1000;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .navbar.visible {
-  top: 0;                /* Slides down into view */
+  top: 0;
 }
 
 .nav-container {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 5%;
-  height: 85px;
+  height: 90px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .nav-logo a {
-  font-size: 1.65rem;
+  font-size: 1.7rem;
   font-weight: 700;
   color: #1e3a2f;
   text-decoration: none;
+  white-space: nowrap;
 }
 
+/* Center Links */
 .nav-menu {
   display: flex;
-  gap: 38px;
+  align-items: center;
+  gap: 42px;           /* Increased spacing */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .nav-menu a {
   color: #2e3f38;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s;
+  font-size: 1.02rem;
+  transition: all 0.3s;
+  white-space: nowrap;
 }
 
 .nav-menu a:hover,
@@ -68,13 +75,15 @@ body {
   color: #2e7d32;
 }
 
+/* Far Right CTA */
 .nav-cta-btn {
   background: #2e7d32;
   color: white;
-  padding: 12px 24px;
+  padding: 13px 26px;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
+  white-space: nowrap;
   transition: all 0.4s ease;
 }
 
@@ -87,12 +96,13 @@ body {
 .hamburger {
   display: none;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
   cursor: pointer;
+  z-index: 1001;
 }
 
 .hamburger span {
-  width: 28px;
+  width: 30px;
   height: 3px;
   background: #1e3a2f;
   transition: 0.4s;
@@ -100,25 +110,25 @@ body {
 
 /* Scroll Effect */
 .navbar.scrolled {
-  background: rgba(255, 255, 255, 0.98);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.99);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
 }
 
-/* ==================== MOBILE ==================== */
+/* ==================== MOBILE MENU ==================== */
 @media (max-width: 992px) {
   .nav-menu {
     position: fixed;
-    top: 85px;
+    top: 90px;
     left: -100%;
     width: 100%;
-    height: calc(100vh - 85px);
+    height: calc(100vh - 90px);
     background: white;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 30px;
+    gap: 35px;
     transition: 0.5s ease;
-    z-index: 999;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   }
 
   .nav-menu.active {
@@ -128,8 +138,33 @@ body {
   .hamburger {
     display: flex;
   }
+
+  /* Hamburger Animation to X */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  .nav-cta {
+    display: none; /* Hide desktop CTA on mobile */
+  }
 }
 
+/* Very Small Screens */
+@media (max-width: 480px) {
+  .nav-logo a {
+    font-size: 1.5rem;
+  }
+  
+  .nav-menu a {
+    font-size: 1.1rem;
+  }
+}
 /* ==================== SERVICES SECTION ==================== */
 .services-section {
   background: linear-gradient(to bottom, #f8fbf8, #f1f6f2);
