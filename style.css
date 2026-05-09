@@ -38,9 +38,9 @@ section {
   transition: color 0.3s ease;
 }
 
-/* hover color 
+/* hover color */
 .nav-link:hover {
-  color: #059669; /* emerald green 
+  color: #059669; /* emerald green */
 }
 
 /* underline animation */
