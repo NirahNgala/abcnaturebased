@@ -3,131 +3,120 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us</title>
-  <link rel="stylesheet" href="about.css">
-  <link rel="stylesheet" href="style.css">
+  <title>About Us - Crescendo.green</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <script>
+    tailwind.config = {
+      content: ["./**/*.{html,js}"],
+      theme: { extend: {} }
+    }
+  </script>
+
+  <style>
+    .about-hero {
+      background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), 
+                  url('ASSETS/Girl with moringa seedlings.jpeg') center/cover;
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 25px;
+      left: 20px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .back-btn:hover {
+      background: rgba(255,255,255,0.3);
+      transform: translateX(-5px);
+    }
+  </style>
 </head>
-<body>
+<body class="font-sans">
 
 <!-- ================= HERO ================= -->
 <section class="about-hero">
-  <button class="back-batn" onclick="goBack()">
-  <span class="arrow">←</span>
-  <span class="back-text">Back</span>
-</button>
-  <div class="container">
-    <h1>About Us</h1>
-    
-</section>
-
-<!-- ================= STORY ================= -->
-<section class="about-section">
-  <div class="container">
-    <h2>Our Story</h2>
-
-    <p>
-      Founded in <b>2019</b>, our journey began with the development of a 200-hectare agroforestry project in <b> Koromi, Kilifi County</b>. Over time, the project evolved into a focused effort on forestry, reforestation, and sustainable land restoration.
-    </p>
-
-    <p>
-      In <b>2022</b>, we expanded with a 4-hectare nursery and experimental farm in <b>Kakuyuni</b>, producing indigenous and fruit trees while supporting ongoing research and field planting.
-    </p>
-
-    <p>
-      In <b>2024</b>, our nursery was selected under JICA’s SFS-CORECC program to produce <b>improved Melia volkensii seedlings</b>. This partnership enabled demonstration plots, research trials, and water harvesting systems.
-    </p>
-
-    <p>
-      In <b>2026</b>, we launched a large-scale nursery in Mtwapa with a 7,500m² shadehouse capable of producing millions of seedlings annually, currently focused on moringa production for a carbon project.
-    </p>
+  <button class="back-btn" onclick="goBack()">
+    <span class="text-2xl">←</span>
+    <span>Back</span>
+  </button>
+  
+  <div>
+    <h1 class="text-5xl md:text-6xl font-bold">About Us</h1>
   </div>
 </section>
 
-<!-- ================= GALLERY ================= -->
-<section class="gallery-section">
-  <div class="container">
-    <h2>Our Work in the Field</h2>
-    <p class="gallery-subtitle">
-      A glimpse into our nurseries, forestry sites, and restoration work.
-    </p>
-
-    <div class="gallery-grid">
-      <div class="gallery-item">
-        <img src="ASSETS/koromifarmafter.jpg" alt="Tree nursery seedlings">
-      </div>
-      <div class="gallery-item">
-        <img src="ASSETS/DJI_0961.JPG" alt="Shadehouse production">
-      </div>
-      <div class="gallery-item">
-        <img src="ASSETS/Planting-3.jpg"alt="Field planting">
-      </div>
-      <div class="gallery-item">
-        <img src="ASSETS/moringa seedlings.jpeg" alt="Moringa seedlings">
-      </div>
-      <div class="gallery-item">
-        <img src="ASSETS/Koromi-16.jpg" alt="Agroforestry system">
-      </div>
-      <div class="gallery-item">
-        <img src="ASSETS/Working-09.jpg" alt
-        ="Research plots">
-      </div>
+<!-- ================= OUR STORY ================= -->
+<section class="py-20 bg-white">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="text-4xl font-bold text-emerald-900 text-center mb-12">Our Story</h2>
+    
+    <div class="space-y-8 text-lg text-emerald-800 leading-relaxed">
+      <p>Founded in <strong>2019</strong>, our journey began with the development of a 200-hectare agroforestry project in <strong>Koromi, Kilifi County</strong>.</p>
+      
+      <p>In <strong>2022</strong>, we expanded with a 4-hectare nursery and experimental farm in <strong>Kakuyuni</strong>.</p>
+      
+      <p>In <strong>2024</strong>, our nursery was selected under JICA’s SFS-CORECC program to produce improved <strong>Melia volkensii</strong> seedlings.</p>
+      
+      <p>In <strong>2026</strong>, we launched a large-scale nursery in Mtwapa with a <strong>7,500m²</strong> shadehouse, currently focused on moringa production for a carbon project.</p>
     </div>
   </div>
 </section>
-
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox">
-  <span class="close">&times;</span>
-  <img class="lightbox-img" id="lightbox-img">
-</div>
 
 <!-- ================= STATS ================= -->
-<section class="stats-section">
-  <div class="container stats-grid">
-    <div class="stat">
-      <h3>200+</h3>
-      <p>Hectares</p>
-    </div>
-    <div class="stat">
-      <h3>7,500m²</h3>
-      <p>Shadehouse Capacity</p>
-    </div>
-    <div class="stat">
-      <h3>500,000</h3>
-      <p>Seedlings per Year</p>
-    </div>
-    <div class="stat">
-      <h3>3</h3>
-      <p>Core Systems</p>
+<section id="stats" class="py-20 bg-emerald-50">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
+      <div><h3 id="hectares" class="text-6xl md:text-7xl font-bold text-emerald-700 mb-2">0</h3><p class="text-xl font-medium">Hectares Restored</p></div>
+      <div><h3 id="shadehouse" class="text-6xl md:text-7xl font-bold text-emerald-700 mb-2">0</h3><p class="text-xl font-medium">Shadehouse Capacity</p></div>
+      <div><h3 id="seedlings" class="text-6xl md:text-7xl font-bold text-emerald-700 mb-2">0</h3><p class="text-xl font-medium">Seedlings per Year</p></div>
+      <div><h3 id="systems" class="text-6xl md:text-7xl font-bold text-emerald-700 mb-2">0</h3><p class="text-xl font-medium">Core Systems</p></div>
     </div>
   </div>
 </section>
 
 <!-- ================= APPROACH ================= -->
-<section class="about-section">
-  <div class="container">
-    <h2>Our Approach</h2>
+<section class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-emerald-900 mb-4">Our Integrated Approach</h2>
+      <div class="w-20 h-1 bg-emerald-600 mx-auto mb-6"></div>
+    </div>
 
-    <div class="approach-grid">
-      <div class="card fade-in">
-        <h3>Commercial Forestry</h3>
-        <p>
-          Focused on Melia volkensii as a high-value timber species forming the economic backbone of our model.
-        </p>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white border border-emerald-100 hover:border-emerald-300 rounded-3xl p-10 hover:shadow-xl hover:-translate-y-2 transition-all">
+        <div class="text-5xl mb-6">🌳</div>
+        <h3 class="text-2xl font-semibold mb-4">Commercial Forestry</h3>
+        <p class="text-emerald-700">Focused on Melia volkensii as a high-value timber species.</p>
       </div>
-
-      <div class="card fade-in">
-        <h3>Ecosystem Restoration</h3>
-        <p>
-          Enrichment planting and assisted natural regeneration to restore biodiversity and ecosystem health.
-        </p>
+      <div class="bg-white border border-emerald-100 hover:border-emerald-300 rounded-3xl p-10 hover:shadow-xl hover:-translate-y-2 transition-all">
+        <div class="text-5xl mb-6">🌍</div>
+        <h3 class="text-2xl font-semibold mb-4">Ecosystem Restoration</h3>
+        <p class="text-emerald-700">Enrichment planting and assisted natural regeneration.</p>
       </div>
-
-      <div class="card fade-in">
-        <h3>Agroforestry</h3>
-        <p>
-          Integrating drought-resistant crops like moringa and cashew with forestry systems for resilience and productivity.
-        </p>
+      <div class="bg-white border border-emerald-100 hover:border-emerald-300 rounded-3xl p-10 hover:shadow-xl hover:-translate-y-2 transition-all">
+        <div class="text-5xl mb-6">🌱</div>
+        <h3 class="text-2xl font-semibold mb-4">Agroforestry</h3>
+        <p class="text-emerald-700">Integrating drought-resistant crops with forestry systems.</p>
       </div>
     </div>
   </div>
