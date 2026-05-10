@@ -124,48 +124,50 @@
 </section>
  
 
-<!--what we deliver-->
- <section class="section-white services-preview">
-  <div class="container">
-
+<!-- ================= WHAT WE DELIVER ================= -->
+<section class="section-white services-preview py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    
     <!-- HEADER -->
-    <div class="services-header">
-      <h2>What We Deliver</h2>
-      <p class="lead">Operational delivery you can fully outsource</p>
-      <p class="subtitle">
-        We handle the heavy lifting on the ground so you can focus on finance,
+    <div class="services-header text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-emerald-900 mb-4">What We Deliver</h2>
+      <p class="lead text-xl text-emerald-700 mb-3">Operational delivery you can fully outsource</p>
+      <p class="subtitle max-w-2xl mx-auto text-emerald-600">
+        We handle the heavy lifting on the ground so you can focus on finance, 
         certification, stakeholder engagement and project development.
       </p>
     </div>
 
     <div class="services-grid">
-
-      <a href="services.html#High Quality Tree Seedlings" class="service-card">
-        <img src="ASSETS/Seedling supply.jpeg">
+      <a href="services.html#High-Quality-Tree-Seedlings" class="service-card group">
+        <div class="image-wrapper">
+          <img src="ASSETS/Seedling supply.jpeg" alt="Seedling Supply">
+        </div>
         <h3>Seedling Supply</h3>
       </a>
 
-      <a href="services.html#planting&maintance" class="service-card">
-        <img src="ASSETS/koromifarmafter.jpg">
+      <a href="services.html#planting&maintance" class="service-card group">
+        <div class="image-wrapper">
+          <img src="ASSETS/koromifarmafter.jpg" alt="Planting & Maintenance">
+        </div>
         <h3>Planting & Maintenance</h3>
       </a>
 
-      <a href="services.html#Monitoring&operations" class="service-card">
-        <img src="ASSETS/Working-07.jpg">
+      <a href="services.html#Monitoring&operations" class="service-card group">
+        <div class="image-wrapper">
+          <img src="ASSETS/Working-07.jpg" alt="Monitoring & Operations">
+        </div>
         <h3>Monitoring & Operations</h3>
       </a>
-
     </div>
 
-  <div class="cta-inline">
-  <a href="services.html">
-    <span class="cta-text">More Services</span>
-    <span class="cta-arrow">
-      <span class="line"></span>
-      <span class="head"></span>
-    </span>
-  </a>
-</div>
+    <!-- CTA -->
+    <div class="cta-inline mt-12 flex justify-center md:justify-end">
+      <a href="services.html" class="inline-flex items-center gap-3 text-emerald-700 hover:text-emerald-800 font-semibold">
+        <span class="cta-text">Explore All Services</span>
+        <span class="cta-arrow">→</span>
+      </a>
+    </div>
 
   </div>
 </section>
@@ -603,6 +605,31 @@ if (galleryContainer) {
   mobileMenu.addEventListener('click', (e) => {
     if (e.target === mobileMenu) closeMenuFunc();
   });
+</script>
+<script>
+// Highlight target section when coming from another page
+document.addEventListener("DOMContentLoaded", () => {
+  const hash = window.location.hash;
+  
+  if (hash) {
+    const targetSection = document.querySelector(hash);
+    if (targetSection) {
+      // Smooth scroll to section
+      targetSection.scrollIntoView({ 
+        behavior: "smooth",
+        block: "center"
+      });
+
+      // Add highlight effect
+      targetSection.classList.add("highlight-section");
+      
+      // Remove highlight after 3 seconds
+      setTimeout(() => {
+        targetSection.classList.remove("highlight-section");
+      }, 3000);
+    }
+  }
+});
 </script>
 </body>
 </html>
