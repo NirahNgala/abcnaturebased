@@ -6,17 +6,36 @@
   <title>Contact Us | Crescendo.green</title>
   <meta name="description" content="Get in touch with Crescendo.green for seedling supply, planting operations, or dryland restoration projects in East Africa.">
 
+  <!-- Satoshi Font -->
+  <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 
+  <script>
+    tailwind.config = {
+      content: ["./**/*.{html,js}"],
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Satoshi', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
   <style>
-    .heading-font { font-family: 'Playfair Display', sans-serif; }
+    /* Use Satoshi for headings too */
+    .heading-font {
+      font-family: 'Satoshi', system-ui, sans-serif;
+      font-weight: 700; /* Adjust weight as needed */
+    }
 
     .contact-hero {
       height: 60vh;
-      background: linear-gradient(rgba(13,26,13,0.75), rgba(13,26,13,0.75)), 
+      background: linear-gradient(rgba(137, 185, 14, 0.75), rgba(60, 159, 201, 0.75)), 
                   url('ASSETS/Planting-5.jpg') center/cover no-repeat;
       display: flex;
       align-items: center;
@@ -24,126 +43,127 @@
       text-align: center;
       color: white;
       margin-top: 70px;
-
     }
+
     /* Growth animation for the main heading */
-#grow-text {
-  animation: growIn 1.8s ease-out forwards;
-  position: relative;
-}
+    #grow-text {
+      animation: growIn 1.8s ease-out forwards;
+      position: relative;
+    }
 
-@keyframes growIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.65) translateY(40px);
-  }
-  65% {
-    opacity: 0.95;
-    transform: scale(1.07) translateY(-6px);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
+    @keyframes growIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.65) translateY(40px);
+      }
+      65% {
+        opacity: 0.95;
+        transform: scale(1.07) translateY(-6px);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
 
-/* Gentle pulse after appearing */
-#grow-text::after {
-  content: '';
-  position: absolute;
-  inset: -30px;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.18) 0%, transparent 75%);
-  opacity: 0;
-  animation: pulseGrow 4.5s ease-in-out infinite;
-  z-index: -1;
-  border-radius: 9999px;
-}
+    /* Gentle pulse after appearing */
+    #grow-text::after {
+      content: '';
+      position: absolute;
+      inset: -30px;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.18) 0%, transparent 75%);
+      opacity: 0;
+      animation: pulseGrow 4.5s ease-in-out infinite;
+      z-index: -1;
+      border-radius: 9999px;
+    }
 
-@keyframes pulseGrow {
-  0%, 100% { transform: scale(0.9); opacity: 0.35; }
-  50% { transform: scale(1.2); opacity: 0.65; }
-}
+    @keyframes pulseGrow {
+      0%, 100% { transform: scale(0.9); opacity: 0.35; }
+      50% { transform: scale(1.2); opacity: 0.65; }
+    }
 
-/* Animated sprouting + swaying leaves - now responsive */
-.leaf {
-  animation: sproutAndSway 6.5s ease-in-out infinite;
-  display: inline-block;
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));
-  transform-origin: center bottom;
-}
+    /* Animated sprouting + swaying leaves */
+    .leaf {
+      animation: sproutAndSway 6.5s ease-in-out infinite;
+      display: inline-block;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));
+      transform-origin: center bottom;
+    }
 
-@keyframes sproutAndSway {
-  0% {
-    transform: scale(0.25) rotate(-30deg) translateY(60px);
-    opacity: 0;
-  }
-  35% {
-    transform: scale(1) rotate(10deg) translateY(0);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1) rotate(-15deg) translateY(-10px);
-  }
-}
+    @keyframes sproutAndSway {
+      0% {
+        transform: scale(0.25) rotate(-30deg) translateY(60px);
+        opacity: 0;
+      }
+      35% {
+        transform: scale(1) rotate(10deg) translateY(0);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1) rotate(-15deg) translateY(-10px);
+      }
+    }
 
-/* Responsive leaf adjustments */
-@media (max-width: 640px) {
-  .leaf {
-    animation-duration: 5.5s;
-  }
-  .leaf:nth-child(2) { animation-duration: 6.8s; }
-  .leaf:nth-child(3) { animation-duration: 5s; }
-  .leaf:nth-child(4) { animation-duration: 7.2s; }
-}
+    @media (max-width: 640px) {
+      .leaf { animation-duration: 5.5s; }
+      .leaf:nth-child(2) { animation-duration: 6.8s; }
+      .leaf:nth-child(3) { animation-duration: 5s; }
+      .leaf:nth-child(4) { animation-duration: 7.2s; }
+    }
 
-/* Make sure leaves don't overflow badly on very small screens */
-@media (max-width: 480px) {
-  .leaf {
-    font-size: 2.25rem !important; /* smaller on tiny phones */
-  }
-}
+    @media (max-width: 480px) {
+      .leaf {
+        font-size: 2.25rem !important;
+      }
+    }
+
+    /* Force Satoshi globally */
+    body {
+      font-family: 'Satoshi', system-ui, sans-serif;
+    }
   </style>
 </head>
-<body class="bg-neutral-50">
+<body class="bg-neutral-50 font-sans">
 
   <!-- Hero -->
- <!-- Hero -->
-<section class="contact-hero relative overflow-hidden min-h-[55vh] md:min-h-[65vh] flex items-center">
-  
-  <!-- Close Button -->
-  <a href="index.html" 
-     class="absolute top-6 right-6 md:top-8 md:right-8 z-20 
-            bg-white/90 hover:bg-white text-emerald-800 
-            w-11 h-11 flex items-center justify-center 
-            rounded-2xl shadow-lg transition-all duration-300 
-            hover:scale-110 active:scale-95">
-    <i class="fas fa-times text-2xl"></i>
-  </a>
-
-  <div class="max-w-4xl mx-auto px-6 text-center relative z-10 w-full">
-    <div id="grow-text" 
-         class="heading-font text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
-      Let's Grow Together
-    </div>
+  <section class="contact-hero relative overflow-hidden min-h-[55vh] md:min-h-[65vh] flex items-center">
     
-    <!-- Animated leaves -->
-    <div class="absolute inset-0 pointer-events-none flex justify-center items-center overflow-hidden">
-      <div class="leaf absolute text-4xl sm:text-5xl md:text-6xl opacity-70" style="top: 18%; left: 10%; animation-delay: 0.2s;">🌱</div>
-      <div class="leaf absolute text-3xl sm:text-4xl md:text-5xl opacity-60" style="top: 32%; right: 12%; animation-delay: 0.7s;">🌿</div>
-      <div class="leaf absolute text-5xl sm:text-6xl md:text-7xl opacity-75" style="bottom: 22%; left: 15%; animation-delay: 1.1s;">🍃</div>
-      <div class="leaf absolute text-4xl sm:text-5xl md:text-6xl opacity-65" style="bottom: 28%; right: 18%; animation-delay: 0.4s;">🌱</div>
-    </div>
+    <!-- Close Button -->
+    <a href="index.html" 
+       class="absolute top-6 right-6 md:top-8 md:right-8 z-20 
+              bg-white/90 hover:bg-white text-emerald-800 
+              w-11 h-11 flex items-center justify-center 
+              rounded-2xl shadow-lg transition-all duration-300 
+              hover:scale-110 active:scale-95">
+      <i class="fas fa-times text-2xl"></i>
+    </a>
 
-    <p class="mt-6 text-lg sm:text-xl text-emerald-100 max-w-lg mx-auto">
-      Ready to bring your nature-based project to life?
-    </p>
-  </div>
-</section>
+    <div class="max-w-4xl mx-auto px-6 text-center relative z-10 w-full">
+      <div id="grow-text" 
+           class="heading-font text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
+        Let's Grow Together
+      </div>
+      
+      <!-- Animated leaves -->
+      <div class="absolute inset-0 pointer-events-none flex justify-center items-center overflow-hidden">
+        <div class="leaf absolute text-4xl sm:text-5xl md:text-6xl opacity-70" style="top: 18%; left: 10%; animation-delay: 0.2s;">🌱</div>
+        <div class="leaf absolute text-3xl sm:text-4xl md:text-5xl opacity-60" style="top: 32%; right: 12%; animation-delay: 0.7s;">🌿</div>
+        <div class="leaf absolute text-5xl sm:text-6xl md:text-7xl opacity-75" style="bottom: 22%; left: 15%; animation-delay: 1.1s;">🍃</div>
+        <div class="leaf absolute text-4xl sm:text-5xl md:text-6xl opacity-65" style="bottom: 28%; right: 18%; animation-delay: 0.4s;">🌱</div>
+      </div>
+
+      <p class="mt-6 text-lg sm:text-xl text-emerald-100 max-w-lg mx-auto">
+        Ready to bring your nature-based project to life?
+      </p>
+    </div>
+  </section>
+
   <!-- Main Content -->
   <div class="max-w-7xl mx-auto px-6 py-20">
     <div class="grid md:grid-cols-2 gap-16">
 
-      <!-- Left Column - Contact Info (Fixed) -->
+      <!-- Left Column - Contact Info -->
       <div>
         <h2 class="heading-font text-4xl font-semibold text-emerald-900 mb-8">Get In Touch</h2>
         <p class="text-lg text-gray-600 mb-10">
@@ -240,68 +260,52 @@
     </div>
   </div>
 
-  <!-- Keep your footer as it is -->
-<!--FOOTER-->
-<footer class="footer-luxury">
-  <div class="footer-overlay"></div>
+  <!-- FOOTER -->
+  <footer class="footer-luxury">
+    <!-- Your existing footer content remains unchanged -->
+    <div class="footer-overlay"></div>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2>Crescendo.green</h2>
+        <p class="tagline">From nursery to landscape</p>
+        <p class="subtext">Sustainable forestry, restoration, and nursery systems across landscapes.</p>
+      </div>
 
-  <div class="footer-container">
+      <div class="footer-block">
+        <h4>Explore</h4>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Projects</a>
+        <a href="#">Contact</a>
+      </div>
 
-    <!-- BRAND -->
-    <div class="footer-brand">
-      <h2>Crescendo.green</h2>
-      <p class="tagline">From nursery to landscape</p>
-      <p class="subtext">
-        Sustainable forestry, restoration, and nursery systems across landscapes.
-      </p>
+      <div class="footer-block">
+        <h4>Contact</h4>
+        <p>info@crescendogreen.com</p>
+        <p>+254 XXX XXX XXX</p>
+        <p>Kenya / East Africa</p>
+      </div>
     </div>
 
-    <!-- NAV -->
-    <div class="footer-block">
-      <h4>Explore</h4>
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Projects</a>
-      <a href="#">Contact</a>
+    <div class="footer-social">
+      <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="#"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
     </div>
 
-    <!-- CONTACT -->
-    <div class="footer-block">
-      <h4>Contact</h4>
-      <p>info@crescendogreen.com</p>
-      <p>+254 XXX XXX XXX</p>
-      <p>Kenya / East Africa</p>
+    <div class="footer-divider"></div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Crescendo.green. All rights reserved.</p>
+      <div class="legal-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+      </div>
     </div>
-
-  </div>
-
-   <!-- SOCIAL -->
-  <div class="footer-social">
-    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-  </div>
-
-  <!-- DIVIDER -->
-  <div class="footer-divider"></div>
-
-  <!-- BOTTOM -->
-  <div class="footer-bottom">
-    <p>© 2026 Crescendo.green. All rights reserved.</p>
-    <div class="legal-links">
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms</a>
-    </div>
-  </div>
-</footer>
+  </footer>
 
   <script>
-    // Hamburger Menu
-    document.getElementById('hamburger').addEventListener('click', () => {
-      document.querySelector('.nav-links').classList.toggle('active');
-    });
-
     // Form Submission
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
