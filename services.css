@@ -1,6 +1,6 @@
 /* ==================== GLOBAL PAGE SPACING ==================== */
 body {
-  font-family: 'Arial', system-ui, sans-serif;
+  font-family: 'Satoshi', sans-serif;
   line-height: 1.7;
   color: #333;
   background: #fff;
@@ -28,15 +28,12 @@ footer {
   left: 0;
   width: 100%;
   z-index: 1000;
-
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(14px);
-
   transition:
     top 0.7s cubic-bezier(0.22, 1, 0.36, 1),
     background 0.4s ease,
     box-shadow 0.4s ease;
-
   box-shadow: 0 8px 30px rgba(0,0,0,0.06);
 }
 
@@ -229,322 +226,32 @@ footer {
     font-size: 1.45rem;
   }
 }
-  <!-- TITLE -->
-    <div class="section-header">
-      <h2>What We Deliver</h2>
-  
-    </div>
-
-  <!-- SERVICE 1 -->
-<div class="service-row">
-  <div class="service-image">
-    <img src="ASSETS/WhatsApp Image 2026-04-08 at 11.26.49 AM.jpeg" alt="Tree nursery">
-  </div>
-
-  <div class="service-content">
-    <h3>High Quality Tree Seedlings</h3>
-
-    <p class="service-desc">
-      We produce healthy, climate-resilient tree seedlings tailored for restoration, commercial forestry,
-      agroforestry, landscaping, and conservation initiatives. Our nursery systems are designed to ensure
-      strong root development, high survival rates, and adaptability to different ecological zones.
-    </p>
-
-    <p class="service-desc">
-      From indigenous species restoration to fruit tree propagation and hardwood production, we support
-      projects of all sizes with reliable planting material and technical guidance for successful establishment.
-    </p>
-
-    <div class="tags">
-      <span>Hardwood</span>
-      <span>Fruit Trees</span>
-      <span>Indigenous Species</span>
-      <span>Landscaping</span>
-    </div>
-  </div>
-</div>
-
-<!-- SERVICE 2 -->
-<div class="service-row reverse">
-  <div class="service-image">
-    <img src="ASSETS/Bob pic.jpg" alt="Consultancy work">
-  </div>
-
-  <div class="service-content">
-    <h3>Consultancy & Management</h3>
-
-    <p class="service-desc">
-      We provide strategic and technical consultancy services for forestry, agroforestry,
-      environmental restoration, and land-use projects. Our support includes planning,
-      feasibility assessments, implementation strategies, operational coordination, and
-      long-term management systems.
-    </p>
-
-    <p class="service-desc">
-      By combining field experience with research-based approaches, we help organizations,
-      communities, and private investors develop sustainable systems that improve productivity,
-      environmental impact, and long-term project success.
-    </p>
-
-    <div class="tags">
-      <span>Market Research</span>
-      <span>Value Chains</span>
-      <span>Project Design</span>
-      <span>Field Management</span>
-    </div>
-  </div>
-</div>
-
-<!-- SERVICE 3 -->
-<div class="service-row">
-  <div class="service-image">
-    <img src="ASSETS/koromifarmafter.jpg" alt="Forestry project">
-  </div>
-
-<div class="service-content">
-  <h3>Project Development & Operational Management</h3>
-
-  <p class="service-desc">
-    We develop and manage integrated forestry, agroforestry, and landscape restoration
-    projects focused on sustainability, carbon outcomes, and long-term land productivity.
-  </p>
-
-  <p class="service-desc">
-    From planning and field execution to <b>ongoing supervision and monitoring<b>, we support
-    projects through <b>every stage<b> to ensure reliable implementation and measurable impact.
-  </p>
-
-  <div class="tags">
-    <span>Forestry</span>
-    <span>Agroforestry</span>
-    <span>Reforestation</span>
-    <span>Field Management</span>
-    <span>Operational Monitoring</span>
-  </div>
-</div>
-</div>
-
-<!-- SERVICE 4 -->
-<div class="service-row reverse">
-  <div class="service-image">
-    <img src="ASSETS/Working-07.jpg" alt="Research trials">
-  </div>
-
-  <div class="service-content">
-    <h3>Research & Innovation</h3>
-
-    <p class="service-desc">
-      Our research and innovation initiatives focus on improving plant performance,
-      landscape resilience, and sustainable production systems. We explore practical
-      solutions that enhance restoration outcomes while responding to changing climate conditions.
-    </p>
-
-    <p class="service-desc">
-      Through field trials, breeding programs, irrigation improvements, mechanisation,
-      and adaptive land management practices, we continuously test and refine systems
-      that increase efficiency, survival rates, and long-term sustainability.
-    </p>
-
-    <div class="tags">
-      <span>Plant Trials</span>
-      <span>Breeding</span>
-      <span>Water Systems</span>
-      <span>Mechanisation</span>
-    </div>
-  </div>
-</div>
-
-    <!-- SERVICE 5 -->
-<div class="service-row">
-  <div class="service-image">
-    <img src="ASSETS/koromifarmafter.jpg" alt="Forestry project">
-  </div>
-
-  <div class="service-content">
-    <h3>Project Development</h3>
-
-    <p class="service-desc">
-      We design and implement integrated forestry and landscape restoration projects that
-      balance ecological sustainability with economic value. Our work focuses on creating
-      scalable systems that support environmental recovery, carbon capture, biodiversity,
-      and community livelihoods.
-    </p>
-
-    <p class="service-desc">
-      From site preparation and species selection to operational execution and monitoring,
-      we manage projects through every stage to ensure effective delivery and measurable impact.
-    </p>
-
-    <div class="tags">
-      <span>Forestry</span>
-      <span>Agroforestry</span>
-      <span>Reforestation</span>
-    </div>
-  </div>
-</div>
-
-  </div>
-</section>
-<!-- PROJECT SHOWCASE (IMAGE GRID HEAVY) -->
-<section class="projects-section">
-  <div class="container">
-    <h2>Project Highlights</h2>
-
-    <div class="projects-grid">
-      <div class="project-card">
-        <img src="ASSETS/pexels-454811840-26672466.jpg">
-        <div class="project-overlay">High Density Mango Plantation</div>
-      </div>
-
-      <div class="project-card">
-        <img src="ASSETS/hero image.jpg">
-        <div class="project-overlay">Professional Forestry Plantation</div>
-      </div>
-
-      <div class="project-card">
-        <img src="ASSETS/sarangib-cashew-633921_1920.jpg">
-        <div class="project-overlay">Cashew Intensification</div>
-      </div>
-
-      <div class="project-card">
-        <img src="ASSETS/DJI_0961 (1).jpg">
-        <div class="project-overlay">Value Chain Development</div>
-      </div>
-
-      <div class="project-card">
-        <img src="ASSETS/Moringa Seeds for Planting.jpeg">
-        <div class="project-overlay">Modern Propagation Methods</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="services-cta">
-  <div class="cta-inner">
-
-    <h2>Let’s Bring Your Project to Life</h2>
-
-    <p>
-      Whether you're planning a restoration initiative, nursery expansion,
-      agroforestry system, or large-scale landscape project, our team is ready
-      to support you from strategy to on-ground execution.
-    </p>
-
-    <a href="contact.html" class="cta-link">
-      <span>Book a Consultation</span>
-      <span class="arrow">→</span>
-    </a>
-
-  </div>
-</section>
-
-<footer class="footer-luxury">
-  <div class="footer-overlay"></div>
-
-  <div class="footer-container">
-
-    <!-- BRAND -->
-    <div class="footer-brand">
-      <h2>Crescendo.green</h2>
-      <p class="tagline">From nursery to landscape</p>
-      <p class="subtext">
-        Sustainable forestry, restoration, and nursery systems across landscapes.
-      </p>
-    </div>
-
-    <!-- NAV -->
-    <div class="footer-block">
-      <h4>Explore</h4>
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Projects</a>
-      <a href="#">Contact</a>
-    </div>
-
-    <!-- CONTACT -->
-    <div class="footer-block">
-      <h4>Contact</h4>
-      <p>info@crescendogreen.com</p>
-      <p>+254 XXX XXX XXX</p>
-      <p>Kenya / East Africa</p>
-    </div>
-
-  </div>
-
-   <!-- SOCIAL -->
-  <div class="footer-social">
-    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-  </div>
-
-  <!-- DIVIDER -->
-  <div class="footer-divider"></div>
-
-  <!-- BOTTOM -->
-  <div class="footer-bottom">
-    <p>© 2026 Crescendo.green. All rights reserved.</p>
-    <div class="legal-links">
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms</a>
-    </div>
-  </div>
-</footer>
-      <script>
-// Intersection Observer for fade-in animations
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, {
-  threshold: 0.15,
-  rootMargin: "0px 0px -50px 0px"
-});
-
-// Observe all animated elements
-document.querySelectorAll('.service-row, .project-card').forEach(el => {
-  observer.observe(el);
-});
-</script>
-
-<script>
-// Navbar slide down
-const navbar = document.querySelector('.navbar');
-
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 120) {
-    navbar.classList.add('visible', 'scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-    // Optional: Keep it visible once shown
-    // navbar.classList.add('visible');
-  }
-});
-
-// Hamburger Menu
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  navMenu.classList.toggle('active');
-});
-</script>
-</body>
-</html>* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 body {
-  font-family: 'Arial', system-ui, sans-serif;
+  font-family: 'Satoshi', sans-serif;
   line-height: 1.7;
   color: #333;
+  background: #fff;
+  overflow-x: hidden;
+}
+h1, h2, h3, h4 {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+p {
+  font-weight: 400;
+}
+
+.nav-menu a,
+.tags span {
+  font-weight: 500;
+}
+
+.nav-cta-btn,
+.cta-link {
+  font-weight: 700;
 }
 
 /* ==================== CONTAINER ==================== */
@@ -582,7 +289,6 @@ body {
 
 .nav-logo a {
   font-size: 1.7rem;
-  font-weight: 700;
   color: #1e3a2f;
   text-decoration: none;
   white-space: nowrap;
@@ -601,7 +307,6 @@ body {
 .nav-menu a {
   color: #2e3f38;
   text-decoration: none;
-  font-weight: 500;
   font-size: 1.02rem;
   transition: all 0.3s;
   white-space: nowrap;
@@ -619,7 +324,6 @@ body {
   padding: 13px 26px;
   border-radius: 50px;
   text-decoration: none;
-  font-weight: 600;
   white-space: nowrap;
   transition: all 0.4s ease;
 }
@@ -845,7 +549,6 @@ body {
   padding: 30px 20px 20px;
   background: linear-gradient(transparent, rgba(0,0,0,0.85));
   color: white;
-  font-weight: 600;
   font-size: 1.1rem;
 }
 
@@ -866,7 +569,6 @@ body {
 .stats-grid strong {
   display: block;
   font-size: 2.8rem;
-  font-weight: 700;
   margin-bottom: 8px;
 }
 
@@ -912,7 +614,6 @@ body {
   text-decoration: none;
   background: white;
   color: #111;
-  font-weight: 700;
   font-size: 1.1rem;
   transition: all 0.4s ease;
 }
@@ -951,3 +652,4 @@ body {
   .service-row {
     margin-bottom: 80px;
   }
+}

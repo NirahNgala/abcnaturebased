@@ -13,10 +13,10 @@
 
   /* FONT */
   --font-main: 'Satoshi', sans-serif;
-  /* COLORS */
+  /* COLORS
   --heading: #0b1a12;
   --text: #4b5563;
-  --muted: #6b7280;
+  --muted: #6b7280; */
 
   /* HEADING SCALE */
   --h1: clamp(3.5rem, 7vw, 6rem);
@@ -29,7 +29,7 @@
   --small: .9rem;
 
   /* SPACING */
-  --section-spacing: 120px;
+  --section-spacing: 20px;
 }
 
 /* GLOBAL FONT */
@@ -48,7 +48,7 @@ a{
 
 body{
   font-family: var(--font-main);
-  color: var(--text);
+  color: rgb(0, 0, 0);
   background:#f4f4f4;
   line-height:1.7;
   -webkit-font-smoothing: antialiased;
