@@ -5,12 +5,84 @@
   box-sizing: border-box;
 }
 
+/* =========================
+   GLOBAL TYPOGRAPHY SYSTEM
+========================= */
 
-body {
-  background-color: #f4f4f4;
-  font-family: 'Inter', sans-serif;
+:root{
 
+  /* FONT */
+  --font-main: 'Satoshi', sans-serif;
+  /* COLORS */
+  --heading: #0b1a12;
+  --text: #4b5563;
+  --muted: #6b7280;
+
+  /* HEADING SCALE */
+  --h1: clamp(3.5rem, 7vw, 6rem);
+  --h2: clamp(2.5rem, 5vw, 4.5rem);
+  --h3: clamp(1.3rem, 2vw, 1.8rem);
+
+  /* BODY */
+  --body-lg: 1.2rem;
+  --body: 1rem;
+  --small: .9rem;
+
+  /* SPACING */
+  --section-spacing: 120px;
 }
+
+/* GLOBAL FONT */
+
+html,
+body,
+button,
+input,
+textarea,
+select,
+a{
+  font-family: var(--font-main);
+}
+
+/* GLOBAL BODY */
+
+body{
+  font-family: var(--font-main);
+  color: var(--text);
+  background:#f4f4f4;
+  line-height:1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* GLOBAL HEADINGS */
+
+h1,h2,h3,h4,h5,h6{
+  font-family: var(--font-main);
+  color: var(--heading);
+  line-height:1.05;
+  letter-spacing:-0.03em;
+  font-weight:700;
+}
+
+/* TYPOGRAPHY HIERARCHY */
+
+h1{
+  font-size: var(--h1);
+}
+
+h2{
+  font-size: var(--h2);
+}
+
+h3{
+  font-size: var(--h3);
+}
+
+p{
+  font-size: var(--body);
+  color: var(--text);
+}
+
 
 html{
 scroll-behavior: smooth;
@@ -18,6 +90,8 @@ scroll-behavior: smooth;
 
 section {
   scroll-margin-top: 90px;
+  padding-top: var(--section-spacing);
+  padding-bottom: var(--section-spacing);
 }
 
 /* LINKS */
@@ -70,12 +144,11 @@ section {
   position: relative;
   padding-top: 80px;
 }
-.hero h1 {
-  font-size: clamp(2.8rem, 6vw, 4.5rem);
+.hero h1{
+  font-size: var(--h1);
   font-weight: 700;
-  line-height: 1.1;
-  margin-bottom: 1rem;
-  letter-spacing: -0.02em;
+  line-height: .95;
+  letter-spacing: -0.04em;
 }
 
 
@@ -307,10 +380,11 @@ section {
 
 .service-card h3 {
   font-size: 1.35rem;
-  font-weight: 600;
+  font-weight: 650;
   padding: 20px;
   color: #0f766e;
   text-align: center;
+   line-height:1.2;
   background: white;
 }
 
@@ -439,9 +513,9 @@ section {
 }
 
 .clients-title{
-  font-size: 2.4rem;
-  font-weight: 700;
-  margin-bottom: 10px;
+  font-size: var(--h2);
+  line-height: 1;
+  letter-spacing: -0.03em;
 }
 
 .clients-subtitle{
@@ -722,10 +796,10 @@ section {
   margin-bottom: 35px;
 }
 
-.partners-header h2 {
-  font-size: 30px;
-  font-weight: 500;
-  letter-spacing: 2px;
+.partners-header h2{
+  font-size: var(--h2);
+  font-weight:700;
+  letter-spacing:-0.03em;
 }
 
 .partners-sub {
@@ -994,7 +1068,7 @@ section {
 .footer-brand h2 {
   font-size: 1.8rem;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: -0.03em;
   margin-bottom: 10px;
   color: #187b06;
   margin-bottom: 10px;
