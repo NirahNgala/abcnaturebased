@@ -29,8 +29,8 @@
   <style>
     .about-hero {
       background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), 
-                  url('ASSETS/Girl with moringa seedlings.jpeg') center/cover;
-      min-height: 420px;
+                  url('ASSETS/Girl\ with\ moringa\ seedlings.webp') center/cover;
+      min-height: 460px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -40,21 +40,20 @@
       overflow: hidden;
     }
 
-    /* Foreground Image in Hero */
     .hero-image {
       position: absolute;
-      bottom: -20px;
-      right: 5%;
-      width: 280px;
-      filter: drop-shadow(0 20px 25px rgba(0,0,0,0.3));
+      bottom: -30px;
+      right: 8%;
+      width: 320px;
+      filter: drop-shadow(0 25px 30px rgba(0,0,0,0.35));
       z-index: 10;
     }
 
     @media (max-width: 768px) {
       .hero-image {
-        width: 200px;
-        right: 8%;
-        bottom: -10px;
+        width: 220px;
+        right: 5%;
+        bottom: -15px;
       }
     }
 
@@ -86,7 +85,7 @@
       font-family: 'Satoshi', system-ui, sans-serif;
     }
 
-    /* Stats Numbers - Set to 2.5rem */
+    /* Stats Numbers */
     .stat-number {
       font-size: 2.5rem;
       line-height: 1;
@@ -100,7 +99,7 @@
       }
     }
 
-    /* CTA Styling */
+    /* CTA */
     .services-cta {
       background: linear-gradient(135deg, #10b981, #047857);
       color: white;
@@ -138,9 +137,6 @@
     <span class="text-2xl">←</span>
     <span>Back</span>
   </button>
-  
-  <!-- Foreground Image -->
-  <img src="ASSETS/Girl with moringa seedlings.jpeg" alt="Moringa Seedlings" class="hero-image">
 
   <div class="relative z-10 text-center px-6">
     <h1 class="text-5xl md:text-6xl font-bold">About Us</h1>
@@ -212,21 +208,38 @@
   </div>
 </section>
 
-<!-- TEAM + CTA -->
+<!-- TEAM SECTION -->
 <section class="team-section py-20 bg-white">
   <div class="max-w-7xl mx-auto px-6">
+    <div class="team-header text-center mb-12">
+      <h2 class="text-4xl font-bold text-emerald-900 mb-3">Our Team</h2>
+      <p class="text-lg text-emerald-800">Crescendo.green is led by practitioners with deep operational experience:</p>
+    </div>
+
+    <!-- Core Leadership -->
+    <div class="mb-16">
+      <h3 class="text-2xl font-semibold text-center mb-8">Core Leadership</h3>
+      <div class="max-w-sm mx-auto">
+        <div class="team-member text-center">
+          <img src="ASSETS/Bob pic.jpg" alt="Bob van der Bijl" class="mx-auto w-48 h-48 object-cover rounded-2xl shadow-lg mb-4">
+          <h3 class="text-2xl font-semibold">Bob van der Bijl</h3>
+          <p class="text-emerald-700">CEO, Operations & Project Development</p>
+        </div>
+      </div>
+    </div>
+
     <!-- CTA -->
     <section class="services-cta">
-      <div class="cta-inner">
+      <div class="cta-inner max-w-2xl mx-auto">
         <h2 class="text-4xl md:text-5xl font-bold mb-6">Let’s Bring Your Project to Life</h2>
-        <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8">
+        <p class="text-lg md:text-xl mb-8">
           Whether you're planning a restoration initiative, nursery expansion, 
           agroforestry system, or large-scale landscape project, our team is ready 
           to support you from strategy to on-ground execution.
         </p>
         <a href="contact.html" class="cta-link">
           <span>Book a Consultation</span>
-          <span class="arrow text-xl">→</span>
+          <span class="text-xl">→</span>
         </a>
       </div>
     </section>
@@ -247,48 +260,37 @@
 <!-- FOOTER -->
 <footer class="footer-luxury">
   <div class="footer-overlay"></div>
-  <div class="footer-container">
-    <div class="footer-brand">
-      <h2>Crescendo.green</h2>
-      <p class="tagline">From nursery to landscape</p>
-      <p class="subtext">Sustainable forestry, restoration, and nursery systems across landscapes.</p>
+  <div class="footer-container max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-10">
+    <div>
+      <h2 class="text-3xl font-bold">Crescendo.green</h2>
+      <p class="tagline text-emerald-100">From nursery to landscape</p>
+      <p class="subtext mt-4 text-emerald-200">
+        Sustainable forestry, restoration, and nursery systems across landscapes.
+      </p>
     </div>
 
-    <div class="footer-block">
-      <h4>Explore</h4>
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Projects</a>
-      <a href="#">Contact</a>
+    <div>
+      <h4 class="font-semibold mb-4">Explore</h4>
+      <div class="space-y-2">
+        <a href="#" class="block hover:text-emerald-300">About</a>
+        <a href="#" class="block hover:text-emerald-300">Services</a>
+        <a href="#" class="block hover:text-emerald-300">Projects</a>
+        <a href="contact.html" class="block hover:text-emerald-300">Contact</a>
+      </div>
     </div>
 
-    <div class="footer-block">
-      <h4>Contact</h4>
+    <div>
+      <h4 class="font-semibold mb-4">Contact</h4>
       <p>info@crescendogreen.com</p>
       <p>+254 XXX XXX XXX</p>
       <p>Kenya / East Africa</p>
     </div>
   </div>
 
-  <div class="footer-social">
-    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-  </div>
-
-  <div class="footer-divider"></div>
-
-  <div class="footer-bottom">
-    <p>© 2026 Crescendo.green. All rights reserved.</p>
-    <div class="legal-links">
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms</a>
-    </div>
+  <div class="footer-bottom text-center py-8 border-t border-emerald-800 text-sm text-emerald-300">
+    © 2026 Crescendo.green. All rights reserved.
   </div>
 </footer>
-
-<script src="about.js"></script>
 
 <script>
   // Back Button
@@ -296,38 +298,35 @@
     window.history.back();
   }
 
-  // Stats Counter Animation
-  function animateCounter(id, target, duration = 2000, suffix = '') {
-    const element = document.getElementById(id);
-    let start = 0;
-    const increment = target / (duration / 16);
+  // Counter Animation
+  function animateValue(id, start, end, duration, suffix = '') {
+    const obj = document.getElementById(id);
+    const range = end - start;
+    let startTimestamp = null;
 
-    const timer = setInterval(() => {
-      start += increment;
-      if (start >= target) {
-        start = target;
-        clearInterval(timer);
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      const value = Math.floor(progress * range + start);
+      obj.textContent = value + suffix;
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      } else {
+        obj.textContent = end + suffix;
       }
-      element.textContent = Math.floor(start) + suffix;
-    }, 16);
+    };
+    window.requestAnimationFrame(step);
   }
 
-  // Trigger counters when section is in view
-  const statsSection = document.getElementById('stats');
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        animateCounter('hectares', 200);
-        animateCounter('shadehouse', 7500, 2500, 'm²');
-        animateCounter('seedlings', 250000, 2200);
-        animateCounter('systems', 4);
-        observer.disconnect();
-      }
-    });
-  }, { threshold: 0.5 });
-
-  observer.observe(statsSection);
+  // Start counters after page load
+  window.onload = function() {
+    setTimeout(() => {
+      animateValue("hectares", 0, 200, 1800);
+      animateValue("shadehouse", 0, 7500, 2200, "m²");
+      animateValue("seedlings", 0, 250000, 2000);
+      animateValue("systems", 0, 4, 1200);
+    }, 600);
+  };
 </script>
 </body>
 </html>
