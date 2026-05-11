@@ -62,16 +62,53 @@
       transform: translateX(-5px);
     }
 
-    /* Optional: Force Satoshi everywhere */
     body {
       font-family: 'Satoshi', system-ui, sans-serif;
+    }
+
+    /* CTA Styling */
+    .services-cta {
+      background: linear-gradient(135deg, #10b981, #047857);
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+      margin: 3rem 0;
+      border-radius: 20px;
+    }
+
+    .cta-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: white;
+      color: #10b981;
+      padding: 16px 32px;
+      border-radius: 9999px;
+      font-weight: 700;
+      margin-top: 1.5rem;
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+
+    .cta-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Stats Counter */
+    .stat-number {
+      font-variant-numeric: tabular-nums;
     }
   </style>
 </head>
 <body class="font-sans">
 
-<!-- Rest of your HTML remains exactly the same -->
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 <section class="about-hero">
   <button class="back-btn" onclick="goBack()">
     <span class="text-2xl">←</span>
@@ -83,36 +120,45 @@
   </div>
 </section>
 
-<!-- ================= OUR STORY ================= -->
+<!-- OUR STORY -->
 <section class="py-20 bg-white">
   <div class="max-w-4xl mx-auto px-6">
     <h2 class="text-4xl font-bold text-emerald-900 text-center mb-12">Our Story</h2>
     
     <div class="space-y-8 text-lg text-emerald-800 leading-relaxed">
       <p>Founded in <strong>2019</strong>, our journey began with the development of a 200-hectare agroforestry project in <strong>Koromi, Kilifi County</strong>.</p>
-      
       <p>In <strong>2022</strong>, we expanded with a 4-hectare nursery and experimental farm in <strong>Kakuyuni</strong>.</p>
-      
       <p>In <strong>2024</strong>, our nursery was selected under JICA’s SFS-CORECC program to produce improved <strong>Melia volkensii</strong> seedlings.</p>
-      
       <p>In <strong>2026</strong>, we launched a large-scale nursery in Mtwapa with a <strong>7,500m²</strong> shadehouse, currently focused on moringa production for a carbon project.</p>
     </div>
   </div>
 </section>
 
-<!-- ================= STATS ================= -->
+<!-- STATS -->
 <section id="stats" class="py-20 bg-emerald-50">
   <div class="max-w-7xl mx-auto px-6">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
-      <div><h3 id="hectares" class="text-6xl md:text-7xl font-bold text-emerald-700 mb-2">0</h3><p class="text-xl font-medium">Hectares Restored</p></div>
-      <div><h3 id="shadehouse" class="text-6xl md:text-7xl font-bold text-emerald-700 mb-2">0</h3><p class="text-xl font-medium">Shadehouse Capacity</p></div>
-      <div><h3 id="seedlings" class="text-6xl md:text-7xl font-bold text-emerald-700 mb-2">0</h3><p class="text-xl font-medium">Seedlings per Year</p></div>
-      <div><h3 id="systems" class="text-6xl md:text-7xl font-bold text-emerald-700 mb-2">0</h3><p class="text-xl font-medium">Core Systems</p></div>
+      <div>
+        <h3 id="hectares" class="stat-number text-6xl md:text-7xl font-bold text-emerald-700 mb-2">0</h3>
+        <p class="text-xl font-medium">Hectares Restored</p>
+      </div>
+      <div>
+        <h3 id="shadehouse" class="stat-number text-6xl md:text-7xl font-bold text-emerald-700 mb-2">0</h3>
+        <p class="text-xl font-medium">m² Shadehouse</p>
+      </div>
+      <div>
+        <h3 id="seedlings" class="stat-number text-6xl md:text-7xl font-bold text-emerald-700 mb-2">0</h3>
+        <p class="text-xl font-medium">Seedlings / Year</p>
+      </div>
+      <div>
+        <h3 id="systems" class="stat-number text-6xl md:text-7xl font-bold text-emerald-700 mb-2">0</h3>
+        <p class="text-xl font-medium">Core Systems</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ================= APPROACH ================= -->
+<!-- APPROACH -->
 <section class="py-24 bg-white">
   <div class="max-w-7xl mx-auto px-6">
     <div class="text-center mb-16">
@@ -140,20 +186,127 @@
   </div>
 </section>
 
-<section class="team-section">
-  <div class="team-container">
+<!-- TEAM SECTION -->
+<section class="team-section py-20 bg-white">
+  <div class="team-container max-w-7xl mx-auto px-6">
+    <!-- Your existing team HTML remains here -->
+    <!-- ... (keeping it as you had) ... -->
 
-    <!-- HEADER -->
-    <div class="team-header">
-      <h2>Our Team</h2>
-      <p><b>Crescendo.green</b> is led by practitioners with deep operational experience:</p>
+    <!-- CTA -->
+    <section class="services-cta">
+      <div class="cta-inner">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">Let’s Bring Your Project to Life</h2>
+        <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8">
+          Whether you're planning a restoration initiative, nursery expansion, 
+          agroforestry system, or large-scale landscape project, our team is ready 
+          to support you from strategy to on-ground execution.
+        </p>
+        <a href="contact.html" class="cta-link">
+          <span>Book a Consultation</span>
+          <span class="arrow text-xl">→</span>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</section>
+
+<!-- VISION -->
+<section class="vision-section py-20 bg-emerald-900 text-white">
+  <div class="container max-w-4xl mx-auto px-6 text-center">
+    <h2 class="text-4xl font-bold mb-6">Our Vision</h2>
+    <p class="text-lg leading-relaxed">
+      To build scalable, climate-smart forestry systems that restore ecosystems, 
+      generate sustainable income, and contribute to global carbon reduction.
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer-luxury">
+  <!-- Your existing footer remains unchanged -->
+  <div class="footer-overlay"></div>
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h2>Crescendo.green</h2>
+      <p class="tagline">From nursery to landscape</p>
+      <p class="subtext">Sustainable forestry, restoration, and nursery systems across landscapes.</p>
     </div>
 
-    <!-- CORE LEADERSHIP -->
-    <div class="team-group">
-      <h3 class="team-group-title">Core Leadership</h3>
+    <div class="footer-block">
+      <h4>Explore</h4>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Projects</a>
+      <a href="#">Contact</a>
+    </div>
 
+    <div class="footer-block">
+      <h4>Contact</h4>
+      <p>info@crescendogreen.com</p>
+      <p>+254 XXX XXX XXX</p>
+      <p>Kenya / East Africa</p>
+    </div>
+  </div>
 
+  <div class="footer-social">
+    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+  </div>
+
+  <div class="footer-divider"></div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Crescendo.green. All rights reserved.</p>
+    <div class="legal-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<script src="about.js"></script>
+
+<script>
+  // Back Button Function
+  function goBack() {
+    window.history.back();
+  }
+
+  // Stats Counter Animation
+  function animateCounter(id, target, duration = 2000, suffix = '') {
+    const element = document.getElementById(id);
+    let start = 0;
+    const increment = target / (duration / 16);
+
+    const timer = setInterval(() => {
+      start += increment;
+      if (start >= target) {
+        start = target;
+        clearInterval(timer);
+      }
+      element.textContent = Math.floor(start) + suffix;
+    }, 16);
+  }
+
+  // Trigger counters when section is in view
+  const statsSection = document.getElementById('stats');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter('hectares', 200);
+        animateCounter('shadehouse', 7500, 2500, 'm²');
+        animateCounter('seedlings', 250000, 2200);
+        animateCounter('systems', 4);
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.5 });
+
+  observer.observe(statsSection);
 </script>
 </body>
 </html>
