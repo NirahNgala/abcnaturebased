@@ -42,14 +42,12 @@
       font-size:0.95rem;
       margin-bottom:24px;
     }
-
     .article-title{
       font-size:3.2rem;
       line-height:1.1;
       margin-bottom:28px;
       font-weight:600;
     }
-
     .article-image{
       width:100%;
       border-radius:28px;
@@ -67,23 +65,11 @@
       font-size:1.1rem;
       color:#e0e0e0;
     }
-
     .article-content h2{
       font-size:1.8rem;
       margin:50px 0 20px;
       color:#b5d66f;
     }
-
-    .article-content p{
-      margin-bottom:28px;
-    }
-
-    .highlight{
-      background:rgba(181, 214, 111, 0.1);
-      padding:2px 8px;
-      border-radius:4px;
-    }
-
     .back-btn{
       display:inline-flex;
       align-items:center;
@@ -93,12 +79,34 @@
       margin-bottom:40px;
       text-decoration:none;
     }
-
-    .back-btn:hover{
+     .back-btn:hover{
       gap:16px;
     }
-
-    /* Mobile */
+    .share-buttons{
+      margin:60px 0 40px;
+      padding:30px 0;
+      border-top:1px solid rgba(255,255,255,0.1);
+      border-bottom:1px solid rgba(255,255,255,0.1);
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+    .share-btn{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      padding:12px 24px;
+      background:#1a1a1a;
+      color:#fff;
+      border-radius:50px;
+      text-decoration:none;
+      transition:.3s;
+      font-size:0.95rem;
+    }
+    .share-btn:hover{
+      background:#b5d66f;
+      color:#000;
+    }
     @media(max-width:768px){
       .article-title{
         font-size:2.4rem;
@@ -111,28 +119,20 @@
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav style="position:fixed; top:0; left:0; width:100%; z-index:1000; padding:24px 7%; display:flex; justify-content:space-between; align-items:center; background:rgba(0,0,0,0.8); backdrop-filter:blur(12px); border-bottom:1px solid rgba(255,255,255,0.08);">
+  <nav style="position:fixed; top:0; left:0; width:100%; z-index:1000; padding:24px 7%; display:flex; justify-content:space-between; align-items:center; background:rgba(0,0,0,0.8); backdrop-filter:blur(12px);">
     <div class="logo" style="font-size:2rem; letter-spacing:5px;">CRESCENDO</div>
-    <a href="blog.html" class="back-btn">
-      ← Back to Insights
-    </a>
+    <a href="blog.html" class="back-btn">← Back to Insights</a>
   </nav>
 
   <div class="article-container">
+    <a href="blog.html" class="back-btn">← Back to All Articles</a>
 
-    <a href="blog.html" class="back-btn">
-      ← Back to All Articles
-    </a>
-
-    <div class="article-header">
-      <div class="article-meta">
-        <span><i class="fa-solid fa-cloud-rain"></i> Climate Systems</span>
-        <span><i class="fa-regular fa-clock"></i> 8 min read</span>
-        <span><i class="fa-solid fa-calendar"></i> May 2026</span>
-      </div>
-      <h1 class="article-title">El Niño 2026: Why Kenya’s Tree-Planting Sector Should Prepare Now</h1>
+    <div class="article-meta">
+      <span><i class="fa-solid fa-cloud-rain"></i> Climate Systems</span>
+      <span><i class="fa-regular fa-clock"></i> 8 min read</span>
+      <span><i class="fa-solid fa-calendar"></i> May 2026</span>
     </div>
+    <h1 class="article-title">El Niño 2026: Why Kenya’s Tree-Planting Sector Should Prepare Now</h1>
 
     <div class="article-image">
       <img src="ASSETS/Malia.jpeg" alt="El Niño 2026 - Kenya Tree Planting">
@@ -182,6 +182,21 @@
       </p>
     </div>
 
+    <!-- SHARE BUTTONS -->
+    <div class="share-buttons">
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://crescendogreen.com/article-el-nino.html" target="_blank" class="share-btn">
+        <i class="fa-brands fa-linkedin"></i> Share on LinkedIn
+      </a>
+      <a href="https://twitter.com/intent/tweet?url=https://crescendogreen.com/article-el-nino.html&text=El%20Ni%C3%B1o%202026%3A%20Why%20Kenya%E2%80%99s%20Tree-Planting%20Sector%20Should%20Prepare%20Now" target="_blank" class="share-btn">
+        <i class="fa-brands fa-x-twitter"></i> Share on X
+      </a>
+      <a href="https://wa.me/?text=El%20Ni%C3%B1o%202026%3A%20Why%20Kenya%E2%80%99s%20Tree-Planting%20Sector%20Should%20Prepare%20Now%20https://crescendogreen.com/article-el-nino.html" target="_blank" class="share-btn">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+      </a>
+      <a href="mailto:?subject=El Niño 2026 Article&body=Check out this insightful article: https://crescendogreen.com/article-el-nino.html" class="share-btn">
+        <i class="fa-solid fa-envelope"></i> Email
+      </a>
+    </div>
   </div>
 
   <script>
