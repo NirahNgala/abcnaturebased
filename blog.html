@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
   <style>
-
     *{
       margin:0;
       padding:0;
@@ -37,7 +36,6 @@
     }
 
     /* ================= NAVBAR ================= */
-
     nav{
       position:fixed;
       top:0;
@@ -88,7 +86,6 @@
     }
 
     /* ================= HERO ================= */
-
     .hero{
       min-height:90vh;
       position:relative;
@@ -141,8 +138,50 @@
       line-height:1.8;
     }
 
-    /* ================= FILTERS ================= */
+    /* ================= FEATURED ARTICLE ================= */
+    .featured{
+      padding:80px 7% 60px;
+      background:#0a0a0a;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
 
+    .featured-content{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:center;
+      max-width:1400px;
+      margin:auto;
+    }
+
+    .featured-image{
+      border-radius:28px;
+      overflow:hidden;
+      box-shadow:0 20px 40px rgba(0,0,0,0.6);
+    }
+
+    .featured-text h2{
+      font-size:3.2rem;
+      line-height:1.1;
+      margin-bottom:24px;
+    }
+
+    .featured-meta{
+      display:flex;
+      gap:18px;
+      color:#b5d66f;
+      margin-bottom:20px;
+      font-size:.95rem;
+    }
+
+    .featured p{
+      color:#cfcfcf;
+      line-height:1.8;
+      margin-bottom:32px;
+      font-size:1.05rem;
+    }
+
+    /* ================= FILTERS ================= */
     .filters{
       padding:50px 7% 20px;
       display:flex;
@@ -195,7 +234,6 @@
     }
 
     /* ================= BLOG GRID ================= */
-
     .blog-grid{
       padding:40px 7% 100px;
       display:grid;
@@ -247,7 +285,7 @@
 
     .blog-content h2{
       font-family:'Satoshi', sans-serif;
-      font-size:2.3rem;
+      font-size:2.1rem;
       line-height:1.1;
       margin-bottom:20px;
       font-weight:600;
@@ -273,7 +311,6 @@
     }
 
     /* ================= CTA ================= */
-
     .cta{
       padding:120px 7%;
       text-align:center;
@@ -322,9 +359,7 @@
     }
 
     /* ================= MOBILE ================= */
-
     @media(max-width:900px){
-
       .nav-links{
         display:none;
       }
@@ -333,35 +368,22 @@
         min-height:80vh;
       }
 
-      .hero h1{
-        font-size:4rem;
+      .featured-content{
+        grid-template-columns:1fr;
+        gap:40px;
       }
 
-      .blog-content h2{
-        font-size:2rem;
+      .featured-text h2{
+        font-size:2.4rem;
       }
-
-      .filters{
-        flex-direction:column;
-        align-items:flex-start;
-      }
-
-      .search-box{
-        width:100%;
-      }
-
     }
-
   </style>
 </head>
 <body>
 
   <!-- NAVBAR -->
-
   <nav>
-
-    <div class="logo"></div>
-
+    <div class="logo">CRESCENDO</div>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -369,197 +391,119 @@
       <a href="projects.html">Projects</a>
       <a href="blog.html">Insights</a>
     </div>
-
     <a href="contact.html" class="nav-btn">Contact Us</a>
-
   </nav>
 
   <!-- HERO -->
-
   <section class="hero">
-
-    <!-- VIDEO -->
     <video autoplay muted loop playsinline>
       <source src="ASSETS/NurseryDroneView.mp4" type="video/mp4">
     </video>
-
     <div class="overlay"></div>
-
     <div class="hero-content">
-
-      <div class="hero-tag">
-        Insights
-      </div>
-
-      <h1>
-        Ideas. Systems.
-        <br>
-        Real Impact.
-      </h1>
-
-      <p>
-        Thoughts from the field, lessons from our work,
-        and perspectives on building scalable restoration systems
-        for a more resilient future.
-      </p>
-
+      <div class="hero-tag">Insights</div>
+      <h1>Ideas. Systems.<br>Real Impact.</h1>
+      <p>Thoughts from the field, lessons from our work, and perspectives on building scalable restoration systems for a more resilient future.</p>
     </div>
+  </section>
 
+  <!-- FEATURED ARTICLE: EL NIÑO -->
+  <section class="featured">
+    <div class="featured-content">
+      <div class="featured-image">
+        <img src="ASSETS/Malia.jpeg" alt="El Niño 2026 Kenya Tree Planting">
+      </div>
+      <div class="featured-text">
+        <div class="featured-meta">
+          <span><i class="fa-solid fa-cloud-rain"></i> Climate Systems</span>
+          <span><i class="fa-regular fa-clock"></i> 8 min read</span>
+        </div>
+        <h2>El Niño 2026: Why Kenya’s Tree-Planting Sector Should Prepare Now</h2>
+        <p>Climate agencies are increasingly confident that El Niño conditions are likely to develop in 2026. For Kenya’s tree-planting sector, this could create a significant planting window — but only for organisations that prepare in advance.</p>
+        <a href="article-el-nino.html" class="read-btn">
+          Read Full Article 
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
   </section>
 
   <!-- FILTERS -->
-
   <section class="filters">
-
     <div class="categories">
-
       <button class="active">All Articles</button>
       <button>Restoration</button>
       <button>Propagation</button>
       <button>Climate Systems</button>
       <button>Consultancy</button>
       <button>Operations</button>
-
     </div>
-
     <div class="search-box">
       <i class="fa-solid fa-magnifying-glass"></i>
       <input type="text" placeholder="Search articles...">
     </div>
-
   </section>
 
   <!-- BLOG GRID -->
-
   <section class="blog-grid">
 
     <!-- CARD 1 -->
-
     <article class="blog-card">
-
       <div class="blog-image">
         <img src="ASSETS/Malia.jpeg">
       </div>
-
       <div class="blog-content">
-
         <div class="blog-meta">
-          <span>
-            <i class="fa-solid fa-leaf"></i>
-            Restoration
-          </span>
-
-          <span>
-            <i class="fa-regular fa-clock"></i>
-            7 min read
-          </span>
+          <span><i class="fa-solid fa-leaf"></i> Restoration</span>
+          <span><i class="fa-regular fa-clock"></i> 7 min read</span>
         </div>
-
-        <h2>
-          Why Most Tree Planting Projects Fail Before Planting Even Starts
-        </h2>
-
-        <p>
-          Many projects are already off-track before the first tree is planted.
-          We explore the hidden challenges in propagation,
-          planning, and operational execution.
-        </p>
-
+        <h2>Why Most Tree Planting Projects Fail Before Planting Even Starts</h2>
+        <p>Many projects are already off-track before the first tree is planted. We explore the hidden challenges in propagation, planning, and operational execution.</p>
         <a href="article1.html" class="read-btn">
-          Read Article
-          <i class="fa-solid fa-arrow-right"></i>
+          Read Article <i class="fa-solid fa-arrow-right"></i>
         </a>
-
       </div>
-
     </article>
 
     <!-- CARD 2 -->
-
     <article class="blog-card">
-
       <div class="blog-image">
         <img src="ASSETS/Nursery.jpeg">
       </div>
-
       <div class="blog-content">
-
         <div class="blog-meta">
-          <span>
-            <i class="fa-solid fa-seedling"></i>
-            Propagation
-          </span>
-
-          <span>
-            <i class="fa-regular fa-clock"></i>
-            6 min read
-          </span>
+          <span><i class="fa-solid fa-seedling"></i> Propagation</span>
+          <span><i class="fa-regular fa-clock"></i> 6 min read</span>
         </div>
-
-        <h2>
-          Centralised vs Community Nurseries:
-          Finding the Right Model for Scale
-        </h2>
-
-        <p>
-          A comparison of nursery models, their trade-offs,
-          and how hybrid systems can improve both quality
-          and community participation.
-        </p>
-
+        <h2>Centralised vs Community Nurseries: Finding the Right Model for Scale</h2>
+        <p>A comparison of nursery models, their trade-offs, and how hybrid systems can improve both quality and community participation.</p>
         <a href="article2.html" class="read-btn">
-          Read Article
-          <i class="fa-solid fa-arrow-right"></i>
+          Read Article <i class="fa-solid fa-arrow-right"></i>
         </a>
-
       </div>
-
     </article>
 
   </section>
 
   <!-- CTA -->
-
   <section class="cta">
-
     <div class="cta-content">
-
-      <h2>
-        Building Better Restoration Systems
-      </h2>
-
-      <p>
-        Explore ideas, field insights, and operational thinking
-        shaping the future of restoration at scale.
-      </p>
-
-      <a href="#" class="cta-btn">
-        View All Articles
-      </a>
-
+      <h2>Building Better Restoration Systems</h2>
+      <p>Explore ideas, field insights, and operational thinking shaping the future of restoration at scale.</p>
+      <a href="#" class="cta-btn">View All Articles</a>
     </div>
-
   </section>
 
-  <!-- JS -->
-
   <script>
-
     // navbar background on scroll
-
     window.addEventListener("scroll", function(){
-
       const nav = document.querySelector("nav");
-
       if(window.scrollY > 50){
         nav.style.background = "rgba(0,0,0,0.75)";
       }else{
         nav.style.background = "rgba(0,0,0,0.45)";
       }
-
     });
-
   </script>
-
 </body>
 </html>
