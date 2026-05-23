@@ -13,10 +13,7 @@
 
   /* FONT */
   --font-main: 'Satoshi', sans-serif;
-  /* COLORS
-  --heading: #0b1a12;
-  --text: #4b5563;
-  --muted: #6b7280; */
+
 
   /* HEADING SCALE */
   --h1: clamp(3.5rem, 7vw, 6rem);
@@ -1070,7 +1067,7 @@ section {
 /* FOOTER */
 .footer-luxury {
   position: relative;
-  background: linear-gradient(180deg, #000000 0%, #0b1a12 100%);
+  background: linear-gradient(180deg, #031c06 0%, #053a07 40%);
   color: #ffffff;
   padding: 80px 8% 40px;
   overflow: hidden;
