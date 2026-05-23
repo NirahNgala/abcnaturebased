@@ -58,7 +58,7 @@
         <div class="dropdown-menu absolute hidden group-hover:block pt-4">
           <div class="bg-white shadow-xl rounded-2xl py-4 w-56 border border-emerald-100">
             <a href="about.html#our-story" class="block px-6 py-3 hover:bg-emerald-50">Our Story</a>
-            <a href="team.html#team" class="block px-6 py-3 hover:bg-emerald-50">Our Team</a>
+            <a href="about.html#team" class="block px-6 py-3 hover:bg-emerald-50">Our Team</a>
             <a href="#kenya-operations" class="block px-6 py-3 hover:bg-emerald-50">Operations in Kenya</a>
             <a href="#partners" class="block px-6 py-3 hover:bg-emerald-50">Partners</a>
           </div>
@@ -85,7 +85,7 @@
     </div>
 
     <a href="contact.html" class="hidden md:block bg-emerald-700 hover:bg-emerald-800 text-white px-6 py-3 rounded-full text-sm font-semibold transition">
-      Start a Project
+      Start a Project With Us
     </a>
 
     <!-- Hamburger Button -->
@@ -535,7 +535,7 @@
           <div class="logo"><img src="ASSETS/logo (1).png"></div>
           <div class="logo"><img src="ASSETS/kalro-logo_2024-1.png"></div>
           <div class="logo"><img src="ASSETS/kenyaforest.png"></div>
-          <div class="logo"><img src="ASSETS/ChatGPT Image Mar 11, 2026, 12_19_29 PM.png"></div>
+        
 
           <!-- duplicate for loop -->
          <div class="logo"><img src="ASSETS/growpact_kenya_ltd_cover.jpeg"></div>
@@ -545,7 +545,7 @@
           <div class="logo"><img src="ASSETS/logo (1).png"></div>
           <div class="logo"><img src="ASSETS/kalro-logo_2024-1.png"></div>
           <div class="logo"><img src="ASSETS/kenyaforest.png"></div>
-          <div class="logo"><img src="ASSETS/ChatGPT Image Mar 11, 2026, 12_19_29 PM.png"></div>
+        
 
 
       </div>
@@ -702,32 +702,6 @@ if (galleryContainer) {
   });
 }
 </script>
-
-<script>
-// Highlight target section when coming from another page
-document.addEventListener("DOMContentLoaded", () => {
-  const hash = window.location.hash;
-  
-  if (hash) {
-    const targetSection = document.querySelector(hash);
-    if (targetSection) {
-      // Smooth scroll to section
-      targetSection.scrollIntoView({ 
-        behavior: "smooth",
-        block: "center"
-      });
-
-      // Add highlight effect
-      targetSection.classList.add("highlight-section");
-      
-      // Remove highlight after 3 seconds
-      setTimeout(() => {
-        targetSection.classList.remove("highlight-section");
-      }, 3000);
-    }
-  }
-});
-</script>
 <script>
   // Hamburger Menu
   const hamburger = document.getElementById('hamburger');
@@ -752,6 +726,31 @@ document.addEventListener("DOMContentLoaded", () => {
       icon.classList.toggle('rotate-180');
     });
   });
+</script>
+<script>
+// Highlight target section when coming from another page
+document.addEventListener("DOMContentLoaded", () => {
+  const hash = window.location.hash;
+  
+  if (hash) {
+    const targetSection = document.querySelector(hash);
+    if (targetSection) {
+      // Smooth scroll to section
+      targetSection.scrollIntoView({ 
+        behavior: "smooth",
+        block: "center"
+      });
+
+      // Add highlight effect
+      targetSection.classList.add("highlight-section");
+      
+      // Remove highlight after 3 seconds
+      setTimeout(() => {
+        targetSection.classList.remove("highlight-section");
+      }, 3000);
+    }
+  }
+});
 </script>
 </body>
 </html>
