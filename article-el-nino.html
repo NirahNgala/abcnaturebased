@@ -6,7 +6,7 @@
   <title>El Niño 2026: Why Kenya’s Tree-Planting Sector Should Prepare Now | Crescendo Insights</title>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Satoshi:wght@600;700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
@@ -139,7 +139,7 @@
     }
 
     .hero-content h1{
-      font-family:'Playfair Display',serif;
+      font-family:'Satoshi',serif;
 
       font-size:clamp(2.8rem,6vw,4.8rem);
 
@@ -151,6 +151,44 @@
 
       text-shadow:0 8px 30px rgba(0,0,0,.25);
     }
+    /* Enhanced CTA Button with Wobble Animation */
+.cta-button {
+  display: inline-block;
+  margin-top: 28px;
+  background: white;
+  color: #047857;
+  padding: 18px 40px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(5, 150, 105, 0.25);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.cta-button:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 20px 40px rgba(5, 150, 105, 0.35);
+  background: #f8faf7;
+}
+
+/* Subtle Attention Animation - Gentle Pulse */
+@keyframes gentlePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+
+.cta-button {
+  animation: gentlePulse 3s ease-in-out infinite;
+}
+
+/* Pause animation when hovering */
+.cta-button:hover {
+  animation: none;
+}
 
     /* ================= META ================= */
 
@@ -196,7 +234,7 @@
 
       color:var(--forest);
 
-      font-family:'Playfair Display',serif;
+      font-family:'Satoshi',serif;
 
       line-height:1.2;
     }
@@ -293,7 +331,7 @@
 
       color:rgba(5,150,105,.15);
 
-      font-family:'Playfair Display',serif;
+      font-family:'Satoshi',serif;
     }
 
     /* ================= STATS ================= */
@@ -334,33 +372,24 @@
 
     .final-cta{
       text-align:center;
-
       margin:80px 0 30px;
-
       padding:60px 40px;
-
       background:
         linear-gradient(
           135deg,
-          #059669,
+          #35a2f0,
           #047857
         );
-
       border-radius:30px;
-
       color:white;
-
       position:relative;
-
       overflow:hidden;
     }
 
     .final-cta::before{
       content:"";
-
       position:absolute;
       inset:0;
-
       background:
         radial-gradient(
           circle at top right,
@@ -688,22 +717,22 @@
         </p>
 
         <!-- CTA -->
-        <div class="final-cta">
+<!-- Improved Professional CTA -->
+<div class="final-cta">
+  <h3>
+    Don’t Miss the 2026 El Niño Planting Season
+  </h3>
+  
+  <p>
+    Secure premium seedlings, expert planning, and reliable aftercare now.<br>
+    <strong>Turn expected rains into real restoration success.</strong>
+  </p>
 
-          <h3>
-            Ready to Prepare for El Niño 2026?
-          </h3>
+  <a href="contact.html" class="cta-button">
+    Prepare for El Niño 2026 →
+  </a>
 
-          <p>
-            Work with Crescendo Green to build scalable,
-            climate-ready restoration systems across East Africa.
-          </p>
-
-          <a href="contact.html">
-            Contact Crescendo Green
-          </a>
-
-        </div>
+</div>
 
       </div>
 
@@ -728,7 +757,7 @@
       </div>
 
       <!-- RELATED -->
-      <section class="related">
+      <section class="related-card">
 
         <h2>
           Related Insights
@@ -737,9 +766,7 @@
         <div class="related-grid">
 
           <article class="related-card">
-
-            <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1600&auto=format&fit=crop">
-
+            <img src="ASSETS/inside-nursery.webp">
             <div class="related-content">
 
               <h3>
@@ -755,29 +782,19 @@
           </article>
 
           <article class="related-card">
-
-            <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1600&auto=format&fit=crop">
-
+            <img src="ASSETS/Malia.jpeg">
             <div class="related-content">
-
               <h3>
                 Why Most Tree Planting Projects Fail
               </h3>
-
               <p>
                 Operational lessons from restoration systems.
               </p>
-
             </div>
-
           </article>
-
         </div>
-
       </section>
-
     </div>
-
   </div>
 
   <!-- JS -->
