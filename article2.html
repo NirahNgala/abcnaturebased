@@ -3,108 +3,736 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Centralised vs Community Nurseries: Finding the Right Model for Scale | Crescendo Insights</title>
+  <title>
+    Centralised vs Community Nurseries:
+    Finding the Right Model for Scale | Crescendo Insights
+  </title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
   <style>
-    *{margin:0;padding:0;box-sizing:border-box;}
+
+    :root{
+      --emerald:#059669;
+      --forest:#065f46;
+      --cream:#f8faf7;
+      --warm:#fffdf8;
+      --text:#1e293b;
+      --muted:#64748b;
+      --border:#dbe4dc;
+      --blue:#0891b2;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
-      font-family:'Satoshi', sans-serif;
-      background:#050505;
-      color:#fff;
-      line-height:1.8;
+      font-family:'Inter',sans-serif;
+      background:linear-gradient(to bottom,#f8faf7,#ffffff);
+      color:var(--text);
+      line-height:1.9;
     }
-    .article-container{
-      max-width:860px;
-      margin:120px auto 80px;
-      padding:0 7%;
+
+    a{
+      text-decoration:none;
+      color:inherit;
     }
-    .article-meta{
-      display:flex;
-      gap:20px;
-      color:#b5d66f;
-      font-size:0.95rem;
-      margin-bottom:24px;
-    }
-    .article-title{
-      font-size:3.2rem;
-      line-height:1.1;
-      margin-bottom:28px;
-      font-weight:600;
-    }
-    .article-image{
+
+    img{
       width:100%;
-      border-radius:28px;
-      margin:40px 0;
-      overflow:hidden;
-      box-shadow:0 20px 40px rgba(0,0,0,0.6);
+      display:block;
     }
-    .article-content{
-      font-size:1.1rem;
-      color:#e0e0e0;
+
+    /* ================= PROGRESS BAR ================= */
+
+    .progress-bar{
+      position:fixed;
+      top:0;
+      left:0;
+      width:0%;
+      height:4px;
+
+      background:
+        linear-gradient(
+          to right,
+          #059669,
+          #10b981
+        );
+
+      z-index:9999;
     }
-    .article-content h2{
+
+    /* ================= NAVBAR ================= */
+
+    nav{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:1000;
+
+      padding:22px 7%;
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+
+      background:rgba(255,255,255,.82);
+
+      backdrop-filter:blur(16px);
+
+      border-bottom:1px solid rgba(5,150,105,.08);
+    }
+
+    .logo{
       font-size:1.8rem;
-      margin:50px 0 20px;
-      color:#b5d66f;
+      font-weight:700;
+      color:var(--forest);
+      letter-spacing:2px;
     }
+
     .back-btn{
       display:inline-flex;
       align-items:center;
       gap:10px;
-      color:#b5d66f;
-      font-weight:500;
-      margin-bottom:40px;
-      text-decoration:none;
+
+      color:var(--emerald);
+
+      font-weight:600;
+
+      transition:.3s;
     }
+
+    .back-btn:hover{
+      transform:translateX(-4px);
+    }
+
+    /* ================= CONTAINER ================= */
+
+    .article-container{
+      max-width:950px;
+
+      margin:120px auto 100px;
+
+      background:white;
+
+      border-radius:32px;
+
+      overflow:hidden;
+
+      border:1px solid rgba(5,150,105,.08);
+
+      box-shadow:
+        0 10px 30px rgba(5,150,105,.05),
+        0 30px 80px rgba(15,23,42,.06);
+    }
+
+    /* ================= HERO ================= */
+
+    .hero{
+      min-height:500px;
+
+      background:
+        linear-gradient(
+          rgba(5,150,105,.45),
+          rgba(15,23,42,.28)
+        ),
+        url('ASSETS/Nursery.jpeg') center/cover no-repeat;
+
+      display:flex;
+      align-items:flex-end;
+
+      padding:80px 8%;
+
+      position:relative;
+    }
+
+    .hero::after{
+      content:"";
+
+      position:absolute;
+      inset:0;
+
+      background:
+        linear-gradient(
+          to top,
+          rgba(255,255,255,.12),
+          transparent
+        );
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      max-width:760px;
+    }
+
+    .hero-tag{
+      display:inline-block;
+
+      padding:10px 18px;
+
+      background:rgba(255,255,255,.15);
+
+      backdrop-filter:blur(12px);
+
+      border-radius:50px;
+
+      color:white;
+
+      margin-bottom:24px;
+
+      font-size:.9rem;
+    }
+
+    .hero h1{
+      font-family:'Playfair Display',serif;
+
+      font-size:clamp(2.8rem,6vw,4.8rem);
+
+      line-height:1.05;
+
+      color:white;
+
+      margin-bottom:28px;
+
+      text-shadow:0 10px 35px rgba(0,0,0,.25);
+    }
+
+    /* ================= META ================= */
+
+    .article-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:18px;
+    }
+
+    .article-meta span{
+      background:rgba(255,255,255,.16);
+
+      backdrop-filter:blur(12px);
+
+      color:white;
+
+      padding:10px 16px;
+
+      border-radius:50px;
+
+      font-size:.92rem;
+    }
+
+    /* ================= CONTENT ================= */
+
+    .content-wrapper{
+      padding:70px 9%;
+    }
+
+    .article-content{
+      font-size:1.12rem;
+      color:var(--text);
+    }
+
+    .article-content p{
+      margin-bottom:28px;
+    }
+
+    .article-content h2{
+      font-family:'Playfair Display',serif;
+
+      font-size:2rem;
+
+      margin:70px 0 24px;
+
+      color:var(--forest);
+
+      line-height:1.2;
+    }
+
+    /* ================= INFO BLOCK ================= */
+
+    .info-card{
+      margin:45px 0;
+
+      padding:35px;
+
+      border-radius:24px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #ecfdf5,
+          #f0fdf4
+        );
+
+      border:1px solid #bbf7d0;
+
+      box-shadow:
+        0 10px 30px rgba(5,150,105,.06);
+    }
+
+    /* ================= COMPARISON GRID ================= */
+
+    .comparison-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:24px;
+
+      margin:50px 0;
+    }
+
+    .comparison-card{
+      background:white;
+
+      border:1px solid var(--border);
+
+      border-radius:24px;
+
+      padding:35px;
+
+      box-shadow:
+        0 10px 30px rgba(15,23,42,.04);
+
+      transition:.4s;
+    }
+
+    .comparison-card:hover{
+      transform:translateY(-8px);
+    }
+
+    .comparison-card i{
+      font-size:2rem;
+      color:var(--emerald);
+      margin-bottom:20px;
+    }
+
+    .comparison-card h3{
+      margin-bottom:16px;
+      font-size:1.4rem;
+      color:var(--forest);
+    }
+
+    .comparison-card p{
+      color:var(--muted);
+    }
+
+    /* ================= QUOTE ================= */
+
+    .quote{
+      margin:70px 0;
+
+      padding:45px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(8,145,178,.08),
+          rgba(5,150,105,.08)
+        );
+
+      border-left:6px solid var(--emerald);
+
+      border-radius:24px;
+
+      font-style:italic;
+
+      font-size:1.3rem;
+
+      line-height:1.7;
+
+      position:relative;
+    }
+
+    .quote::before{
+      content:"“";
+
+      position:absolute;
+
+      top:-15px;
+      left:20px;
+
+      font-size:6rem;
+
+      color:rgba(5,150,105,.12);
+
+      font-family:'Playfair Display',serif;
+    }
+
+    /* ================= CTA ================= */
+
+    .cta{
+      margin-top:80px;
+
+      padding:60px 40px;
+
+      border-radius:30px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #059669,
+          #047857
+        );
+
+      text-align:center;
+
+      color:white;
+
+      position:relative;
+
+      overflow:hidden;
+    }
+
+    .cta::before{
+      content:"";
+
+      position:absolute;
+      inset:0;
+
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(255,255,255,.22),
+          transparent 40%
+        );
+    }
+
+    .cta h3{
+      font-size:2rem;
+      margin-bottom:18px;
+      position:relative;
+      z-index:2;
+    }
+
+    .cta p{
+      max-width:650px;
+      margin:auto;
+      position:relative;
+      z-index:2;
+    }
+
+    .cta a{
+      display:inline-block;
+
+      margin-top:28px;
+
+      padding:16px 34px;
+
+      border-radius:50px;
+
+      background:white;
+
+      color:#047857;
+
+      font-weight:600;
+
+      transition:.3s;
+
+      position:relative;
+      z-index:2;
+    }
+
+    .cta a:hover{
+      transform:translateY(-4px);
+    }
+
+    /* ================= RESPONSIVE ================= */
+
     @media(max-width:768px){
-      .article-title{font-size:2.4rem;}
-      .article-container{margin-top:100px;}
+
+      nav{
+        padding:18px 7%;
+      }
+
+      .article-container{
+        margin:95px 0 0;
+        border-radius:0;
+      }
+
+      .hero{
+        min-height:420px;
+        padding:60px 8%;
+      }
+
+      .hero h1{
+        font-size:2.5rem;
+      }
+
+      .content-wrapper{
+        padding:55px 8%;
+      }
+
+      .quote{
+        padding:35px 28px;
+        font-size:1.15rem;
+      }
+
     }
+
   </style>
 </head>
 <body>
 
-  <nav style="position:fixed; top:0; left:0; width:100%; z-index:1000; padding:24px 7%; display:flex; justify-content:space-between; align-items:center; background:rgba(0,0,0,0.8); backdrop-filter:blur(12px);">
-    <div class="logo" style="font-size:2rem; letter-spacing:5px;">CRESCENDO</div>
-    <a href="blog.html" class="back-btn">← Back to Insights</a>
+  <!-- PROGRESS -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- NAVBAR -->
+  <nav>
+
+    <div class="logo">
+      CRESCENDO
+    </div>
+
+    <a href="blog.html" class="back-btn">
+      <i class="fa-solid fa-arrow-left"></i>
+      Back to Insights
+    </a>
+
   </nav>
 
+  <!-- ARTICLE -->
   <div class="article-container">
-    <a href="blog.html" class="back-btn">← Back to All Articles</a>
 
-    <div class="article-meta">
-      <span><i class="fa-solid fa-seedling"></i> Propagation</span>
-      <span><i class="fa-regular fa-clock"></i> 6 min read</span>
-      <span><i class="fa-solid fa-calendar"></i> May 2026</span>
+    <!-- HERO -->
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <div class="hero-tag">
+          Propagation • Nursery Systems • East Africa
+        </div>
+
+        <h1>
+          Centralised vs Community Nurseries:
+          Finding the Right Model for Scale
+        </h1>
+
+        <div class="article-meta">
+
+          <span>
+            <i class="fa-solid fa-seedling"></i>
+            Propagation
+          </span>
+
+          <span>
+            <i class="fa-regular fa-clock"></i>
+            6 min read
+          </span>
+
+          <span>
+            <i class="fa-solid fa-calendar"></i>
+            May 2026
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CONTENT -->
+    <div class="content-wrapper">
+
+      <div class="article-content">
+
+        <p>
+          When scaling tree planting efforts in Kenya,
+          one of the most important strategic decisions
+          is choosing the right nursery model.
+          Should organisations invest in large centralised nurseries
+          or distributed community-based systems?
+        </p>
+
+        <div class="info-card">
+
+          <strong>🌱 Key Insight:</strong>
+
+          The most resilient restoration systems often combine
+          operational efficiency with strong local participation.
+
+        </div>
+
+        <!-- COMPARISON -->
+        <div class="comparison-grid">
+
+          <div class="comparison-card">
+
+            <i class="fa-solid fa-industry"></i>
+
+            <h3>
+              Centralised Nurseries
+            </h3>
+
+            <p>
+              Better quality control, efficient production systems,
+              elite propagation management, and large-scale consistency.
+            </p>
+
+          </div>
+
+          <div class="comparison-card">
+
+            <i class="fa-solid fa-people-group"></i>
+
+            <h3>
+              Community Nurseries
+            </h3>
+
+            <p>
+              Stronger local ownership, employment creation,
+              reduced transport distances, and community participation.
+            </p>
+
+          </div>
+
+        </div>
+
+        <h2>
+          Centralised Nurseries:
+          Quality & Efficiency at Scale
+        </h2>
+
+        <p>
+          Centralised facilities offer better control over genetics,
+          production protocols, hardening processes,
+          and quality assurance systems.
+        </p>
+
+        <p>
+          They are ideal for producing hundreds of thousands
+          or even millions of seedlings efficiently while maintaining
+          consistency across large programmes.
+        </p>
+
+        <h2>
+          Community Nurseries:
+          Local Ownership & Employment
+        </h2>
+
+        <p>
+          Community nurseries create local jobs,
+          build ownership, and reduce transport distances
+          between nursery and planting site.
+        </p>
+
+        <p>
+          However, they can struggle with technical consistency,
+          quality control, and economies of scale
+          without strong support systems.
+        </p>
+
+        <h2>
+          The Hybrid Model:
+          Best of Both Worlds
+        </h2>
+
+        <p>
+          At Crescendo Green,
+          we advocate for hybrid systems —
+          centralised mother nurseries combined with
+          strategically supported satellite community nurseries.
+        </p>
+
+        <p>
+          This approach delivers both operational scale
+          and strong local economic participation.
+        </p>
+
+        <div class="quote">
+
+          The future of large-scale restoration
+          lies in smart hybrid nursery systems.
+
+        </div>
+
+        <h2>
+          What Makes Hybrid Systems Successful?
+        </h2>
+
+        <p>
+          Successful hybrid systems depend on:
+        </p>
+
+        <ul style="margin-left:20px; margin-top:20px;">
+
+          <li>
+            Strong training programmes
+          </li>
+
+          <li>
+            Shared supply chains for inputs
+          </li>
+
+          <li>
+            Consistent technical oversight
+          </li>
+
+          <li>
+            Clear quality standards across all sites
+          </li>
+
+          <li>
+            Reliable monitoring and reporting systems
+          </li>
+
+        </ul>
+
+        <!-- CTA -->
+        <div class="cta">
+
+          <h3>
+            Building Smarter Nursery Systems
+          </h3>
+
+          <p>
+            Crescendo Green supports scalable propagation systems,
+            operational nursery planning,
+            and restoration delivery across East Africa.
+          </p>
+
+          <a href="contact.html">
+            Talk to Our Team
+          </a>
+
+        </div>
+
+      </div>
+
     </div>
-    <h1 class="article-title">Centralised vs Community Nurseries: Finding the Right Model for Scale</h1>
 
-    <div class="article-image">
-      <img src="ASSETS/Nursery.jpeg" alt="Nursery Operations Kenya">
-    </div>
-
-    <div class="article-content">
-      <p>When scaling tree planting efforts in Kenya, one of the most important decisions is choosing the right nursery model. Should you go with large centralised nurseries or distributed community-based ones?</p>
-
-      <h2>Centralised Nurseries: Quality &amp; Efficiency at Scale</h2>
-      <p>Centralised facilities offer better control over genetics, production protocols, hardening processes, and quality assurance. They are ideal for producing hundreds of thousands or millions of high-quality seedlings efficiently.</p>
-
-      <h2>Community Nurseries: Local Ownership &amp; Employment</h2>
-      <p>Community nurseries create local jobs, build ownership, and reduce transport distances. However, they often struggle with consistency in quality, technical capacity, and economies of scale.</p>
-
-      <h2>The Hybrid Model: Best of Both Worlds</h2>
-      <p>At Crescendo Green, we advocate for hybrid systems — centralised mother nurseries for elite seedling production combined with well-supported satellite community nurseries. This approach delivers both scale and local benefits.</p>
-
-      <p>Key success factors include strong training programmes, consistent technical oversight, shared supply chains for inputs, and clear quality standards across all sites.</p>
-
-      <p style="margin-top:50px; text-align:center; font-style:italic; color:#b5d66f;">
-        “The future of large-scale restoration lies in smart hybrid nursery systems.”
-      </p>
-    </div>
   </div>
+
+  <!-- JS -->
+  <script>
+
+    window.addEventListener("scroll", () => {
+
+      const scrollTop =
+        document.documentElement.scrollTop;
+
+      const scrollHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+      const progress =
+        (scrollTop / scrollHeight) * 100;
+
+      document.getElementById("progressBar").style.width =
+        progress + "%";
+
+    });
+
+  </script>
 
 </body>
 </html>

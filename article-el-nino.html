@@ -5,210 +5,802 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>El Niño 2026: Why Kenya’s Tree-Planting Sector Should Prepare Now | Crescendo Insights</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
   <style>
+
+    :root{
+      --emerald:#059669;
+      --emerald-light:#d1fae5;
+      --forest:#065f46;
+      --cream:#f8faf7;
+      --warm:#fffdf8;
+      --text:#1e293b;
+      --muted:#64748b;
+      --border:#dbe4dc;
+      --blue:#0891b2;
+      --orange:#ea580c;
+    }
+
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
     }
 
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
-      font-family:'Satoshi', sans-serif;
-      background:#050505;
-      color:#fff;
-      line-height:1.8;
+      font-family:'Inter',sans-serif;
+      background:linear-gradient(to bottom,#f8faf7,#ffffff);
+      color:var(--text);
+      line-height:1.9;
     }
 
-    .article-container{
-      max-width:860px;
-      margin:120px auto 80px;
-      padding:0 7%;
+    a{
+      text-decoration:none;
+      color:inherit;
     }
 
-    .article-header{
-      margin-bottom:60px;
-    }
-
-    .article-meta{
-      display:flex;
-      gap:20px;
-      color:#b5d66f;
-      font-size:0.95rem;
-      margin-bottom:24px;
-    }
-    .article-title{
-      font-size:3.2rem;
-      line-height:1.1;
-      margin-bottom:28px;
-      font-weight:600;
-    }
-    .article-image{
-      width:100%;
-      border-radius:28px;
-      margin:40px 0;
-      overflow:hidden;
-      box-shadow:0 20px 40px rgba(0,0,0,0.6);
-    }
-
-    .article-image img{
+    img{
       width:100%;
       display:block;
     }
 
-    .article-content{
-      font-size:1.1rem;
-      color:#e0e0e0;
+    /* ================= PROGRESS BAR ================= */
+
+    .progress-bar{
+      position:fixed;
+      top:0;
+      left:0;
+      height:4px;
+      width:0%;
+      background:linear-gradient(to right,#059669,#10b981);
+      z-index:9999;
     }
-    .article-content h2{
-      font-size:1.8rem;
-      margin:50px 0 20px;
-      color:#b5d66f;
+
+    /* ================= ARTICLE CONTAINER ================= */
+
+    .article-container{
+      max-width:920px;
+      margin:70px auto 100px;
+      background:white;
+      border-radius:32px;
+      overflow:hidden;
+
+      box-shadow:
+        0 10px 30px rgba(5,150,105,.06),
+        0 30px 80px rgba(15,23,42,.06);
+
+      border:1px solid rgba(5,150,105,.08);
     }
-    .back-btn{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      color:#b5d66f;
-      font-weight:500;
-      margin-bottom:40px;
-      text-decoration:none;
-    }
-     .back-btn:hover{
-      gap:16px;
-    }
-    .share-buttons{
-      margin:60px 0 40px;
-      padding:30px 0;
-      border-top:1px solid rgba(255,255,255,0.1);
-      border-bottom:1px solid rgba(255,255,255,0.1);
+
+    /* ================= HERO ================= */
+
+    .hero{
+      min-height:520px;
+
+      background:
+        linear-gradient(
+          rgba(5,150,105,.50),
+          rgba(15,23,42,.35)
+        ),
+        url('ASSETS/Malia.jpeg') center/cover no-repeat;
+
       display:flex;
-      gap:16px;
+      align-items:flex-end;
+
+      padding:80px 8%;
+
+      position:relative;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+
+      background:
+        linear-gradient(
+          to top,
+          rgba(255,255,255,.15),
+          transparent
+        );
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      max-width:760px;
+    }
+
+    .hero-tag{
+      display:inline-block;
+
+      padding:10px 18px;
+
+      background:rgba(255,255,255,.16);
+
+      backdrop-filter:blur(12px);
+
+      border-radius:50px;
+
+      color:white;
+
+      font-size:.9rem;
+
+      margin-bottom:24px;
+    }
+
+    .hero-content h1{
+      font-family:'Playfair Display',serif;
+
+      font-size:clamp(2.8rem,6vw,4.8rem);
+
+      line-height:1.05;
+
+      color:white;
+
+      margin-bottom:24px;
+
+      text-shadow:0 8px 30px rgba(0,0,0,.25);
+    }
+
+    /* ================= META ================= */
+
+    .article-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:18px;
+
+      color:white;
+
+      font-size:.95rem;
+    }
+
+    .article-meta span{
+      background:rgba(255,255,255,.15);
+
+      backdrop-filter:blur(12px);
+
+      padding:10px 16px;
+
+      border-radius:50px;
+    }
+
+    /* ================= CONTENT ================= */
+
+    .content-wrapper{
+      padding:70px 9%;
+    }
+
+    .article-content{
+      font-size:1.12rem;
+      color:var(--text);
+    }
+
+    .article-content p{
+      margin-bottom:26px;
+    }
+
+    .article-content h2{
+      font-size:2rem;
+
+      margin:70px 0 24px;
+
+      color:var(--forest);
+
+      font-family:'Playfair Display',serif;
+
+      line-height:1.2;
+    }
+
+    .highlight{
+      color:var(--blue);
+      font-weight:600;
+    }
+
+    /* ================= INFO CARD ================= */
+
+    .card{
+      background:linear-gradient(
+        135deg,
+        #ecfdf5,
+        #f0fdf4
+      );
+
+      border:1px solid #bbf7d0;
+
+      padding:32px;
+
+      border-radius:22px;
+
+      margin:42px 0;
+
+      box-shadow:
+        0 10px 30px rgba(5,150,105,.06);
+    }
+
+    /* ================= LIST ================= */
+
+    ul{
+      margin:25px 0;
+    }
+
+    ul li{
+      margin:18px 0;
+
+      list-style:none;
+
+      position:relative;
+
+      padding-left:36px;
+
+      color:#334155;
+    }
+
+    ul li::before{
+      content:"🌱";
+      position:absolute;
+      left:0;
+      top:0;
+    }
+
+    /* ================= QUOTE ================= */
+
+    .quote{
+      margin:70px 0;
+
+      padding:45px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(8,145,178,.08),
+          rgba(5,150,105,.08)
+        );
+
+      border-left:6px solid var(--emerald);
+
+      border-radius:24px;
+
+      font-style:italic;
+
+      font-size:1.35rem;
+
+      line-height:1.7;
+
+      color:#0f172a;
+
+      position:relative;
+    }
+
+    .quote::before{
+      content:"“";
+
+      position:absolute;
+
+      top:-15px;
+      left:20px;
+
+      font-size:6rem;
+
+      color:rgba(5,150,105,.15);
+
+      font-family:'Playfair Display',serif;
+    }
+
+    /* ================= STATS ================= */
+
+    .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:20px;
+      margin:60px 0;
+    }
+
+    .stat-card{
+      background:white;
+
+      border:1px solid var(--border);
+
+      border-radius:24px;
+
+      padding:35px 25px;
+
+      text-align:center;
+
+      box-shadow:0 10px 30px rgba(15,23,42,.04);
+    }
+
+    .stat-card h3{
+      font-size:2.3rem;
+      color:var(--emerald);
+      margin-bottom:10px;
+    }
+
+    .stat-card p{
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    /* ================= CTA ================= */
+
+    .final-cta{
+      text-align:center;
+
+      margin:80px 0 30px;
+
+      padding:60px 40px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #059669,
+          #047857
+        );
+
+      border-radius:30px;
+
+      color:white;
+
+      position:relative;
+
+      overflow:hidden;
+    }
+
+    .final-cta::before{
+      content:"";
+
+      position:absolute;
+      inset:0;
+
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(255,255,255,.25),
+          transparent 40%
+        );
+    }
+
+    .final-cta h3{
+      font-size:2rem;
+      margin-bottom:18px;
+      position:relative;
+      z-index:2;
+    }
+
+    .final-cta p{
+      position:relative;
+      z-index:2;
+      max-width:650px;
+      margin:auto;
+    }
+
+    .final-cta a{
+      display:inline-block;
+
+      margin-top:28px;
+
+      background:white;
+
+      color:#047857;
+
+      padding:16px 34px;
+
+      border-radius:50px;
+
+      font-weight:600;
+
+      transition:.3s;
+
+      position:relative;
+      z-index:2;
+    }
+
+    .final-cta a:hover{
+      transform:translateY(-4px);
+    }
+
+    /* ================= SHARE ================= */
+
+    .share-buttons{
+      margin-top:60px;
+
+      padding-top:35px;
+
+      border-top:1px solid var(--border);
+
+      display:flex;
+      gap:14px;
       flex-wrap:wrap;
     }
+
     .share-btn{
+      padding:14px 24px;
+
+      background:white;
+
+      color:#1e293b;
+
+      border:1px solid #dbe4dc;
+
+      border-radius:50px;
+
       display:flex;
       align-items:center;
-      gap:8px;
-      padding:12px 24px;
-      background:#1a1a1a;
-      color:#fff;
-      border-radius:50px;
-      text-decoration:none;
+      gap:10px;
+
       transition:.3s;
-      font-size:0.95rem;
     }
+
     .share-btn:hover{
-      background:#b5d66f;
-      color:#000;
+      background:var(--emerald);
+
+      color:white;
+
+      border-color:var(--emerald);
+
+      transform:translateY(-3px);
     }
+
+    /* ================= RELATED ================= */
+
+    .related{
+      margin-top:90px;
+    }
+
+    .related h2{
+      margin-bottom:30px;
+    }
+
+    .related-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:24px;
+    }
+
+    .related-card{
+      background:white;
+
+      border:1px solid var(--border);
+
+      border-radius:24px;
+
+      overflow:hidden;
+
+      transition:.4s;
+
+      box-shadow:0 10px 30px rgba(15,23,42,.04);
+    }
+
+    .related-card:hover{
+      transform:translateY(-8px);
+    }
+
+    .related-card img{
+      height:200px;
+      object-fit:cover;
+    }
+
+    .related-content{
+      padding:24px;
+    }
+
+    .related-content h3{
+      font-size:1.2rem;
+      margin-bottom:12px;
+      line-height:1.4;
+    }
+
+    .related-content p{
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    /* ================= RESPONSIVE ================= */
+
     @media(max-width:768px){
-      .article-title{
-        font-size:2.4rem;
-      }
+
       .article-container{
-        margin-top:100px;
+        border-radius:0;
+        margin:0;
       }
+
+      .hero{
+        min-height:420px;
+        padding:60px 8%;
+      }
+
+      .hero-content h1{
+        font-size:2.5rem;
+      }
+
+      .content-wrapper{
+        padding:55px 8%;
+      }
+
+      .quote{
+        padding:35px 28px;
+        font-size:1.15rem;
+      }
+
+      .stats-grid{
+        grid-template-columns:1fr;
+      }
+
     }
+
   </style>
 </head>
 <body>
 
-  <nav style="position:fixed; top:0; left:0; width:100%; z-index:1000; padding:24px 7%; display:flex; justify-content:space-between; align-items:center; background:rgba(0,0,0,0.8); backdrop-filter:blur(12px);">
-    <div class="logo" style="font-size:2rem; letter-spacing:5px;">CRESCENDO</div>
-    <a href="blog.html" class="back-btn">← Back to Insights</a>
-  </nav>
+  <!-- Progress Bar -->
+  <div class="progress-bar" id="progressBar"></div>
 
   <div class="article-container">
-    <a href="blog.html" class="back-btn">← Back to All Articles</a>
 
-    <div class="article-meta">
-      <span><i class="fa-solid fa-cloud-rain"></i> Climate Systems</span>
-      <span><i class="fa-regular fa-clock"></i> 8 min read</span>
-      <span><i class="fa-solid fa-calendar"></i> May 2026</span>
+    <!-- HERO -->
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <div class="hero-tag">
+          Climate Systems • Restoration • East Africa
+        </div>
+
+        <h1>
+          El Niño 2026:
+          Why Kenya’s Tree-Planting Sector Should Prepare Now
+        </h1>
+
+        <div class="article-meta">
+
+          <span>
+            <i class="fa-solid fa-cloud-rain"></i>
+            Climate Systems
+          </span>
+
+          <span>
+            <i class="fa-regular fa-clock"></i>
+            8 min read
+          </span>
+
+          <span>
+            <i class="fa-solid fa-calendar"></i>
+            May 2026
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CONTENT -->
+    <div class="content-wrapper">
+
+      <div class="article-content">
+
+        <p>
+          Climate agencies are increasingly confident that
+          <strong>El Niño conditions</strong> are likely to develop in 2026.
+          NOAA’s Climate Prediction Center currently estimates an 82% probability
+          of El Niño emerging during May–July 2026.
+        </p>
+
+        <p>
+          For Kenya and the Horn of Africa, this brings real opportunity —
+          especially during the short rains.
+          But <span class="highlight">rainfall alone is not enough</span>.
+        </p>
+
+        <h2>
+          Rainfall Creates Opportunity — Preparation Wins
+        </h2>
+
+        <p>
+          Well-timed rains can dramatically improve seedling survival.
+          However, success depends on having strong, hardened seedlings ready,
+          sites prepared, and teams fully equipped.
+        </p>
+
+        <div class="card">
+
+          <strong>🌱 Key Reminder:</strong>
+
+          The best planting seasons are won in the months before the first rain falls.
+
+        </div>
+
+        <!-- STATS -->
+        <div class="stats-grid">
+
+          <div class="stat-card">
+            <h3>82%</h3>
+            <p>Probability of El Niño development in 2026</p>
+          </div>
+
+          <div class="stat-card">
+            <h3>2x</h3>
+            <p>Higher survival rates with proper planning</p>
+          </div>
+
+          <div class="stat-card">
+            <h3>2026</h3>
+            <p>Potential landmark restoration season</p>
+          </div>
+
+        </div>
+
+        <h2>
+          El Niño Also Brings Risks
+        </h2>
+
+        <p>
+          Heavy downpours can flood sites, damage roads,
+          increase erosion, and create disease pressure in nurseries.
+          Smart planning turns these risks into manageable challenges.
+        </p>
+
+        <h2>
+          Why You Should Start Preparing Now
+        </h2>
+
+        <ul>
+          <li>Reserve nursery capacity early</li>
+          <li>Secure quality seeds and finalise species lists</li>
+          <li>Plan logistics, transport and field teams</li>
+          <li>Budget for proper aftercare and monitoring</li>
+        </ul>
+
+        <h2>
+          Quality Seedlings Make the Difference
+        </h2>
+
+        <p>
+          At <strong>Crescendo Green</strong>,
+          we focus on producing robust, well-rooted seedlings
+          that survive and thrive in real field conditions.
+        </p>
+
+        <div class="quote">
+
+          A favourable season can be missed if the seedlings are not ready.
+          But with the right preparation, 2026 could become
+          a landmark year for restoration in Kenya.
+
+        </div>
+
+        <h2>
+          Turn Planting Into a Professional Operation
+        </h2>
+
+        <p>
+          Large-scale success requires more than just planting days —
+          it needs strategy, technical oversight, and strong follow-up.
+        </p>
+
+        <!-- CTA -->
+        <div class="final-cta">
+
+          <h3>
+            Ready to Prepare for El Niño 2026?
+          </h3>
+
+          <p>
+            Work with Crescendo Green to build scalable,
+            climate-ready restoration systems across East Africa.
+          </p>
+
+          <a href="contact.html">
+            Contact Crescendo Green
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- SHARE -->
+      <div class="share-buttons">
+
+        <a href="#" class="share-btn">
+          <i class="fa-brands fa-linkedin"></i>
+          LinkedIn
+        </a>
+
+        <a href="#" class="share-btn">
+          <i class="fa-brands fa-x-twitter"></i>
+          X
+        </a>
+
+        <a href="#" class="share-btn">
+          <i class="fa-brands fa-whatsapp"></i>
+          WhatsApp
+        </a>
+
+      </div>
+
+      <!-- RELATED -->
+      <section class="related">
+
+        <h2>
+          Related Insights
+        </h2>
+
+        <div class="related-grid">
+
+          <article class="related-card">
+
+            <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1600&auto=format&fit=crop">
+
+            <div class="related-content">
+
+              <h3>
+                Centralised vs Community Nurseries
+              </h3>
+
+              <p>
+                Finding scalable nursery systems for East Africa.
+              </p>
+
+            </div>
+
+          </article>
+
+          <article class="related-card">
+
+            <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1600&auto=format&fit=crop">
+
+            <div class="related-content">
+
+              <h3>
+                Why Most Tree Planting Projects Fail
+              </h3>
+
+              <p>
+                Operational lessons from restoration systems.
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </section>
+
     </div>
-    <h1 class="article-title">El Niño 2026: Why Kenya’s Tree-Planting Sector Should Prepare Now</h1>
 
-    <div class="article-image">
-      <img src="ASSETS/Malia.jpeg" alt="El Niño 2026 - Kenya Tree Planting">
-    </div>
-
-    <div class="article-content">
-      <p>Climate agencies are increasingly confident that <strong>El Niño conditions</strong> are likely to develop in 2026. NOAA’s Climate Prediction Center currently estimates an 82% probability of El Niño emerging during May–July 2026, with a 96% probability that conditions continue through December 2026–February 2027.</p>
-
-      <p>For Kenya and the wider Horn of Africa, this is significant. El Niño is often associated with increased rainfall in parts of the region, especially during the short-rains season. However, this does not mean uniform or guaranteed good rains across all areas.</p>
-
-      <h2>Rainfall Creates Opportunity — Preparation Determines Success</h2>
-      <p>For forestry, agroforestry, and restoration projects, good rainfall is one of the most important success factors. It improves seedling establishment, reduces early mortality, and supports strong root development.</p>
-
-      <p>But <span class="highlight">tree planting success is not created by rainfall alone</span>.</p>
-
-      <p>Seedlings must be ready before the rains arrive — well-rooted, properly hardened, and correctly sized. Planting sites, access roads, transport, field teams, and aftercare systems all need to be prepared in advance.</p>
-
-      <h2>El Niño Can Also Bring Risks</h2>
-      <p>Heavy rainfall can damage roads, flood sites, increase erosion, and wash away poorly planted seedlings. In nurseries, prolonged wet conditions can raise disease pressure.</p>
-
-      <p>Organisations should therefore treat the 2026 El Niño as a reason for <strong>better planning</strong>, not rushed planting.</p>
-
-      <h2>Why Organisations Should Act Now</h2>
-      <p>The coming months are critical. Large-scale tree planting programmes require significant lead time for:</p>
-      <ul style="margin:25px 0 35px; padding-left:25px;">
-        <li>Reserving nursery capacity</li>
-        <li>Confirming species lists and seed sourcing</li>
-        <li>Site preparation and logistics planning</li>
-        <li>Budgeting for aftercare and monitoring</li>
-      </ul>
-
-      <h2>The Importance of Quality Seedlings</h2>
-      <p>At <strong>Crescendo Green</strong>, we believe seedling quality is one of the most important determinants of success. A good seedling has a healthy root system, strong stem, and sufficient hardening to survive field conditions.</p>
-
-      <h2>Planting Should Be Planned as an Operation, Not an Event</h2>
-      <p>Professional planting programmes require nursery planning, field logistics, technical supervision, and robust post-planting management — especially for carbon, conservation, and agroforestry projects.</p>
-
-      <p style="margin-top:50px; font-style:italic; color:#b5d66f;">
-        “A favourable season can be missed if the seedlings are not ready. But with the right preparation, 2026 could become an important year for tree establishment and restoration in Kenya.”
-      </p>
-
-      <p><strong>At Crescendo Green</strong>, we help large-scale projects prepare effectively through high-quality seedling production, species planning, and full operational support.</p>
-
-      <p style="margin-top:50px; text-align:center; font-size:1.3rem;">
-        <strong>Don’t wait for the rains to start.</strong><br>
-        Start preparing now.
-      </p>
-    </div>
-
-    <!-- SHARE BUTTONS -->
-    <div class="share-buttons">
-      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://crescendogreen.com/article-el-nino.html" target="_blank" class="share-btn">
-        <i class="fa-brands fa-linkedin"></i> Share on LinkedIn
-      </a>
-      <a href="https://twitter.com/intent/tweet?url=https://crescendogreen.com/article-el-nino.html&text=El%20Ni%C3%B1o%202026%3A%20Why%20Kenya%E2%80%99s%20Tree-Planting%20Sector%20Should%20Prepare%20Now" target="_blank" class="share-btn">
-        <i class="fa-brands fa-x-twitter"></i> Share on X
-      </a>
-      <a href="https://wa.me/?text=El%20Ni%C3%B1o%202026%3A%20Why%20Kenya%E2%80%99s%20Tree-Planting%20Sector%20Should%20Prepare%20Now%20https://crescendogreen.com/article-el-nino.html" target="_blank" class="share-btn">
-        <i class="fa-brands fa-whatsapp"></i> WhatsApp
-      </a>
-      <a href="mailto:?subject=El Niño 2026 Article&body=Check out this insightful article: https://crescendogreen.com/article-el-nino.html" class="share-btn">
-        <i class="fa-solid fa-envelope"></i> Email
-      </a>
-    </div>
   </div>
 
+  <!-- JS -->
   <script>
-    // Simple scroll effect for navbar
-    window.addEventListener("scroll", function(){
-      const nav = document.querySelector("nav");
-      if(window.scrollY > 50){
-        nav.style.background = "rgba(0,0,0,0.95)";
-      }else{
-        nav.style.background = "rgba(0,0,0,0.8)";
-      }
+
+    // reading progress bar
+
+    window.addEventListener("scroll", () => {
+
+      const scrollTop = document.documentElement.scrollTop;
+
+      const scrollHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+      const progress = (scrollTop / scrollHeight) * 100;
+
+      document.getElementById("progressBar").style.width =
+        progress + "%";
+
     });
+
   </script>
+
 </body>
 </html>
