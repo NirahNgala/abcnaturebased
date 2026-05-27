@@ -131,14 +131,12 @@ section {
 }
 /* Hero Section */
 .hero {
-  min-height: 80vh;
+  min-height: 85vh;
+  position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: center;
   color: white;
-  text-align: left;
-  position: relative;
   padding-top: 80px;
 }
 .hero h1{
@@ -147,83 +145,95 @@ section {
   line-height: .95;
   letter-spacing: -0.04em;
 }
- .hero video{
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
-
-     .overlay{
-      position:absolute;
-      inset:0;
-      background:rgba(0,0,0,0.62);
-    }
-
-    .hero-content{
-      position:relative;
-      z-index:2;
-      max-width:760px;
-    }
-
-    .hero-tag{
-      color:#b5d66f;
-      margin-bottom:24px;
-      font-size:.9rem;
-      letter-spacing:3px;
-      text-transform:uppercase;
-    }
-
-    .hero h1{
-      font-family: var(--font-main);
-      font-size:clamp(4rem,8vw,7rem);
-      line-height:0.95;
-      margin-bottom:28px;
-      font-weight:600;
-    }
-
-    .hero p{
-      max-width:600px;
-      color:#d4d4d4;
-      font-size:1.1rem;
-      line-height:1.8;
-    }
-
-
-.hero-buttons{
-  display:flex;
-  gap:16px;
-  margin-top:28px;
-  flex-wrap:wrap;
+.hero video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
 }
 
-/* Primary button */
-.btn-primary{
-  padding:14px 26px;
-  background:#8fae45;
-  color:#000;
-  border-radius:50px;
-  font-weight:600;
-  transition:.3s;
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 2;
 }
 
-.btn-primary:hover{
-  transform:translateY(-3px);
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 760px;
+  padding: 0 20px;
+  margin: 0 auto;
 }
 
-/* Secondary button */
-.btn-secondary{
-  padding:14px 26px;
-  border:1px solid #8fae45;
-  color:#fff;
-  border-radius:50px;
-  transition:.3s;
+.hero-tag {
+  color: #b5d66f;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
-.btn-secondary:hover{
-  background:#8fae45;
-  color:#000;
+.hero h1 {
+  font-size: clamp(3.2rem, 8vw, 6.5rem);
+  line-height: 1.05;
+  margin-bottom: 24px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.hero p {
+  max-width: 580px;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #e5e5e5;
+  margin-bottom: 32px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn-primary {
+  padding: 16px 32px;
+  background: #8fae45;
+  color: #000;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(143, 174, 69, 0.3);
+}
+
+.btn-secondary {
+  padding: 16px 32px;
+  border: 2px solid #8fae45;
+  color: #fff;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-secondary:hover {
+  background: #8fae45;
+  color: #000;
+  transform: translateY(-4px);
 }
 
 /* Responsive */
@@ -238,40 +248,67 @@ section {
   }
 }
 
-/* Make image smaller on mobile */
+/* ====================== MOBILE RESPONSIVE ====================== */
 @media (max-width: 768px) {
-  .hero-slideshow {
-    height: 70vh;           /* Smaller height on mobile */
-    top: 0;
+  .hero {
+    min-height: 78vh;           /* Reduced slightly */
+    padding-top: 70px;
   }
 
-   .hero video{
-      height:70%;
-
-    }
-}
-
-
-/* Mobile Typography Fix */
-@media (max-width: 768px) {
-
-  .hero {
-    min-height: 60vh;
-    padding: 20px 10px;
+  .hero video {
+    height: 70%;               /* Keep full coverage but not oversized */
+    object-position: center;    /* Better framing on mobile */
   }
 
   .hero-content {
-    width: 100%;
-    max-width: 100%;
-    padding: 8px 6px;
-    border-radius: 6px;
+    text-align: center;
+    padding: 0 20px;
   }
 
   .hero h1 {
-    font-size: 2rem;
-    line-height: 1.15;
-    margin-bottom: 0.8rem;
+    font-size: clamp(2.6rem, 9vw, 3.8rem);
+    margin-bottom: 20px;
   }
+
+  .hero p {
+    font-size: 1.05rem;
+    margin-bottom: 28px;
+  }
+
+  .hero-buttons {
+    justify-content: center;     /* Center buttons */
+    gap: 12px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 14px 28px;
+    font-size: 1rem;
+    width: 60%;                 /* Full width on very small screens */
+    max-width: 260px;            /* But not too wide */
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+  .hero {
+    min-height: 55vh;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* Mobile Typography Fix */
+@media (max-width: 768px) {
 
   .hero-sub {
     font-size: 1rem;
@@ -740,6 +777,98 @@ section {
 
 .cta-section .container {
   animation: float 6s ease-in-out infinite;
+}
+/* ====================== NURSERY VIDEO SECTION ====================== */
+.nursery-video-section {
+  padding: 20px 10px;
+  background: #9bc3e658;
+}
+
+.nursery-video-section .section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.nursery-video-section h2 {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  margin-bottom: 8px;
+  color: #0f2a1f;
+}
+
+.nursery-video-section .subtitle {
+  font-size: 1.1rem;
+  color: #5e8c41;
+  font-weight: 500;
+}
+
+.video-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #000;
+}
+
+/* Optional play icon overlay when paused */
+.video-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 42, 31, 0.15);
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+
+.video-wrapper:hover::after {
+  opacity: 1;
+}
+
+/* Caption */
+.video-caption {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.05rem;
+  color: #444;
+}
+
+.video-caption p {
+  display: inline-block;
+  background: white;
+  padding: 12px 30px;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* ====================== MOBILE RESPONSIVE ====================== */
+@media (max-width: 768px) {
+  .nursery-video-section {
+    padding: 70px 15px;
+  }
+  
+  .video-wrapper {
+    border-radius: 16px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+  }
+  
+  .video-caption p {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nursery-video-section {
+    padding: 60px 12px;
+  }
 }
 
 /*PARTNER SECTION*/
