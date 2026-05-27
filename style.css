@@ -191,73 +191,6 @@ section {
     }
 
 
-
-
-/* CONTENT */
-
-/* Overlay only hind text be
-.hero-content {
-  position: relative;
-  z-index: 2;
-  display: inline-block;
-  padding: 35px 40px;
-  border-radius: 20px;
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(8px);
-  color: rgb(249, 249, 249);
-  margin-bottom: 40px;
-}
-.hero-content h1 {
-  font-size: 3.5rem;
-  line-height: 1.1;
-  margin-bottom: 16px;
-}
-
-.hero-content-wrapper {
-  position: relative;
-  z-index: 2;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px;
-  text-align: center;
-}
-
-.hero-sub {
-  font-size: clamp(1.25rem, 3vw, 1.6rem);
-  font-weight: 400;
-  margin-bottom: 1.5rem;
-  opacity: 0.95;
-}
-
-.hero-tagline {
-  font-size: 1.1rem;
-  opacity: 0.95;
-  color: rgb(154, 185, 240);
-  opacity: 0.85;
-  font-weight: 500;
-}
-/* Slideshow container 
-.hero-slideshow {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-}
-
-.hero-slideshow .slide {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transition: opacity 1.2s ease;
-}
-
-.hero-slideshow .slide.active {
-  opacity: 1;
-}
-*/
-
 .hero-buttons{
   display:flex;
   gap:16px;
@@ -311,9 +244,11 @@ section {
     height: 70vh;           /* Smaller height on mobile */
     top: 0;
   }
-  .hero {
-    min-height: auto;
-  }
+
+   .hero video{
+      height:70%;
+
+    }
 }
 
 
@@ -1341,5 +1276,221 @@ section {
   .footer-container {
     flex-direction: column;
     gap: 40px;
+  }
+}
+/* ====================== MOBILE RESPONSIVENESS ====================== */
+
+/* Navbar */
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 0 15px;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding-top: 40px;
+    transition: 0.4s;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  
+  .nav-menu.active {
+    left: 0;
+  }
+  
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 85vh;
+  }
+  
+  .hero h1 {
+    font-size: clamp(2.8rem, 9vw, 4.5rem);
+    line-height: 1.05;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+  }
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+@media (max-width: 640px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .image-wrapper {
+    height: 200px;
+  }
+}
+
+/* How We Deliver Diagram */
+.diagram-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .diagram-wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .arrow {
+    display: none;
+  }
+  
+  .step {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* Photo Collage */
+.collage {
+  display: flex;
+  overflow-x: auto;
+  gap: 12px;
+  padding: 10px 0;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.photo {
+  flex: 0 0 280px;
+  scroll-snap-align: start;
+}
+
+@media (max-width: 768px) {
+  .photo {
+    flex: 0 0 240px;
+  }
+}
+
+/* Carbon Section */
+@media (max-width: 768px) {
+  .carbon-section .grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+}
+
+/* Operations Map */
+#map {
+  height: 380px;
+  border-radius: 16px;
+}
+
+@media (max-width: 768px) {
+  .operations-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  #map {
+    height: 320px;
+  }
+}
+
+/* Partners Marquee */
+.marquee-track {
+  animation: scroll 25s linear infinite;
+}
+
+@media (max-width: 768px) {
+  .logo img {
+    height: 45px;
+  }
+  
+  .marquee-track {
+    gap: 40px;
+  }
+}
+
+/* Footer - 4 → 2 → 2 (as you requested) */
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px 30px;
+}
+
+@media (max-width: 992px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-brand {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);   /* Still 2 columns on small mobile */
+    gap: 35px 20px;
+  }
+  .footer-brand {
+    grid-column: span 2;
+  }
+}
+
+.footer-bottom {
+  flex-direction: column;
+  text-align: center;
+  gap: 15px;
+}
+
+/* General Mobile Improvements */
+@media (max-width: 768px) {
+  section {
+    padding: 60px 15px;
+  }
+  
+  h2 {
+    font-size: 2.2rem;
+  }
+  
+  .container {
+    padding: 0 15px;
   }
 }
