@@ -17,7 +17,7 @@
     
     <!-- Logo - Far Left -->
     <div class="nav-logo">
-      <a href="index.html">Crescendo.green</a>
+      <a href="index.html">CrescendoGreen</a>
     </div>
 
     <!-- Menu Links - Center -->
@@ -337,6 +337,17 @@ hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active');
   navMenu.classList.toggle('active');
 });
+</script>
+<script>document.querySelectorAll('.nav-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    navMenu.classList.remove('active');
+    hamburger.classList.remove('active');
+  });
+});
+
+if (window.scrollY > 120) {
+  navbar.classList.add('visible');
+}
 </script>
 </body>
 </html>
