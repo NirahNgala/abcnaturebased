@@ -86,7 +86,7 @@ scroll-behavior: smooth;
 }
 
 section {
-  scroll-margin-top: 90px;
+  scroll-margin-top:90px;
   padding-top: var(--section-spacing);
   padding-bottom: var(--section-spacing);
 }
@@ -240,13 +240,13 @@ section {
 /* Make image smaller on mobile */
 @media (max-width: 768px) {
   .hero {
-    min-height: 78vh;           /* Reduced slightly */
-    padding-top: 70px;
+    min-height: 58vh;           
+    padding-top: 50px;
   }
 
   .hero video {
-    height: 100%;               /* Keep full coverage but not oversized */
-    object-position: center;    /* Better framing on mobile */
+    height: 100%;               
+    object-position: center;    
   }
 
   .hero-content {
@@ -265,7 +265,7 @@ section {
   }
 
   .hero-buttons {
-    justify-content: center;     /* Center buttons */
+    justify-content: center;    
     gap: 12px;
   }
 
@@ -273,8 +273,8 @@ section {
   .btn-secondary {
     padding: 14px 28px;
     font-size: 1rem;
-    width: 60%;                 /* Full width on very small screens */
-    max-width: 260px;            /* But not too wide */
+    width: 60%;                
+    max-width: 160px;            
   }
 }
 
@@ -648,6 +648,7 @@ section {
 @media (max-width: 768px) {
   .diagram-wrapper {
     flex-direction: column;
+    gap: 25px;
   }
 
   .arrow {
@@ -766,7 +767,7 @@ section {
 /* ====================== NURSERY VIDEO SECTION ====================== */
 .nursery-video-section {
   padding: 20px 10px;
-  background: #9bc3e658;
+  background: #93979a58;
 }
 
 .nursery-video-section .section-header {

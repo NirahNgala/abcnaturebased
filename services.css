@@ -209,11 +209,16 @@ p {
 }
 
 .nav-menu a {
-  color: #2e3f38;
+  position: relative;
+  display: inline-block;
   text-decoration: none;
-  font-size: 1.02rem;
-  transition: all 0.3s;
-  white-space: nowrap;
+  color: #2e3f38;
+  font-weight: 500;
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+  width: 100%;
 }
 
 .nav-menu a:hover,
@@ -322,6 +327,16 @@ p {
   
   .nav-menu a {
     font-size: 1.1rem;
+  }
+}
+@media (max-width: 992px) {
+  .nav-menu a::after {
+    display: none;
+  }
+
+  .nav-menu a:hover,
+  .nav-menu a.active {
+    color: #2e7d32;
   }
 }
 /* ==================== SERVICES SECTION ==================== */
