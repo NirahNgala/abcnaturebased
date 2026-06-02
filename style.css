@@ -1553,7 +1553,7 @@ caption {
 
 @media (max-width: 768px) {
   .hero {
-    min-height: 55vh;
+    min-height: 35vh;
   }
   
   .hero h1 {
