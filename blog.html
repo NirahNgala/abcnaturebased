@@ -38,24 +38,44 @@
     /* ================= NAVBAR ================= */
     nav{
       position:fixed;
+      font-family: 'Satoshi', sans-serif;
       top:0;
       left:0;
       width:100%;
       z-index:1000;
-      padding:24px 7%;
+      padding: 16px;
       display:flex;
       justify-content:space-between;
       align-items:center;
       background:rgba(0,0,0,0.45);
-      backdrop-filter:blur(12px);
+      backdrop-filter:blur(14px);
       border-bottom:1px solid rgba(255,255,255,0.08);
     }
 
-    .logo{
-      font-size:2rem;
-      letter-spacing:5px;
-      font-family:'Satoshi', sans-serif;
-    }
+    /* ================= LOGO ================= */
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo a {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo img {
+  height: 80px;   /* adjust size here */
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* optional: slightly larger on wide screens */
+@media (min-width: 1200px) {
+  .nav-logo img {
+    height: 95px;
+  }
+}
 
     .nav-links{
       display:flex;
@@ -382,17 +402,23 @@
 <body>
 
   <!-- NAVBAR -->
-  <nav>
-    <div class="logo">CRESCENDO</div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="projects.html">Projects</a>
-      <a href="blog.html">Insights</a>
-    </div>
-    <a href="contact.html" class="nav-btn">Contact Us</a>
-  </nav>
+<nav>
+  <div class="nav-logo">
+    <a href="index.html">
+      <img src="ASSETS/logo__3_-removebg-preview (1).png" alt="Crescendo Green Logo">
+    </a>
+  </div>
+
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <!-- <a href="projects.html">Projects</a> -->
+    <a href="blog.html">Insights</a>
+  </div>
+
+  <a href="contact.html" class="nav-btn">Contact Us</a>
+</nav>
 
   <!-- HERO -->
   <section class="hero">

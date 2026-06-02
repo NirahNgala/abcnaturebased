@@ -25,10 +25,12 @@ footer {
   box-shadow: 0 10px 35px rgba(0,0,0,0.1);
 }
 
-/* LOGO LEFT */
-.nav-logo {
-  justify-self: start;
+.nav-logo img {
+  height: 60px;
+  width: auto;
+  display: block;
 }
+
 
 
 
