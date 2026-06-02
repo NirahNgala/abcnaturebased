@@ -341,39 +341,57 @@
       margin-bottom:24px;
     }
 
-    /* ================= MOBILE MENU ================= */
-    .mobile-menu {
-      position: fixed;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100vh;
-      background: #ffffff;
-      z-index: 2000;
-      transition: 0.4s ease;
-      padding: 100px 7% 40px;
-      display: flex;
-      flex-direction: column;
-      color: #000;
-    }
+  
+/* ================= MOBILE MENU ================= */
+.mobile-menu {
+  position: fixed;
+  top: 100px;
+  left: -100%;
+  width: 100%;
+  height: 40vh;
+  background: rgba(255,255,255,0.98);
+  backdrop-filter: blur(18px);
+  z-index: 2000;
+  transition: 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
 
-    .mobile-menu.active {
-      left: 0;
-    }
+/* ACTIVE STATE */
+.mobile-menu.active {
+  left: 0;
+}
 
-    .mobile-menu a {
-      font-size: 1.4rem;
-      padding: 18px 0;
-      border-bottom: 1px solid rgba(0,0,0,0.1);
-      color: #000;
-    }
+/* LINKS GROUP */
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  text-align: center;
+}
 
-    /* Hide CTA on mobile */
-    @media(max-width: 768px){
-      .cta {
-        display: none;
-      }
-    }
+.mobile-menu-links a {
+  font-size: 1.6rem;
+  color: #000;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.mobile-menu-links a:hover {
+  color: #8fae45;
+}
+
+/* CTA */
+.mobile-cta {
+  padding: 14px 28px;
+  border-radius: 50px;
+  border: 1px solid #000;
+  color: #000;
+  font-weight: 600;
+}
 
     /* ================= MEDIA QUERIES ================= */
     @media(max-width: 992px){
@@ -393,7 +411,7 @@
     @media(max-width: 768px){
       .hero{
         padding-top: 140px;
-        min-height: 85vh;
+        min-height: 55vh;
       }
       
       .blog-grid{
@@ -430,21 +448,21 @@
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
-      <a href="blog.html">Insights</a>
+      <!--<a href="blog.html">Insights</a>-->
     </div>
-
-    <a href="contact.html" class="nav-btn">Contact Us</a>
     <div class="hamburger" id="hamburger">☰</div>
   </nav>
 
-  <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobileMenu">
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-links">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
-    <a href="blog.html">Insights</a>
-    <a href="contact.html" class="nav-btn" style="margin-top:40px; width:fit-content; color:#000; border-color:#000;">Contact Us</a>
   </div>
+
+  <a href="contact.html" class="mobile-cta">Contact Us</a>
+</div>
 
   <!-- HERO -->
   <section class="hero">
@@ -543,31 +561,50 @@
     </div>
   </section>
 
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
+ <script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const links = document.querySelectorAll('.mobile-menu a');
 
-    hamburger.addEventListener('click', () => {
-      mobileMenu.classList.toggle('active');
-      
-      if(mobileMenu.classList.contains('active')){
-        hamburger.innerHTML = '✕';
-        hamburger.style.color = '#000';
-      } else {
-        hamburger.innerHTML = '☰';
-        hamburger.style.color = '#fff';
-      }
-    });
+  function toggleMenu(){
+    mobileMenu.classList.toggle('active');
 
-    // Navbar scroll
-    window.addEventListener("scroll", () => {
-      const nav = document.querySelector("nav");
-      if(window.scrollY > 50){
-        nav.style.background = "rgba(0,0,0,0.85)";
-      } else {
-        nav.style.background = "rgba(0,0,0,0.45)";
-      }
+    if (mobileMenu.classList.contains('active')) {
+      hamburger.innerHTML = '✕';
+      hamburger.style.color = '#fff';
+    } else {
+      hamburger.innerHTML = '☰';
+      hamburger.style.color = '#fff';
+    }
+  }
+
+  hamburger.addEventListener('click', toggleMenu);
+
+  // CLOSE MENU ON LINK CLICK
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+      hamburger.innerHTML = '☰';
+      hamburger.style.color = '#fff';
     });
-  </script>
+  });
+
+  // OPTIONAL: CLOSE ON OUTSIDE CLICK (overlay feel)
+  mobileMenu.addEventListener('click', (e) => {
+    if (e.target === mobileMenu) {
+      toggleMenu();
+    }
+  });
+
+  // Navbar scroll
+  window.addEventListener("scroll", () => {
+    const nav = document.querySelector("nav");
+    if(window.scrollY > 50){
+      nav.style.background = "rgba(0,0,0,0.85)";
+    } else {
+      nav.style.background = "rgba(0,0,0,0.45)";
+    }
+  });
+</script>
 </body>
 </html>
