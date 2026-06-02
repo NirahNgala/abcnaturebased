@@ -97,12 +97,6 @@ html{
 scroll-behavior: smooth;
 }
 
-section {
-  scroll-margin-top:90px;
-  padding-top: var(--section-spacing);
-  padding-bottom: var(--section-spacing);
-}
-
 /* LINKS */
 .nav-link {
   font-weight: 700;
@@ -141,17 +135,22 @@ section {
 .nav-link.active::after {
   width: 100%;
 }
+
 /* Hero Section */
 .hero {
-  min-height: 80vh;
-  overflow: hidden;
+  min-height: 100dvh;   /* modern viewport unit (fixes mobile URL bar issue) */
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: white;
-  text-align: left;
+  padding: clamp(90px, 10vh, 160px) 7% 80px;
   position: relative;
-  padding-top: 80px;
+  overflow: hidden;
+}
+@media (max-width: 480px) {
+  .hero {
+    min-height: 100dvh; /* full screen always */
+    padding: 110px 6% 60px;
+    align-items: flex-start; /* better readability on small screens */
+  }
 }
 .hero h1{
   font-size: var(--h1);
@@ -159,13 +158,13 @@ section {
   line-height: .95;
   letter-spacing: -0.04em;
 }
- .hero video{
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
+.hero video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
      .overlay{
       position:absolute;
