@@ -144,7 +144,7 @@
 </div>
 </header>
 
-<!-- Hero Section -->
+
 <!-- Hero Section -->
 <section class="hero">
   <!-- VIDEO -->
@@ -284,11 +284,6 @@
   <!-- ==================== NURSERY VIDEO SECTION ==================== -->
 <section class="nursery-video-section">
   <div class="container">
-    <div class="section-header">
-      <h2>Mtwapa Nursery</h2>
-      <p class="subtitle"> — Kilifi, Kenya</p>
-    </div>
-
     <div class="video-wrapper">
       <video 
         autoplay 
@@ -300,7 +295,6 @@
         Your browser does not support the video tag.
       </video>
     </div>
-
     <div class="video-caption">
       <p><strong>ATC Mtwapa Nursery</strong> — High-quality seedling propagation hub</p>
     </div>
@@ -328,7 +322,7 @@
   </div>
 </section>
 
-<section class="photo-collage">
+<!--<section class="photo-collage">
 
   <div class="swipe-gallery">
 
@@ -347,7 +341,7 @@
 
   </div>
 
-</section>
+</section>-->
   
 <!-- CARBON DEVELOPERS -->
 <section class="relative text-center md:text-left overflow-hidden  bg-orange-40 text-white">
@@ -628,88 +622,6 @@
     </div>
   </div>
 </footer>
-<script>
-// Automatic 3-Column Gallery with your 18 images
-const imageSets = [
-  {
-    img1: "PHOTO-2021-05-04-20-32-40.jpg",
-    img2: "IMG_6373.JPG",
-    img3: "3e61e330-b0e9-4ed7-a8e5-c6c0526c8a28.jpeg",
-    cap1: "",
-    cap2: "",
-    cap3: ""
-  },
-  {
-    img1: " ASSETS/WhatsApp Image 2026-04-08 at 11.26.49 AM.jpeg",
-    img2: "ASSETS/potseedlings.jpg",
-    img3: "IMG_6370.JPG",
-    cap1: "",
-    cap2: "",
-    cap3: ""
-  },
-  {
-    img1: "IMG_6372.JPG",
-    img2: "IMG_20240215_175633281.jpg",
-    img3: "IMG_20240215_180419436.jpg",
-  },
-  {
-    img1: "PHOTO-2021-05-26-20-08-34.jpg",
-    img2: "PHOTO-2021-05-28-23-13-33(1).jpg",
-    img3: "PHOTO-2021-06-28-18-27-25.jpg",
-  },
-  {
-    img1: "PHOTO-2021-08-05-19-33-24.jpg",
-    img2: "PHOTO-2021-08-05-19-34-18.jpg",
-    img3: "PHOTO-2021-08-19-20-16-51.jpg",
-   
-  },
-  {
-    img1: "53e54dc2-604d-4636-97d4-31e5c5c2843e.jpeg",
-    img2: "508a091a-acd4-461c-a2e0-a1bc063334ba.jpeg",
-    img3: "4988f5c3-b909-4b7f-8230-775dad032bc7.jpeg",
-   
-  }
-];
-
-let currentSet = 0;
-
-function changeGallery() {
-  currentSet = (currentSet + 1) % imageSets.length;
-  const set = imageSets[currentSet];
-
-  // Fade out
-  document.getElementById('img1').style.opacity = '0';
-  document.getElementById('img2').style.opacity = '0';
-  document.getElementById('img3').style.opacity = '0';
-
-  setTimeout(() => {
-    document.getElementById('img1').src = set.img1;
-    document.getElementById('img2').src = set.img2;
-    document.getElementById('img3').src = set.img3;
-
-    document.getElementById('caption1').textContent = set.cap1;
-    document.getElementById('caption2').textContent = set.cap2;
-    document.getElementById('caption3').textContent = set.cap3;
-
-    // Fade in
-    document.getElementById('img1').style.opacity = '1';
-    document.getElementById('img2').style.opacity = '1';
-    document.getElementById('img3').style.opacity = '1';
-  }, 800);
-}
-
-// Auto change every 5 seconds
-let galleryInterval = setInterval(changeGallery, 5000);
-
-// Pause when hovering over gallery
-const galleryContainer = document.getElementById('photo-gallery');
-if (galleryContainer) {
-  galleryContainer.addEventListener('mouseenter', () => clearInterval(galleryInterval));
-  galleryContainer.addEventListener('mouseleave', () => {
-    galleryInterval = setInterval(changeGallery, 5000);
-  });
-}
-</script>
 <script>
   // Hamburger Menu
   const hamburger = document.getElementById('hamburger');
