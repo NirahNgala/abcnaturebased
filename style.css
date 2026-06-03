@@ -1205,7 +1205,7 @@ section {
 /* FOOTER */
 .footer-luxury {
   position: relative;
-  background: linear-gradient(180deg, #031c06 0%, #053a07 40%);
+  background: #0f2a1f;
   color: #ffffff;
   padding: 80px 8% 40px;
   overflow: hidden;
@@ -1390,6 +1390,13 @@ section {
   margin-bottom: 10px;
   color: #187b06;
   margin-bottom: 10px;
+}
+.footer-logo {
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 1.25rem;
 }
 
 .footer-brand .tagline {

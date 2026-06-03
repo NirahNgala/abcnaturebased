@@ -29,7 +29,7 @@
   <style>
     .about-hero {
       background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), 
-                  url('ASSETS/Girl\ with\ moringa\ seedlings.webp') center/cover;
+                  url('ASSETS/Girl with moringa seedlings.webp') center/cover;
       min-height: 460px;
       display: flex;
       align-items: center;
@@ -49,40 +49,49 @@
       z-index: 10;
     }
 
-    .contact-hero{
-      margin-top: 0;
+    .close-btn {
+      position: absolute;
+      top:0px;
+      right: 25px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      color: white;
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: 300;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 20;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
 
+    .close-btn:hover {
+      background: rgba(255,255,255,0.3);
+      transform: scale(1.1);
+    }
+
+    .contact-hero {
+      margin-top: 0px;
+    }
     @media (max-width: 768px) {
       .hero-image {
         width: 220px;
         right: 5%;
         bottom: -15px;
       }
-    }
-
-    .back-btn {
-      position: absolute;
-      top: 25px;
-      left: 20px;
-      background: rgba(255,255,255,0.15);
-      backdrop-filter: blur(8px);
-      color: white;
-      border: none;
-      padding: 10px 16px;
-      border-radius: 50px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s;
-      z-index: 20;
-    }
-
-    .back-btn:hover {
-      background: rgba(255,255,255,0.3);
-      transform: translateX(-5px);
+      .close-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 24px;
+        top: 20px;
+        right: 20px;
+      }
     }
 
     body {
@@ -137,9 +146,8 @@
 
 <!-- HERO -->
 <section class="about-hero">
-  <button class="back-btn" onclick="goBack()">
-    <span class="text-2xl">←</span>
-    <span>Back</span>
+  <button class="close-btn" onclick="goBack()" title="Close">
+    ×
   </button>
 
   <div class="relative z-10 text-center px-6">
@@ -351,7 +359,6 @@
     </div>
   </div>
 </section>
-   
 
 <div id="footer"></div>
 
@@ -362,8 +369,9 @@ fetch('footer.html')
     document.getElementById('footer').innerHTML = data;
   });
 </script>
+
 <script>
-  // Back Button
+  // Close Button Function
   function goBack() {
     window.history.back();
   }
