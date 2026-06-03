@@ -27,61 +27,34 @@
   </script>
 
   <style>
-  
     .heading-font {
       font-family: 'Satoshi', system-ui, sans-serif;
       font-weight: 700; 
     }
 
     .contact-hero {
-      height: 60vh;
-      background:  url('ASSETS/Planting-4.jpg') center/cover no-repeat;
+      min-height: 55vh;
+      background: url('ASSETS/Planting-4.jpg') center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       color: rgb(0, 0, 0);
+      position: relative;
+      overflow: hidden;
     }
 
-    /* Growth animation for the main heading */
+    /* Growth animation */
     #grow-text {
       animation: growIn 1.8s ease-out forwards;
-      position: relative;
     }
 
     @keyframes growIn {
-      0% {
-        opacity: 0;
-        transform: scale(0.65) translateY(40px);
-      }
-      65% {
-        opacity: 0.95;
-        transform: scale(1.07) translateY(-6px);
-      }
-      100% {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-      }
+      0% { opacity: 0; transform: scale(0.65) translateY(40px); }
+      65% { opacity: 0.95; transform: scale(1.07) translateY(-6px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
     }
 
-    /* Gentle pulse after appearing */
-    #grow-text::after {
-      content: '';
-      position: absolute;
-      inset: -30px;
-      background: radial-gradient(circle, rgba(16, 185, 129, 0.18) 0%, transparent 75%);
-      opacity: 0;
-      animation: pulseGrow 4.5s ease-in-out infinite;
-      z-index: -1;
-      border-radius: 9999px;
-    }
-
-    @keyframes pulseGrow {
-      0%, 100% { transform: scale(0.9); opacity: 0.35; }
-      50% { transform: scale(1.2); opacity: 0.65; }
-    }
-
-    /* Animated sprouting + swaying leaves */
     .leaf {
       animation: sproutAndSway 6.5s ease-in-out infinite;
       display: inline-block;
@@ -90,33 +63,49 @@
     }
 
     @keyframes sproutAndSway {
-      0% {
-        transform: scale(0.25) rotate(-30deg) translateY(60px);
-        opacity: 0;
-      }
-      35% {
-        transform: scale(1) rotate(10deg) translateY(0);
-        opacity: 1;
-      }
-      100% {
-        transform: scale(1) rotate(-15deg) translateY(-10px);
-      }
+      0% { transform: scale(0.25) rotate(-30deg) translateY(60px); opacity: 0; }
+      35% { transform: scale(1) rotate(10deg) translateY(0); opacity: 1; }
+      100% { transform: scale(1) rotate(-15deg) translateY(-10px); }
     }
 
+    /* ==================== FORM INPUT IMPROVEMENTS ==================== */
+    .contact-input {
+      width: 100%;
+      padding: 16px 20px;           /* Good default */
+      border: 1px solid #d1d5db;
+      border-radius: 16px;
+      font-size: 1rem;
+      transition: all 0.2s;
+    }
+
+    .contact-input:focus {
+      border-color: #10b981;
+      box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15);
+      outline: none;
+    }
+
+    /* Mobile-specific fixes */
     @media (max-width: 640px) {
-      .leaf { animation-duration: 5.5s; }
-      .leaf:nth-child(2) { animation-duration: 6.8s; }
-      .leaf:nth-child(3) { animation-duration: 5s; }
-      .leaf:nth-child(4) { animation-duration: 7.2s; }
-    }
+      .contact-input {
+        padding: 18px 20px;         /* Larger touch target */
+        font-size: 16px;            /* Prevents zoom on iOS */
+        border-radius: 14px;
+      }
 
-    @media (max-width: 480px) {
-      .leaf {
-        font-size: 2.25rem !important;
+      .contact-textarea {
+        padding: 18px 20px;
+        font-size: 16px;
+      }
+
+      .form-card {
+        padding: 2rem 1.5rem !important;
+      }
+
+      .contact-hero {
+        min-height: 48vh;
       }
     }
 
-    /* Force Satoshi globally */
     body {
       font-family: 'Satoshi', system-ui, sans-serif;
     }
@@ -125,11 +114,11 @@
 <body class="bg-neutral-50 font-sans">
 
   <!-- Hero -->
-  <section class="contact-hero relative overflow-hidden min-h-[55vh] md:min-h-[65vh] flex items-center">
+  <section class="contact-hero relative overflow-hidden">
     
     <!-- Close Button -->
     <a href="index.html" 
-       class="absolute top-6 right-6 md:top-8 md:right-8 z-20 
+       class="absolute top-6 right-6 z-20 
               bg-white/90 hover:bg-white text-emerald-800 
               w-11 h-11 flex items-center justify-center 
               rounded-2xl shadow-lg transition-all duration-300 
@@ -139,11 +128,10 @@
 
     <div class="max-w-4xl mx-auto px-6 text-center relative z-10 w-full">
       <div id="grow-text" 
-           class="heading-font text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-black-500 leading-tight">
+           class="heading-font text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-black leading-tight">
         Let's Grow Together
       </div>
       
-      <!-- Animated leaves -->
       <div class="absolute inset-0 pointer-events-none flex justify-center items-center overflow-hidden">
         <div class="leaf absolute text-4xl sm:text-5xl md:text-6xl opacity-70" style="top: 18%; left: 10%; animation-delay: 0.2s;">🌱</div>
         <div class="leaf absolute text-3xl sm:text-4xl md:text-5xl opacity-60" style="top: 32%; right: 12%; animation-delay: 0.7s;">🌿</div>
@@ -151,90 +139,95 @@
         <div class="leaf absolute text-4xl sm:text-5xl md:text-6xl opacity-65" style="bottom: 28%; right: 18%; animation-delay: 0.4s;">🌱</div>
       </div>
 
-      <p class="mt-6 text-lg sm:text-xl text-emerald-100 max-w-lg mx-auto">
+      <p class="mt-5 text-base sm:text-lg text-emerald-100 max-w-md mx-auto">
         Ready to bring your nature-based project to life?
       </p>
     </div>
   </section>
 
   <!-- Main Content -->
-  <div class="max-w-7xl mx-auto px-6 py-20">
-    <div class="grid md:grid-cols-2 gap-16">
+  <div class="max-w-7xl mx-auto px-6 py-12 md:py-20">
+    <div class="grid md:grid-cols-2 gap-12 md:gap-16">
 
-      <!-- Left Column - Contact Info -->
-      <div>
-        <h2 class="heading-font text-4xl font-semibold text-emerald-900 mb-8">Get In Touch</h2>
-        <p class="text-lg text-gray-600 mb-10">
-          Whether you're planning a large restoration project, need reliable seedling supply, or want operational support — we're here to help.
-        </p>
+      <!-- Left Column -->
+      <div class="space-y-8">
 
-        <div class="space-y-8">
-          <div class="flex gap-5">
-            <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center flex-shrink-0">
-              <i class="fas fa-envelope text-2xl"></i>
-            </div>
-            <div>
-              <strong class="block text-emerald-800">Email</strong>
-              <a href="mailto:info@crescendo.green" class="text-lg hover:text-emerald-700">info@crescendo.green</a>
-            </div>
-          </div>
+  <!-- EMAIL -->
+  <div class="flex gap-5">
+    <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center flex-shrink-0">
+      <i class="fas fa-envelope text-2xl"></i>
+    </div>
+    <div>
+      <strong class="block text-emerald-800">Email</strong>
+      <a href="mailto:bpvanderbijl@gmail.com"
+         class="text-base md:text-lg hover:text-emerald-700">
+        bpvanderbijl@gmail.com
+      </a>
+    </div>
+  </div>
 
-          <div class="flex gap-5">
-            <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center flex-shrink-0">
-              <i class="fas fa-phone text-2xl"></i>
-            </div>
-            <div>
-              <strong class="block text-emerald-800">Phone</strong>
-              <a href="tel:+254700123456" class="text-lg hover:text-emerald-700">+254 700 123 456</a>
-            </div>
-          </div>
+  <!-- PHONE -->
+  <div class="flex gap-5">
+    <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center flex-shrink-0">
+      <i class="fas fa-phone text-2xl"></i>
+    </div>
+    <div>
+      <strong class="block text-emerald-800">Phone</strong>
+      <a href="tel:+254725707814"
+         class="text-base md:text-lg hover:text-emerald-700">
+        +254 725 707814
+      </a>
+    </div>
+  </div>
+  <div class="flex gap-5">
+  <div class="w-12 h-12 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center flex-shrink-0">
+    <i class="fa-brands fa-whatsapp text-2xl"></i>
+  </div>
+  <div>
+    <strong class="block text-emerald-800">WhatsApp</strong>
+    <a href="https://wa.me/254725707814?text=Hello%20Crescendo.green%20team%2C%20I%20have%20an%20inquiry"
+       class="text-base md:text-lg hover:text-emerald-700">
+      Chat with us
+    </a>
+  </div>
+</div>
 
-          <div class="flex gap-5">
-            <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center flex-shrink-0">
-              <i class="fas fa-location-dot text-2xl"></i>
-            </div>
-            <div>
-              <strong class="block text-emerald-800">Location</strong>
-              <p class="text-lg">Nairobi, Kenya<br>East Africa</p>
-            </div>
-          </div>
-        </div>
+  <!-- LOCATION -->
+  <div class="flex gap-5">
+    <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center flex-shrink-0">
+      <i class="fas fa-location-dot text-2xl"></i>
+    </div>
+    <div>
+      <strong class="block text-emerald-800">Location</strong>
+      <p class="text-base md:text-lg">Nairobi, Kenya<br>East Africa</p>
+    </div>
+  </div>
 
-        <!-- Social Icons -->
-        <div class="mt-12">
-          <p class="text-sm uppercase tracking-widest text-gray-500 mb-4">Follow us</p>
-          <div class="flex gap-6 text-3xl text-emerald-700">
-            <a href="#" class="hover:text-emerald-500 transition"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="hover:text-emerald-500 transition"><i class="fab fa-x-twitter"></i></a>
-            <a href="#" class="hover:text-emerald-500 transition"><i class="fab fa-facebook"></i></a>
-            <a href="#" class="hover:text-emerald-500 transition"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-      </div>
+</div>
 
       <!-- Right Column - Contact Form -->
-      <div class="bg-white rounded-3xl shadow-xl p-10 md:p-12">
+      <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12 form-card">
         <h3 class="text-2xl font-semibold text-emerald-900 mb-8">Send us a message</h3>
         
         <form id="contactForm" class="space-y-6">
           <div>
             <label class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
-            <input type="text" required class="w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-emerald-500">
+            <input type="text" required class="contact-input">
           </div>
 
           <div>
             <label class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
-            <input type="email" required class="w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-emerald-500">
+            <input type="email" required class="contact-input">
           </div>
 
           <div>
             <label class="block text-sm font-medium text-gray-700 mb-2">Organization / Company</label>
-            <input type="text" class="w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-emerald-500">
+            <input type="text" class="contact-input">
           </div>
 
           <div>
             <label class="block text-sm font-medium text-gray-700 mb-2">What are you interested in?</label>
-            <select class="w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-emerald-500">
+            <select class="contact-input">
               <option value="">Select an option...</option>
               <option value="seedling">Seedling Supply & Nursery</option>
               <option value="planting">Planting & Field Management</option>
@@ -246,11 +239,11 @@
 
           <div>
             <label class="block text-sm font-medium text-gray-700 mb-2">Your Message *</label>
-            <textarea rows="6" required placeholder="Tell us about your project..." class="w-full px-5 py-4 border border-gray-300 rounded-3xl focus:outline-none focus:border-emerald-500"></textarea>
+            <textarea rows="5" required placeholder="Tell us about your project..." class="contact-input contact-textarea"></textarea>
           </div>
 
           <button type="submit" 
-                  class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-semibold py-5 rounded-2xl transition text-lg">
+                  class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-semibold py-5 rounded-2xl transition text-lg mt-4">
             Send Message
           </button>
         </form>
@@ -258,22 +251,37 @@
     </div>
   </div>
 
- <div id="footer"></div>
+  <div id="footer"></div>
 
-<script>
-fetch('footer.html')
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById('footer').innerHTML = data;
-  });
-</script>
   <script>
-    // Form Submission
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer').innerHTML = data;
+    });
+  </script>
+
+  <script>
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
       alert("✅ Thank you! Your message has been received. We'll get back to you within 1-2 business days.");
       this.reset();
     });
   </script>
+  <script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const name = this.querySelector('input[type="text"]').value;
+  const email = this.querySelector('input[type="email"]').value;
+  const message = this.querySelector('textarea').value;
+
+  const mailto = `mailto:bpvanderbijl@gmail.com?subject=New Inquiry from ${name}&body=Email: ${email}%0A%0AMessage:%0A${message}`;
+
+  window.location.href = mailto;
+
+  this.reset();
+});
+</script>
 </body>
 </html>
