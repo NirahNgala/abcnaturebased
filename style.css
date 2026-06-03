@@ -780,6 +780,175 @@ section {
 .cta-section .container {
   animation: float 6s ease-in-out infinite;
 }
+
+/* ====================== CARBON SECTION ====================== */
+.carbon-section {
+  position: relative;
+  overflow: hidden;
+  color: white;
+  padding: 40px 0;
+}
+
+.carbon-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.carbon-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+}
+
+.carbon-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.453), rgba(41, 40, 40, 0.543), rgba(0,0,0,0.55));
+}
+
+.carbon-container {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.carbon-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.carbon-content {
+  text-align: center;
+}
+
+.carbon-title {
+  font-size: 2.6rem;
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.2rem;
+}
+
+.carbon-subtitle {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: #36d2f1;
+  max-width: 520px;
+  margin: 0 auto 1rem;
+}
+
+.carbon-features {
+  font-size: 1.1rem;
+  color: #1bb2d4;
+  margin-bottom: 2rem;
+}
+
+.carbon-cta {
+  display: inline-block;
+  background: #f97316;
+  color: white;
+  padding: 16px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+}
+
+.carbon-cta:hover {
+  background: #ea580c;
+  transform: translateY(-3px);
+}
+
+.highlight-card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 24px;
+  padding: 32px;
+}
+
+.highlight-card h3 {
+  font-size: 1.5rem;
+  color: #fed7aa;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.highlight-card p {
+  color: #f5f5f4;
+  line-height: 1.65;
+}
+
+/* ====================== MEDIA QUERIES ====================== */
+@media (min-width: 768px) {
+  .carbon-section {
+    padding: 50px 0;
+  }
+
+  .carbon-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+
+  .carbon-content {
+    text-align: left;
+  }
+
+  .carbon-subtitle,
+  .carbon-features {
+    margin: 0 0 1.5rem 0;
+  }
+
+  .carbon-title {
+    font-size: 3.2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .carbon-title {
+    font-size: 3.8rem;
+    line-height: 1.05;
+  }
+
+  .carbon-subtitle {
+    font-size: 1.35rem;
+  }
+
+  .highlight-card {
+    padding: 40px;
+  }
+}
+
+/* Extra Small Screens */
+@media (max-width: 480px) {
+  .carbon-section {
+    padding: 20px;
+  }
+
+  .carbon-title {
+    font-size: 1.25rem;
+  }
+
+  .carbon-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .carbon-features {
+    font-size: .7rem;
+  }
+
+  .highlight-card {
+    padding: 14px;
+  }
+
+  .highlight-card h3 {
+    font-size: 1rem;
+  }
+}
 /* ====================== NURSERY VIDEO SECTION ====================== */
 .nursery-video-section {
   padding: 20px 10px;
