@@ -6,6 +6,7 @@
   <title>Our Services - Crescendo Green</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css" class="css">
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet">
   
   <style>
@@ -429,6 +430,7 @@
       </div>
 
       <div class="nav-menu">
+        <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="services.html" class="active">Services</a>
         <a href="blog.html">Blog</a>
@@ -569,7 +571,15 @@
       <button onclick="closeModal()" style="background:none; border:none; color:#a90606; cursor:pointer; margin-top:20px;">Close</button>
     </div>
   </div>
+<div id="footer"></div>
 
+<script>
+fetch('footer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('footer').innerHTML = data;
+  });
+</script>
   <script>
     // Animation Observer
     const observer = new IntersectionObserver((entries) => {
