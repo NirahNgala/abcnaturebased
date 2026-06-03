@@ -552,14 +552,15 @@
     </article>
   </section>
 
-  <!-- CTA (Hidden on mobile) -->
-  <section class="cta">
-    <div class="cta-content">
-      <h2>Building Better Restoration Systems</h2>
-      <p>Explore ideas, field insights, and operational thinking shaping the future of restoration at scale.</p>
-      <a href="#" class="cta-btn">View All Articles</a>
-    </div>
-  </section>
+  <div id="footer"></div>
+
+<script>
+fetch('footer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('footer').innerHTML = data;
+  });
+</script>
 
  <script>
   const hamburger = document.getElementById('hamburger');

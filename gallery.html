@@ -1,0 +1,395 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Crescendo Green</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --green-1: #22c55e;
+            --green-2: #16a34a;
+            --blue-1: #06b6d4;
+            --blue-2: #0891b2;
+            --dark: #0f172a;
+            --light: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e2937 100%);
+            color: var(--light);
+            line-height: 1.6;
+        }
+
+        header {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 3px solid var(--green-1);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--green-1), var(--blue-1));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--green-1);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), 
+                        url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, var(--green-1), var(--blue-1));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .gallery-section {
+            max-width: 1400px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            padding: 12px 28px;
+            border: none;
+            border-radius: 50px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(8px);
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: linear-gradient(90deg, var(--green-1), var(--blue-1));
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(34, 197, 94, 0.3);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            aspect-ratio: 4 / 3;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05) rotate(1deg);
+            box-shadow: 0 20px 40px rgba(34, 197, 94, 0.4);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.12);
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(15, 23, 42, 0.95));
+            padding: 2rem 1.5rem 1.5rem;
+            transform: translateY(30px);
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item:hover .overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.98);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .modal-content {
+            max-width: 1000px;
+            max-height: 90vh;
+            position: relative;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+        }
+
+        .close {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            background: var(--green-1);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        footer {
+            background: #0a1421;
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+            margin-top: 6rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">🌱 Crescendo Green</div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Journal</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#" style="color: var(--green-1);">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Our World in Green &amp; Blue</h1>
+            <p>Vibrant moments, growing dreams, and beautiful places we've helped flourish.</p>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="nature">Nature</button>
+            <button class="filter-btn" data-filter="urban">Urban Green</button>
+            <button class="filter-btn" data-filter="projects">Projects</button>
+            <button class="filter-btn" data-filter="people">People</button>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- Populated by JS -->
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <img id="modalImage" src="" alt="" loading="lazy">
+            <div style="margin-top: 1rem; text-align: center; color: #94a3b8;">
+                <h3 id="modalTitle"></h3>
+                <p id="modalDesc"></p>
+            </div>
+        </div>
+    </div>
+
+<div id="footer"></div>
+
+<script>
+fetch('footer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('footer').innerHTML = data;
+  });
+</script>
+
+    <script>
+        const images = [
+            { id: 1, src: "https://picsum.photos/id/1015/800/600", category: "nature", title: "Emerald Canopy", desc: "Lush rainforest in Costa Rica" },
+            { id: 2, src: "https://picsum.photos/id/133/800/600", category: "urban", title: "Rooftop Garden", desc: "Downtown vertical oasis" },
+            { id: 3, src: "https://picsum.photos/id/201/800/600", category: "projects", title: "Community Orchard", desc: "Planting day in Portland" },
+            { id: 4, src: "https://picsum.photos/id/251/800/600", category: "nature", title: "Crystal Lake", desc: "Morning mist over the mountains" },
+            { id: 5, src: "https://picsum.photos/id/180/800/600", category: "people", title: "Green Team", desc: "Volunteers restoring wetlands" },
+            { id: 6, src: "https://picsum.photos/id/312/800/600", category: "urban", title: "Street Art Garden", desc: "Colorful mural meets living wall" },
+            { id: 7, src: "https://picsum.photos/id/367/800/600", category: "projects", title: "Solar Greenhouse", desc: "Sustainable food production" },
+            { id: 8, src: "https://picsum.photos/id/401/800/600", category: "nature", title: "Blue Lagoon", desc: "Hidden paradise in Iceland" }
+        ];
+
+        function createGallery() {
+            const grid = document.getElementById('galleryGrid');
+            grid.innerHTML = '';
+
+            images.forEach(img => {
+                const item = document.createElement('div');
+                item.className = `gallery-item`;
+                item.dataset.category = img.category;
+                
+                item.innerHTML = `
+                    <img src="https://picsum.photos/id/1016/800/600" 
+                         data-src="${img.src}" 
+                         alt="${img.title}"
+                         loading="lazy">
+                    <div class="overlay">
+                        <h3>${img.title}</h3>
+                        <p>${img.desc}</p>
+                    </div>
+                `;
+
+                // Lazy loading with fallback
+                const imgElement = item.querySelector('img');
+                imgElement.addEventListener('load', () => {
+                    imgElement.src = imgElement.dataset.src;
+                });
+
+                item.addEventListener('click', () => showModal(img));
+                grid.appendChild(item);
+            });
+        }
+
+        function showModal(img) {
+            const modal = document.getElementById('modal');
+            const modalImg = document.getElementById('modalImage');
+            
+            modalImg.src = img.src;           // High quality for modal
+            document.getElementById('modalTitle').textContent = img.title;
+            document.getElementById('modalDesc').textContent = img.desc;
+            modal.style.display = 'flex';
+        }
+
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.dataset.filter;
+                const items = document.querySelectorAll('.gallery-item');
+
+                items.forEach(item => {
+                    item.style.display = (filter === 'all' || item.dataset.category === filter) ? 'block' : 'none';
+                });
+            });
+        });
+
+        // Modal controls
+        document.getElementById('closeModal').addEventListener('click', () => {
+            document.getElementById('modal').style.display = 'none';
+        });
+
+        document.getElementById('modal').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('modal')) {
+                document.getElementById('modal').style.display = 'none';
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "Escape") {
+                document.getElementById('modal').style.display = 'none';
+            }
+        });
+
+        // Initialize
+        window.onload = createGallery;
+    </script>
+</body>
+</html>
