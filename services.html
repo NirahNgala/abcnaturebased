@@ -37,13 +37,12 @@
       background: rgba(255, 255, 255, 0.96);
       backdrop-filter: blur(12px);
       z-index: 1000;
-      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      transition: all 0.4s ease;
     }
 
     .navbar.scrolled {
       background: rgba(255, 255, 255, 0.99);
-      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 6px 25px rgba(0,0,0,0.12);
     }
 
     .nav-container {
@@ -64,7 +63,6 @@
 
     .nav-menu {
       display: flex;
-      align-items: center;
       gap: 42px;
       position: absolute;
       left: 50%;
@@ -107,14 +105,12 @@
       border-radius: 50px;
       text-decoration: none;
       font-weight: 700;
-      white-space: nowrap;
       transition: all 0.4s ease;
     }
 
     .nav-cta-btn:hover {
       background: #1f5f24;
       transform: translateY(-3px);
-      box-shadow: 0 10px 22px rgba(46,125,50,0.25);
     }
 
     .hamburger {
@@ -134,7 +130,7 @@
       transition: all 0.4s ease;
     }
 
-    /* ==================== HERO & SERVICES ==================== */
+    /* ==================== SERVICES SECTION ==================== */
     .services-hero {
       background: #f5f5f3;
       padding: 140px 0 100px;
@@ -146,45 +142,31 @@
       margin: 0 auto;
     }
 
-    .section-header {
-      text-align: center;
-      margin-bottom: 100px;
-    }
-
     .section-header h2 {
+      text-align: center;
       font-size: clamp(2.8rem, 5vw, 4rem);
       color: var(--dark);
-      letter-spacing: -0.04em;
+      margin-bottom: 100px;
     }
 
     .service-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
       min-height: 680px;
-      align-items: stretch;
       margin-bottom: 80px;
       opacity: 0;
       transform: translateY(40px);
-      transition: all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+      transition: all 0.8s ease;
     }
 
-    .service-row.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .service-row.visible { opacity: 1; transform: translateY(0); }
 
     .service-row.reverse .service-image { order: 2; }
-    .service-row.reverse .service-content { order: 1; }
-
-    .service-image {
-      overflow: hidden;
-    }
 
     .service-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
       transition: transform 1.2s ease;
     }
 
@@ -194,24 +176,16 @@
 
     .service-content {
       background: #f1f1ef;
+      padding: 80px;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 80px;
     }
 
     .service-content h3 {
       font-size: 2.4rem;
-      line-height: 1.1;
       margin-bottom: 28px;
       color: var(--dark);
-    }
-
-    .service-desc {
-      font-size: 1.02rem;
-      line-height: 1.8;
-      margin-bottom: 22px;
-      max-width: 560px;
     }
 
     .tags {
@@ -227,7 +201,7 @@
       padding: 10px 18px;
       border-radius: 50px;
       font-size: 0.92rem;
-      transition: all 0.35s ease;
+      transition: 0.35s;
     }
 
     .tags span:hover {
@@ -235,7 +209,7 @@
       color: white;
     }
 
-    /* ==================== PROJECTS ==================== */
+    /* ==================== PROJECTS - IMPROVED ==================== */
     .projects-section {
       background: #f5f7f6;
       padding: 100px 0;
@@ -250,17 +224,18 @@
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
     }
 
     .project-card {
       position: relative;
+      border-radius: 24px;
       overflow: hidden;
-      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: all 0.4s ease;
       opacity: 0;
       transform: translateY(50px);
-      transition: all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
     }
 
     .project-card.visible {
@@ -268,15 +243,20 @@
       transform: translateY(0);
     }
 
+    .project-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
     .project-card img {
       width: 100%;
-      height: 280px;
+      height: 340px;
       object-fit: cover;
-      transition: transform 0.7s ease;
+      transition: transform 0.6s ease;
     }
 
     .project-card:hover img {
-      transform: scale(1.1);
+      transform: scale(1.08);
     }
 
     .project-overlay {
@@ -284,67 +264,81 @@
       bottom: 0;
       left: 0;
       right: 0;
-      padding: 30px 20px 20px;
-      background: linear-gradient(transparent, rgba(0,0,0,0.85));
+      padding: 40px 24px 24px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.75));
       color: white;
-      font-size: 1.1rem;
-      font-weight: 500;
-    }
-
-    /* ==================== CTA SECTION ==================== */
-    .services-cta {
-      padding: 140px 20px;
-      background: linear-gradient(rgba(0,0,0,0.68), rgba(0,0,0,0.68)),
-                  url("ASSETS/Nursery at night.jpeg") center/cover no-repeat;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    .cta-inner {
-      max-width: 820px;
-      color: white;
-      padding: 60px 50px;
-      border-radius: 28px;
-      background: rgba(255,255,255,0.09);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255,255,255,0.2);
-    }
-
-    .cta-inner h2 {
-      font-size: clamp(2.2rem, 6vw, 3.6rem);
-      margin-bottom: 24px;
-      line-height: 1.15;
-    }
-
-    .cta-inner p {
       font-size: 1.15rem;
-      margin-bottom: 40px;
-      opacity: 0.95;
+      font-weight: 600;
     }
 
-    .cta-link {
-      display: inline-flex;
+    /* ==================== FLOATING CTA BUTTON ==================== */
+    .floating-cta {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--primary);
+      color: white;
+      padding: 10px 16px;
+      border-radius: 30px;
+      font-weight: 600;
+      box-shadow: 0 10px 30px rgba(46,125,50,0.3);
+      z-index: 999;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
       align-items: center;
-      gap: 14px;
-      padding: 18px 36px;
+      gap: 10px;
+    }
+
+    .floating-cta:hover {
+      transform: scale(1.08);
+      box-shadow: 0 15px 35px rgba(38, 96, 41, 0.4);
+    }
+
+    /* ==================== MODAL POPUP ==================== */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      background: white;
+      font-family: 'Satoshi', sans-serif;
+      width: 90%;
+      border-radius: 24px;
+      padding: 50px 40px;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    }
+
+    .modal h2 {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+      color: var(--dark);
+    }
+
+    .modal p {
+      font-size: 1.1rem;
+      margin-bottom: 32px;
+      color: #555;
+    }
+
+    .modal .cta-link {
+      background: var(--primary);
+      color: white;
+      padding: 18px 40px;
       border-radius: 50px;
       text-decoration: none;
-      background: white;
-      color: #111;
-      font-size: 1.1rem;
       font-weight: 700;
-      transition: all 0.4s ease;
+      display: inline-block;
     }
 
-    .cta-link:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-      gap: 20px;
-    }
-
-    /* ==================== MOBILE ==================== */
+    /* Mobile */
     @media (max-width: 992px) {
       .nav-menu {
         position: fixed;
@@ -452,14 +446,10 @@
     </div>
   </nav>
 
-  <!-- SERVICES HERO -->
+  <!-- SERVICES -->
   <section class="services-hero">
     <div class="container">
-      <div class="section-header">
-        <h2>What We Deliver</h2>
-      </div>
-
-      <!-- Service 1 -->
+      
       <div class="service-row" id="nursery">
         <div class="service-image">
           <img src="ASSETS/moringa seedlings.jpeg" alt="Tree nursery">
@@ -496,7 +486,7 @@
       </div>
 
       <!-- Service 3 -->
-      <div class="service-row" id="monitoring">
+      <div class="service-row" id="monitoring-operations">
         <div class="service-image">
           <img src="ASSETS/Monitoring&Operations .jpeg" alt="Monitoring and Operations">
         </div>
@@ -534,7 +524,7 @@
     </div>
   </section>
 
-  <!-- PROJECT SHOWCASE -->
+  <!-- IMPROVED PROJECT SHOWCASE -->
   <section class="projects-section">
     <div class="container">
       <h2>Project Highlights</h2>
@@ -563,64 +553,50 @@
     </div>
   </section>
 
-  <!-- CALL TO ACTION -->
-  <section class="services-cta">
-    <div class="cta-inner">
-      <h2>Let’s Bring Your Project to Life</h2>
-      <p>
-        Whether you're planning a restoration initiative, nursery expansion, 
-        agroforestry system, or large-scale landscape project, our team is ready 
-        to support you from strategy to on-ground execution.
-      </p>
-      <a href="contact.html" class="cta-link">
-        <span>Book a Consultation</span>
-        <span class="arrow">→</span>
-      </a>
+  <!-- FLOATING CTA BUTTON -->
+  <div class="floating-cta" onclick="openModal()">
+    <span>Start Your Project</span>
+    <span style="font-size: 1.4rem;">→</span>
+  </div>
+
+  <!-- POPUP MODAL -->
+  <div class="modal" id="contactModal">
+    <div class="modal-content">
+      <h2>Ready to Grow?</h2>
+      <p>Let’s discuss your project goals. Our team is ready to support you from planning to successful execution.</p>
+      <a href="contact.html" class="cta-link">Book a Consultation</a>
+      <br><br>
+      <button onclick="closeModal()" style="background:none; border:none; color:#a90606; cursor:pointer; margin-top:20px;">Close</button>
     </div>
-  </section>
+  </div>
 
   <script>
-    // Intersection Observer for fade-in animations
+    // Animation Observer
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
-    }, {
-      threshold: 0.15,
-      rootMargin: "0px 0px -50px 0px"
-    });
+    }, { threshold: 0.15 });
 
-    document.querySelectorAll('.service-row, .project-card').forEach(el => {
-      observer.observe(el);
-    });
+    document.querySelectorAll('.service-row, .project-card').forEach(el => observer.observe(el));
 
-    // Navbar scroll effect
-    const navbar = document.querySelector('.navbar');
+    // Navbar Scroll
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 80) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
+      document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 80);
     });
 
-    // Hamburger Menu
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
+    // Modal Functions
+    function openModal() {
+      document.getElementById('contactModal').style.display = 'flex';
+    }
 
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      navMenu.classList.toggle('active');
-    });
+    function closeModal() {
+      document.getElementById('contactModal').style.display = 'none';
+    }
 
-    // Close mobile menu on link click
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        hamburger.classList.remove('active');
-      });
+    // Close modal when clicking outside
+    document.getElementById('contactModal').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
     });
   </script>
 </body>
