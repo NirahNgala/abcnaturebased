@@ -226,8 +226,8 @@
         <div class="filters">
             <button class="filter-btn active" data-filter="all">All</button>
             <button class="filter-btn" data-filter="nature">Nature</button>
-            <button class="filter-btn" data-filter="urban">Urban Green</button>
-            <button class="filter-btn" data-filter="projects">Projects</button>
+            <button class="filter-btn" data-filter="nurseries">Nurseries</button>
+            <button class="filter-btn" data-filter="sneak-peak">Sneak-Peak</button>
             <button class="filter-btn" data-filter="people">People</button>
         </div>
 
@@ -250,14 +250,14 @@
 
     <script>
         const images = [
-            { id: 1, src: "ASSETS/", category: "nature", title: "Emerald Canopy", desc: "Lush rainforest in Costa Rica" },
-            { id: 2, src: "https://picsum.photos/id/133/800/600", category: "urban", title: "Rooftop Garden", desc: "Downtown vertical oasis" },
-            { id: 3, src: "https://picsum.photos/id/201/800/600", category: "projects", title: "Community Orchard", desc: "Planting day in Portland" },
-            { id: 4, src: "https://picsum.photos/id/251/800/600", category: "nature", title: "Crystal Lake", desc: "Morning mist over the mountains" },
-            { id: 5, src: "https://picsum.photos/id/180/800/600", category: "people", title: "Green Team", desc: "Volunteers restoring wetlands" },
-            { id: 6, src: "https://picsum.photos/id/312/800/600", category: "urban", title: "Street Art Garden", desc: "Colorful mural meets living wall" },
-            { id: 7, src: "https://picsum.photos/id/367/800/600", category: "projects", title: "Solar Greenhouse", desc: "Sustainable food production" },
-            { id: 8, src: "https://picsum.photos/id/401/800/600", category: "nature", title: "Blue Lagoon", desc: "Hidden paradise in Iceland" }
+            { id: 1, src: "ASSETS/", category: "nature", title: "", desc: "L " },
+            { id: 2, src: "ASSETS/", category: "nurseries", title: "", desc: "" },
+            { id: 3, src: "ASSETS/", category: "sneak-peak", title: "Community Orchard", desc: "Planting day in Portland" },
+            { id: 4, src: "ASSETS/", category: "nature", title: "Crystal Lake", desc: "Morning mist over the mountains" },
+            { id: 5, src: "ASSETS/", category: "people", title: "Green Team", desc: "Volunteers restoring wetlands" },
+            { id: 6, src: "ASSETS/", category: "nurseries", title: "Street Art Garden", desc: "Colorful mural meets living wall" },
+            { id: 7, src: "ASSETS/", category: "sneak-peak", title: "Solar Greenhouse", desc: "Sustainable food production" },
+            { id: 8, src: "ASSETS/", category: "nature", title: "Blue Lagoon", desc: "Hidden paradise in Iceland" }
         ];
 
         function createGallery() {
@@ -270,7 +270,7 @@
                 item.dataset.category = img.category;
                 
                 item.innerHTML = `
-                    <img src="https://picsum.photos/id/1016/800/600" 
+                    <img src="ASSETS/placeholder.webp" 
                          data-src="${img.src}" 
                          alt="${img.title}"
                          loading="lazy">
