@@ -227,7 +227,6 @@
             <button class="filter-btn active" data-filter="all">All</button>
             <button class="filter-btn" data-filter="nature">Nature</button>
             <button class="filter-btn" data-filter="nurseries">Nurseries</button>
-            <button class="filter-btn" data-filter="sneak-peak">Sneak-Peak</button>
             <button class="filter-btn" data-filter="people">People</button>
         </div>
 
@@ -248,93 +247,177 @@
         </div>
     </div>
 
-    <script>
-        const images = [
-            { id: 1, src: "ASSETS/student.webp", category: "nature", title: "", desc: "L " },
-            { id: 2, src: "ASSETS/", category: "nurseries", title: "", desc: "" },
-            { id: 3, src: "ASSETS/", category: "sneak-peak", title: "Community Orchard", desc: "Planting day in Portland" },
-            { id: 4, src: "ASSETS/", category: "nature", title: "Crystal Lake", desc: "Morning mist over the mountains" },
-            { id: 5, src: "ASSETS/Willy.webp", category: "people", title: "Willy", desc: "at Koromi Farm" },
-            { id: 6, src: "ASSETS/", category: "nurseries", title: "Street Art Garden", desc: "Colorful mural meets living wall" },
-            { id: 7, src: "ASSETS/", category: "sneak-peak", title: "Solar Greenhouse", desc: "Sustainable food production" },
-            { id: 8, src: "ASSETS/", category: "nature", title: "Blue Lagoon", desc: "Hidden paradise in Iceland" }
-        ];
-
-        function createGallery() {
-            const grid = document.getElementById('galleryGrid');
-            grid.innerHTML = '';
-
-            images.forEach(img => {
-                const item = document.createElement('div');
-                item.className = `gallery-item`;
-                item.dataset.category = img.category;
-                
-                item.innerHTML = `
-                    <img src="ASSETS/placeholder.webp" 
-                         data-src="${img.src}" 
-                         alt="${img.title}"
-                         loading="lazy">
-                    <div class="overlay">
-                        <h3>${img.title}</h3>
-                        <p>${img.desc}</p>
-                    </div>
-                `;
-
-                // Lazy loading with fallback
-                const imgElement = item.querySelector('img');
-                imgElement.addEventListener('load', () => {
-                    imgElement.src = imgElement.dataset.src;
-                });
-
-                item.addEventListener('click', () => showModal(img));
-                grid.appendChild(item);
-            });
+  <script>
+    const images = [
+        { 
+            id: 1, 
+            src: "ASSETS/Malia-vonski.webp", 
+            category: "nature", 
+            title: "Young Plantation", 
+            desc: "Rows of young trees in the field" 
+        },
+        { 
+            id: 2, 
+            src: "ASSETS/seedlings.jpeg.webp", 
+            category: "nurseries", 
+            title: "Seedling Nursery", 
+            desc: "Watering young plants in containers" 
+        },
+        { 
+            id: 3, 
+            src: "ASSETS/students.webp", 
+            category: "people", 
+            title: "Community Education", 
+            desc: "Students and community members at the farm" 
+        },
+        { 
+            id: 4, 
+            src: "ASSETS/student.webp", 
+            category: "people", 
+            title: "Harvest Learning", 
+            desc: "Students examining fresh produce" 
+        },
+        { 
+            id: 5, 
+            src: "ASSETS/mathilde-09.webp", 
+            category: "nurseries", 
+            title: "Nursery Work", 
+            desc: "Women working with planting materials" 
+        },
+        { 
+            id: 6, 
+            src: "ASSETS/RiverKoromi.webp", 
+            category: "nature", 
+            title: "River Koromi", 
+            desc: "Nearby water source for the farm" 
+        },
+        { 
+            id: 7, 
+            src: "ASSETS/Nursery.jpeg", 
+            category: "nurseries", 
+            title: "Organized Nursery", 
+            desc: "Hundreds of healthy seedlings ready for planting" 
+        },
+        { 
+            id: 8, 
+            src: "ASSETS/Willy.webp", 
+            category: "people", 
+            title: "Willy at Koromi Farm", 
+            desc: "Local team member with a friendly cat" 
+        },
+        { 
+            id: 9, 
+            src: "ASSETS/mathilde-08.webp", 
+            category: "people", 
+            title: "Field Team", 
+            desc: "International and local volunteers working together" 
+        },
+        { 
+            id: 10, 
+            src: "ASSETS/grouppic.webp", 
+            category: "people", 
+            title: "The Full Team", 
+            desc: "Group photo with the farm dog" 
+        },
+        { 
+            id: 11, 
+            src: "ASSETS/Working-10.webp", 
+            category: "nurseries", 
+            title: "Nursery Discussion", 
+            desc: "Team planning in the nursery" 
+        },
+        { 
+            id: 12, 
+            src: "ASSETS/Working.webp", 
+            category: "nurseries", 
+            title: "Team Collaboration", 
+            desc: "Discussing planting strategy" 
+        },
+        { 
+            id: 13, 
+            src: "ASSETS/mathilde-05.jpg.webp", 
+            category: "nurseries", 
+            title: "Loading Seedlings", 
+            desc: "Preparing to transport young trees" 
         }
+    ];
 
-        function showModal(img) {
-            const modal = document.getElementById('modal');
-            const modalImg = document.getElementById('modalImage');
+    function createGallery() {
+        const grid = document.getElementById('galleryGrid');
+        if (!grid) return;
+        grid.innerHTML = '';
+
+        images.forEach(img => {
+            const item = document.createElement('div');
+            item.className = `gallery-item`;
+            item.dataset.category = img.category;
             
-            modalImg.src = img.src;           // High quality for modal
-            document.getElementById('modalTitle').textContent = img.title;
-            document.getElementById('modalDesc').textContent = img.desc;
-            modal.style.display = 'flex';
-        }
+            item.innerHTML = `
+                <img src="${img.src}" 
+                     alt="${img.title}"
+                     loading="lazy">
+                <div class="overlay">
+                    <h3>${img.title}</h3>
+                    <p>${img.desc}</p>
+                </div>
+            `;
 
-        // Filter functionality
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
+            item.addEventListener('click', () => showModal(img));
+            grid.appendChild(item);
+        });
+    }
 
-                const filter = btn.dataset.filter;
-                const items = document.querySelectorAll('.gallery-item');
+    function showModal(img) {
+        const modal = document.getElementById('modal');
+        const modalImg = document.getElementById('modalImage');
+        
+        modalImg.src = img.src;
+        document.getElementById('modalTitle').textContent = img.title;
+        document.getElementById('modalDesc').textContent = img.desc;
+        modal.style.display = 'flex';
+    }
 
-                items.forEach(item => {
-                    item.style.display = (filter === 'all' || item.dataset.category === filter) ? 'block' : 'none';
-                });
+    // Filter buttons
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.dataset.filter;
+            const items = document.querySelectorAll('.gallery-item');
+
+            items.forEach(item => {
+                item.style.display = (filter === 'all' || item.dataset.category === filter) ? 'block' : 'none';
             });
         });
+    });
 
-        // Modal controls
-        document.getElementById('closeModal').addEventListener('click', () => {
+    // Modal controls
+    const closeModal = document.getElementById('closeModal');
+    if (closeModal) {
+        closeModal.addEventListener('click', () => {
             document.getElementById('modal').style.display = 'none';
         });
+    }
 
-        document.getElementById('modal').addEventListener('click', (e) => {
-            if (e.target === document.getElementById('modal')) {
-                document.getElementById('modal').style.display = 'none';
+    const modalElement = document.getElementById('modal');
+    if (modalElement) {
+        modalElement.addEventListener('click', (e) => {
+            if (e.target === modalElement) {
+                modalElement.style.display = 'none';
             }
         });
+    }
 
-        document.addEventListener('keydown', (e) => {
-            if (e.key === "Escape") {
-                document.getElementById('modal').style.display = 'none';
-            }
-        });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === "Escape") {
+            const modal = document.getElementById('modal');
+            if (modal) modal.style.display = 'none';
+        }
+    });
 
-        // Initialize
-        window.onload = createGallery;
-    </script>
+    // Initialize gallery
+    window.onload = createGallery;
+</script>
 </body>
 </html>
