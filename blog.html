@@ -38,14 +38,12 @@
       top:0;
       left:0;
       width:100%;
-      z-index:1000;
+      z-index:3000;
       padding: 16px 7%;
       display:flex;
       justify-content:space-between;
       align-items:center;
-      background:rgba(0,0,0,0.45);
-      backdrop-filter:blur(14px);
-      border-bottom:1px solid rgba(255,255,255,0.08);
+      background:rgb(255, 255, 255);
       transition: all 0.3s;
     }
 
@@ -63,8 +61,9 @@
 
     .nav-links a{
       font-size:1rem;
-      color:#d7d7d7;
+      color:#0c3805;
       transition:.3s;
+      font-weight:500;
     }
 
     .nav-links a:hover{
@@ -88,8 +87,9 @@
       display: none;
       font-size: 1.8rem;
       cursor: pointer;
-      color: #fff;
-      z-index: 3000;
+      color: #000000;
+      z-index: 4000;
+      position: relative;
     }
 
     /* ================= HERO ================= */
@@ -346,10 +346,10 @@
 /* ================= MOBILE MENU ================= */
 .mobile-menu {
   position: fixed;
-  top: 100px;
+  top: 80px;
   left: -100%;
   width: 100%;
-  height: 40vh;
+  height: 100%;
   background: rgba(255,255,255,0.98);
   backdrop-filter: blur(18px);
   z-index: 2000;
@@ -359,6 +359,7 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
+  pointer-events: auto;
 }
 
 /* ACTIVE STATE */
@@ -370,12 +371,12 @@
 .mobile-menu-links {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 5px;
   text-align: center;
 }
 
 .mobile-menu-links a {
-  font-size: 1.6rem;
+  font-size: 1.25rem;
   color: #000;
   font-weight: 500;
   transition: 0.2s;
@@ -401,11 +402,15 @@
       }
       .hamburger {
         display: block;
+        color: #000;
       }
       
       .featured-content{
         grid-template-columns: 1fr;
         gap: 40px;
+      }
+      .mobile-menu {
+        top: 70px;
       }
     }
 
@@ -436,29 +441,31 @@
   </style>
 </head>
 <body>
-
-  <!-- NAVBAR -->
+<!-- NAVBAR -->
   <nav>
     <div class="nav-logo">
       <a href="index.html">
-        <img src="ASSETS/logo__3_-removebg-preview (1).png" alt="Crescendo Green Logo">
-      </a>
-    </div>
+        <img src="ASSETS/logo (3).png" alt="Crescendo Green Logo">
+    </a>
+  </div>
 
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
       <a href="services.html">Services</a>
-      <!--<a href="blog.html">Insights</a>-->
+
     </div>
     <div class="hamburger" id="hamburger">☰</div>
-  </nav>
+</nav>
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <div class="mobile-menu-links">
     <a href="index.html">Home</a>
+    <a href="blog.html" class="active" style="color: #8fae45;">Blog</a>
     <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
     <a href="services.html">Services</a>
   </div>
 
@@ -573,10 +580,10 @@ fetch('footer.html')
 
     if (mobileMenu.classList.contains('active')) {
       hamburger.innerHTML = '✕';
-      hamburger.style.color = '#fff';
+      hamburger.style.color = '#000000';
     } else {
       hamburger.innerHTML = '☰';
-      hamburger.style.color = '#fff';
+      hamburger.style.color = '#000000';
     }
   }
 
@@ -587,7 +594,7 @@ fetch('footer.html')
     link.addEventListener('click', () => {
       mobileMenu.classList.remove('active');
       hamburger.innerHTML = '☰';
-      hamburger.style.color = '#fff';
+      hamburger.style.color = '#000000';
     });
   });
 
@@ -602,9 +609,9 @@ fetch('footer.html')
   window.addEventListener("scroll", () => {
     const nav = document.querySelector("nav");
     if(window.scrollY > 50){
-      nav.style.background = "rgba(0,0,0,0.85)";
+      nav.style.background = "#ffff";
     } else {
-      nav.style.background = "rgba(0,0,0,0.45)";
+      nav.style.background = "#fff";
     }
   });
 </script>

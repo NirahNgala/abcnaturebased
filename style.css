@@ -1472,12 +1472,10 @@ section {
 
 .contact-block {
   grid-column: 1 / -1;
-
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
   align-items: center;
-
   border-top: 1px solid rgba(0,0,0,.08);
   padding-top: 20px;
   margin-top: 5px;
