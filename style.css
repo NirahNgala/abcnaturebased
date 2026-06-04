@@ -285,15 +285,7 @@ section {
   }
 }
 
-@media (max-width: 768px) {
-  .hero-video {
-    display: none;
-  }
 
-  .hero {
-    background: url("ASSETS/Nurserydroneview.webp") center/cover;
-  }
-}
 /* Make image smaller on mobile */
 @media (max-width: 768px) {
   .hero {
