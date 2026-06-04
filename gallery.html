@@ -29,7 +29,7 @@
         }
 
         header {
-            background: rgba(51, 69, 109, 0.95);
+            background: rgba(3, 25, 72, 0.95);
             backdrop-filter: blur(12px);
             position: sticky;
             top: 0;
@@ -44,15 +44,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-
-        .logo {
-            font-size: 2rem;
-            font-weight: 800;
-            background: linear-gradient(90deg, var(--green-1), var(--blue-1));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -2px;
         }
 
         .nav-links {
@@ -72,35 +63,6 @@
             color: var(--green-1);
         }
 
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), 
-                        url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
-            height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            padding: 2rem;
-        }
-
-        .hero h1 {
-            font-size: 4.5rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(90deg, var(--green-1), var(--blue-1));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            font-size: 1.4rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-        }
 
         .gallery-section {
             max-width: 1400px;
@@ -248,13 +210,12 @@
 
     <header>
         <nav>
-            <div class="logo">🌱 Crescendo Green</div>
+            <div class="logo"></div>
             <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">Journal</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#" style="color: var(--green-1);">Gallery</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html" style="color: var(--green-1);">Gallery</a></li>
             </ul>
         </nav>
     </header>
@@ -289,7 +250,7 @@
 
     <script>
         const images = [
-            { id: 1, src: "https://picsum.photos/id/1015/800/600", category: "nature", title: "Emerald Canopy", desc: "Lush rainforest in Costa Rica" },
+            { id: 1, src: "ASSETS/", category: "nature", title: "Emerald Canopy", desc: "Lush rainforest in Costa Rica" },
             { id: 2, src: "https://picsum.photos/id/133/800/600", category: "urban", title: "Rooftop Garden", desc: "Downtown vertical oasis" },
             { id: 3, src: "https://picsum.photos/id/201/800/600", category: "projects", title: "Community Orchard", desc: "Planting day in Portland" },
             { id: 4, src: "https://picsum.photos/id/251/800/600", category: "nature", title: "Crystal Lake", desc: "Morning mist over the mountains" },
