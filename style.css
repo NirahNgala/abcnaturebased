@@ -291,11 +291,11 @@ section {
   .hero {
     min-height: 55vh;           
     padding-top: 50px;
+    background: url('ASSETS/NurseryDroneView.jpg') center/cover no-repeat;
   }
 
   .hero video {
-    height: 100%;               
-    object-position: center;    
+    display: none; /
   }
 
   .hero-content {
@@ -1185,24 +1185,7 @@ section {
   position: relative;
 }
 
-/* fade edges like modern agency sites */
-.marquee::before,
-.marquee::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 120px;
-  height: 100%;
-  z-index: 2;
-}
-.marquee::before {
-  left: 0;
-  background: linear-gradient(to right, rgba(60, 208, 80, 0.193), transparent);
-}
-.marquee::after {
-  right: 0;
-  background: linear-gradient(to left, rgba(245, 187, 254, 0.193), transparent);
-}
+
 @media (max-width: 768px) {
 
   /* SECTION PADDING */
