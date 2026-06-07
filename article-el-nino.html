@@ -82,7 +82,33 @@
     }
 
     /* ================= HERO ================= */
+    /* ================= CLOSE BUTTON ================= */
 
+.close-btn {
+  position: fixed;
+  top: 22px;
+  right: 22px;
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(5, 150, 105, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--forest);
+  font-size: 1.2rem;
+  z-index: 10000;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+  transform: rotate(90deg) scale(1.1);
+  background: var(--emerald);
+  color: white;
+}
     .hero{
       min-height:520px;
 
@@ -572,6 +598,10 @@
 
   <!-- Progress Bar -->
   <div class="progress-bar" id="progressBar"></div>
+  <!-- CLOSE BUTTON -->
+<a href="javascript:history.back()"class="close-btn" aria-label="Close article">
+  <i class="fa-solid fa-xmark"></i>
+</a>
 
   <div class="article-container">
 
