@@ -72,41 +72,29 @@
     }
 
     /* ================= NAVBAR ================= */
+.close-btn {
+  position: fixed;
+  top: 22px;
+  right: 22px;
+  width: 48px;
+  height: 48px;
+  backdrop-filter: blur(12px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--forest);
+  font-size: 1.2rem;
+  z-index: 10000;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
 
-    nav{
-      position:fixed;
-      top:0;
-      left:0;
-      width:100%;
-      z-index:1000;
-      padding:22px 7%;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      background:rgba(255,255,255,.82);
-      backdrop-filter:blur(16px);
-      border-bottom:1px solid rgba(5,150,105,.08);
-    }
-
-    .logo{
-      font-size:1.8rem;
-      font-weight:700;
-      color:var(--forest);
-      letter-spacing:2px;
-    }
-
-    .back-btn{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      color:var(--emerald);
-      font-weight:600;
-      transition:.3s;
-    }
-
-    .back-btn:hover{
-      transform:translateX(-4px);
-    }
+.close-btn:hover {
+  transform: rotate(90deg) scale(1.1);
+  background: var(--emerald);
+  color: white;
+}
 
     /* ================= CONTAINER ================= */
 
@@ -452,19 +440,10 @@
   <!-- PROGRESS -->
   <div class="progress-bar" id="progressBar"></div>
 
-  <!-- NAVBAR -->
-  <nav>
+<a href="javascript:history.back()"class="close-btn" aria-label="Close article">
+  <i class="fa-solid fa-xmark"></i>
+</a>
 
-    <div class="logo">
-      CRESCENDO
-    </div>
-
-    <a href="blog.html" class="back-btn">
-      <i class="fa-solid fa-arrow-left"></i>
-      Back to Insights
-    </a>
-
-  </nav>
 
   <!-- ARTICLE -->
   <div class="article-container">

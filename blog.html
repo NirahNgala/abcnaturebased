@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
   <link rel="stylesheet" href="style.css" />
-
+  
   <style>
     *{
       margin:0;
@@ -70,31 +70,75 @@
       color:#b5d66f;
     }
 
-    .nav-btn{
-      padding:14px 26px;
-      border:1px solid #8fae45;
-      border-radius:50px;
-      transition:.3s;
-      white-space: nowrap;
-    }
+   /* ================= HAMBURGER & MOBILE MENU ================= */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #000000;
+  z-index: 5000;
+  transition: all 0.3s;
+}
 
-    .nav-btn:hover{
-      background:#8fae45;
-      color:#000;
-    }
+.hamburger:hover {
+  color: #b5d66f;
+}
 
-    .hamburger {
-      display: none;
-      font-size: 1.8rem;
-      cursor: pointer;
-      color: #000000;
-      z-index: 4000;
-      position: relative;
-    }
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100vh;
+  background: rgba(255,255,255,0.98);
+  backdrop-filter: blur(20px);
+  z-index: 4500;
+  transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding-top: 80px;
+  overflow-y: auto;
+}
 
+.mobile-menu.active {
+  left: 0;
+}
+
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  text-align: center;
+}
+
+.mobile-menu-links a {
+  font-size: 1.4rem;
+  color: #000;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.mobile-menu-links a:hover,
+.mobile-menu-links a.active {
+  color: #8fae45;
+}
+
+.mobile-cta {
+  padding: 16px 36px;
+  border-radius: 50px;
+  border: 2px solid #000;
+  color: #000;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 20px;
+}
     /* ================= HERO ================= */
     .hero{
-      min-height:100vh;
+      min-height: 420px;
       position:relative;
       display:flex;
       align-items:center;
@@ -102,23 +146,24 @@
       overflow:hidden;
     }
 
-    .hero video{
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
-
+   .hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
     .overlay{
       position:absolute;
       inset:0;
-      background:rgba(0,0,0,0.62);
+      background:rgba(0,0,0,0.55);
+      z-index:2;
     }
 
     .hero-content{
       position:relative;
-      z-index:2;
+      z-index:3;
       max-width:760px;
     }
 
@@ -187,93 +232,129 @@
       font-size:1.05rem;
     }
 
-    /* ================= FILTERS & BLOG ================= */
-    .filters{
-      padding:50px 7% 30px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:20px;
-      align-items:center;
-      justify-content:space-between;
+ /* ================= FILTERS & BLOG ================= */
+.filters{
+  padding:50px 7% 30px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.categories{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.categories button{
+  background:#111;
+  border:none;
+  color:#d2d2d2;
+  padding:12px 20px;
+  border-radius:50px;
+  cursor:pointer;
+  transition:.3s;
+  font-size:0.95rem;
+  white-space: nowrap;
+}
+
+.categories button.active,
+.categories button:hover{
+  background:#8fae45;
+  color:#000;
+}
+
+.search-box{
+  background:#101010;
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:50px;
+  padding:12px 20px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-width:280px;
+  max-width:100%;
+}
+
+.search-box input{
+  background:transparent;
+  border:none;
+  outline:none;
+  color:white;
+  width:100%;
+}
+
+/* ================= HIDE FILTERS ON MOBILE ================= */
+@media (max-width: 768px) {
+  .filters {
+    display: none;
+  }
+}
+
+    /* Upgraded Blog Grid */
+    .blog-grid {
+      padding: 40px 7% 120px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 32px;
     }
 
-    .categories{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
+    .blog-card {
+      display: block;
+      background: #0d0d0d;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 28px;
+      color: inherit;
+      text-decoration: none;
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 0;
+      transform: translateY(40px);
     }
 
-    .categories button{
-      background:#111;
-      border:none;
-      color:#d2d2d2;
-      padding:12px 20px;
-      border-radius:50px;
-      cursor:pointer;
-      transition:.3s;
-      font-size:0.95rem;
-      white-space: nowrap;
+    .blog-card:hover h2 {
+  color: #b5d66f;
+}
+
+    .blog-card.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    .categories button.active,
-    .categories button:hover{
-      background:#8fae45;
-      color:#000;
+   .blog-card:hover {
+  transform: translateY(-14px);
+  border-color: #b5d66f;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+    .blog-image {
+      position: relative;
+      height: 260px;
+      overflow: hidden;
     }
 
-    .search-box{
-      background:#101010;
-      border:1px solid rgba(255,255,255,0.08);
-      border-radius:50px;
-      padding:12px 20px;
-      display:flex;
-      align-items:center;
-      gap:10px;
-      min-width:280px;
-      max-width:100%;
+    .blog-image img {
+      transition: transform 0.8s ease;
+      height: 100%;
+      object-fit: cover;
     }
 
-    .search-box input{
-      background:transparent;
-      border:none;
-      outline:none;
-      color:white;
-      width:100%;
+    .blog-card:hover img {
+      transform: scale(1.1);
     }
 
-    .blog-grid{
-      padding:40px 7% 100px;
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
-      gap:32px;
-    }
-
-    .blog-card{
-      background:#0d0d0d;
-      border:1px solid rgba(255,255,255,0.06);
-      border-radius:28px;
-      overflow:hidden;
-      transition:.4s;
-    }
-
-    .blog-card:hover{
-      transform:translateY(-10px);
-      border-color:rgba(181,214,111,0.35);
-    }
-
-    .blog-image{
-      height:260px;
-      overflow:hidden;
-    }
-
-    .blog-image img{
-      height:100%;
-      object-fit:cover;
-      transition:1s;
-    }
-
-    .blog-card:hover img{
-      transform:scale(1.08);
+    .image-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: #b5d66f;
+      color: #000;
+      font-size: 0.8rem;
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-weight: 600;
     }
 
     .blog-content{
@@ -293,6 +374,7 @@
       font-size:1.85rem;
       line-height:1.15;
       margin-bottom:18px;
+      transition: color 0.3s;
       font-weight:600;
     }
 
@@ -300,6 +382,33 @@
       color:#cfcfcf;
       line-height:1.8;
       margin-bottom:28px;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 24px;
+    }
+
+    .save-btn {
+      position: relative;
+      z-index: 2;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: #666;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .save-btn.saved {
+      color: #b5d66f;
+    }
+
+    .save-btn:hover {
+      color: #b5d66f;
+      transform: scale(1.2);
     }
 
     .read-btn{
@@ -315,304 +424,292 @@
       gap:16px;
     }
 
-    /* ================= CTA ================= */
-    .cta{
-      padding:100px 7%;
-      text-align:center;
-      position:relative;
+    /* ================= MOBILE MENU & OTHER STYLES ================= */
+    .mobile-menu {
+      position: fixed;
+      top: 80px;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,0.98);
+      backdrop-filter: blur(18px);
+      z-index: 2000;
+      transition: 0.35s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
     }
 
-    .cta::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:url('ASSETS/Rootupclose.jpeg') center/cover;
-      opacity:.08;
+    .mobile-menu.active {
+      left: 0;
     }
 
-    .cta-content{
-      position:relative;
-      z-index:2;
-      max-width:750px;
-      margin:auto;
+    .mobile-menu-links a {
+      font-size: 1.25rem;
+      color: #000;
+      font-weight: 500;
     }
 
-    .cta h2{
-      font-size:clamp(2.8rem, 6vw, 4rem);
-      margin-bottom:24px;
+    .mobile-cta {
+      padding: 14px 28px;
+      border-radius: 50px;
+      border: 1px solid #000;
+      color: #000;
+      font-weight: 600;
     }
 
-  
-/* ================= MOBILE MENU ================= */
-.mobile-menu {
-  position: fixed;
-  top: 80px;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: rgba(255,255,255,0.98);
-  backdrop-filter: blur(18px);
-  z-index: 2000;
-  transition: 0.35s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  pointer-events: auto;
-}
-
-/* ACTIVE STATE */
-.mobile-menu.active {
-  left: 0;
-}
-
-/* LINKS GROUP */
-.mobile-menu-links {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  text-align: center;
-}
-
-.mobile-menu-links a {
-  font-size: 1.25rem;
-  color: #000;
-  font-weight: 500;
-  transition: 0.2s;
-}
-
-.mobile-menu-links a:hover {
-  color: #8fae45;
-}
-
-/* CTA */
-.mobile-cta {
-  padding: 14px 28px;
-  border-radius: 50px;
-  border: 1px solid #000;
-  color: #000;
-  font-weight: 600;
-}
-
-    /* ================= MEDIA QUERIES ================= */
     @media(max-width: 992px){
-      .nav-links{
-        display: none;
-      }
-      .hamburger {
-        display: block;
-        color: #000;
-      }
-      
-      .featured-content{
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-      .mobile-menu {
-        top: 70px;
-      }
+      .nav-links{ display: none; }
+      .hamburger { display: block; color: #000; }
+      .featured-content{ grid-template-columns: 1fr; gap: 40px; }
     }
 
     @media(max-width: 768px){
-      .hero{
-        padding-top: 140px;
-        min-height: 55vh;
-      }
-      
-      .blog-grid{
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 24px;
-      }
+      .hero{ padding-top: 140px; min-height: 55vh; }
+      .blog-grid{ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
     }
+      .overlay{
+    background:rgba(0,0,0,0.65);
+  }
+
 
     @media(max-width: 480px){
-      .filters{
-        flex-direction: column;
-        align-items: stretch;
-      }
-      .search-box{
-        min-width: auto;
-      }
-      .blog-content{
-        padding: 24px;
-      }
+      .filters{ flex-direction: column; align-items: stretch; }
+      .search-box{ min-width: auto; }
     }
   </style>
 </head>
 <body>
+
 <!-- NAVBAR -->
-  <nav>
-    <div class="nav-logo">
-      <a href="index.html">
-        <img src="ASSETS/Crescendologo.png" alt="Crescendo Green Logo">
+<nav>
+  <div class="nav-logo">
+    <a href="index.html">
+      <img src="ASSETS/Crescendologo.png" alt="Crescendo Green Logo">
     </a>
   </div>
 
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="services.html">Services</a>
-
-    </div>
-    <div class="hamburger" id="hamburger">☰</div>
-</nav>
-
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <div class="mobile-menu-links">
+  <div class="nav-links">
     <a href="index.html">Home</a>
-    <a href="blog.html" class="active" style="color: #8fae45;">Blog</a>
     <a href="about.html">About</a>
     <a href="gallery.html">Gallery</a>
     <a href="services.html">Services</a>
   </div>
+  <div class="hamburger" id="hamburger">☰</div>
+</nav>
 
+<!-- MOBILE MENU -->
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-links">
+    <a href="index.html">Home</a>
+    <a href="blog.html" class="active">Blog</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="services.html">Services</a>
+  </div>
   <a href="contact.html" class="mobile-cta">Contact Us</a>
 </div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <video autoplay muted loop playsinline>
-      <source src="ASSETS/InsideNurseryDroneView.webm" type="video/webm">
-    </video>
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <div class="hero-tag">Insights</div>
-      <h1>Ideas. Systems.<br>Real Impact.</h1>
-      <p>Thoughts from the field, lessons from our work, and perspectives on building scalable restoration systems for a more resilient future.</p>
-    </div>
-  </section>
+<!-- HERO -->
+<section class="hero">
+  <img src="ASSETS/Moringa-assembled.webp" alt="Crescendo Green Hero" class="hero-bg">
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Insights</div>
+    <h1>Ideas.<br> Systems.<br>Real Impact.</h1>
+    <p>Thoughts from the field, lessons from our work, and perspectives on building scalable restoration systems for a more resilient future.</p>
+  </div>
+</section>
 
-  <!-- FEATURED ARTICLE -->
-  <section class="featured">
-    <div class="featured-content">
-      <div class="featured-image">
-        <img src="ASSETS/Malia.jpeg" alt="El Niño 2026 Kenya Tree Planting">
-      </div>
-      <div class="featured-text">
-        <div class="featured-meta">
-          <span><i class="fa-solid fa-cloud-rain"></i> Climate Systems</span>
-          <span><i class="fa-regular fa-clock"></i> 8 min read</span>
-        </div>
-        <h2>El Niño 2026: Why Kenya’s Tree-Planting Sector Should Prepare Now</h2>
-        <p>Climate agencies are increasingly confident that El Niño conditions are likely to develop in 2026. 
-           For Kenya’s tree-planting sector, this could create a significant planting window, but only for organisations that prepare in advance.</p>
-        <a href="article-el-nino.html" class="read-btn">
-          Read Full Article 
-          <i class="fa-solid fa-arrow-right"></i>
-        </a>
-      </div>
+<!-- FEATURED ARTICLE -->
+<section class="featured">
+  <div class="featured-content">
+    <div class="featured-image">
+      <img src="ASSETS/Malia.jpeg" alt="El Niño 2026 Kenya Tree Planting">
     </div>
-  </section>
+    <div class="featured-text">
+      <div class="featured-meta">
+        <span><i class="fa-solid fa-cloud-rain"></i> Climate Systems</span>
+        <span><i class="fa-regular fa-clock"></i> 8 min read</span>
+      </div>
+      <h2>El Niño 2026: Why Kenya’s Tree-Planting Sector Should Prepare Now</h2>
+      <p>Climate agencies are increasingly confident that El Niño conditions are likely to develop in 2026. 
+         For Kenya’s tree-planting sector, this could create a significant planting window, but only for organisations that prepare in advance.</p>
+      <a href="article-el-nino.html" class="read-btn">
+        Read Full Article 
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
 
-  <!-- FILTERS -->
-  <section class="filters">
-    <div class="categories">
-      <button class="active">All Articles</button>
-      <button>Restoration</button>
-      <button>Propagation</button>
-      <button>Climate Systems</button>
-      <button>Consultancy</button>
-      <button>Operations</button>
-    </div>
-    <div class="search-box">
-      <i class="fa-solid fa-magnifying-glass"></i>
-      <input type="text" placeholder="Search articles...">
-    </div>
-  </section>
+<!-- FILTERS -->
+<section class="filters">
+  <div class="categories" id="categoryFilters">
+    <button class="active" data-filter="all">All Articles</button>
+    <button data-filter="restoration">Restoration</button>
+    <button data-filter="propagation">Propagation</button>
+    <button data-filter="climate">Climate Systems</button>
+    <button data-filter="consultancy">Consultancy</button>
+    <button data-filter="operations">Operations</button>
+  </div>
+  <div class="search-box">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="text" id="searchInput" placeholder="Search articles...">
+  </div>
+</section>
 
-  <!-- BLOG GRID -->
-  <section class="blog-grid">
-    <article class="blog-card">
-      <div class="blog-image">
-        <img src="ASSETS/Malia.jpeg">
+
+<!-- BLOG GRID -->
+<section class="blog-grid" id="blogGrid">
+
+  <!-- Card 1 -->
+  <a href="article1.html" class="blog-card" data-category="restoration" data-tags="failure planning">
+    <div class="blog-image">
+      <img src="ASSETS/Malia.jpeg" alt="Why Most Tree Planting Projects Fail">
+      <div class="image-badge">Popular</div>
+    </div>
+    <div class="blog-content">
+      <div class="blog-meta">
+        <span><i class="fa-solid fa-leaf"></i> Restoration</span>
+        <span><i class="fa-regular fa-clock"></i> 7 min read</span>
       </div>
-      <div class="blog-content">
-        <div class="blog-meta">
-          <span><i class="fa-solid fa-leaf"></i> Restoration</span>
-          <span><i class="fa-regular fa-clock"></i> 7 min read</span>
-        </div>
-        <h2>Why Most Tree Planting Projects Fail Before Planting Even Starts</h2>
-        <p>Many projects are already off-track before the first tree is planted. We explore the hidden challenges in propagation, planning, and operational execution.</p>
-        <a href="article1.html" class="read-btn">
+      <h2>Why Most Tree Planting Projects Fail Before Planting Even Starts</h2>
+      <p>Many projects are already off-track before the first tree is planted. We explore the hidden challenges in propagation, planning, and operational execution.</p>
+      
+      <div class="card-footer">
+        <button class="save-btn" aria-label="Save article">
+          <i class="fa-regular fa-bookmark"></i>
+        </button>
+        <span class="read-btn">
           Read Article <i class="fa-solid fa-arrow-right"></i>
-        </a>
+        </span>
       </div>
-    </article>
+    </div>
+  </a>
 
-    <article class="blog-card">
-      <div class="blog-image">
-        <img src="ASSETS/inside-nursery.webp">
+  <!-- Card 2 -->
+  <a href="article2.html" class="blog-card" data-category="propagation" data-tags="nursery scale">
+    <div class="blog-image">
+      <img src="ASSETS/inside-nursery.webp" alt="Centralised vs Community Nurseries">
+    </div>
+    <div class="blog-content">
+      <div class="blog-meta">
+        <span><i class="fa-solid fa-seedling"></i> Propagation</span>
+        <span><i class="fa-regular fa-clock"></i> 6 min read</span>
       </div>
-      <div class="blog-content">
-        <div class="blog-meta">
-          <span><i class="fa-solid fa-seedling"></i> Propagation</span>
-          <span><i class="fa-regular fa-clock"></i> 6 min read</span>
-        </div>
-        <h2>Centralised vs Community Nurseries: Finding the Right Model for Scale</h2>
-        <p>A comparison of nursery models, their trade-offs, and how hybrid systems can improve both quality and community participation.</p>
-        <a href="article2.html" class="read-btn">
+      <h2>Centralised vs Community Nurseries: Finding the Right Model for Scale</h2>
+      <p>A comparison of nursery models, their trade-offs, and how hybrid systems can improve both quality and community participation.</p>
+      
+      <div class="card-footer">
+        <button class="save-btn" aria-label="Save article">
+          <i class="fa-regular fa-bookmark"></i>
+        </button>
+        <span class="read-btn">
           Read Article <i class="fa-solid fa-arrow-right"></i>
-        </a>
+        </span>
       </div>
-    </article>
-  </section>
+    </div>
+  </a>
 
-  <div id="footer"></div>
+</section>
+<div id="footer"></div>
 
 <script>
-fetch('footer.html')
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById('footer').innerHTML = data;
-  });
-</script>
-
- <script>
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const links = document.querySelectorAll('.mobile-menu a');
-
-  function toggleMenu(){
-    mobileMenu.classList.toggle('active');
-
-    if (mobileMenu.classList.contains('active')) {
-      hamburger.innerHTML = '✕';
-      hamburger.style.color = '#000000';
-    } else {
-      hamburger.innerHTML = '☰';
-      hamburger.style.color = '#000000';
-    }
-  }
-
-  hamburger.addEventListener('click', toggleMenu);
-
-  // CLOSE MENU ON LINK CLICK
-  links.forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.remove('active');
-      hamburger.innerHTML = '☰';
-      hamburger.style.color = '#000000';
+  // Load Footer
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer').innerHTML = data;
     });
-  });
 
-  // OPTIONAL: CLOSE ON OUTSIDE CLICK (overlay feel)
-  mobileMenu.addEventListener('click', (e) => {
-    if (e.target === mobileMenu) {
-      toggleMenu();
-    }
+ // Mobile Menu
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+
+function toggleMenu() {
+  mobileMenu.classList.toggle('active');
+  
+  if (mobileMenu.classList.contains('active')) {
+    hamburger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+    document.body.style.overflow = 'hidden';        // Prevent scrolling
+  } else {
+    hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    document.body.style.overflow = 'visible';
+  }
+}
+
+hamburger.addEventListener('click', toggleMenu);
+
+// Close menu when clicking a link
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.remove('active');
+    hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    document.body.style.overflow = 'visible';
   });
+});
 
   // Navbar scroll
   window.addEventListener("scroll", () => {
     const nav = document.querySelector("nav");
-    if(window.scrollY > 50){
-      nav.style.background = "#ffff";
-    } else {
-      nav.style.background = "#fff";
-    }
+    nav.style.background = window.scrollY > 50 ? "#ffff" : "#fff";
+  });
+
+  // ================= BLOG INTERACTIVITY =================
+  const cards = document.querySelectorAll('.blog-card');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, index * 80);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  cards.forEach(card => observer.observe(card));
+
+  // Category Filtering
+  const filterBtns = document.querySelectorAll('#categoryFilters button');
+  const blogCards = document.querySelectorAll('.blog-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter');
+
+      blogCards.forEach(card => {
+        card.style.display = (filter === 'all' || card.getAttribute('data-category') === filter) ? 'block' : 'none';
+      });
+    });
+  });
+
+  // Live Search
+  const searchInput = document.getElementById('searchInput');
+  searchInput.addEventListener('input', () => {
+    const term = searchInput.value.toLowerCase().trim();
+
+    blogCards.forEach(card => {
+      const title = card.querySelector('h2').textContent.toLowerCase();
+      const excerpt = card.querySelector('p').textContent.toLowerCase();
+      const tags = (card.getAttribute('data-tags') || "").toLowerCase();
+
+      card.style.display = (title.includes(term) || excerpt.includes(term) || tags.includes(term)) ? 'block' : 'none';
+    });
+  });
+
+  // Bookmark Functionality
+  document.querySelectorAll('.save-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      btn.classList.toggle('saved');
+    });
   });
 </script>
 </body>
