@@ -6,15 +6,13 @@
   <title>Our Services - Crescendo Green</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" class="style">
   
   <style>
     :root {
       --primary: #2e7d32;
-      --dark: #0f2a1f;
-      --accent: #5e8c41;
-      --light: #f8f9f5;
+      --dark: #1e3a2f;
     }
 
     * {
@@ -27,26 +25,11 @@
       font-family: 'Satoshi', sans-serif;
       line-height: 1.7;
       color: #333;
-      background: var(--light);
+      background: #fff;
       overflow-x: hidden;
     }
 
-    /* ====================== SUBTLE SEEDLING BACKGROUND ====================== */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('ASSETS/seedlings-background.webp') repeat;
-      opacity: 0.07;
-      z-index: -1;
-      pointer-events: none;
-      background-size: 380px;
-    }
-
-    /* ====================== NAVBAR ====================== */
+    /* ==================== NAVBAR ==================== */
     .navbar {
       position: fixed;
       top: 0;
@@ -60,7 +43,7 @@
 
     .navbar.scrolled {
       background: rgba(255, 255, 255, 0.99);
-      box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 25px rgba(0,0,0,0.12);
     }
 
     .nav-container {
@@ -74,8 +57,9 @@
     }
 
     .nav-logo img {
-      height: 62px;
+      height: 60px;
       width: auto;
+      display: block;
     }
 
     .nav-menu {
@@ -89,7 +73,7 @@
     .nav-menu a {
       position: relative;
       text-decoration: none;
-      color: #2c3e35;
+      color: #2e3f38;
       font-weight: 500;
       transition: color 0.3s ease;
     }
@@ -185,11 +169,10 @@
     }
 
     .service-row:hover .service-image img {
-      transform: scale(1.06);
+      transform: scale(1.05);
     }
 
     .service-content {
-      background: white;
       padding: 80px 70px;
       display: flex;
       flex-direction: column;
@@ -218,12 +201,12 @@
     }
 
     .tags span {
-      background: #f0f4f1;
+      border: 1px solid #c9d3cb;
       color: var(--primary);
-      padding: 8px 20px;
+      padding: 10px 18px;
       border-radius: 50px;
-      font-size: 0.95rem;
-      transition: all 0.3s;
+      font-size: 0.92rem;
+      transition: 0.35s;
     }
 
     .tags span:hover {
@@ -231,9 +214,9 @@
       color: white;
     }
 
-    /* ====================== PROJECTS ====================== */
+    /* ==================== PROJECTS ==================== */
     .projects-section {
-      background: #f8f9f5;
+      background: #f5f7f6;
       padding: 100px 0;
     }
 
@@ -246,14 +229,15 @@
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
     }
 
     .project-card {
+      position: relative;
       border-radius: 24px;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
       transition: all 0.4s ease;
       opacity: 0;
       transform: translateY(50px);
@@ -266,14 +250,14 @@
 
     .project-card:hover {
       transform: translateY(-12px);
-      box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
     }
 
     .project-card img {
       width: 100%;
-      height: 360px;
+      height: 340px;
       object-fit: cover;
-      transition: transform 0.8s ease;
+      transition: transform 0.6s ease;
     }
 
     .project-card:hover img {
@@ -292,17 +276,17 @@
       font-weight: 600;
     }
 
-    /* Floating CTA */
+    /* ==================== FLOATING CTA ==================== */
     .floating-cta {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
+      bottom: 25px;
+      right: 25px;
       background: var(--primary);
       color: white;
-      padding: 14px 24px;
+      padding: 12px 20px;
       border-radius: 50px;
       font-weight: 600;
-      box-shadow: 0 10px 30px rgba(46,125,50,0.35);
+      box-shadow: 0 10px 30px rgba(46,125,50,0.3);
       z-index: 999;
       cursor: pointer;
       transition: all 0.3s ease;
@@ -366,8 +350,9 @@
       margin-top: 80px;
     }
 
+/* ==================== MOBILE MENU FIX ==================== */
 /* ==================== MOBILE ==================== */
-    @media (max-width: 768px) {
+@media (max-width: 768px) {
 
   /* Mobile Menu */
   .nav-menu {
@@ -402,22 +387,22 @@
   /* Services */
   .service-row,
   .service-row.reverse {
-        grid-template-columns: 1fr;
-        min-height: auto;
-        margin-bottom: 60px;
-      }
+    grid-template-columns: 1fr;
+    min-height: auto;
+    margin-bottom: 60px;
+  }
 
   .service-image {
     height: 320px;
   }
 
-      .service-content {
+  .service-content {
     padding: 50px 24px;
-      }
+  }
 
-      .service-content h3 {
-        font-size: 2rem;
-      }
+  .service-content h3 {
+    font-size: 2rem;
+  }
 
   /* Projects */
   .projects-grid {
@@ -616,16 +601,10 @@
     </div>
   </section>
 
-  <!-- SERVICE ROWS -->
-  <div class="container">
-    <!-- Your four service rows remain here (I kept your structure) -->
-    <!-- Just paste your existing service-row blocks inside this container -->
-  </div>
-
-  <!-- PROJECTS SECTION -->
+  <!-- PROJECT SHOWCASE -->
   <section class="projects-section">
     <div class="container">
-      <h2>Featured Projects</h2>
+      <h2>Project Highlights</h2>
       <div class="projects-grid">
         <div class="project-card">
           <img src="ASSETS/mangoes.jpg" alt="High Density Mango Plantation">
@@ -669,7 +648,6 @@
   </div>
 
   <div id="footer"></div>
-
   <script>
     // Load Footer
     fetch('footer.html')
@@ -681,15 +659,13 @@
     // Animation Observer
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.15 });
 
     document.querySelectorAll('.service-row, .project-card').forEach(el => observer.observe(el));
 
-    // Navbar scroll effect
+    // Navbar Scroll Effect
     window.addEventListener('scroll', () => {
       document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 80);
     });
@@ -717,7 +693,7 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
     navMenu.classList.remove('active');
     document.body.style.overflow = 'visible';
   });
-    });
-  </script>
+});
+</script>
 </body>
 </html>
