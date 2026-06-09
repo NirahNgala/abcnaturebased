@@ -467,49 +467,111 @@ section {
   100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
 }
 
-
-.clients{
-  padding: 90px 20px;
-  background: #f6f8f5;
+/* ====================== CLIENTS SECTION ====================== */
+.clients {
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9f0e4 100%);
   text-align: center;
 }
 
-.clients-title{
-  font-size: var(--h2);
-  line-height: 1;
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Header */
+.section-header {
+  margin-bottom: 70px;
+}
+
+.clients-title {
+  font-size: clamp(2.4rem, 5vw, 3.2rem);
+  font-weight: 700;
+  color: #0f2a1f;
+  margin-bottom: 16px;
   letter-spacing: -0.03em;
 }
 
-.clients-subtitle{
-  max-width: 700px;
-  margin: 0 auto 40px;
-  font-size: 1.05rem;
+.clients-subtitle {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 1.1rem;
   color: #555;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
-.clients-grid{
+/* Clients Grid */
+.clients-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.client-item {
+  display: flex;
+  align-items: center;
   gap: 14px;
-}
-
-.client-item{
-  padding: 12px 22px;
-  border-radius: 50px;
+  padding: 18px 28px;
   background: white;
-  border: 1px solid #e6e6e6;
+  border: 1px solid #e8ede4;
+  border-radius: 60px;
   font-weight: 600;
-  font-size: 0.95rem;
-  transition: all 0.2s ease;
+  font-size: 1.05rem;
+  color: #0f2a1f;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  min-width: 180px;
+  justify-content: center;
 }
 
-.client-item:hover{
-  transform: translateY(-3px);
-  border-color: #5f9c43;
+.client-item i {
+  font-size: 1.5rem;
+  color: #5e8c41;
+  transition: all 0.4s ease;
 }
 
+.client-item:hover {
+  transform: translateY(-10px);
+  border-color: #5e8c41;
+  box-shadow: 0 20px 35px rgba(94, 140, 65, 0.15);
+}
+
+.client-item:hover i {
+  transform: scale(1.2);
+  color: #4a6f34;
+}
+
+/* ====================== MOBILE RESPONSIVE ====================== */
+@media (max-width: 768px) {
+  .clients {
+    padding: 70px 15px;
+  }
+  
+  .client-item {
+    min-width: 160px;
+    padding: 16px 22px;
+    font-size: 1rem;
+    gap: 12px;
+  }
+  
+  .client-item i {
+    font-size: 1.35rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .clients-grid {
+    gap: 16px;
+  }
+  
+  .client-item {
+    min-width: 100%;
+    max-width: 320px;
+  }
+}
 /* ====================== HOW WE DELIVER ====================== */
 .how-we-deliver {
   padding: 100px 20px;
@@ -785,170 +847,177 @@ section {
   position: relative;
   overflow: hidden;
   color: white;
-  padding: 40px 0;
+  min-height: 720px;
+  display: flex;
+  align-items: center;
+  padding: 120px 20px 100px;
 }
 
 .carbon-bg {
   position: absolute;
   inset: 0;
+  z-index: 1;
 }
 
 .carbon-bg img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.9;
+  filter: brightness(0.75) contrast(1.1);
 }
 
 .carbon-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.453), rgba(41, 40, 40, 0.543), rgba(0,0,0,0.55));
+  z-index: 2;
+  background: linear-gradient(
+    to right,
+    rgba(15, 42, 31, 0.75),
+    rgba(15, 42, 31, 0.65),
+    rgba(0, 0, 0, 0.45)
+  );
 }
 
+/* Content Container */
 .carbon-container {
   position: relative;
+  z-index: 3;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 20px;
 }
 
 .carbon-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 30px;
+  gap: 50px;
   align-items: center;
 }
 
 .carbon-content {
-  text-align: center;
+  max-width: 620px;
 }
 
 .carbon-title {
-  font-size: 2.6rem;
-  line-height: 1.1;
+  font-size: clamp(2.6rem, 6vw, 4.2rem);
+  line-height: 1.05;
   font-weight: 700;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.04em;
   margin-bottom: 1.2rem;
 }
 
+.highlight {
+  color: #f97316;
+  position: relative;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: rgba(249, 115, 22, 0.3);
+  z-index: -1;
+}
+
 .carbon-subtitle {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   line-height: 1.5;
-  color: #36d2f1;
-  max-width: 520px;
-  margin: 0 auto 1rem;
+  color: #e0f2e9;
+  margin-bottom: 1.5rem;
 }
 
 .carbon-features {
-  font-size: 1.1rem;
-  color: #1bb2d4;
-  margin-bottom: 2rem;
+  font-size: 1.15rem;
+  color: #a3e4d0;
+  margin-bottom: 2.5rem;
+  font-weight: 500;
 }
 
 .carbon-cta {
   display: inline-block;
   background: #f97316;
   color: white;
-  padding: 16px 32px;
-  font-size: 1.1rem;
+  padding: 18px 38px;
+  font-size: 1.15rem;
   font-weight: 600;
   border-radius: 9999px;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 25px rgba(249, 115, 22, 0.3);
 }
 
 .carbon-cta:hover {
   background: #ea580c;
-  transform: translateY(-3px);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 35px rgba(249, 115, 22, 0.4);
+}
+
+/* Highlight Card */
+.carbon-highlights {
+  position: relative;
+  z-index: 3;
 }
 
 .highlight-card {
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 24px;
-  padding: 32px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 28px;
+  padding: 40px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
 
 .highlight-card h3 {
-  font-size: 1.5rem;
+  font-size: 1.65rem;
   color: #fed7aa;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   font-weight: 600;
 }
 
 .highlight-card p {
-  color: #f5f5f4;
-  line-height: 1.65;
+  color: #f1f5f3;
+  line-height: 1.7;
+  font-size: 1.05rem;
 }
 
-/* ====================== MEDIA QUERIES ====================== */
+/* ====================== RESPONSIVE ====================== */
 @media (min-width: 768px) {
-  .carbon-section {
-    padding: 50px 0;
-  }
-
   .carbon-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: 80px;
   }
-
+  
   .carbon-content {
     text-align: left;
-  }
-
-  .carbon-subtitle,
-  .carbon-features {
-    margin: 0 0 1.5rem 0;
-  }
-
-  .carbon-title {
-    font-size: 3.2rem;
   }
 }
 
 @media (min-width: 1024px) {
   .carbon-title {
-    font-size: 3.8rem;
-    line-height: 1.05;
+    font-size: 4.4rem;
   }
-
-  .carbon-subtitle {
-    font-size: 1.35rem;
-  }
-
+  
   .highlight-card {
-    padding: 40px;
+    padding: 48px;
   }
 }
 
-/* Extra Small Screens */
-@media (max-width: 480px) {
+@media (max-width: 640px) {
   .carbon-section {
-    padding: 20px;
+    min-height: auto;
+    padding: 90px 15px 80px;
   }
-
-  .carbon-title {
-    font-size: 1.25rem;
-  }
-
-  .carbon-subtitle {
-    font-size: 0.9rem;
-  }
-
-  .carbon-features {
-    font-size: .7rem;
-  }
-
+  
   .highlight-card {
-    padding: 14px;
+    padding: 28px;
   }
-
-  .highlight-card h3 {
-    font-size: 1rem;
+  
+  .carbon-cta {
+    padding: 16px 32px;
+    font-size: 1.1rem;
   }
 }
-
 
 /*PARTNER SECTION*/
 .partners-section {
@@ -1093,7 +1162,7 @@ section {
   margin: 0 7px;
   cursor: pointer;
   transition: all 0.3s ease;
-  border: 2px solid transparent;
+  /*border: 2px solid transparent;*/
 }
 
 .slider-dots span.active {
@@ -1102,7 +1171,6 @@ section {
   transform: scale(1.4);
 }
 
-/* Rest of your existing styles remain the same */
 .media-slider {
   max-width: 1200px;
   margin: 0 auto;
@@ -1113,6 +1181,9 @@ section {
   padding-bottom: 20px;
   scrollbar-width: thin;
   scrollbar-color: #5e8c41 #e0e0e0;
+}
+.media-slider:hover {
+  cursor: grab;
 }
 
 .slide {
