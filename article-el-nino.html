@@ -3,851 +3,306 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>El Niño 2026: Why Kenya’s Tree-Planting Sector Should Prepare Now | Crescendo Insights</title>
+  <title>El Niño 2026: Let’s Get Ready to Plant! 🌱</title>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Satoshi:wght@600;700&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Satoshi:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
   <style>
-
     :root{
-      --emerald:#059669;
+      --emerald:#10b981;
       --emerald-light:#d1fae5;
-      --forest:#065f46;
-      --cream:#f8faf7;
-      --warm:#fffdf8;
-      --text:#1e293b;
-      --muted:#64748b;
-      --border:#dbe4dc;
-      --blue:#0891b2;
-      --orange:#ea580c;
+      --mint:#a7f3d0;
+      --peach:#fcd34d;
+      --cream:#fefce8;
+      --text:#1e2937;
+      --soft:#64748b;
+      --pink:#f9a8d4;
     }
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
-
-    html{
-      scroll-behavior:smooth;
-    }
-
+    *{ margin:0; padding:0; box-sizing:border-box; }
     body{
       font-family:'Inter',sans-serif;
-      background:linear-gradient(to bottom,#f8faf7,#ffffff);
+      background:linear-gradient(to bottom,#f0fdfa,#fefce8);
       color:var(--text);
       line-height:1.9;
     }
 
-    a{
-      text-decoration:none;
-      color:inherit;
-    }
-
-    img{
-      width:100%;
-      display:block;
-    }
-
-    /* ================= PROGRESS BAR ================= */
-
-    .progress-bar{
-      position:fixed;
-      top:0;
-      left:0;
-      height:4px;
-      width:0%;
-      background:linear-gradient(to right,#059669,#10b981);
-      z-index:9999;
-    }
-
-    /* ================= ARTICLE CONTAINER ================= */
-
     .article-container{
       max-width:920px;
-      margin:70px auto 100px;
+      margin:60px auto 100px;
       background:white;
-      border-radius:32px;
+      border-radius:40px;
       overflow:hidden;
-
-      box-shadow:
-        0 10px 30px rgba(5,150,105,.06),
-        0 30px 80px rgba(15,23,42,.06);
-
-      border:1px solid rgba(5,150,105,.08);
+      box-shadow:0 20px 60px rgba(16,185,129,.12);
+      border:3px solid var(--mint);
     }
 
-    /* ================= HERO ================= */
-    /* ================= CLOSE BUTTON ================= */
+    /* Cute Progress Bar */
+    .progress-bar{
+      position:fixed;
+      top:0; left:0;
+      height:6px;
+      width:0%;
+      background:linear-gradient(to right,#10b981,#67e8b4);
+      z-index:9999;
+      border-radius:0 0 4px 0;
+    }
 
-.close-btn {
-  position: fixed;
-  top: 22px;
-  right: 22px;
-  width: 48px;
-  height: 48px;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(5, 150, 105, 0.15);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--forest);
-  font-size: 1.2rem;
-  z-index: 10000;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  transition: all 0.3s ease;
-}
+    /* Close Button */
+    .close-btn {
+      position: fixed;
+      top: 22px;
+      right: 22px;
+      width: 52px;
+      height: 52px;
+      background: white;
+      border: 2px solid var(--mint);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #10b981;
+      font-size: 1.4rem;
+      z-index: 10000;
+      box-shadow: 0 8px 25px rgba(16,185,129,.2);
+      transition: all 0.3s ease;
+    }
+    .close-btn:hover {
+      transform: rotate(90deg) scale(1.15);
+      background: #10b981;
+      color: white;
+    }
 
-.close-btn:hover {
-  transform: rotate(90deg) scale(1.1);
-  background: var(--emerald);
-  color: white;
-}
+    /* Hero */
     .hero{
       min-height:520px;
-
-      background:
-        linear-gradient(
-          rgba(5,150,105,.50),
-          rgba(15,23,42,.35)
-        ),
-        url('ASSETS/Malia.jpeg') center/cover no-repeat;
-
+      background: linear-gradient(rgba(16,185,129,.45), rgba(16,185,129,.55)),
+                  url('ASSETS/Malia.jpeg') center/cover no-repeat;
       display:flex;
       align-items:flex-end;
-
       padding:80px 8%;
-
       position:relative;
-    }
-
-    .hero::after{
-      content:"";
-      position:absolute;
-      inset:0;
-
-      background:
-        linear-gradient(
-          to top,
-          rgba(255,255,255,.15),
-          transparent
-        );
-    }
-
-    .hero-content{
-      position:relative;
-      z-index:2;
-      max-width:760px;
-    }
-
-    .hero-tag{
-      display:inline-block;
-
-      padding:10px 18px;
-
-      background:rgba(255,255,255,.16);
-
-      backdrop-filter:blur(12px);
-
-      border-radius:50px;
-
-      color:white;
-
-      font-size:.9rem;
-
-      margin-bottom:24px;
     }
 
     .hero-content h1{
       font-family:'Satoshi',serif;
-
-      font-size:clamp(2.8rem,6vw,4.8rem);
-
-      line-height:1.05;
-
+      font-size:clamp(2.6rem,6vw,4.6rem);
+      line-height:1.1;
       color:white;
-
-      margin-bottom:24px;
-
-      text-shadow:0 8px 30px rgba(0,0,0,.25);
-    }
-    /* Enhanced CTA Button with Wobble Animation */
-.cta-button {
-  display: inline-block;
-  margin-top: 28px;
-  background: white;
-  color: #047857;
-  padding: 18px 40px;
-  border-radius: 50px;
-  font-weight: 700;
-  font-size: 1.1rem;
-  text-decoration: none;
-  box-shadow: 0 10px 30px rgba(5, 150, 105, 0.25);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  z-index: 2;
-  overflow: hidden;
-}
-
-.cta-button:hover {
-  transform: translateY(-6px) scale(1.04);
-  box-shadow: 0 20px 40px rgba(5, 150, 105, 0.35);
-  background: #f8faf7;
-}
-
-/* Subtle Attention Animation - Gentle Pulse */
-@keyframes gentlePulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.04); }
-}
-
-.cta-button {
-  animation: gentlePulse 3s ease-in-out infinite;
-}
-
-/* Pause animation when hovering */
-.cta-button:hover {
-  animation: none;
-}
-
-    /* ================= META ================= */
-
-    .article-meta{
-      display:flex;
-      flex-wrap:wrap;
-      gap:18px;
-
-      color:white;
-
-      font-size:.95rem;
+      text-shadow:0 6px 20px rgba(0,0,0,.3);
+      margin-bottom:20px;
     }
 
-    .article-meta span{
-      background:rgba(255,255,255,.15);
-
+    .hero-tag{
+      display:inline-block;
+      padding:8px 20px;
+      background:rgba(255,255,255,.25);
       backdrop-filter:blur(12px);
-
-      padding:10px 16px;
-
       border-radius:50px;
+      color:white;
+      font-size:1rem;
+      font-weight:500;
     }
 
-    /* ================= CONTENT ================= */
-
-    .content-wrapper{
-      padding:70px 9%;
-    }
+    /* Content */
+    .content-wrapper{ padding:70px 9%; }
 
     .article-content{
-      font-size:1.12rem;
+      font-size:1.13rem;
       color:var(--text);
     }
 
-    .article-content p{
-      margin-bottom:26px;
-    }
-
-    .article-content h2{
-      font-size:2rem;
-
-      margin:70px 0 24px;
-
-      color:var(--forest);
-
+    h2{
       font-family:'Satoshi',serif;
-
-      line-height:1.2;
+      color:#065f46;
+      margin:60px 0 20px;
+      font-size:2.1rem;
     }
-
-    .highlight{
-      color:var(--blue);
-      font-weight:600;
-    }
-
-    /* ================= INFO CARD ================= */
 
     .card{
-      background:linear-gradient(
-        135deg,
-        #ecfdf5,
-        #f0fdf4
-      );
-
-      border:1px solid #bbf7d0;
-
+      background:linear-gradient(135deg, #ecfdf5, #fefce8);
+      border:2px solid #a7f3d0;
       padding:32px;
-
-      border-radius:22px;
-
-      margin:42px 0;
-
-      box-shadow:
-        0 10px 30px rgba(5,150,105,.06);
+      border-radius:28px;
+      margin:40px 0;
+      box-shadow:0 15px 30px rgba(16,185,129,.1);
+      text-align:center;
+      font-size:1.2rem;
+      font-weight:600;
+      color:#065f46;
     }
 
-    /* ================= LIST ================= */
-
-    ul{
-      margin:25px 0;
-    }
-
-    ul li{
-      margin:18px 0;
-
-      list-style:none;
-
-      position:relative;
-
-      padding-left:36px;
-
-      color:#334155;
-    }
-
-    ul li::before{
-      content:"🌱";
-      position:absolute;
-      left:0;
-      top:0;
-    }
-
-    /* ================= QUOTE ================= */
-
-    .quote{
-      margin:70px 0;
-
-      padding:45px;
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(8,145,178,.08),
-          rgba(5,150,105,.08)
-        );
-
-      border-left:6px solid var(--emerald);
-
-      border-radius:24px;
-
-      font-style:italic;
-
-      font-size:1.35rem;
-
-      line-height:1.7;
-
-      color:#0f172a;
-
-      position:relative;
-    }
-
-    .quote::before{
-      content:"“";
-
-      position:absolute;
-
-      top:-15px;
-      left:20px;
-
-      font-size:6rem;
-
-      color:rgba(5,150,105,.15);
-
-      font-family:'Satoshi',serif;
-    }
-
-    /* ================= STATS ================= */
-
+    /* Stats - Super Cute */
     .stats-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-      gap:20px;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:24px;
       margin:60px 0;
     }
 
     .stat-card{
       background:white;
-
-      border:1px solid var(--border);
-
-      border-radius:24px;
-
-      padding:35px 25px;
-
+      border:2px solid var(--mint);
+      border-radius:28px;
+      padding:32px 20px;
       text-align:center;
-
-      box-shadow:0 10px 30px rgba(15,23,42,.04);
+      box-shadow:0 15px 35px rgba(16,185,129,.12);
+      transition: transform 0.3s;
     }
-
+    .stat-card:hover{
+      transform: translateY(-10px) scale(1.04);
+    }
     .stat-card h3{
-      font-size:2.3rem;
-      color:var(--emerald);
-      margin-bottom:10px;
+      font-size:2.8rem;
+      color:#10b981;
+      margin-bottom:8px;
     }
 
-    .stat-card p{
-      color:var(--muted);
-      font-size:.95rem;
+    /* Quote */
+    .quote{
+      margin:70px 0;
+      padding:50px 40px;
+      background:linear-gradient(135deg, #ecfdf5, #f0fdfa);
+      border-radius:32px;
+      border-left:8px solid #10b981;
+      font-size:1.35rem;
+      font-style:italic;
+      position:relative;
+    }
+    .quote::before{
+      content:"🌱";
+      font-size:4rem;
+      position:absolute;
+      top:-20px;
+      left:30px;
+      opacity:0.2;
     }
 
-    /* ================= CTA ================= */
-
+    /* Final CTA - Extra Cute */
     .final-cta{
       text-align:center;
-      margin:80px 0 30px;
-      padding:60px 40px;
-      background:
-        linear-gradient(
-          135deg,
-          #35a2f0,
-          #047857
-        );
-      border-radius:30px;
+      margin:80px 0;
+      padding:65px 40px;
+      background:linear-gradient(135deg, #67e8b4, #10b981);
+      border-radius:36px;
       color:white;
-      position:relative;
-      overflow:hidden;
+      box-shadow:0 20px 50px rgba(16,185,129,.3);
     }
 
-    .final-cta::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        radial-gradient(
-          circle at top right,
-          rgba(255,255,255,.25),
-          transparent 40%
-        );
+    .cta-button {
+      display: inline-block;
+      margin-top: 28px;
+      background: white;
+      color: #047857;
+      padding: 18px 42px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.15rem;
+      box-shadow: 0 12px 30px rgba(16,185,129,.3);
+      transition: all 0.4s;
+    }
+    .cta-button:hover {
+      transform: translateY(-8px) scale(1.08);
+      box-shadow: 0 20px 40px rgba(16,185,129,.4);
     }
 
-    .final-cta h3{
-      font-size:2rem;
-      margin-bottom:18px;
-      position:relative;
-      z-index:2;
-    }
-
-    .final-cta p{
-      position:relative;
-      z-index:2;
-      max-width:650px;
-      margin:auto;
-    }
-
-    .final-cta a{
-      display:inline-block;
-
-      margin-top:28px;
-
-      background:white;
-
-      color:#047857;
-
-      padding:16px 34px;
-
-      border-radius:50px;
-
-      font-weight:600;
-
-      transition:.3s;
-
-      position:relative;
-      z-index:2;
-    }
-
-    .final-cta a:hover{
-      transform:translateY(-4px);
-    }
-
-    /* ================= SHARE ================= */
-
-    .share-buttons{
-      margin-top:60px;
-
-      padding-top:35px;
-
-      border-top:1px solid var(--border);
-
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-    }
-
+    /* Share buttons */
     .share-btn{
       padding:14px 24px;
-
       background:white;
-
-      color:#1e293b;
-
-      border:1px solid #dbe4dc;
-
+      border:2px solid var(--mint);
       border-radius:50px;
-
       display:flex;
       align-items:center;
       gap:10px;
-
-      transition:.3s;
+      transition:all .3s;
     }
-
     .share-btn:hover{
-      background:var(--emerald);
-
+      background:#10b981;
       color:white;
-
-      border-color:var(--emerald);
-
-      transform:translateY(-3px);
+      transform:scale(1.05);
     }
-
-    /* ================= RELATED ================= */
-
-    .related{
-      margin-top:90px;
-    }
-
-    .related h2{
-      margin-bottom:30px;
-    }
-
-    .related-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:24px;
-    }
-
-    .related-card{
-      background:white;
-
-      border:1px solid var(--border);
-
-      border-radius:24px;
-
-      overflow:hidden;
-
-      transition:.4s;
-
-      box-shadow:0 10px 30px rgba(15,23,42,.04);
-    }
-
-    .related-card:hover{
-      transform:translateY(-8px);
-    }
-
-    .related-card img{
-      height:200px;
-      object-fit:cover;
-    }
-
-    .related-content{
-      padding:24px;
-    }
-
-    .related-content h3{
-      font-size:1.2rem;
-      margin-bottom:12px;
-      line-height:1.4;
-    }
-
-    .related-content p{
-      color:var(--muted);
-      font-size:.95rem;
-    }
-
-    /* ================= RESPONSIVE ================= */
-
-    @media(max-width:768px){
-
-      .article-container{
-        border-radius:0;
-        margin:0;
-      }
-
-      .hero{
-        min-height:420px;
-        padding:60px 8%;
-      }
-
-      .hero-content h1{
-        font-size:2.5rem;
-      }
-
-      .content-wrapper{
-        padding:55px 8%;
-      }
-
-      .quote{
-        padding:35px 28px;
-        font-size:1.15rem;
-      }
-
-      .stats-grid{
-        grid-template-columns:1fr;
-      }
-
-    }
-
   </style>
 </head>
 <body>
 
-  <!-- Progress Bar -->
   <div class="progress-bar" id="progressBar"></div>
-  <!-- CLOSE BUTTON -->
-<a href="javascript:history.back()"class="close-btn" aria-label="Close article">
-  <i class="fa-solid fa-xmark"></i>
-</a>
+
+  <a href="javascript:history.back()" class="close-btn" aria-label="Close">
+    <i class="fa-solid fa-xmark"></i>
+  </a>
 
   <div class="article-container">
 
-    <!-- HERO -->
     <section class="hero">
-
       <div class="hero-content">
-
-        <div class="hero-tag">
-          Climate Systems • Restoration • East Africa
-        </div>
-
-        <h1>
-          El Niño 2026:
-          Why Kenya’s Tree-Planting Sector Should Prepare Now
-        </h1>
-
-        <div class="article-meta">
-
-          <span>
-            <i class="fa-solid fa-cloud-rain"></i>
-            Climate Systems
-          </span>
-
-          <span>
-            <i class="fa-regular fa-clock"></i>
-            8 min read
-          </span>
-
-          <span>
-            <i class="fa-solid fa-calendar"></i>
-            May 2026
-          </span>
-
-        </div>
-
+        <div class="hero-tag">🌧️🌱 Climate • Restoration • Kenya</div>
+        <h1>El Niño 2026:<br>Let’s Get Ready to Plant Lots of Trees! 🌳💚</h1>
       </div>
-
     </section>
 
-    <!-- CONTENT -->
     <div class="content-wrapper">
-
       <div class="article-content">
 
-        <p>
-          Climate agencies are increasingly confident that
-          <strong>El Niño conditions</strong> are likely to develop in 2026.
-          NOAA’s Climate Prediction Center currently estimates an 82% probability
-          of El Niño emerging during May–July 2026.
-        </p>
+        <p>Hey friends! 🌈 Climate experts are feeling pretty confident that <strong>El Niño</strong> is coming in 2026 — and that means <strong>good rains</strong> for Kenya!</p>
 
-        <p>
-          For Kenya and the Horn of Africa, this brings real opportunity —
-          especially during the short rains.
-          But <span class="highlight">rainfall alone is not enough</span>.
-        </p>
-
-        <h2>
-          Rainfall Creates Opportunity — Preparation Wins
-        </h2>
-
-        <p>
-          Well-timed rains can dramatically improve seedling survival.
-          However, success depends on having strong, hardened seedlings ready,
-          sites prepared, and teams fully equipped.
-        </p>
+        <p>This is our chance to grow <em>lots</em> of happy little trees. But we have to get ready now~</p>
 
         <div class="card">
-
-          <strong>🌱 Key Reminder:</strong>
-
-          The best planting seasons are won in the months before the first rain falls.
-
+          🌱 The best planting seasons are prepared with love <strong>before</strong> the rain starts!
         </div>
 
-        <!-- STATS -->
         <div class="stats-grid">
-
           <div class="stat-card">
             <h3>82%</h3>
-            <p>Probability of El Niño development in 2026</p>
+            <p>Chance of El Niño in 2026</p>
           </div>
-
           <div class="stat-card">
-            <h3>2x</h3>
-            <p>Higher survival rates with proper planning</p>
+            <h3>2×</h3>
+            <p>More baby trees survive with good prep!</p>
           </div>
-
           <div class="stat-card">
             <h3>2026</h3>
-            <p>Potential landmark restoration season</p>
+            <p>Could be our best planting year ever 🌟</p>
           </div>
-
         </div>
 
-        <h2>
-          El Niño Also Brings Risks
-        </h2>
-
-        <p>
-          Heavy downpours can flood sites, damage roads,
-          increase erosion, and create disease pressure in nurseries.
-          Smart planning turns these risks into manageable challenges.
-        </p>
-
-        <h2>
-          Why You Should Start Preparing Now
-        </h2>
-
+        <h2>Let’s Make This Season Super Successful! ✨</h2>
         <ul>
-          <li>Reserve nursery capacity early</li>
-          <li>Secure quality seeds and finalise species lists</li>
-          <li>Plan logistics, transport and field teams</li>
-          <li>Budget for proper aftercare and monitoring</li>
+          <li>🌱 Book nursery space early</li>
+          <li>🌱 Choose strong, healthy seeds</li>
+          <li>🌱 Plan transport & happy planting teams</li>
+          <li>🌱 Prepare aftercare (water + love)</li>
         </ul>
 
-        <h2>
-          Quality Seedlings Make the Difference
-        </h2>
-
-        <p>
-          At <strong>Crescendo Green</strong>,
-          we focus on producing robust, well-rooted seedlings
-          that survive and thrive in real field conditions.
-        </p>
+        <h2>Quality Seedlings = Happy Trees</h2>
+        <p>At <strong>Crescendo Green</strong>, we grow strong, tough little seedlings that are ready to thrive in the real world.</p>
 
         <div class="quote">
-
-          A favourable season can be missed if the seedlings are not ready.
-          But with the right preparation, 2026 could become
-          a landmark year for restoration in Kenya.
-
+          A good rainy season is a gift — but only if our seedlings are ready to dance in the rain! 
         </div>
 
-        <h2>
-          Turn Planting Into a Professional Operation
-        </h2>
-
-        <p>
-          Large-scale success requires more than just planting days —
-          it needs strategy, technical oversight, and strong follow-up.
-        </p>
-
-        <!-- CTA -->
-<!-- Improved Professional CTA -->
-<div class="final-cta">
-  <h3>
-    Don’t Miss the 2026 El Niño Planting Season
-  </h3>
-  
-  <p>
-    Secure premium seedlings, expert planning, and reliable aftercare now.<br>
-    <strong>Turn expected rains into real restoration success.</strong>
-  </p>
-
-  <a href="contact.html" class="cta-button">
-    Prepare for El Niño 2026 →
-  </a>
-
-</div>
-
-      </div>
-
-      <!-- SHARE -->
-      <div class="share-buttons">
-
-        <a href="#" class="share-btn">
-          <i class="fa-brands fa-linkedin"></i>
-          LinkedIn
-        </a>
-
-        <a href="#" class="share-btn">
-          <i class="fa-brands fa-x-twitter"></i>
-          X
-        </a>
-
-        <a href="#" class="share-btn">
-          <i class="fa-brands fa-whatsapp"></i>
-          WhatsApp
-        </a>
-
-      </div>
-
-      <!-- RELATED -->
-      <section class="related-card">
-
-        <h2>
-          Related Insights
-        </h2>
-
-        <div class="related-grid">
-
-          <article class="related-card">
-            <img src="ASSETS/inside-nursery.webp">
-            <div class="related-content">
-
-              <h3>
-                Centralised vs Community Nurseries
-              </h3>
-
-              <p>
-                Finding scalable nursery systems for East Africa.
-              </p>
-
-            </div>
-
-          </article>
-
-          <article class="related-card">
-            <img src="ASSETS/Malia.jpeg">
-            <div class="related-content">
-              <h3>
-                Why Most Tree Planting Projects Fail
-              </h3>
-              <p>
-                Operational lessons from restoration systems.
-              </p>
-            </div>
-          </article>
+        <!-- Super Cute CTA -->
+        <div class="final-cta">
+          <h3>Ready to make 2026 our greenest year yet? 🌍💚</h3>
+          <p><strong>Secure cute, strong seedlings + expert support now!</strong></p>
+          <a href="contact.html" class="cta-button">
+            Yes! Let’s Prepare for El Niño 2026 →
+          </a>
         </div>
-      </section>
+
+      </div>
     </div>
   </div>
 
-  <!-- JS -->
   <script>
-
-    // reading progress bar
-
     window.addEventListener("scroll", () => {
-
       const scrollTop = document.documentElement.scrollTop;
-
-      const scrollHeight =
-        document.documentElement.scrollHeight -
-        document.documentElement.clientHeight;
-
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       const progress = (scrollTop / scrollHeight) * 100;
-
-      document.getElementById("progressBar").style.width =
-        progress + "%";
-
+      document.getElementById("progressBar").style.width = progress + "%";
     });
-
   </script>
-
 </body>
 </html>

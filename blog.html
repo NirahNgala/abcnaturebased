@@ -7,7 +7,6 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
-  <link rel="stylesheet" href="style.css" />
   
   <style>
     *{
@@ -17,11 +16,11 @@
     }
 
     body{
-      font-family:'Satoshi', sans-serif;
-      background:#ffffffd0;
-      color:#fff;
+      font-family:'Inter', sans-serif;
+      background:#f8fff4;
+      color:#2c3e1e;
       overflow-x:hidden;
-      line-height:1.6;
+      line-height:1.7;
     }
 
     a{ text-decoration:none; color:inherit; }
@@ -30,6 +29,7 @@
       width:100%;
       display:block;
       height:auto;
+      border-radius: 24px;
     }
 
     /* ================= NAVBAR ================= */
@@ -39,74 +39,90 @@
       left:0;
       width:100%;
       z-index:3000;
-      padding: 16px 7%;
+      padding: 18px 7%;
       display:flex;
       justify-content:space-between;
       align-items:center;
-      background:rgb(255, 255, 255);
-      transition: all 0.3s;
+      background:rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      transition: all 0.4s;
     }
 
     .nav-logo img {
-      height: 68px;
+      height: 72px;
       width: auto;
       object-fit: contain;
+      transition: transform 0.3s;
+    }
+
+    .nav-logo:hover img {
+      transform: scale(1.08) rotate(4deg);
     }
 
     .nav-links{
       display:flex;
-      gap:40px;
+      gap:42px;
       align-items:center;
     }
 
     .nav-links a{
-      font-size:1rem;
-      color:#0c3805;
-      transition:.3s;
+      font-size:1.05rem;
+      color:#2c3e1e;
       font-weight:500;
+      position: relative;
     }
 
-    .nav-links a:hover{
-      color:#b5d66f;
+    .nav-links a:after{
+      content:'';
+      position:absolute;
+      width:0;
+      height:2px;
+      bottom:-4px;
+      left:0;
+      background:#8fae45;
+      transition:0.3s;
     }
 
-   /* ================= HAMBURGER & MOBILE MENU ================= */
-.hamburger {
-  display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: #000000;
-  z-index: 5000;
-  transition: all 0.3s;
+    .nav-links a:hover:after{
+      width:100%;
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      font-size: 1.9rem;
+      cursor: pointer;
+      color: #2c3e1e;
+      z-index: 5000;
+      transition: all 0.3s;
 }
 
 .hamburger:hover {
   color: #b5d66f;
-}
+    }
 
-/* Mobile Menu */
-.mobile-menu {
-  position: fixed;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100vh;
-  background: rgba(255,255,255,0.98);
-  backdrop-filter: blur(20px);
-  z-index: 4500;
-  transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  padding-top: 80px;
-  overflow-y: auto;
-}
+    /* Mobile Menu */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100vh;
+      background: #f8fff4;
+      z-index: 4500;
+      transition: 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      padding-top: 80px;
+    }
 
-.mobile-menu.active {
-  left: 0;
-}
+    .mobile-menu.active {
+      left: 0;
+    }
 
 .mobile-menu-links {
   display: flex;
@@ -146,18 +162,20 @@
       overflow:hidden;
     }
 
-   .hero-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-}
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      filter: brightness(1.1);
+    }
+
     .overlay{
       position:absolute;
       inset:0;
-      background:rgba(0,0,0,0.55);
+      background:linear-gradient(180deg, rgba(44,62,30,0.45), rgba(44,62,30,0.65));
       z-index:2;
     }
 
@@ -169,31 +187,34 @@
 
     .hero-tag{
       color:#b5d66f;
-      margin-bottom:24px;
-      font-size:.95rem;
-      letter-spacing:3px;
-      text-transform:uppercase;
-    }
-
-    .hero h1{
-      font-size:clamp(3.2rem, 8.5vw, 6.5rem);
-      line-height:0.95;
-      margin-bottom:28px;
+      background:rgba(181,214,111,0.2);
+      padding:6px 18px;
+      border-radius:50px;
+      display:inline-block;
+      margin-bottom:20px;
+      font-size:0.95rem;
+      letter-spacing:2px;
       font-weight:600;
     }
 
+    .hero h1{
+      font-size:clamp(3.4rem, 8.5vw, 6.8rem);
+      line-height:0.95;
+      margin-bottom:28px;
+      font-weight:700;
+      color:white;
+    }
+
     .hero p{
-      max-width:600px;
-      color:#d4d4d4;
-      font-size:1.1rem;
-      line-height:1.75;
+      color:#e8f0d8;
+      font-size:1.15rem;
+      max-width:580px;
     }
 
     /* ================= FEATURED ================= */
     .featured{
-      padding:80px 7% 60px;
-      background:#074a3770;
-      border-bottom:1px solid rgba(255,255,255,0.08);
+      padding:90px 7% 70px;
+      background:#e8f4d8;
     }
 
     .featured-content{
@@ -206,41 +227,41 @@
     }
 
     .featured-image{
-      border-radius:28px;
+      border-radius:32px;
       overflow:hidden;
-      box-shadow:0 20px 40px rgba(0,0,0,0.6);
+      box-shadow:0 25px 50px -12px rgba(143,174,69,0.3);
     }
 
     .featured-text h2{
-      font-size:clamp(2.4rem, 5vw, 3.2rem);
+      font-size:clamp(2.5rem, 5vw, 3.4rem);
       line-height:1.1;
       margin-bottom:24px;
+      color:#2c3e1e;
     }
 
     .featured-meta{
       display:flex;
-      gap:18px;
-      color:#4f661f;
-      margin-bottom:20px;
-      font-size:.95rem;
+      gap:20px;
+      color:#5f7a2f;
+      margin-bottom:24px;
+      font-size:1rem;
     }
 
     .featured p{
-      color:#000000;
+      color:#3f4a2e;
       line-height:1.8;
-      margin-bottom:32px;
-      font-size:1.05rem;
+      font-size:1.1rem;
     }
 
- /* ================= FILTERS & BLOG ================= */
-.filters{
-  padding:50px 7% 30px;
-  display:flex;
-  flex-wrap:wrap;
-  gap:20px;
-  align-items:center;
-  justify-content:space-between;
-}
+    /* ================= FILTERS ================= */
+    .filters{
+      padding:60px 7% 40px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:20px;
+      align-items:center;
+      justify-content:space-between;
+    }
 
 .categories{
   display:flex;
@@ -248,24 +269,24 @@
   flex-wrap:wrap;
 }
 
-.categories button{
-  background:#111;
-  border:none;
-  color:#d2d2d2;
-  padding:12px 20px;
-  border-radius:50px;
-  cursor:pointer;
-  transition:.3s;
-  font-size:0.95rem;
-  white-space: nowrap;
-}
+    .categories button{
+      background:white;
+      border:2px solid #d1e8b8;
+      color:#3f4a2e;
+      padding:12px 24px;
+      border-radius:50px;
+      cursor:pointer;
+      transition:all .4s cubic-bezier(0.4, 0, 0.2, 1);
+      font-weight:500;
+    }
 
-.categories button.active,
-.categories button:hover{
-  background:#8fae45;
-  color:#000;
-}
-
+    .categories button.active,
+    .categories button:hover{
+      background:#8fae45;
+      color:white;
+      border-color:#8fae45;
+      transform: translateY(-3px);
+    }
 .search-box{
   background:#101010;
   border:1px solid rgba(255,255,255,0.08);
@@ -285,64 +306,42 @@
   color:white;
   width:100%;
 }
-
-/* ================= HIDE FILTERS ON MOBILE ================= */
-@media (max-width: 768px) {
-  .filters {
-    display: none;
-  }
-}
-
-    /* Upgraded Blog Grid */
+    /* Blog Grid */
     .blog-grid {
-      padding: 40px 7% 120px;
+      padding: 20px 7% 120px;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 32px;
+      gap: 36px;
     }
 
     .blog-card {
       display: block;
-      background: #0d0d0d;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 28px;
-      color: inherit;
-      text-decoration: none;
+      background: white;
+      border: 2px solid #e8f4d8;
+      border-radius: 32px;
       overflow: hidden;
-      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-      opacity: 0;
-      transform: translateY(40px);
+      transition: all 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
 
-    .blog-card:hover h2 {
-  color: #b5d66f;
-}
-
-    .blog-card.visible {
-      opacity: 1;
-      transform: translateY(0);
+    .blog-card:hover {
+      transform: translateY(-18px) scale(1.03);
+      border-color: #b5d66f;
+      box-shadow: 0 30px 60px rgba(143,174,69,0.25);
     }
-
-   .blog-card:hover {
-  transform: translateY(-14px);
-  border-color: #b5d66f;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-}
 
     .blog-image {
-      position: relative;
       height: 260px;
       overflow: hidden;
+      position: relative;
     }
 
     .blog-image img {
       transition: transform 0.8s ease;
-      height: 100%;
-      object-fit: cover;
     }
 
     .blog-card:hover img {
-      transform: scale(1.1);
+      transform: scale(1.12);
     }
 
     .image-badge {
@@ -350,11 +349,12 @@
       top: 16px;
       right: 16px;
       background: #b5d66f;
-      color: #000;
-      font-size: 0.8rem;
-      padding: 4px 12px;
+      color: #2c3e1e;
+      font-size: 0.82rem;
+      padding: 6px 16px;
       border-radius: 50px;
-      font-weight: 600;
+      font-weight: 700;
+      box-shadow: 0 4px 15px rgba(181,214,111,0.4);
     }
 
     .blog-content{
@@ -371,17 +371,14 @@
     }
 
     .blog-content h2{
-      font-size:1.85rem;
-      line-height:1.15;
-      margin-bottom:18px;
-      transition: color 0.3s;
-      font-weight:600;
+      font-size:1.9rem;
+      line-height:1.2;
+      margin-bottom:16px;
+      color:#2c3e1e;
     }
 
-    .blog-content p{
-      color:#cfcfcf;
-      line-height:1.8;
-      margin-bottom:28px;
+    .blog-card:hover h2 {
+      color:#5f7a2f;
     }
 
     .card-footer {
@@ -412,16 +409,15 @@
     }
 
     .read-btn{
+      color:#5f7a2f;
+      font-weight:600;
       display:inline-flex;
       align-items:center;
-      gap:10px;
-      color:#b5d66f;
-      font-weight:500;
-      transition:.3s;
+      gap:8px;
     }
 
     .read-btn:hover{
-      gap:16px;
+      gap:14px;
     }
 
     /* ================= MOBILE MENU & OTHER STYLES ================= */
@@ -501,7 +497,6 @@
 </nav>
 
 <!-- MOBILE MENU -->
-<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <div class="mobile-menu-links">
     <a href="index.html">Home</a>
@@ -518,9 +513,9 @@
   <img src="ASSETS/Moringa-assembled.webp" alt="Crescendo Green Hero" class="hero-bg">
   <div class="overlay"></div>
   <div class="hero-content">
-    <div class="hero-tag">Insights</div>
+    <div class="hero-tag">🌱 Insights</div>
     <h1>Ideas.<br> Systems.<br>Real Impact.</h1>
-    <p>Thoughts from the field, lessons from our work, and perspectives on building scalable restoration systems for a more resilient future.</p>
+    <p>Thoughts from the field, lessons from our work, and gentle wisdom on building beautiful, scalable restoration systems.</p>
   </div>
 </section>
 
@@ -528,7 +523,7 @@
 <section class="featured">
   <div class="featured-content">
     <div class="featured-image">
-      <img src="ASSETS/Malia.jpeg" alt="El Niño 2026 Kenya Tree Planting">
+      <img src="ASSETS/Malia-vonski.webp" alt="El Niño 2026 Kenya Tree Planting">
     </div>
     <div class="featured-text">
       <div class="featured-meta">
@@ -536,8 +531,7 @@
         <span><i class="fa-regular fa-clock"></i> 8 min read</span>
       </div>
       <h2>El Niño 2026: Why Kenya’s Tree-Planting Sector Should Prepare Now</h2>
-      <p>Climate agencies are increasingly confident that El Niño conditions are likely to develop in 2026. 
-         For Kenya’s tree-planting sector, this could create a significant planting window, but only for organisations that prepare in advance.</p>
+      <p>Climate agencies are increasingly confident that El Niño conditions are likely to develop in 2026. For Kenya’s tree-planting sector, this could be a beautiful opportunity — if we prepare with love and care.</p>
       <a href="article-el-nino.html" class="read-btn">
         Read Full Article 
         <i class="fa-solid fa-arrow-right"></i>
@@ -553,8 +547,6 @@
     <button data-filter="restoration">Restoration</button>
     <button data-filter="propagation">Propagation</button>
     <button data-filter="climate">Climate Systems</button>
-    <button data-filter="consultancy">Consultancy</button>
-    <button data-filter="operations">Operations</button>
   </div>
   <div class="search-box">
     <i class="fa-solid fa-magnifying-glass"></i>
@@ -562,15 +554,14 @@
   </div>
 </section>
 
-
 <!-- BLOG GRID -->
 <section class="blog-grid" id="blogGrid">
 
   <!-- Card 1 -->
   <a href="article1.html" class="blog-card" data-category="restoration" data-tags="failure planning">
     <div class="blog-image">
-      <img src="ASSETS/Malia.jpeg" alt="Why Most Tree Planting Projects Fail">
-      <div class="image-badge">Popular</div>
+      <img src="ASSETS/Malia-vonski.webp" alt="Why Most Tree Planting Projects Fail">
+      <div class="image-badge">❤️ Popular</div>
     </div>
     <div class="blog-content">
       <div class="blog-meta">
@@ -578,15 +569,11 @@
         <span><i class="fa-regular fa-clock"></i> 7 min read</span>
       </div>
       <h2>Why Most Tree Planting Projects Fail Before Planting Even Starts</h2>
-      <p>Many projects are already off-track before the first tree is planted. We explore the hidden challenges in propagation, planning, and operational execution.</p>
+      <p>Many projects are already off-track before the first tree is planted. Let’s talk about how we can do better.</p>
       
       <div class="card-footer">
-        <button class="save-btn" aria-label="Save article">
-          <i class="fa-regular fa-bookmark"></i>
-        </button>
-        <span class="read-btn">
-          Read Article <i class="fa-solid fa-arrow-right"></i>
-        </span>
+        <button class="save-btn"><i class="fa-regular fa-bookmark"></i></button>
+        <span class="read-btn">Read Article <i class="fa-solid fa-arrow-right"></i></span>
       </div>
     </div>
   </a>
@@ -602,7 +589,7 @@
         <span><i class="fa-regular fa-clock"></i> 6 min read</span>
       </div>
       <h2>Centralised vs Community Nurseries: Finding the Right Model for Scale</h2>
-      <p>A comparison of nursery models, their trade-offs, and how hybrid systems can improve both quality and community participation.</p>
+      <p>A gentle comparison of nursery models and how hybrid systems can create more joy and better results.</p>
       
       <div class="card-footer">
         <button class="save-btn" aria-label="Save article">
@@ -616,6 +603,7 @@
   </a>
 
 </section>
+
 <div id="footer"></div>
 
 <script>
