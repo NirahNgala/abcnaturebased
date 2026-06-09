@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us | Crescendo.green</title>
+  <title>Contact Us | Crescendo Green</title>
   <meta name="description" content="Get in touch with Crescendo.green for seedling supply, planting operations, or dryland restoration projects in East Africa.">
 
-  <!-- Satoshi Font -->
   <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet">
-
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -18,33 +16,31 @@
       content: ["./**/*.{html,js}"],
       theme: {
         extend: {
-          fontFamily: {
-            sans: ['Satoshi', 'system-ui', 'sans-serif'],
-          }
+          fontFamily: { sans: ['Satoshi', 'system-ui', 'sans-serif'] }
         }
       }
     }
   </script>
 
   <style>
-    .heading-font {
-      font-family: 'Satoshi', system-ui, sans-serif;
-      font-weight: 700; 
+    :root {
+      --primary: #2e7d32;
+      --accent: #5e8c41;
     }
 
     .contact-hero {
       min-height: 55vh;
-      background: url('ASSETS/Planting-girl.webp') center/cover no-repeat;
+      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), 
+                  url('ASSETS/Planting-girl.webp') center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      color: rgb(0, 0, 0);
+      color: white;
       position: relative;
       overflow: hidden;
     }
 
-    /* Growth animation */
     #grow-text {
       animation: growIn 1.8s ease-out forwards;
     }
@@ -58,8 +54,6 @@
     .leaf {
       animation: sproutAndSway 6.5s ease-in-out infinite;
       display: inline-block;
-      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));
-      transform-origin: center bottom;
     }
 
     @keyframes sproutAndSway {
@@ -68,78 +62,50 @@
       100% { transform: scale(1) rotate(-15deg) translateY(-10px); }
     }
 
-    /* ==================== FORM INPUT IMPROVEMENTS ==================== */
     .contact-input {
       width: 100%;
-      padding: 16px 20px;           /* Good default */
+      padding: 16px 20px;
       border: 1px solid #d1d5db;
       border-radius: 16px;
       font-size: 1rem;
-      transition: all 0.2s;
+      transition: all 0.3s;
     }
 
     .contact-input:focus {
-      border-color: #10b981;
-      box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15);
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(46, 125, 50, 0.15);
       outline: none;
     }
 
-    /* Mobile-specific fixes */
     @media (max-width: 640px) {
-      .contact-input {
-        padding: 18px 20px;         /* Larger touch target */
-        font-size: 16px;            /* Prevents zoom on iOS */
-        border-radius: 14px;
-      }
-
-      .contact-textarea {
+      .contact-input, .contact-textarea {
         padding: 18px 20px;
-        font-size: 16px;
+        font-size: 16px; /* Prevents iOS zoom */
       }
-
-      .form-card {
-        padding: 2rem 1.5rem !important;
-      }
-
-      .contact-hero {
-        min-height: 48vh;
-      }
-    }
-
-    body {
-      font-family: 'Satoshi', system-ui, sans-serif;
     }
   </style>
 </head>
-<body class="bg-neutral-50 font-sans">
+<body class="bg-neutral-50">
 
   <!-- Hero -->
-  <section class="contact-hero relative overflow-hidden">
-    
-    <!-- Close Button -->
+  <section class="contact-hero">
     <a href="index.html" 
-       class="absolute top-6 right-6 z-20 
-              bg-white/90 hover:bg-white text-emerald-800 
-              w-11 h-11 flex items-center justify-center 
-              rounded-2xl shadow-lg transition-all duration-300 
-              hover:scale-110 active:scale-95">
+       class="absolute top-6 right-6 z-20 bg-white/90 hover:bg-white text-emerald-800 w-11 h-11 flex items-center justify-center rounded-2xl shadow-lg transition-all hover:scale-110">
       <i class="fas fa-times text-2xl"></i>
     </a>
 
-    <div class="max-w-4xl mx-auto px-6 text-center relative z-10 w-full">
-      <div id="grow-text" 
-           class="heading-font text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-black leading-tight">
+    <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+      <div id="grow-text" class="heading-font text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
         Let's Grow Together
       </div>
       
       <div class="absolute inset-0 pointer-events-none flex justify-center items-center overflow-hidden">
-        <div class="leaf absolute text-4xl sm:text-5xl md:text-6xl opacity-70" style="top: 18%; left: 10%; animation-delay: 0.2s;">🌱</div>
-        <div class="leaf absolute text-3xl sm:text-4xl md:text-5xl opacity-60" style="top: 32%; right: 12%; animation-delay: 0.7s;">🌿</div>
-        <div class="leaf absolute text-5xl sm:text-6xl md:text-7xl opacity-75" style="bottom: 22%; left: 15%; animation-delay: 1.1s;">🍃</div>
-        <div class="leaf absolute text-4xl sm:text-5xl md:text-6xl opacity-65" style="bottom: 28%; right: 18%; animation-delay: 0.4s;">🌱</div>
+        <div class="leaf absolute text-5xl opacity-70" style="top: 18%; left: 10%; animation-delay: 0.2s;">🌱</div>
+        <div class="leaf absolute text-4xl opacity-60" style="top: 32%; right: 12%; animation-delay: 0.7s;">🌿</div>
+        <div class="leaf absolute text-6xl opacity-75" style="bottom: 22%; left: 15%; animation-delay: 1.1s;">🍃</div>
       </div>
 
-      <p class="mt-5 text-base sm:text-lg text-emerald-100 max-w-md mx-auto">
+      <p class="mt-6 text-lg text-white/90 max-w-md mx-auto">
         Ready to bring your nature-based project to life?
       </p>
     </div>
@@ -149,64 +115,52 @@
   <div class="max-w-7xl mx-auto px-6 py-12 md:py-20">
     <div class="grid md:grid-cols-2 gap-12 md:gap-16">
 
-      <!-- Left Column -->
+      <!-- Contact Info -->
       <div class="space-y-8">
+        <div class="flex gap-5">
+          <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-envelope text-2xl"></i>
+          </div>
+          <div>
+            <strong class="block text-emerald-800">Email</strong>
+            <a href="mailto:bpvanderbijl@gmail.com" class="text-lg hover:text-emerald-700">bpvanderbijl@gmail.com</a>
+          </div>
+        </div>
 
-  <!-- EMAIL -->
-  <div class="flex gap-5">
-    <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center flex-shrink-0">
-      <i class="fas fa-envelope text-2xl"></i>
-    </div>
-    <div>
-      <strong class="block text-emerald-800">Email</strong>
-      <a href="mailto:bpvanderbijl@gmail.com"
-         class="text-base md:text-lg hover:text-emerald-700">
-        bpvanderbijl@gmail.com
-      </a>
-    </div>
-  </div>
+        <div class="flex gap-5">
+          <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-phone text-2xl"></i>
+          </div>
+          <div>
+            <strong class="block text-emerald-800">Phone</strong>
+            <a href="tel:+254725707814" class="text-lg hover:text-emerald-700">+254 725 707814</a>
+          </div>
+        </div>
 
-  <!-- PHONE -->
-  <div class="flex gap-5">
-    <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center flex-shrink-0">
-      <i class="fas fa-phone text-2xl"></i>
-    </div>
-    <div>
-      <strong class="block text-emerald-800">Phone</strong>
-      <a href="tel:+254725707814"
-         class="text-base md:text-lg hover:text-emerald-700">
-        +254 725 707814
-      </a>
-    </div>
-  </div>
-  <div class="flex gap-5">
-  <div class="w-12 h-12 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center flex-shrink-0">
-    <i class="fa-brands fa-whatsapp text-2xl"></i>
-  </div>
-  <div>
-    <strong class="block text-emerald-800">WhatsApp</strong>
-    <a href="https://wa.me/254725707814?text=Hello%20Crescendo.green%20team%2C%20I%20have%20an%20inquiry"
-       class="text-base md:text-lg hover:text-emerald-700">
-      Chat with us
-    </a>
-  </div>
-</div>
+        <div class="flex gap-5">
+          <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center flex-shrink-0">
+            <i class="fa-brands fa-whatsapp text-2xl"></i>
+          </div>
+          <div>
+            <strong class="block text-emerald-800">WhatsApp</strong>
+            <a href="https://wa.me/254725707814?text=Hello%20Crescendo.green%20team%2C%20I%20have%20an%20inquiry" 
+               class="text-lg hover:text-emerald-700">Chat with us</a>
+          </div>
+        </div>
 
-  <!-- LOCATION -->
-  <div class="flex gap-5">
-    <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center flex-shrink-0">
-      <i class="fas fa-location-dot text-2xl"></i>
-    </div>
-    <div>
-      <strong class="block text-emerald-800">Location</strong>
-      <p class="text-base md:text-lg">Nairobi, Kenya<br>East Africa</p>
-    </div>
-  </div>
+        <div class="flex gap-5">
+          <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-location-dot text-2xl"></i>
+          </div>
+          <div>
+            <strong class="block text-emerald-800">Location</strong>
+            <p class="text-lg">Nairobi, Kenya<br>East Africa</p>
+          </div>
+        </div>
+      </div>
 
-</div>
-
-      <!-- Right Column - Contact Form -->
-      <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12 form-card">
+      <!-- Contact Form -->
+      <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12">
         <h3 class="text-2xl font-semibold text-emerald-900 mb-8">Send us a message</h3>
         
         <form id="contactForm" class="space-y-6">
@@ -221,12 +175,12 @@
           </div>
 
           <div>
-            <label class="block text-sm font-medium text-gray-700 mb-2">Organization / Company</label>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Organization</label>
             <input type="text" class="contact-input">
           </div>
 
           <div>
-            <label class="block text-sm font-medium text-gray-700 mb-2">What are you interested in?</label>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Interested In</label>
             <select class="contact-input">
               <option value="">Select an option...</option>
               <option value="seedling">Seedling Supply & Nursery</option>
@@ -243,7 +197,7 @@
           </div>
 
           <button type="submit" 
-                  class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-semibold py-5 rounded-2xl transition text-lg mt-4">
+                  class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-semibold py-5 rounded-2xl transition text-lg">
             Send Message
           </button>
         </form>
@@ -254,14 +208,12 @@
   <div id="footer"></div>
 
   <script>
-  fetch('footer.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('footer').innerHTML = data;
-    });
-  </script>
+    // Load Footer
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('footer').innerHTML = data);
 
-  <script>
+    // Form Submission
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
       alert("✅ Thank you! Your message has been received. We'll get back to you within 1-2 business days.");
@@ -280,8 +232,8 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
 
   window.location.href = mailto;
 
-  this.reset();
-});
-</script>
+      this.reset();
+    });
+  </script>
 </body>
 </html>
