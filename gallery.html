@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,12 +6,11 @@
     <title>Gallery | Crescendo Green</title>
     <style>
         :root {
-            --green-1: #22c55e;
-            --green-2: #16a34a;
-            --blue-1: #06b6d4;
-            --blue-2: #0891b2;
-            --dark: #0f172a;
-            --light: #ffffff;
+            --primary: #2e7d32;
+            --dark: #0f2a1f;
+            --light: #f8f9f5;
+            --accent: #5e8c41;
+            --text: #333;
         }
 
         * {
@@ -23,191 +21,169 @@
 
         body {
             font-family: 'Satoshi', system-ui, sans-serif;
-            background: linear-gradient(135deg, #abefd4 0%, #ffffff 100%);
-            color: var(--light);
+            background: var(--light);
+            color: var(--text);
             line-height: 1.6;
         }
-:root {
-    --primary: #2e7d32;
-    --green-1: #22c55e;
-    --green-2: #16a34a;
-    --blue-1: #06b6d4;
-    --blue-2: #0891b2;
-    --dark: #0f172a;
-    --light: #ffffff;
-}
-         .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(12px);
-      z-index: 1000;
-      transition: all 0.4s ease;
-    }
 
-    .navbar.scrolled {
-      background: rgba(255, 255, 255, 0.99);
-      box-shadow: 0 6px 25px rgba(0,0,0,0.12);
-    }
+        /* ====================== NAVBAR ====================== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            transition: all 0.4s ease;
+        }
 
-    .nav-container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 5%;
-      height: 90px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.99);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
 
-    .nav-logo img {
-      height: 60px;
-      width: auto;
-      display: block;
-    }
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 5%;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-    .nav-menu {
-      display: flex;
-      gap: 42px;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-    }
+        .nav-logo img {
+            height: 58px;
+            width: auto;
+        }
 
-    .nav-menu a {
-      position: relative;
-      text-decoration: none;
-      color: #2e3f38;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
+        .nav-menu {
+            display: flex;
+            gap: 42px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
 
-    .nav-menu a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -8px;
-      width: 0;
-      height: 2px;
-      background: var(--primary);
-      transition: width 0.35s ease;
-    }
+        .nav-menu a {
+            text-decoration: none;
+            color: #2c3e35;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
 
-    .nav-menu a:hover::after,
-    .nav-menu a.active::after {
-      width: 100%;
-    }
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--primary);
+        }
 
-    .nav-menu a:hover,
-    .nav-menu a.active {
-      color: var(--primary);
-    }
+        .nav-cta-btn {
+            background: var(--primary);
+            color: white;
+            padding: 13px 26px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.4s;
+        }
 
-    .nav-cta-btn {
-      background: var(--primary);
-      color: white;
-      padding: 13px 26px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 700;
-      transition: all 0.4s ease;
-    }
+        .nav-cta-btn:hover {
+            background: #1e5f24;
+            transform: translateY(-3px);
+        }
 
-    .nav-cta-btn:hover {
-      background: #1f5f24;
-      transform: translateY(-3px);
-    }
+        .hamburger {
+            width: 32px;
+            height: 24px;
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+        }
 
-    .hamburger {
-      width: 32px;
-      height: 24px;
-      display: none;
-      flex-direction: column;
-      justify-content: space-between;
-      cursor: pointer;
-    }
+        .hamburger span {
+            width: 100%;
+            height: 3px;
+            background: #183126;
+            border-radius: 999px;
+            transition: all 0.4s ease;
+        }
 
-    .hamburger span {
-      width: 100%;
-      height: 3px;
-      background: #183126;
-      border-radius: 999px;
-      transition: all 0.4s ease;
-    }
+        /* ====================== GALLERY ====================== */
+        .gallery-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 140px 2rem 6rem;
+        }
 
-    .gallery-section {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 140px 2rem 4rem;
-}
         .filters {
             display: flex;
             flex-wrap: wrap;
             gap: 1rem;
             justify-content: center;
-            margin-bottom: 3rem;
+            margin-bottom: 3.5rem;
         }
 
         .filter-btn {
-            padding: 12px 28px;
-            border: none;
+            padding: 12px 32px;
+            border: 1px solid #ddd;
             border-radius: 50px;
-            background: rgba(255,255,255,0.1);
-            color: rgb(0, 0, 0);
-            font-weight: 600;
+            background: white;
+            color: #444;
+            font-weight: 500;
             cursor: pointer;
             transition: all 0.3s ease;
-            backdrop-filter: blur(8px);
         }
 
         .filter-btn.active,
         .filter-btn:hover {
-            background: linear-gradient(90deg, var(--green-1), var(--blue-1));
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(34, 197, 94, 0.3);
         }
 
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1.5rem;
+            gap: 1.8rem;
         }
 
         .gallery-item {
             position: relative;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+            transition: all 0.4s ease;
             aspect-ratio: 4 / 3;
         }
 
         .gallery-item:hover {
-            transform: scale(1.05) rotate(1deg);
-            box-shadow: 0 20px 40px rgba(34, 197, 94, 0.4);
+            transform: scale(1.04);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
         }
 
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s ease;
+            transition: transform 0.7s ease;
         }
 
         .gallery-item:hover img {
-            transform: scale(1.12);
+            transform: scale(1.1);
         }
 
+        /* Overlay with White Text */
         .overlay {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(transparent, rgba(15, 23, 42, 0.95));
+            background: linear-gradient(transparent, rgba(15, 23, 42, 0.92));
             padding: 2rem 1.5rem 1.5rem;
-            transform: translateY(30px);
+            transform: translateY(40px);
             opacity: 0;
             transition: all 0.4s ease;
         }
@@ -217,15 +193,28 @@
             opacity: 1;
         }
 
+        .overlay h3 {
+            color: #ffffff;
+            font-size: 1.25rem;
+            margin-bottom: 6px;
+        }
+
+        .overlay p {
+            color: #e0e0e0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Modal */
         .modal {
             display: none;
             position: fixed;
-            top: 0;
+            top: 0; 
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(15, 23, 42, 0.98);
-            z-index: 1000;
+            background: rgba(15, 23, 42, 0.95);
+            z-index: 2000;
             align-items: center;
             justify-content: center;
             padding: 2rem;
@@ -248,17 +237,16 @@
             position: absolute;
             top: -20px;
             right: -20px;
-            background: var(--green-1);
+            background: var(--primary);
             color: white;
-            width: 50px;
-            height: 50px;
+            width: 52px;
+            height: 52px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
+            font-size: 1.8rem;
             cursor: pointer;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
         }
 
         footer {
@@ -266,98 +254,91 @@
             padding: 3rem 2rem 2rem;
             text-align: center;
             margin-top: 6rem;
+            color: #aaa;
         }
 
+        /* ====================== MOBILE ====================== */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 3rem;
+            .gallery-section {
+                padding: 110px 1rem 4rem;
             }
+            
             .gallery-grid {
                 grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             }
         }
-        /* MOBILE NAVIGATION */
-@media (max-width: 768px) {
 
-  .hamburger {
-    display: flex;
-    z-index: 1001;
-  }
+        /* Mobile Navigation */
+        @media (max-width: 768px) {
+            .hamburger {
+                 display: flex;
+                  z-index: 1001;
+                 }
+            .nav-cta {
+                 display: none; 
+                }
 
-  .nav-cta {
-    display: none;
-  }
-
-  .nav-menu {
-    position: fixed;
-    top: 90px;
-    left: -100%;
-    width: 100%;
-    height: calc(100vh - 90px);
-    background: white;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 35px;
-    transition: left 0.4s ease;
+            .nav-menu {
+                position: fixed;
+                top: 90px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 90px);
+                background: white;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 35px;
+                transition: left 0.4s ease;
     transform: none;
-    z-index: 999;
-  }
+                z-index: 999;
+            }
 
-  .nav-menu.active {
-    left: 0;
-  }
+            .nav-menu.active { left: 0; }
+        }
 
-  .nav-menu a {
-    font-size: 1.2rem;
-  }
-}
-
-/* Hamburger Animation */
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(7px, 7px);
-}
-
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -7px);
-}
+        /* Hamburger Animation */
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
     </style>
 </head>
 <body>
 
-        <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="nav-logo">
-        <a href="index.html">
-          <img src="ASSETS/Crescendologo.png" alt="Crescendo Green Logo">
-        </a>
-      </div>
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="ASSETS/Crescendologo.png" alt="Crescendo Green Logo">
+                </a>
+            </div>
 
-      <div class="nav-menu">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="gallery.html" class="active">Gallery</a>
-        <a href="blog.html">Blog</a>
-      </div>
+            <div class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="gallery.html" class="active">Gallery</a>
+                <a href="blog.html">Blog</a>
+            </div>
 
-      <div class="nav-cta">
-        <a href="contact.html" class="nav-cta-btn">Get in touch</a>
-      </div>
+            <div class="nav-cta">
+                <a href="contact.html" class="nav-cta-btn">Get in touch</a>
+            </div>
 
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </nav>
-
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
     <section class="gallery-section">
         <div class="filters">
@@ -367,24 +348,22 @@
             <button class="filter-btn" data-filter="people">People</button>
         </div>
 
-        <div class="gallery-grid" id="galleryGrid">
-            <!-- Populated by JS -->
-        </div>
+        <div class="gallery-grid" id="galleryGrid"></div>
     </section>
 
-    <!-- Lightbox Modal -->
+    <!-- Modal -->
     <div class="modal" id="modal">
         <div class="modal-content">
-            <span class="close" id="closeModal">&times;</span>
-            <img id="modalImage" src="" alt="" loading="lazy">
-            <div style="margin-top: 1rem; text-align: center; color: #94a3b8;">
+            <span class="close" id="closeModal">×</span>
+            <img id="modalImage" src="" alt="">
+            <div style="margin-top: 1rem; text-align: center; color: #ffffff;">
                 <h3 id="modalTitle"></h3>
                 <p id="modalDesc"></p>
             </div>
         </div>
     </div>
 
-  <script>
+    <script>
     const images = [
         { 
             id: 1, 
@@ -561,32 +540,28 @@
     });
 
     // Initialize gallery
-    window.onload = createGallery;
-</script>
-  <script>
-// Hamburger Menu - Full Screen Fix
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+        window.onload = createGallery;
+    </script>
 
-hamburger.addEventListener('click', () => {
-  const isActive = navMenu.classList.toggle('active');
-  hamburger.classList.toggle('active');
-  
-  if (isActive) {
-    document.body.style.overflow = 'hidden';
-  } else {
-    document.body.style.overflow = 'visible';
-  }
-});
+    <script>
+        // Hamburger Menu
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.querySelector('.nav-menu');
 
-// Close menu when clicking a link
-document.querySelectorAll('.nav-menu a').forEach(link => {
-  link.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
-    document.body.style.overflow = 'visible';
-  });
-});
-</script>
+        hamburger.addEventListener('click', () => {
+            const isActive = navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            
+            document.body.style.overflow = isActive ? 'hidden' : 'visible';
+        });
+
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = 'visible';
+            });
+        });
+    </script>
 </body>
 </html>
