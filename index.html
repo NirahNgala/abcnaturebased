@@ -239,75 +239,109 @@
 
 
 
-<!-- ==================== HOW WE DELIVER PROJECTS =================== -->
-<section class="how-we-deliver">
-
-  <!-- TITLE (CENTERED TOP) -->
-  <div class="section-header">
-    <div class="line"></div>
-    <h2>How We Deliver Projects</h2>
-  </div>
-
-  <!-- PROCESS DIAGRAM -->
-  <div class="diagram-wrapper">
-
-    <div class="step">
-      <div class="icon-box"><i class="fas fa-seedling"></i></div>
-      <h3>Propagation</h3>
-      <p>Tree & Plant<br>Seedling Production</p>
-      </div>
-
-    <div class="arrow"></div>
-
-    <div class="step">
-      <div class="icon-box"><i class="fas fa-tree"></i></div>
-      <h3>Experimentation</h3>
-      <p>Testing Species<br>& Systems</p>
-      </div>
-
-    <div class="arrow"></div>
-
-    <div class="step">
-      <div class="icon-box"><i class="fas fa-clipboard-list"></i></div>
-      <h3>Project Development</h3>
-      <p>Design & Planning</p>
-      </div>
-
-    <div class="arrow"></div>
-
-    <div class="step">
-      <div class="icon-box"><i class="fas fa-person-digging"></i></div>
-      <h3>Operational Delivery</h3>
-      <p>Planting & Management</p>
-      </div>
-
-    <div class="arrow"></div>
-
-    <div class="step">
-      <div class="icon-box"><i class="fas fa-earth-africa"></i></div>
-      <h3>Landscape Impact</h3>
-      <p>Restoration & Carbon Benefits</p>
+<!-- ==================== HOW WE DELIVER PROJECTS ==================== -->
+<section class="how-we-deliver" id="how-we-deliver">
+  <div class="container">
+    
+    <!-- TITLE -->
+    <div class="section-header">
+      <div class="line"></div>
+      <h2>How We Deliver Projects</h2>
+      <p class="subtitle">From propagation to lasting landscape impact</p>
     </div>
 
+    <!-- PROCESS DIAGRAM -->
+    <div class="diagram-wrapper" id="diagramWrapper">
+      <div class="step">
+        <div class="icon-box"><i class="fas fa-seedling"></i></div>
+        <h3>Propagation</h3>
+        <p>Tree &amp; Plant Seedling Production</p>
+      </div>
+
+      <div class="arrow">→</div>
+
+      <div class="step">
+        <div class="icon-box"><i class="fas fa-tree"></i></div>
+        <h3>Experimentation</h3>
+        <p>Testing Species &amp; Systems</p>
+      </div>
+
+      <div class="arrow">→</div>
+
+      <div class="step">
+        <div class="icon-box"><i class="fas fa-clipboard-list"></i></div>
+        <h3>Project Development</h3>
+        <p>Design &amp; Planning</p>
+      </div>
+
+      <div class="arrow">→</div>
+
+      <div class="step">
+        <div class="icon-box"><i class="fas fa-person-digging"></i></div>
+        <h3>Operational Delivery</h3>
+        <p>Planting &amp; Management</p>
+      </div>
+
+      <div class="arrow">→</div>
+
+      <div class="step">
+        <div class="icon-box"><i class="fas fa-earth-africa"></i></div>
+        <h3>Landscape Impact</h3>
+        <p>Restoration &amp; Carbon Benefits</p>
+      </div>
+    </div>
   </div>
 </section>
 
-  <!-- ==================== NURSERY VIDEO SECTION ==================== -->
+<!-- ==================== NURSERY VIDEO + GALLERY SECTION ==================== -->
 <section class="nursery-video-section">
   <div class="container">
-    <div class="video-wrapper">
-      <video 
-        autoplay 
-        muted 
-        loop 
-        playsinline 
-        controls>
-        <source src="ASSETS/NurseryDroneView.webm" type="video/webm">
-        Your browser does not support the video tag.
-      </video>
+    
+    <div class="media-slider" id="mediaSlider">
+      
+      <!-- Video Slide -->
+      <div class="slide">
+        <div class="video-wrapper">
+          <img src="ASSETS/NurseryDroneView.webp" 
+               alt="ATC Mtwapa Nursery - Aerial view" 
+               class="video-poster">
+
+          <video 
+            id="nursery-video"
+            muted 
+            loop 
+            playsinline 
+            controls
+            preload="none"
+            aria-label="Drone view of ATC Mtwapa Nursery">
+            <source src="ASSETS/NurseryDroneView.webm" type="video/webm">
+            <source src="ASSETS/NurseryDroneView.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      <!-- Photo Slides -->
+      <div class="slide">
+        <img src="ASSETS/nurseryatnight.webp" alt="ATC Mtwapa Nursery - Seedling trays">
+      </div>
+      <div class="slide">
+        <img src="ASSETS/Moringa-assembled.webp" alt="ATC Mtwapa Nursery - Young plants">
+      </div>
+      <div class="slide">
+        <img src="ASSETS/Seedling supply.webp" alt="ATC Mtwapa Nursery - Greenhouse interior">
+      </div>
+      <div class="slide">
+        <img src="ASSETS/Qualityseedlings (1).webp" alt="ATC Mtwapa Nursery - Mature seedlings">
+      </div>
+
     </div>
+
+    <!-- Navigation Dots -->
+    <div class="slider-dots" id="sliderDots"></div>
+
     <div class="video-caption">
-      <p><strong>ATC Mtwapa Nursery</strong> — High-quality seedling propagation hub</p>
+      <p><strong>ATC Mtwapa Nursery</strong> — Premium seedlings &amp; professional propagation center in Mtwapa</p>
     </div>
   </div>
 </section>
@@ -621,6 +655,70 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 </script>
+<script>
+// Lazy Loading for Video (previous code)
+document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.getElementById('mediaSlider');
+  const slides = document.querySelectorAll('.slide');
+  const dotsContainer = document.getElementById('sliderDots');
+  const video = document.getElementById('nursery-video');
+  const poster = document.querySelector('.video-poster');
 
+  // Create Dots
+  dotsContainer.innerHTML = '';
+  slides.forEach((_, index) => {
+    const dot = document.createElement('span');
+    dot.addEventListener('click', () => {
+      slider.scrollTo({
+        left: index * slider.offsetWidth,
+        behavior: 'smooth'
+      });
+    });
+    dotsContainer.appendChild(dot);
+  });
+
+  // Update active dot on scroll
+  function updateActiveDot() {
+    const scrollPosition = slider.scrollLeft + slider.offsetWidth / 2;
+    let activeIndex = 0;
+
+    slides.forEach((slide, index) => {
+      if (slide.offsetLeft <= scrollPosition) {
+        activeIndex = index;
+      }
+    });
+
+    const dots = dotsContainer.querySelectorAll('span');
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === activeIndex);
+    });
+  }
+
+  slider.addEventListener('scroll', updateActiveDot);
+  
+  // Initial active dot
+  setTimeout(updateActiveDot, 300);
+
+  // Video Lazy Loading
+  if (video) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          video.load();
+          video.play().catch(() => {});
+          
+          if (poster) {
+            poster.style.opacity = '0';
+            setTimeout(() => poster.style.display = 'none', 600);
+          }
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    observer.observe(slider);
+  }
+});
+</script>
 </body>
 </html>
