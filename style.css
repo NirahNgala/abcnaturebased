@@ -574,7 +574,7 @@ section {
 }
 /* ====================== HOW WE DELIVER ====================== */
 .how-we-deliver {
-  padding: 100px 20px;
+  padding: 90px 20px;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9f0e4 100%);
 }
 
@@ -680,12 +680,11 @@ section {
   color: #0f2a1f;
 }
 
-/* ====================== CREATIVE MOBILE DESIGN ====================== */
-@media (max-width: 992px) {
+/* ================ MOBILE DESIGN ================ */
   .diagram-wrapper {
     gap: 15px;
   }
-}
+
 
 @media (max-width: 768px) {
   .how-we-deliver {
@@ -740,6 +739,153 @@ section {
     width: 68px;
     height: 68px;
     font-size: 24px;
+  }
+}
+/* ====================== KENYA OPERATIONS ====================== */
+.kenya-operations {
+  padding: 90px 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9f0e4 100%);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Header */
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header .line {
+  width: 70px;
+  height: 4px;
+  background: #5e8c41;
+  margin: 0 auto 16px;
+  border-radius: 10px;
+}
+
+.section-header h2 {
+  font-size: clamp(2.3rem, 5.5vw, 3.4rem);
+  font-weight: 700;
+  color: #0f2a1f;
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  color: #5e8c41;
+  max-width: 600px;
+  margin:12px 0 auto;
+}
+
+/* Grid */
+.operations-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 50px;
+}
+
+@media (min-width: 992px) {
+  .operations-grid {
+    grid-template-columns: 1fr 1.1fr;
+    gap: 70px;
+  }
+}
+
+/* Location Cards */
+.locations {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.location-card {
+  background: transparent;
+  border-radius: 20px;
+  padding: 26px;
+  display: flex;
+  gap: 20px;
+  transition: all 0.4s ease;
+}
+
+.location-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(94, 140, 65, 0.15);
+  border-color: #5e8c41;
+}
+
+.icon {
+  font-size: 2.2rem;
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f7eb;
+  border-radius: 16px;
+}
+
+.content h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #0f2a1f;
+  margin-bottom: 8px;
+}
+
+.content p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Map */
+.map-wrapper {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+.map {
+  width: 100%;
+  height: 400px;
+  background: #e5e7eb;
+  border-radius: 24px;
+}
+
+.map-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+/* ====================== MOBILE RESPONSIVE ====================== */
+@media (max-width: 768px) {
+  .kenya-operations {
+    padding: 70px 15px;
+  }
+  
+  .location-card {
+    padding: 24px;
+  }
+  
+  .map {
+    height: 520px;
+  }
+}
+
+@media (max-width: 480px) {
+  .location-card {
+    padding: 20px;
+    gap: 16px;
+  }
+  
+  .icon {
+    font-size: 1.9rem;
+    width: 52px;
+    height: 52px;
   }
 }
 
@@ -1067,7 +1213,7 @@ section {
   letter-spacing: -0.02em;
 }
 
-.subtitle {
+.nursery-video-section .subtitle {
   font-size: 1.25rem;
   color: #5e8c41;
   font-weight: 600;
