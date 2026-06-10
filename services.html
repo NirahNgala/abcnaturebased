@@ -217,31 +217,31 @@
     /* ==================== PROJECTS ==================== */
     .projects-section {
       background: #f5f7f6;
-      padding: 100px 0;
+      padding: 110px 0;
     }
 
     .projects-section h2 {
       text-align: center;
-      font-size: 2.6rem;
-      margin-bottom: 70px;
+      font-size: 2.65rem;
+      margin-bottom: 20px;
       color: var(--dark);
     }
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 32px;
     }
 
     .project-card {
-      position: relative;
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      transition: all 0.4s ease;
-      opacity: 0;
-      transform: translateY(50px);
-    }
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: all 0.4s ease;
+  height: 420px; /* Consistent height */
+  cursor: pointer;
+}
 
     .project-card.visible {
       opacity: 1;
@@ -249,32 +249,40 @@
     }
 
     .project-card:hover {
-      transform: translateY(-12px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      transform: translateY(-15px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.18);
     }
 
     .project-card img {
-      width: 100%;
-      height: 340px;
-      object-fit: cover;
-      transition: transform 0.6s ease;
-    }
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+.project-card:hover img {
+  transform: scale(1.08);
+}
 
-    .project-card:hover img {
-      transform: scale(1.08);
-    }
+.project-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 45px 30px 30px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.82));
+  color: white;
+}
 
-    .project-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 40px 24px 24px;
-      background: linear-gradient(transparent, rgba(0,0,0,0.75));
-      color: white;
-      font-size: 1.15rem;
-      font-weight: 600;
-    }
+.project-overlay h3 {
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+
+.project-overlay p {
+  font-size: 0.98rem;
+  opacity: 0.95;
+  line-height: 1.5;
+}
 
     /* ==================== FLOATING CTA ==================== */
     .floating-cta {
@@ -303,26 +311,49 @@
     }
 
     /* ==================== MODAL ==================== */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.7);
-      z-index: 2000;
-      align-items: center;
-      justify-content: center;
-    }
+    /* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.75);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
 
-    .modal-content {
-      background: white;
-      width: 90%;
-      max-width: 420px;
-      border-radius: 24px;
-      padding: 50px 40px;
-      text-align: center;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-    }
+.modal-content {
+  background: white;
+  max-width: 780px;
+  width: 100%;
+  border-radius: 24px;
+  padding: 50px 45px;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+}
 
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #666;
+  line-height: 1;
+}
+
+.modal-close:hover {
+  color: #000;
+}
+
+.modal h3 {
+  font-size: 2.1rem;
+  color: var(--dark);
+  margin-bottom: 25px;
+}
     .modal h2 {
       font-size: 2.2rem;
       margin-bottom: 16px;
@@ -601,34 +632,59 @@
     </div>
   </section>
 
-  <!-- PROJECT SHOWCASE -->
-  <section class="projects-section">
-    <div class="container">
-      <h2>Project Highlights</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <img src="ASSETS/mangoes.jpg" alt="High Density Mango Plantation">
-          <div class="project-overlay">High Density Mango Plantation</div>
-        </div>
-        <div class="project-card">
-          <img src="ASSETS/Malia-vonski.webp" alt="Professional Forestry Plantation">
-          <div class="project-overlay">Professional Forestry Plantation</div>
-        </div>
-        <div class="project-card">
-          <img src="ASSETS/sarangib-cashew-633921_1920.jpg" alt="Cashew Intensification">
-          <div class="project-overlay">Cashew Intensification</div>
-        </div>
-        <div class="project-card">
-          <img src="ASSETS/inside-nursery.webp" alt="Value Chain Development">
-          <div class="project-overlay">Value Chain Development</div>
-        </div>
-        <div class="project-card">
-          <img src="ASSETS/Moringa Seeds for Planting.jpeg" alt="Modern Propagation Methods">
-          <div class="project-overlay">Modern Propagation Methods</div>
+<!-- PROJECT SHOWCASE -->
+<section class="projects-section">
+  <div class="container">
+    <h2>Our Flagship Initiatives</h2>
+    
+    <p style="text-align: center; max-width: 760px; margin: 0 auto 70px; font-size: 1.12rem; color: #555; line-height: 1.7;">
+      Discover our key programmes driving innovation in Kenya’s agriculture and forestry sectors. 
+      Click on any project below to learn more.
+    </p>
+
+    <div class="projects-grid">
+      
+      <!-- Card 1 -->
+      <div class="project-card" onclick="showProjectModal(0)">
+        <img src="ASSETS/sarangib-cashew-633921_1920.jpg" alt="Cashew Innovations">
+        <div class="project-overlay">
+          <h3>Cashew Innovations</h3>
+          <p>High-density planting • Dwarf varieties • Advanced nursery &amp; soil technologies</p>
         </div>
       </div>
+
+      <!-- Card 2 -->
+      <div class="project-card" onclick="showProjectModal(1)">
+        <img src="ASSETS/mangoes.jpg" alt="Value Chain Development">
+        <div class="project-overlay">
+          <h3>Value Chain Development</h3>
+          <p>Freeze-dried mango • Moringa oil • Bixa annatto • Market &amp; processing focus</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="project-card" onclick="showProjectModal(2)">
+        <img src="ASSETS/inside-nursery.webp" alt="Sustainable Production Inputs">
+        <div class="project-overlay">
+          <h3>Sustainable Production Inputs</h3>
+          <p>Biochar • Large-scale composting • Regenerative soil amendments</p>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- PROJECT MODAL -->
+<div class="modal" id="projectModal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeProjectModal()">×</span>
+    <div id="modal-body">
+      <!-- Content injected by JavaScript -->
+    </div>
+  </div>
+</div>
+
 
   <!-- FLOATING CTA -->
   <div class="floating-cta" onclick="openModal()">
@@ -693,6 +749,61 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
     navMenu.classList.remove('active');
     document.body.style.overflow = 'visible';
   });
+});
+</script>
+<script>
+// Project Data
+const projects = [
+  {
+    title: "Cashew Innovations",
+    content: `
+      <p>Kenya's cashew sector has enormous untapped potential, yet average yields remain far below those achieved in leading producing countries such as Brazil and Vietnam.</p>
+      <p>At Crescendo Green, we are working with research partners to introduce a new generation of innovations that can significantly improve productivity, resilience and profitability for growers.</p>
+      <p>Our programme focuses on the evaluation of <strong>dwarf and semi-dwarf cashew varieties</strong> that enable higher planting densities, easier harvesting and greater yields per hectare. In parallel, we are testing improved nursery techniques and advanced planting inputs including biochar, compost, and microbial technologies.</p>
+    `
+  },
+  {
+    title: "Value Chain Development",
+    content: `
+      <p>Increasing agricultural production only creates lasting impact when farmers have access to profitable markets and local value addition.</p>
+      <p>Current initiatives include research into freeze-dried mango products, cold-pressed moringa oil, and the development of the Bixa annatto value chain in partnership with KALRO.</p>
+      <p>Our long-term vision is to help transform Kenya from an exporter of raw commodities into a producer of high-value processed products.</p>
+      <p><strong>Over the past 10 years</strong>, we have conducted numerous value chain analyses across livestock, horticulture, drought-resistant crops, and agroforestry.</p>
+    `
+  },
+  {
+    title: "Sustainable Production Inputs",
+    content: `
+      <p>Healthy soils are the foundation of productive and climate-resilient agriculture.</p>
+      <p>We develop large-scale composting systems and invest in <strong>biochar production technologies</strong> that transform biomass into stable carbon-rich material.</p>
+      <p>These inputs are being evaluated across cashew, moringa, and indigenous tree species to increase productivity while reducing dependence on synthetic fertilizers.</p>
+      <p>By integrating circular economy principles with regenerative agriculture, we aim to create scalable solutions for sustainable landscape restoration.</p>
+    `
+  }
+];
+
+function showProjectModal(index) {
+  const modal = document.getElementById('projectModal');
+  const body = document.getElementById('modal-body');
+  
+  body.innerHTML = `
+    <h3>${projects[index].title}</h3>
+    ${projects[index].content}
+    <div style="margin-top: 35px; text-align: center;">
+      <a href="contact.html" class="nav-cta-btn" style="padding: 16px 36px; font-size: 1.1rem;">Discuss This Project With Us</a>
+    </div>
+  `;
+  
+  modal.style.display = "flex";
+}
+
+function closeProjectModal() {
+  document.getElementById('projectModal').style.display = "none";
+}
+
+// Close modal when clicking outside
+document.getElementById('projectModal').addEventListener('click', function(e) {
+  if (e.target === this) closeProjectModal();
 });
 </script>
 </body>

@@ -10,20 +10,20 @@
 
   <style>
     :root{
-      --emerald:#10b981;
-      --emerald-light:#d1fae5;
-      --mint:#a7f3d0;
-      --peach:#fcd34d;
-      --cream:#fefce8;
-      --text:#1e2937;
-      --soft:#64748b;
-      --pink:#f9a8d4;
+      --primary: #2e7d32;
+      --primary-dark: #1e5a24;
+      --light-green: #a7d8b0;
+      --cream: #f8f4eb;
+      --beige: #fefce8;
+      --text: #1e2937;
+      --soft: #475569;
     }
 
     *{ margin:0; padding:0; box-sizing:border-box; }
+
     body{
       font-family:'Inter',sans-serif;
-      background:linear-gradient(to bottom,#f0fdfa,#fefce8);
+      background: linear-gradient(to bottom, #f1f8f3, #fefce8);
       color:var(--text);
       line-height:1.9;
     }
@@ -34,19 +34,18 @@
       background:white;
       border-radius:40px;
       overflow:hidden;
-      box-shadow:0 20px 60px rgba(16,185,129,.12);
-      border:3px solid var(--mint);
+      box-shadow:0 20px 60px rgba(46,125,50,.15);
+      border:3px solid var(--light-green);
     }
 
-    /* Cute Progress Bar */
+    /* Progress Bar */
     .progress-bar{
       position:fixed;
       top:0; left:0;
       height:6px;
       width:0%;
-      background:linear-gradient(to right,#10b981,#67e8b4);
+      background:linear-gradient(to right, var(--primary), #4ade80);
       z-index:9999;
-      border-radius:0 0 4px 0;
     }
 
     /* Close Button */
@@ -57,27 +56,27 @@
       width: 52px;
       height: 52px;
       background: white;
-      border: 2px solid var(--mint);
+      border: 2px solid var(--primary);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #10b981;
+      color: var(--primary);
       font-size: 1.4rem;
       z-index: 10000;
-      box-shadow: 0 8px 25px rgba(16,185,129,.2);
+      box-shadow: 0 8px 25px rgba(46,125,50,.2);
       transition: all 0.3s ease;
     }
     .close-btn:hover {
       transform: rotate(90deg) scale(1.15);
-      background: #10b981;
+      background: var(--primary);
       color: white;
     }
 
     /* Hero */
     .hero{
       min-height:520px;
-      background: linear-gradient(rgba(16,185,129,.45), rgba(16,185,129,.55)),
+      background: linear-gradient(rgba(30,90,36,.65), rgba(30,90,36,.75)),
                   url('ASSETS/Malia.jpeg') center/cover no-repeat;
       display:flex;
       align-items:flex-end;
@@ -90,19 +89,19 @@
       font-size:clamp(2.6rem,6vw,4.6rem);
       line-height:1.1;
       color:white;
-      text-shadow:0 6px 20px rgba(0,0,0,.3);
+      text-shadow:0 6px 25px rgba(0,0,0,.45);
       margin-bottom:20px;
     }
 
     .hero-tag{
       display:inline-block;
-      padding:8px 20px;
-      background:rgba(255,255,255,.25);
+      padding:8px 22px;
+      background:rgba(255,255,255,.28);
       backdrop-filter:blur(12px);
       border-radius:50px;
       color:white;
-      font-size:1rem;
-      font-weight:500;
+      font-size:1.05rem;
+      font-weight:600;
     }
 
     /* Content */
@@ -115,25 +114,25 @@
 
     h2{
       font-family:'Satoshi',serif;
-      color:#065f46;
-      margin:60px 0 20px;
-      font-size:2.1rem;
+      color:var(--primary-dark);
+      margin:60px 0 24px;
+      font-size:2.2rem;
     }
 
     .card{
-      background:linear-gradient(135deg, #ecfdf5, #fefce8);
-      border:2px solid #a7f3d0;
+      background:linear-gradient(135deg, #f0f9f0, #fefce8);
+      border:2px solid var(--light-green);
       padding:32px;
       border-radius:28px;
       margin:40px 0;
-      box-shadow:0 15px 30px rgba(16,185,129,.1);
+      box-shadow:0 15px 30px rgba(46,125,50,.1);
       text-align:center;
       font-size:1.2rem;
       font-weight:600;
-      color:#065f46;
+      color:var(--primary-dark);
     }
 
-    /* Stats - Super Cute */
+    /* Stats */
     .stats-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
@@ -143,19 +142,19 @@
 
     .stat-card{
       background:white;
-      border:2px solid var(--mint);
+      border:2px solid var(--light-green);
       border-radius:28px;
       padding:32px 20px;
       text-align:center;
-      box-shadow:0 15px 35px rgba(16,185,129,.12);
+      box-shadow:0 15px 35px rgba(46,125,50,.1);
       transition: transform 0.3s;
     }
     .stat-card:hover{
       transform: translateY(-10px) scale(1.04);
     }
     .stat-card h3{
-      font-size:2.8rem;
-      color:#10b981;
+      font-size:2.9rem;
+      color:var(--primary);
       margin-bottom:8px;
     }
 
@@ -163,9 +162,9 @@
     .quote{
       margin:70px 0;
       padding:50px 40px;
-      background:linear-gradient(135deg, #ecfdf5, #f0fdfa);
+      background:linear-gradient(135deg, #f0f9f0, #f8f4eb);
       border-radius:32px;
-      border-left:8px solid #10b981;
+      border-left:8px solid var(--primary);
       font-size:1.35rem;
       font-style:italic;
       position:relative;
@@ -174,54 +173,37 @@
       content:"🌱";
       font-size:4rem;
       position:absolute;
-      top:-20px;
-      left:30px;
-      opacity:0.2;
+      top:-25px;
+      left:35px;
+      opacity:0.15;
     }
 
-    /* Final CTA - Extra Cute */
+    /* Final CTA */
     .final-cta{
       text-align:center;
       margin:80px 0;
       padding:65px 40px;
-      background:linear-gradient(135deg, #67e8b4, #10b981);
+      background:linear-gradient(135deg, var(--primary), var(--primary-dark));
       border-radius:36px;
       color:white;
-      box-shadow:0 20px 50px rgba(16,185,129,.3);
+      box-shadow:0 20px 50px rgba(46,125,50,.35);
     }
 
     .cta-button {
       display: inline-block;
       margin-top: 28px;
       background: white;
-      color: #047857;
+      color: var(--primary-dark);
       padding: 18px 42px;
       border-radius: 50px;
       font-weight: 700;
       font-size: 1.15rem;
-      box-shadow: 0 12px 30px rgba(16,185,129,.3);
+      box-shadow: 0 12px 30px rgba(46,125,50,.3);
       transition: all 0.4s;
     }
     .cta-button:hover {
       transform: translateY(-8px) scale(1.08);
-      box-shadow: 0 20px 40px rgba(16,185,129,.4);
-    }
-
-    /* Share buttons */
-    .share-btn{
-      padding:14px 24px;
-      background:white;
-      border:2px solid var(--mint);
-      border-radius:50px;
-      display:flex;
-      align-items:center;
-      gap:10px;
-      transition:all .3s;
-    }
-    .share-btn:hover{
-      background:#10b981;
-      color:white;
-      transform:scale(1.05);
+      box-shadow: 0 20px 40px rgba(46,125,50,.4);
     }
   </style>
 </head>
@@ -283,10 +265,9 @@
           A good rainy season is a gift — but only if our seedlings are ready to dance in the rain! 
         </div>
 
-        <!-- Super Cute CTA -->
         <div class="final-cta">
           <h3>Ready to make 2026 our greenest year yet? 🌍💚</h3>
-          <p><strong>Secure cute, strong seedlings + expert support now!</strong></p>
+          <p><strong>Secure strong seedlings + expert support now!</strong></p>
           <a href="contact.html" class="cta-button">
             Yes! Let’s Prepare for El Niño 2026 →
           </a>
@@ -304,5 +285,5 @@
       document.getElementById("progressBar").style.width = progress + "%";
     });
   </script>
-</body>
+</body> 
 </html>
