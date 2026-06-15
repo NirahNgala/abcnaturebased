@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - Crescendo.green</title>
+  <title>About Us - Crescendo Green</title>
   
   <!-- Satoshi Font -->
   <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet">
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="about.css">
   <link rel="stylesheet" href="style.css">
@@ -27,10 +28,19 @@
   </script>
 
   <style>
+    :root {
+      --primary: #0f2c22;
+      --accent: #4ade80;
+    }
+
+    body {
+      font-family: 'Satoshi', system-ui, sans-serif;
+    }
+
     .about-hero {
-      background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), 
-                  url('ASSETS/Girl\ with\ moringa\ seedlings.webp') center/cover;
-      min-height: 460px;
+      background: linear-gradient(rgba(15,44,34,0.65), rgba(15,44,34,0.75)), 
+                  url('ASSETS/Girl with moringa seedlings.webp') center/cover;
+      min-height: 520px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -42,46 +52,58 @@
 
     .hero-image {
       position: absolute;
-      bottom: -30px;
+      bottom: -40px;
       right: 8%;
-      width: 320px;
-      filter: drop-shadow(0 25px 30px rgba(0,0,0,0.35));
+      width: 340px;
+      filter: drop-shadow(0 25px 35px rgba(0,0,0,0.4));
       z-index: 10;
+      transition: transform 0.6s ease;
     }
 
+  
     .close-btn {
       position: absolute;
-      top:0px;
+      top: 25px;
       right: 25px;
-      background: rgba(255,255,255,0.15);
-      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(12px);
       color: white;
       border: none;
-      width: 50px;
-      height: 50px;
+      width: 52px;
+      height: 52px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 28px;
+      font-size: 32px;
       font-weight: 300;
       cursor: pointer;
       transition: all 0.3s ease;
       z-index: 20;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
 
     .close-btn:hover {
-      background: rgba(255,255,255,0.3);
-      transform: scale(1.1);
+      background: rgba(255,255,255,0.35);
+      transform: rotate(90deg);
     }
 
-    .contact-hero {
-      margin-top: 0px;
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--primary);
     }
+
+    .team-member {
+      transition: all 0.4s ease;
+    }
+    
+    .team-member:hover {
+      transform: translateY(-8px);
+    }
+
     @media (max-width: 768px) {
       .hero-image {
-        width: 220px;
+        width: 240px;
         right: 5%;
         bottom: -15px;
       }
@@ -134,7 +156,7 @@
       margin-top: 1.5rem;
       transition: all 0.3s;
       text-decoration: none;
-    }
+      }
 
     .cta-link:hover {
       transform: translateY(-3px);
@@ -142,98 +164,78 @@
     }
   </style>
 </head>
-<body class="font-sans">
+<body class="font-sans bg-white">
 
 <!-- HERO -->
 <section class="about-hero">
-  <button class="close-btn" onclick="goBack()" title="Close">
-    ×
-  </button>
+  <button class="close-btn" onclick="goBack()" title="Close">×</button>
 
-  <div class="relative z-10 text-center px-6">
-    <h1 class="text-5xl md:text-6xl font-bold">Our Story</h1>
+  <div class="relative z-10 text-center px-6 max-w-3xl">
+    <h1 class="text-5xl md:text-6xl font-bold tracking-tight">Our Story</h1>
+    <p class="mt-4 text-lg md:text-xl text-white/90">
+      From a small experimental farm to a leading landscape restoration company in Kenya.
+    </p>
   </div>
 </section>
 
-<!-- OUR STORY -->
+<!-- OUR JOURNEY -->
 <section class="py-24 bg-white">
   <div class="max-w-6xl mx-auto px-6">
-
-    <div class="text-center mb-14">
-      <h2 class="text-4xl md:text-5xl font-bold text-emerald-900 mb-4">
-        Our Journey
-      </h2>
-      <div class="w-20 h-1 bg-emerald-600 mx-auto mb-6"></div>
-      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-        Key milestones that have shaped Crescendo Green's growth and impact.
-      </p>
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-emerald-900">Our Journey</h2>
+      <div class="w-24 h-1 bg-emerald-600 mx-auto mt-6"></div>
     </div>
 
-    <div class="overflow-hidden rounded-3xl shadow-lg border border-emerald-100">
+    <div class="overflow-hidden rounded-3xl shadow-xl border border-emerald-100">
       <table class="w-full">
         <thead>
           <tr class="bg-emerald-800 text-white">
-            <th class="px-6 py-5 text-left text-lg">Year</th>
-            <th class="px-6 py-5 text-left text-lg">Milestone</th>
+            <th class="px-6 py-6 text-left text-lg font-medium">Year</th>
+            <th class="px-6 py-6 text-left text-lg font-medium">Milestone</th>
           </tr>
         </thead>
-
-        <tbody class="bg-white">
-
-          <tr class="border-b border-emerald-100 hover:bg-emerald-50 transition">
-            <td class="px-6 py-6 font-bold text-emerald-700">2019</td>
-            <td class="px-6 py-6 text-gray-700">
-              Development of a 200-hectare agroforestry project in Koromi, Kilifi County.
-            </td>
-          </tr>
-
-          <tr class="border-b border-emerald-100 hover:bg-emerald-50 transition">
-            <td class="px-6 py-6 font-bold text-emerald-700">2022</td>
-            <td class="px-6 py-6 text-gray-700">
-              Expanded operations with a 200-hectare nursery and experimental farm in Kakuyuni.
-            </td>
-          </tr>
-
-          <tr class="border-b border-emerald-100 hover:bg-emerald-50 transition">
-            <td class="px-6 py-6 font-bold text-emerald-700">2024</td>
-            <td class="px-6 py-6 text-gray-700">
-              Selected under JICA's SFS-CORECC programme to produce improved Melia volkensii seedlings.
-            </td>
-          </tr>
-
+        <tbody class="divide-y divide-emerald-100">
           <tr class="hover:bg-emerald-50 transition">
-            <td class="px-6 py-6 font-bold text-emerald-700">2026</td>
-            <td class="px-6 py-6 text-gray-700">
-              Launched a large-scale nursery in Mtwapa featuring a 7,500m² shadehouse focused on moringa production for carbon projects.
-            </td>
+            <td class="px-6 py-7 font-bold text-emerald-700 w-28">2019</td>
+            <td class="px-6 py-7 text-gray-700">Development of a 200-hectare agroforestry project in Koromi, Kilifi County.</td>
           </tr>
-
+          <tr class="hover:bg-emerald-50 transition">
+            <td class="px-6 py-7 font-bold text-emerald-700">2022</td>
+            <td class="px-6 py-7 text-gray-700">Expanded operations with a 200-hectare nursery and experimental farm in Kakuyuni.</td>
+          </tr>
+          <tr class="hover:bg-emerald-50 transition">
+            <td class="px-6 py-7 font-bold text-emerald-700">2024</td>
+            <td class="px-6 py-7 text-gray-700">Selected under JICA's SFS-CORECC programme to produce improved Melia volkensii seedlings.</td>
+          </tr>
+          <tr class="hover:bg-emerald-50 transition">
+            <td class="px-6 py-7 font-bold text-emerald-700">2026</td>
+            <td class="px-6 py-7 text-gray-700">Launched a large-scale nursery in Mtwapa featuring a 7,500m² shadehouse focused on moringa production for carbon projects.</td>
+          </tr>
         </tbody>
       </table>
     </div>
-
   </div>
 </section>
 
 <!-- STATS -->
-<section id="stats" class="py-20 bg-emerald-50">
+<section class="py-20 bg-emerald-50">
   <div class="max-w-7xl mx-auto px-6">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
       <div>
-        <h3 id="hectares" class="stat-number text-emerald-700 mb-2">0</h3>
-        <p class="text-xl font-medium">Hectares Restored</p>
+        <h3 id="hectares" class="stat-number">0</h3>
+        <p class="text-xl font-medium text-gray-600">Hectares Restored</p>
       </div>
       <div>
-        <h3 id="shadehouse" class="stat-number text-emerald-700 mb-2">0</h3>
-        <p class="text-xl font-medium">Shadehouse</p>
+        <h3 id="shadehouse" class="stat-number">0</h3>
+        <p class="text-xl font-medium text-gray-600"> Shadehouse</p>
       </div>
       <div>
-        <h3 id="seedlings" class="stat-number text-emerald-700 mb-2">0</h3>
-        <p class="text-xl font-medium"> Million Seedlings/Year</p>
+        <h3 id="seedlings" class="stat-number">0</h3>
+        <p class="text-xl font-medium text-gray-600">Million Seedlings/Year</p>
       </div>
       <div>
-        <h3 id="systems" class="stat-number text-emerald-700 mb-2">0</h3>
-        <p class="text-xl font-medium">Tree Species</p>
+        <h3 id="species" class="stat-number">0</h3>
+        <p class="text-xl font-medium text-gray-600">Tree Species</p>
       </div>
     </div>
   </div>
@@ -389,10 +391,10 @@
           <div class="photo-wrapper">
             <img src="ASSETS/Victor.jpeg" alt="Victor Langenberg">
             <div class="leaf-icon"></div>
-          </div>
+      </div>
           <h3>Victor Langenberg</h3>
           <p>Water Resources Management Expert (Acacia Water)</p>
-        </div>
+    </div>
 
         <div class="team-member">
           <div class="photo-wrapper">
@@ -427,31 +429,31 @@ fetch('footer.html')
   function animateValue(id, start, end, duration, suffix = '') {
     const obj = document.getElementById(id);
     const range = end - start;
-    let startTimestamp = null;
+    let startTime = null;
 
     const step = (timestamp) => {
-      if (!startTimestamp) startTimestamp = timestamp;
-      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
       const value = Math.floor(progress * range + start);
       obj.textContent = value + suffix;
-      if (progress < 1) {
-        window.requestAnimationFrame(step);
-      } else {
-        obj.textContent = end + suffix;
-      }
+      if (progress < 1) requestAnimationFrame(step);
     };
-    window.requestAnimationFrame(step);
+    requestAnimationFrame(step);
   }
 
-  // Start counters after page load
-  window.onload = function() {
+  window.onload = () => {
     setTimeout(() => {
-      animateValue("hectares", 0, 200, 1800);
-      animateValue("shadehouse", 0, 7500, 2200, "m²");
-      animateValue("seedlings", 0, 3, 2000);
-      animateValue("systems", 0, 60, 1200);
-    }, 600);
+      animateValue("hectares", 0, 200, 1600);
+      animateValue("shadehouse", 0, 7500, 2000, "m²");
+      animateValue("seedlings", 0, 3, 1800);
+      animateValue("species", 0, 60, 1400);
+    }, 800);
   };
+
+  // Load Footer
+  fetch('footer.html')
+    .then(res => res.text())
+    .then(data => document.getElementById('footer').innerHTML = data);
 </script>
 </body>
 </html>
