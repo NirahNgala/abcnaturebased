@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | Crescendo Green</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 
     <style>
         :root {
@@ -319,7 +320,15 @@
         </p>
         <a href="contact.html" class="btn">Get In Touch</a>
     </section>
+<div id="footer"></div>
 
+<script>
+fetch('footer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('footer').innerHTML = data;
+  });
+</script>
     <script>
         // Reveal Animation
         const reveals = document.querySelectorAll('.reveal');
@@ -341,5 +350,6 @@
             });
         });
     </script>
+
 </body>
 </html>
