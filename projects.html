@@ -21,18 +21,24 @@
             overflow-x: hidden;
         }
 
-        /* HERO - Strongest Parallax */
+        /* ====================== PARALLAX LAYERS ====================== */
+        .parallax {
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        /* HERO */
         .hero {
             height: 100vh;
             min-height: 650px;
             background: linear-gradient(rgba(15,44,34,0.65), rgba(15,44,34,0.75)),
                         url('ASSETS/nurserypic.jpeg') center/cover;
-            background-attachment: fixed;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            position: relative;
         }
 
         .hero-content {
@@ -70,23 +76,14 @@
             margin: 0 auto;
         }
 
-        /* Parallax Sections */
-        .parallax-bg {
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-
-        /* STATS */
+        /* STATS - Different Background */
         .stats {
-            background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)),
-                        url('ASSETS/nurserypic.jpeg') center/cover;
-            background-attachment: fixed;
             padding: 80px 20px;
             margin-top: -80px;
             position: relative;
             z-index: 10;
+            background: linear-gradient(rgba(255, 255, 255, 0.521), rgba(255,255,255,0.92)),
+                        url('ASSETS/nurserypic3.jpeg') center/cover;
         }
 
         .stats-grid {
@@ -103,10 +100,11 @@
             color: var(--primary);
         }
 
-        /* PROJECTS */
+        /* PROJECTS SECTION - Subtle Parallax Background */
         .projects-section {
             padding: 100px 20px;
-            background: #f8fff9;
+            background: linear-gradient(rgba(248,255,249,0.95), rgba(248,255,249,0.95)),
+                        url('ASSETS/nurserygood.jpeg') center/cover;
         }
 
         .project-container {
@@ -170,11 +168,10 @@
             font-weight: bold;
         }
 
-        /* CTA */
+        /* CTA - Forest Background */
         .cta {
             background: linear-gradient(rgba(15,44,34,0.88), rgba(15,44,34,0.88)),
-                        url('ASSETS/forest-bg.jpg') center/cover;
-            background-attachment: fixed;
+                        url('ASSETS/nurserygood2.jpeg') center/cover;
             color: white;
             text-align: center;
             padding: 140px 20px;
@@ -196,7 +193,7 @@
             transform: scale(1.05);
         }
 
-        /* Reveal */
+        /* Reveal Animation */
         .reveal {
             opacity: 0;
             transform: translateY(50px);
@@ -208,7 +205,7 @@
             transform: translateY(0);
         }
 
-        /* Mobile */
+        /* Mobile Adjustments */
         @media (max-width: 900px) {
             .project-container {
                 grid-template-columns: 1fr;
@@ -219,14 +216,15 @@
         }
 
         @media (max-width: 600px) {
-            .hero, .stats { margin-top: -60px; }
+            .hero { height: 85vh; }
+            .stats { margin-top: -50px; }
         }
     </style>
 </head>
 <body>
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero parallax">
         <div class="hero-content">
             <div class="hero-tag">OUR PROJECTS</div>
             <h1>Restoring Landscapes.<br>Growing Opportunities.</h1>
@@ -234,8 +232,8 @@
         </div>
     </section>
 
-    <!-- STATS - Parallax -->
-    <section class="stats parallax-bg">
+    <!-- STATS -->
+    <section class="stats parallax">
         <div class="stats-grid">
             <div class="stat-card reveal"><h3>7,500m²</h3><p>Nursery Shadehouse</p></div>
             <div class="stat-card reveal"><h3>200 Ha</h3><p>Landscape Restoration</p></div>
@@ -245,7 +243,7 @@
     </section>
 
     <!-- PROJECTS -->
-    <section class="projects-section">
+    <section class="projects-section parallax">
         <!-- Project 1 -->
         <div class="project-container reveal">
             <div class="project-image">
@@ -307,8 +305,8 @@
         </div>
     </section>
 
-    <!-- CTA - Parallax -->
-    <section class="cta parallax-bg">
+    <!-- CTA -->
+    <section class="cta parallax">
         <h2>Partner With Us</h2>
         <p style="max-width:700px; margin:0 auto 40px; font-size:1.2rem;">
             We collaborate with governments, NGOs, researchers, investors, and private sector partners to scale landscape restoration and climate-smart agricultural solutions.
@@ -328,17 +326,15 @@
             });
         });
 
-        // Global Parallax Effect
+        // Multi-layer Parallax
         window.addEventListener('scroll', () => {
-            const scrollY = window.scrollY * 0.5;   // Adjust speed (0.3 = slower, 0.7 = faster)
+            const scroll = window.scrollY;
 
-            document.querySelectorAll('.parallax-bg').forEach(section => {
-                section.style.backgroundPositionY = `${scrollY}px`;
+            // Different speeds for different sections
+            document.querySelectorAll('.parallax').forEach((section, index) => {
+                const speed = 0.4 + (index * 0.1); // Varying parallax intensity
+                section.style.backgroundPositionY = `${scroll * speed}px`;
             });
-
-            // Extra strong effect on hero
-            const hero = document.querySelector('.hero');
-            if (hero) hero.style.backgroundPositionY = `${window.scrollY * 0.7}px`;
         });
     </script>
 </body>
