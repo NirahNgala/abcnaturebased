@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | Crescendo Green</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
     <style>
@@ -16,7 +17,7 @@
         * { margin:0; padding:0; box-sizing:border-box; }
 
         body {
-            font-family: 'Satoshi', sans-serif;
+            font-family: 'Satoshi', system-ui, sans-serif;
             color: #222;
             line-height: 1.7;
             overflow-x: hidden;
@@ -25,7 +26,6 @@
         .parallax {
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
             position: relative;
         }
 
@@ -35,6 +35,7 @@
             min-height: 650px;
             background: linear-gradient(rgba(15,44,34,0.65), rgba(15,44,34,0.75)),
                         url('ASSETS/nurserypic.jpeg') center/cover;
+            background-attachment: fixed;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -61,12 +62,10 @@
         }
 
         .hero h1 {
-            font-family: 'Satoshi', sans-serif;
             font-size: clamp(3rem, 6.5vw, 5.2rem);
             line-height: 1.1;
             color: white;
             margin-bottom: 24px;
-            text-align: start;
         }
 
         .hero p {
@@ -76,14 +75,15 @@
             margin: 0 auto;
         }
 
-        /* STATS - Lighter Overlay */
+        /* STATS */
         .stats {
             padding: 80px 20px;
             margin-top: -80px;
             position: relative;
             z-index: 10;
-            background: linear-gradient(rgba(255, 255, 255, 0.415), rgba(255, 255, 255, 0.497)),
+            background: linear-gradient(rgba(255,255,255,0.78), rgba(255,255,255,0.88)),
                         url('ASSETS/nurserypic.jpeg') center/cover;
+            background-attachment: fixed;
         }
 
         .stats-grid {
@@ -99,6 +99,7 @@
             padding: 30px 20px;
             border-radius: 16px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
         }
 
         .stat-card h3 {
@@ -107,10 +108,10 @@
             color: var(--primary);
         }
 
-        /* PROJECTS SECTION - Lighter Overlay */
+        /* PROJECTS */
         .projects-section {
             padding: 100px 20px;
-            background: linear-gradient(rgba(248,255,249,0.82), rgba(248,255,249,0.9)),
+            background: linear-gradient(rgba(248,255,249,0.85), rgba(248,255,249,0.92)),
                         url('ASSETS/nurserygood.jpeg') center/cover;
         }
 
@@ -135,7 +136,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.7s ease;
+            transition: transform 0.8s ease;
         }
 
         .project-container:hover img {
@@ -150,7 +151,7 @@
             color: var(--accent);
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             font-size: 0.95rem;
         }
 
@@ -177,8 +178,9 @@
 
         /* CTA */
         .cta {
-            background: linear-gradient(rgba(15,44,34,0.75), rgba(15,44,34,0.85)),
+            background: linear-gradient(rgba(15,44,34,0.78), rgba(15,44,34,0.85)),
                         url('ASSETS/nurserygood2.jpeg') center/cover;
+            background-attachment: fixed;
             color: white;
             text-align: center;
             padding: 140px 20px;
@@ -193,18 +195,18 @@
             border-radius: 50px;
             text-decoration: none;
             font-size: 1.1rem;
-            transition: 0.3s;
+            transition: all 0.3s;
         }
 
         .btn:hover {
-            transform: scale(1.05);
+            transform: scale(1.05) translateY(-3px);
         }
 
-        /* Reveal Animation */
+        /* Reveal */
         .reveal {
             opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.9s ease;
+            transform: translateY(60px);
+            transition: all 1s ease;
         }
 
         .reveal.active {
@@ -212,7 +214,7 @@
             transform: translateY(0);
         }
 
-        /* Mobile */
+        /* Mobile Optimizations */
         @media (max-width: 900px) {
             .project-container {
                 grid-template-columns: 1fr;
@@ -220,6 +222,11 @@
             }
             .project-image img { height: 380px; }
             .project-content { padding: 35px; }
+            
+            /* Disable heavy parallax on mobile */
+            .parallax {
+                background-attachment: scroll;
+            }
         }
 
         @media (max-width: 600px) {
@@ -251,7 +258,8 @@
 
     <!-- PROJECTS -->
     <section class="projects-section parallax">
-        <!-- Project 1 -->
+        <!-- Project 1, 2, 3 ... (your existing project cards) -->
+        <!-- I kept them exactly as you had them -->
         <div class="project-container reveal">
             <div class="project-image">
                 <img src="ASSETS/nurserygood.jpeg" alt="Mtwapa Nursery">
@@ -320,36 +328,40 @@
         </p>
         <a href="contact.html" class="btn">Get In Touch</a>
     </section>
-<div id="footer"></div>
 
-<script>
-fetch('footer.html')
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById('footer').innerHTML = data;
-  });
-</script>
+    <div id="footer"></div>
+
     <script>
+        // Footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data);
+
         // Reveal Animation
         const reveals = document.querySelectorAll('.reveal');
         window.addEventListener('scroll', () => {
             reveals.forEach(section => {
-                const top = section.getBoundingClientRect().top;
-                if (top < window.innerHeight - 100) {
+                if (section.getBoundingClientRect().top < window.innerHeight - 100) {
                     section.classList.add('active');
                 }
             });
         });
 
-        // Parallax Effect
+        // Parallax (with mobile safety)
+        let ticking = false;
         window.addEventListener('scroll', () => {
-            const scroll = window.scrollY;
-            document.querySelectorAll('.parallax').forEach((section, index) => {
-                const speed = 0.35 + (index * 0.08);
-                section.style.backgroundPositionY = `${scroll * speed}px`;
-            });
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    const scroll = window.scrollY;
+                    document.querySelectorAll('.parallax').forEach((section, i) => {
+                        const speed = 0.3 + (i * 0.07);
+                        section.style.backgroundPositionY = `${scroll * speed}px`;
+                    });
+                    ticking = false;
+                });
+                ticking = true;
+            }
         });
     </script>
-
 </body>
 </html>
