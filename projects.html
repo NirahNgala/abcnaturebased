@@ -4,182 +4,159 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | Crescendo Green</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --primary: #18392b;
-            --accent: #4CAF50;
-            --light: #f8faf8;
+            --primary: #0f2c22;
+            --accent: #4ade80;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin:0; padding:0; box-sizing:border-box; }
 
         body {
             font-family: 'Inter', sans-serif;
-            color: #333;
+            color: #222;
             line-height: 1.7;
-            background: #fff;
             overflow-x: hidden;
         }
 
         /* HERO */
-        .projects-hero {
-            height: 60vh;
-            min-height: 450px;
-            background: 
-                linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
-                url('ASSETS/nurserypic.jpeg') center/cover;
+        .hero {
+            height: 100vh;
+            min-height: 650px;
+            background: linear-gradient(rgba(15,44,34,0.65), rgba(15,44,34,0.75)),
+                        url('ASSETS/nurserypic.jpeg') center/cover no-repeat;
             background-attachment: fixed;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: #fff;
-            padding: 20px;
+            position: relative;
         }
 
-        .projects-hero-content {
-            max-width: 800px;
+        .hero-content {
+            max-width: 900px;
+            padding: 0 20px;
         }
 
-        .projects-tag {
+        .hero-tag {
             display: inline-block;
-            padding: 8px 18px;
-            border: 1px solid rgba(255,255,255,.4);
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(12px);
+            color: white;
+            padding: 10px 24px;
             border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 2px;
             margin-bottom: 20px;
-            font-size: 0.9rem;
-            backdrop-filter: blur(10px);
-            animation: fadeDown 1s ease;
         }
 
-        .projects-hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            margin-bottom: 20px;
-            animation: fadeUp 1s ease 0.2s both;
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 6.5vw, 5.2rem);
+            line-height: 1.1;
+            color: white;
+            margin-bottom: 24px;
         }
 
-        .projects-hero p {
-            font-size: 1.1rem;
+        .hero p {
+            font-size: 1.2rem;
+            color: #ddd;
             max-width: 700px;
-            margin: auto;
-            animation: fadeUp 1s ease 0.4s both;
+            margin: 0 auto;
         }
 
         /* STATS */
         .stats {
-            max-width: 1200px;
-            margin: -90px auto 80px;
-            padding: 0 20px;
+            background: white;
+            padding: 60px 20px;
+            margin-top: -80px;
             position: relative;
             z-index: 10;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         .stats-grid {
+            max-width: 1200px;
+            margin: auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+            gap: 25px;
         }
 
         .stat-card {
-            background: rgba(255,255,255,.95);
-            backdrop-filter: blur(12px);
-            padding: 35px 20px;
-            border-radius: 18px;
             text-align: center;
-            box-shadow: 0 10px 40px rgba(0,0,0,.08);
+            padding: 25px 15px;
         }
 
         .stat-card h3 {
-            font-size: 2.2rem;
+            font-size: clamp(2.2rem, 5vw, 3rem);
+            font-weight: 800;
             color: var(--primary);
-            margin-bottom: 8px;
-        }
-
-        /* INTRO */
-        .projects-intro {
-            max-width: 1200px;
-            margin: auto;
-            padding: 90px 20px;
-            text-align: center;
-        }
-
-        .projects-intro h2 {
-            font-size: 2.5rem;
-            color: #1f4b34;
-            margin-bottom: 20px;
-        }
-
-        .projects-intro p {
-            max-width: 850px;
-            margin: auto;
-            color: #666;
         }
 
         /* PROJECTS */
-        .project-section {
-            padding: 90px 20px;
-        }
-
-        .project-section:nth-child(even) {
-            background: #f8faf8;
+        .projects-section {
+            padding: 100px 20px;
+            background: #f8fff9;
         }
 
         .project-container {
             max-width: 1200px;
-            margin: auto;
+            margin: 0 auto 80px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 50px;
             align-items: center;
             background: white;
-            padding: 30px;
             border-radius: 24px;
-            box-shadow: 0 10px 40px rgba(0,0,0,.06);
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+        }
+
+        .project-container:nth-child(even) {
+            background: #f8fff9;
         }
 
         .project-image {
-            overflow: hidden;
-            border-radius: 18px;
+            height: 100%;
         }
 
         .project-image img {
             width: 100%;
-            height: 600px;
+            height: 100%;
             object-fit: cover;
-            transition: 0.8s;
+            transition: 0.6s ease;
         }
 
         .project-container:hover img {
-            transform: scale(1.08);
+            transform: scale(1.07);
+        }
+
+        .project-content {
+            padding: 45px;
         }
 
         .project-content span {
-            display: inline-block;
-            margin-bottom: 10px;
             color: var(--accent);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
+            font-size: 0.95rem;
         }
 
         .project-content h2 {
-            font-size: 2.3rem;
+            font-size: clamp(1.8rem, 4vw, 2.4rem);
+            margin: 16px 0 22px;
+            color: var(--primary);
             line-height: 1.2;
-            margin: 15px 0 20px;
-            color: #1f4b34;
         }
 
         .project-features {
             list-style: none;
-            margin-top: 25px;
+            margin-top: 20px;
         }
 
         .project-features li {
@@ -197,56 +174,40 @@
         }
 
         /* CTA */
-        .projects-cta {
-            background: 
-                linear-gradient(rgba(24,57,43,.88), rgba(24,57,43,.88)),
-                url("ASSETS/forest-bg.jpg") center/cover;
-            color: #fff;
+        .cta {
+            background: linear-gradient(rgba(15,44,34,0.92), rgba(15,44,34,0.92)),
+                        url('ASSETS/forest-bg.jpg') center/cover;
+            color: white;
             text-align: center;
-            padding: 100px 20px;
+            padding: 120px 20px;
         }
 
-        .projects-cta h2 {
-            font-size: 2.5rem;
+        .cta h2 {
+            font-size: clamp(2.4rem, 5vw, 3.2rem);
             margin-bottom: 20px;
         }
 
-        .projects-cta p {
-            max-width: 700px;
-            margin: auto;
-            margin-bottom: 35px;
-        }
-
-        .projects-btn {
+        .btn {
             display: inline-block;
-            padding: 15px 32px;
-            background: #fff;
-            color: #1f4b34;
-            text-decoration: none;
+            padding: 18px 42px;
+            background: var(--accent);
+            color: #0f2c22;
+            font-weight: 700;
             border-radius: 50px;
-            font-weight: 600;
+            text-decoration: none;
+            font-size: 1.1rem;
             transition: 0.3s;
         }
 
-        .projects-btn:hover {
-            transform: translateY(-4px);
+        .btn:hover {
+            transform: scale(1.05);
         }
 
-        /* ANIMATIONS */
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
+        /* Reveal Animation */
         .reveal {
             opacity: 0;
-            transform: translateY(60px);
-            transition: 1s ease;
+            transform: translateY(50px);
+            transition: all 0.9s ease;
         }
 
         .reveal.active {
@@ -254,37 +215,34 @@
             transform: translateY(0);
         }
 
-        /* RESPONSIVE */
+        /* ==================== MOBILE RESPONSIVE ==================== */
         @media (max-width: 900px) {
             .project-container {
                 grid-template-columns: 1fr;
-                gap: 40px;
+                margin-bottom: 60px;
             }
-
+            
             .project-image img {
-                height: 400px;
+                height: 380px;
             }
 
-            .project-content h2 {
-                font-size: 2rem;
-            }
-
-            .projects-hero {
-                height: 50vh;
+            .project-content {
+                padding: 35px;
             }
         }
 
         @media (max-width: 600px) {
-            .stats-grid {
-                grid-template-columns: 1fr;
+            .hero {
+                height: 85vh;
             }
-
+            
             .stats {
-                margin-top: -40px;
+                margin-top: -50px;
+                padding: 50px 15px;
             }
-
-            .project-section {
-                padding: 60px 20px;
+            
+            .projects-section {
+                padding: 70px 15px;
             }
         }
     </style>
@@ -292,51 +250,28 @@
 <body>
 
     <!-- HERO -->
-    <section class="projects-hero">
-        <div class="projects-hero-content">
-            <div class="projects-tag">Our Projects</div>
-            <h1>Restoring Landscapes. Growing Opportunities.</h1>
-            <p>
-                From large-scale nursery development to landscape restoration and climate-smart agriculture,
-                our projects create lasting environmental and economic impact across Kenya.
-            </p>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-tag">OUR PROJECTS</div>
+            <h1>Restoring Landscapes.<br>Growing Opportunities.</h1>
+            <p>From large-scale nursery development to landscape restoration and climate-smart agriculture, our projects create lasting environmental and economic impact across Kenya.</p>
         </div>
     </section>
 
     <!-- STATS -->
     <section class="stats">
         <div class="stats-grid">
-            <div class="stat-card">
-                <h3>7,500m²</h3>
-                <p>Nursery Shadehouse</p>
-            </div>
-            <div class="stat-card">
-                <h3>200 Ha</h3>
-                <p>Landscape Restoration</p>
-            </div>
-            <div class="stat-card">
-                <h3>60+</h3>
-                <p>Tree Species Propagated</p>
-            </div>
-            <div class="stat-card">
-                <h3>Millions</h3>
-                <p>Seedlings Capacity</p>
-            </div>
+            <div class="stat-card reveal"><h3>7,500m²</h3><p>Nursery Shadehouse</p></div>
+            <div class="stat-card reveal"><h3>200 Ha</h3><p>Landscape Restoration</p></div>
+            <div class="stat-card reveal"><h3>60+</h3><p>Tree Species Propagated</p></div>
+            <div class="stat-card reveal"><h3>Millions</h3><p>Seedlings Capacity</p></div>
         </div>
     </section>
 
-    <!-- INTRO -->
-    <section class="projects-intro">
-        <h2>Transforming Landscapes Through Innovation</h2>
-        <p>
-            Crescendo Green develops practical, science-driven solutions that combine
-            reforestation, agroforestry, climate resilience, and sustainable value chains.
-            Our projects serve as living laboratories where innovation meets implementation.
-        </p>
-    </section>
-
-    <!-- PROJECT 1 -->
-    <section class="project-section">
+    <!-- PROJECTS -->
+    <section class="projects-section">
+        
+        <!-- Project 1 -->
         <div class="project-container reveal">
             <div class="project-image">
                 <img src="ASSETS/nurserygood.jpeg" alt="Mtwapa Nursery">
@@ -344,16 +279,8 @@
             <div class="project-content">
                 <span>Mtwapa Nursery & Innovation Hub</span>
                 <h2>Large-Scale Propagation & Research Centre</h2>
-                <p>
-                    Located at Mtwapa Agricultural Training Centre, this flagship facility
-                    combines commercial seedling production, applied research, training,
-                    and technology development.
-                </p>
-                <p>
-                    Designed with a 7,500m² shadehouse, the nursery will produce millions
-                    of high-quality seedlings annually for restoration, agroforestry,
-                    and commercial plantation projects.
-                </p>
+                <p>Located at Mtwapa Agricultural Training Centre, this flagship facility combines commercial seedling production, applied research, training, and technology development.</p>
+                <p>Designed with a 7,500m² shadehouse, the nursery will produce millions of high-quality seedlings annually for restoration, agroforestry, and commercial plantation projects.</p>
                 <ul class="project-features">
                     <li>7,500m² shadehouse facility</li>
                     <li>Millions of seedlings annually</li>
@@ -363,24 +290,14 @@
                 </ul>
             </div>
         </div>
-    </section>
 
-    <!-- PROJECT 2 -->
-    <section class="project-section">
+        <!-- Project 2 -->
         <div class="project-container reveal">
             <div class="project-content">
                 <span>Koromi Restoration Project</span>
                 <h2>200 Hectares of Landscape Restoration</h2>
-                <p>
-                    The Koromi Project near Baricho serves as Crescendo Green's flagship
-                    demonstration site for integrated landscape restoration, commercial
-                    forestry, and regenerative agriculture.
-                </p>
-                <p>
-                    Through partnerships with local and international organizations,
-                    the site demonstrates how productive landscapes can support both
-                    economic development and ecosystem recovery.
-                </p>
+                <p>The Koromi Project near Baricho serves as Crescendo Green's flagship demonstration site for integrated landscape restoration, commercial forestry, and regenerative agriculture.</p>
+                <p>Through partnerships with local and international organizations, the site demonstrates how productive landscapes can support both economic development and ecosystem recovery.</p>
                 <ul class="project-features">
                     <li>200-hectare restoration landscape</li>
                     <li>Melia volkensii trials</li>
@@ -393,10 +310,8 @@
                 <img src="ASSETS/nurserypic3.jpeg" alt="Koromi Project">
             </div>
         </div>
-    </section>
 
-    <!-- PROJECT 3 -->
-    <section class="project-section">
+        <!-- Project 3 -->
         <div class="project-container reveal">
             <div class="project-image">
                 <img src="ASSETS/nurserypic1.jpeg" alt="Arabuko Farm">
@@ -404,15 +319,8 @@
             <div class="project-content">
                 <span>Arabuko Farm</span>
                 <h2>Experimental Nursery & Demonstration Site</h2>
-                <p>
-                    Arabuko Farm was the original innovation hub of Crescendo Green and
-                    remains an important demonstration site for sustainable propagation,
-                    water-efficient farming systems, and climate-smart agriculture.
-                </p>
-                <p>
-                    The farm helped establish the techniques and systems that now support
-                    the company's larger restoration and nursery operations.
-                </p>
+                <p>Arabuko Farm was the original innovation hub of Crescendo Green and remains an important demonstration site for sustainable propagation, water-efficient farming systems, and climate-smart agriculture.</p>
+                <p>The farm helped establish the techniques and systems that now support the company's larger restoration and nursery operations.</p>
                 <ul class="project-features">
                     <li>Over 60 tree species propagated</li>
                     <li>Indigenous tree production</li>
@@ -425,32 +333,25 @@
     </section>
 
     <!-- CTA -->
-    <section class="projects-cta">
+    <section class="cta">
         <h2>Partner With Us</h2>
-        <p>
-            We collaborate with governments, NGOs, researchers, investors,
-            and private sector partners to scale landscape restoration and
-            climate-smart agricultural solutions.
+        <p style="max-width:700px; margin:0 auto 40px; font-size:1.2rem;">
+            We collaborate with governments, NGOs, researchers, investors, and private sector partners to scale landscape restoration and climate-smart agricultural solutions.
         </p>
-        <a href="contact.html" class="projects-btn">Get In Touch</a>
+        <a href="contact.html" class="btn">Get In Touch</a>
     </section>
 
     <script>
-        // Reveal Animation
         const reveals = document.querySelectorAll('.reveal');
 
-        const revealOnScroll = () => {
+        window.addEventListener('scroll', () => {
             reveals.forEach(section => {
                 const top = section.getBoundingClientRect().top;
                 if (top < window.innerHeight - 100) {
                     section.classList.add('active');
                 }
             });
-        };
-
-        window.addEventListener('scroll', revealOnScroll);
-        // Trigger once on load
-        window.addEventListener('load', revealOnScroll);
+        });
     </script>
 </body>
 </html>
