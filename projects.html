@@ -21,12 +21,12 @@
             overflow-x: hidden;
         }
 
-        /* HERO */
+        /* HERO - Strongest Parallax */
         .hero {
             height: 100vh;
             min-height: 650px;
             background: linear-gradient(rgba(15,44,34,0.65), rgba(15,44,34,0.75)),
-                        url('ASSETS/nurserypic.jpeg') center/cover no-repeat;
+                        url('ASSETS/nurserypic.jpeg') center/cover;
             background-attachment: fixed;
             display: flex;
             align-items: center;
@@ -38,6 +38,7 @@
         .hero-content {
             max-width: 900px;
             padding: 0 20px;
+            z-index: 2;
         }
 
         .hero-tag {
@@ -68,14 +69,23 @@
             margin: 0 auto;
         }
 
+        /* Parallax Sections */
+        .parallax-bg {
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
         /* STATS */
         .stats {
-            background: white;
-            padding: 60px 20px;
+            background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)),
+                        url('ASSETS/nurserypic.jpeg') center/cover;
+            background-attachment: fixed;
+            padding: 80px 20px;
             margin-top: -80px;
             position: relative;
             z-index: 10;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         .stats-grid {
@@ -84,11 +94,6 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 25px;
-        }
-
-        .stat-card {
-            text-align: center;
-            padding: 25px 15px;
         }
 
         .stat-card h3 {
@@ -120,19 +125,15 @@
             background: #f8fff9;
         }
 
-        .project-image {
-            height: 100%;
-        }
-
         .project-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: 0.6s ease;
+            transition: transform 0.7s ease;
         }
 
         .project-container:hover img {
-            transform: scale(1.07);
+            transform: scale(1.08);
         }
 
         .project-content {
@@ -154,11 +155,6 @@
             line-height: 1.2;
         }
 
-        .project-features {
-            list-style: none;
-            margin-top: 20px;
-        }
-
         .project-features li {
             margin-bottom: 12px;
             padding-left: 28px;
@@ -175,16 +171,12 @@
 
         /* CTA */
         .cta {
-            background: linear-gradient(rgba(15,44,34,0.92), rgba(15,44,34,0.92)),
+            background: linear-gradient(rgba(15,44,34,0.88), rgba(15,44,34,0.88)),
                         url('ASSETS/forest-bg.jpg') center/cover;
+            background-attachment: fixed;
             color: white;
             text-align: center;
-            padding: 120px 20px;
-        }
-
-        .cta h2 {
-            font-size: clamp(2.4rem, 5vw, 3.2rem);
-            margin-bottom: 20px;
+            padding: 140px 20px;
         }
 
         .btn {
@@ -203,7 +195,7 @@
             transform: scale(1.05);
         }
 
-        /* Reveal Animation */
+        /* Reveal */
         .reveal {
             opacity: 0;
             transform: translateY(50px);
@@ -215,35 +207,18 @@
             transform: translateY(0);
         }
 
-        /* ==================== MOBILE RESPONSIVE ==================== */
+        /* Mobile */
         @media (max-width: 900px) {
             .project-container {
                 grid-template-columns: 1fr;
                 margin-bottom: 60px;
             }
-            
-            .project-image img {
-                height: 380px;
-            }
-
-            .project-content {
-                padding: 35px;
-            }
+            .project-image img { height: 380px; }
+            .project-content { padding: 35px; }
         }
 
         @media (max-width: 600px) {
-            .hero {
-                height: 85vh;
-            }
-            
-            .stats {
-                margin-top: -50px;
-                padding: 50px 15px;
-            }
-            
-            .projects-section {
-                padding: 70px 15px;
-            }
+            .hero, .stats { margin-top: -60px; }
         }
     </style>
 </head>
@@ -258,8 +233,8 @@
         </div>
     </section>
 
-    <!-- STATS -->
-    <section class="stats">
+    <!-- STATS - Parallax -->
+    <section class="stats parallax-bg">
         <div class="stats-grid">
             <div class="stat-card reveal"><h3>7,500m²</h3><p>Nursery Shadehouse</p></div>
             <div class="stat-card reveal"><h3>200 Ha</h3><p>Landscape Restoration</p></div>
@@ -270,7 +245,6 @@
 
     <!-- PROJECTS -->
     <section class="projects-section">
-        
         <!-- Project 1 -->
         <div class="project-container reveal">
             <div class="project-image">
@@ -332,8 +306,8 @@
         </div>
     </section>
 
-    <!-- CTA -->
-    <section class="cta">
+    <!-- CTA - Parallax -->
+    <section class="cta parallax-bg">
         <h2>Partner With Us</h2>
         <p style="max-width:700px; margin:0 auto 40px; font-size:1.2rem;">
             We collaborate with governments, NGOs, researchers, investors, and private sector partners to scale landscape restoration and climate-smart agricultural solutions.
@@ -342,8 +316,8 @@
     </section>
 
     <script>
+        // Reveal Animation
         const reveals = document.querySelectorAll('.reveal');
-
         window.addEventListener('scroll', () => {
             reveals.forEach(section => {
                 const top = section.getBoundingClientRect().top;
@@ -351,6 +325,19 @@
                     section.classList.add('active');
                 }
             });
+        });
+
+        // Global Parallax Effect
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY * 0.5;   // Adjust speed (0.3 = slower, 0.7 = faster)
+
+            document.querySelectorAll('.parallax-bg').forEach(section => {
+                section.style.backgroundPositionY = `${scrollY}px`;
+            });
+
+            // Extra strong effect on hero
+            const hero = document.querySelector('.hero');
+            if (hero) hero.style.backgroundPositionY = `${window.scrollY * 0.7}px`;
         });
     </script>
 </body>
