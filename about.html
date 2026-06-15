@@ -37,29 +37,63 @@
       font-family: 'Satoshi', system-ui, sans-serif;
     }
 
+  /* ====================== HERO ====================== */
+.about-hero {
+    background: linear-gradient(rgba(15,44,34,0.65), rgba(15,44,34,0.75)), 
+                url('ASSETS/Girl with moringa seedlings.webp') center/cover no-repeat;
+    min-height: 520px;           /* Default for mobile */
+    height: 520px;               /* Fixed height for mobile */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Make it Full View on Desktop */
+@media (min-width: 1024px) {
     .about-hero {
-      background: linear-gradient(rgba(15,44,34,0.65), rgba(15,44,34,0.75)), 
-                  url('ASSETS/Girl with moringa seedlings.webp') center/cover;
-      min-height: 520px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      position: relative;
-      overflow: hidden;
+        height: 100vh;           /* Full screen height on desktop */
+        min-height: 100vh;
     }
+}
 
+/* Optional: Slightly taller tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .about-hero {
+        height: 85vh;
+        min-height: 85vh;
+    }
+}
+
+/* Hero Image (floating girl) */
+.hero-image {
+    position: absolute;
+    bottom: -40px;
+    right: 8%;
+    width: 340px;
+    filter: drop-shadow(0 25px 35px rgba(0,0,0,0.4));
+    z-index: 10;
+    transition: transform 0.6s ease;
+}
+
+/* Adjust floating image on larger screens */
+@media (min-width: 1024px) {
     .hero-image {
-      position: absolute;
-      bottom: -40px;
-      right: 8%;
-      width: 340px;
-      filter: drop-shadow(0 25px 35px rgba(0,0,0,0.4));
-      z-index: 10;
-      transition: transform 0.6s ease;
+        width: 420px;
+        bottom: -60px;
+        right: 10%;
     }
+}
 
+@media (max-width: 768px) {
+    .hero-image {
+        width: 260px;
+        right: 5%;
+    }
+}
   
     .close-btn {
       position: absolute;
@@ -168,21 +202,22 @@
 
 <!-- HERO -->
 <section class="about-hero">
-  <button class="close-btn" onclick="goBack()" title="Close">×</button>
+    <button class="close-btn" onclick="goBack()" title="Close">×</button>
 
-  <div class="relative z-10 text-center px-6 max-w-3xl">
-    <h1 class="text-5xl md:text-6xl font-bold tracking-tight">Our Story</h1>
-    <p class="mt-4 text-lg md:text-xl text-white/90">
-      From a small experimental farm to a leading landscape restoration company in Kenya.
+    <div class="relative z-10 text-center px-6 max-w-3xl">
+        <h1 class="text-5xl md:text-6xl font-bold tracking-tight">Our Story</h1>
+        <p class="mt-4 text-lg md:text-xl text-white/90">
+        One seedling, one forest, and one community at a time.
     </p>
-  </div>
+        </p>
+    </div>
 </section>
 
 <!-- OUR JOURNEY -->
 <section class="py-24 bg-white">
   <div class="max-w-6xl mx-auto px-6">
     <div class="text-center mb-16">
-      <h2 class="text-4xl md:text-5xl font-bold text-emerald-900">Our Journey</h2>
+      <h2 class="text-4xl md:text-5xl font-bold text-emerald-900"></h2>
       <div class="w-24 h-1 bg-emerald-600 mx-auto mt-6"></div>
     </div>
 
