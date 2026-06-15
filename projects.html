@@ -21,7 +21,6 @@
             overflow-x: hidden;
         }
 
-        /* ====================== PARALLAX LAYERS ====================== */
         .parallax {
             background-size: cover;
             background-position: center;
@@ -76,14 +75,14 @@
             margin: 0 auto;
         }
 
-        /* STATS - Different Background */
+        /* STATS - Lighter Overlay */
         .stats {
             padding: 80px 20px;
             margin-top: -80px;
             position: relative;
             z-index: 10;
-            background: linear-gradient(rgba(255, 255, 255, 0.521), rgba(255,255,255,0.92)),
-                        url('ASSETS/nurserypic3.jpeg') center/cover;
+            background: linear-gradient(rgba(255, 255, 255, 0.415), rgba(255, 255, 255, 0.497)),
+                        url('ASSETS/nurserypic.jpeg') center/cover;
         }
 
         .stats-grid {
@@ -94,16 +93,23 @@
             gap: 25px;
         }
 
+        .stat-card {
+            background: rgba(255,255,255,0.95);
+            padding: 30px 20px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
         .stat-card h3 {
             font-size: clamp(2.2rem, 5vw, 3rem);
             font-weight: 800;
             color: var(--primary);
         }
 
-        /* PROJECTS SECTION - Subtle Parallax Background */
+        /* PROJECTS SECTION - Lighter Overlay */
         .projects-section {
             padding: 100px 20px;
-            background: linear-gradient(rgba(248,255,249,0.95), rgba(248,255,249,0.95)),
+            background: linear-gradient(rgba(248,255,249,0.82), rgba(248,255,249,0.9)),
                         url('ASSETS/nurserygood.jpeg') center/cover;
         }
 
@@ -114,14 +120,14 @@
             grid-template-columns: 1fr 1fr;
             gap: 50px;
             align-items: center;
-            background: white;
+            background: rgba(255,255,255,0.97);
             border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
         }
 
         .project-container:nth-child(even) {
-            background: #f8fff9;
+            background: rgba(248,255,249,0.97);
         }
 
         .project-image img {
@@ -168,9 +174,9 @@
             font-weight: bold;
         }
 
-        /* CTA - Forest Background */
+        /* CTA */
         .cta {
-            background: linear-gradient(rgba(15,44,34,0.88), rgba(15,44,34,0.88)),
+            background: linear-gradient(rgba(15,44,34,0.75), rgba(15,44,34,0.85)),
                         url('ASSETS/nurserygood2.jpeg') center/cover;
             color: white;
             text-align: center;
@@ -205,7 +211,7 @@
             transform: translateY(0);
         }
 
-        /* Mobile Adjustments */
+        /* Mobile */
         @media (max-width: 900px) {
             .project-container {
                 grid-template-columns: 1fr;
@@ -326,13 +332,11 @@
             });
         });
 
-        // Multi-layer Parallax
+        // Parallax Effect
         window.addEventListener('scroll', () => {
             const scroll = window.scrollY;
-
-            // Different speeds for different sections
             document.querySelectorAll('.parallax').forEach((section, index) => {
-                const speed = 0.4 + (index * 0.1); // Varying parallax intensity
+                const speed = 0.35 + (index * 0.08);
                 section.style.backgroundPositionY = `${scroll * speed}px`;
             });
         });
