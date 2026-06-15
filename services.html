@@ -312,15 +312,16 @@
 
     /* ==================== MODAL ==================== */
     /* Modal */
+/* ==================== PROJECT MODAL ==================== */
 .modal {
   display: none;
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.75);
-  z-index: 2000;
+  background: rgba(0,0,0,0.8);
+  z-index: 3000;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 15px;
 }
 
 .modal-content {
@@ -330,19 +331,20 @@
   border-radius: 24px;
   padding: 50px 45px;
   position: relative;
-  max-height: 90vh;
+  max-height: 92vh;
   overflow-y: auto;
-  box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.3);
 }
 
 .modal-close {
   position: absolute;
-  top: 20px;
+  top: 18px;
   right: 25px;
-  font-size: 2rem;
+  font-size: 2.2rem;
   cursor: pointer;
   color: #666;
   line-height: 1;
+  z-index: 10;
 }
 
 .modal-close:hover {
@@ -353,29 +355,26 @@
   font-size: 2.1rem;
   color: var(--dark);
   margin-bottom: 25px;
+  line-height: 1.2;
 }
-    .modal h2 {
-      font-size: 2.2rem;
-      margin-bottom: 16px;
-      color: var(--dark);
-    }
 
-    .modal p {
-      font-size: 1.1rem;
-      margin-bottom: 32px;
-      color: #555;
-    }
-
-    .modal .cta-link {
-      background: var(--primary);
-      color: white;
-      padding: 18px 40px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 700;
-      display: inline-block;
-    }
-
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 40px 25px;
+    border-radius: 20px;
+    max-height: 95vh;
+  }
+  
+  .modal h3 {
+    font-size: 1.75rem;
+  }
+  
+  .modal p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+}
     /* ==================== FOOTER IMPROVEMENTS ==================== */
     #footer {
       margin-top: 80px;
@@ -558,7 +557,7 @@
   <section class="services-hero">
     <div class="container">
       
-      <div class="service-row" id="nursery">
+      <div class="service-row" id="High-quality-seedlings">
         <div class="service-image">
           <img src="ASSETS/Moringa seedlings packed in crates.webp" alt="Tree nursery">
         </div>
@@ -632,67 +631,13 @@
     </div>
   </section>
 
-<!-- PROJECT SHOWCASE -->
-<section class="projects-section">
-  <div class="container">
-    <h2>Our Flagship Initiatives</h2>
-    
-    <p style="text-align: center; max-width: 760px; margin: 0 auto 70px; font-size: 1.12rem; color: #555; line-height: 1.7;">
-      Discover our key programmes driving innovation in Kenya’s agriculture and forestry sectors. 
-      Click on any project below to learn more.
-    </p>
-
-    <div class="projects-grid">
-      
-      <!-- Card 1 -->
-      <div class="project-card" onclick="showProjectModal(0)">
-        <img src="ASSETS/sarangib-cashew-633921_1920.jpg" alt="Cashew Innovations">
-        <div class="project-overlay">
-          <h3>Cashew Innovations</h3>
-          <p>High-density planting • Dwarf varieties • Advanced nursery &amp; soil technologies</p>
-        </div>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="project-card" onclick="showProjectModal(1)">
-        <img src="ASSETS/mangoes.jpg" alt="Value Chain Development">
-        <div class="project-overlay">
-          <h3>Value Chain Development</h3>
-          <p>Freeze-dried mango • Moringa oil • Bixa annatto • Market &amp; processing focus</p>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="project-card" onclick="showProjectModal(2)">
-        <img src="ASSETS/inside-nursery.webp" alt="Sustainable Production Inputs">
-        <div class="project-overlay">
-          <h3>Sustainable Production Inputs</h3>
-          <p>Biochar • Large-scale composting • Regenerative soil amendments</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- PROJECT MODAL -->
-<div class="modal" id="projectModal">
-  <div class="modal-content">
-    <span class="modal-close" onclick="closeProjectModal()">×</span>
-    <div id="modal-body">
-      <!-- Content injected by JavaScript -->
-    </div>
-  </div>
-</div>
-
-
-  <!-- FLOATING CTA -->
+ <!-- FLOATING CTA -->
   <div class="floating-cta" onclick="openModal()">
     <span>Start Your Project</span>
     <span style="font-size: 1.4rem;">→</span>
   </div>
 
-  <!-- MODAL -->
+  <!-- CONTACT MODAL -->
   <div class="modal" id="contactModal">
     <div class="modal-content">
       <h2>Ready to Grow?</h2>
@@ -700,6 +645,16 @@
       <a href="contact.html" class="cta-link">Book a Consultation</a>
       <br><br>
       <button onclick="closeModal()" style="background:none; border:none; color:#a90606; cursor:pointer; margin-top:20px;">Close</button>
+    </div>
+  </div>
+
+  <!-- PROJECT MODAL - FIXED & CLEAN -->
+  <div class="modal" id="projectModal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeProjectModal()">×</span>
+      <div id="modal-body">
+        <!-- JavaScript will inject content here -->
+      </div>
     </div>
   </div>
 
@@ -789,8 +744,11 @@ function showProjectModal(index) {
   body.innerHTML = `
     <h3>${projects[index].title}</h3>
     ${projects[index].content}
-    <div style="margin-top: 35px; text-align: center;">
-      <a href="contact.html" class="nav-cta-btn" style="padding: 16px 36px; font-size: 1.1rem;">Discuss This Project With Us</a>
+    <div style="margin-top: 40px; text-align: center;">
+      <a href="contact.html" class="nav-cta-btn" 
+         style="display: inline-block; width: 100%; max-width: 320px; padding: 18px 30px; font-size: 1.08rem; text-align: center;">
+        Discuss This Project With Us →
+      </a>
     </div>
   `;
   
