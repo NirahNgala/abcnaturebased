@@ -175,7 +175,6 @@
             transform: scale(1.1);
         }
 
-        /* Overlay with White Text */
         .overlay {
             position: absolute;
             bottom: 0;
@@ -262,21 +261,14 @@
             .gallery-section {
                 padding: 110px 1rem 4rem;
             }
-            
             .gallery-grid {
                 grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             }
         }
 
-        /* Mobile Navigation */
         @media (max-width: 768px) {
-            .hamburger {
-                 display: flex;
-                  z-index: 1001;
-                 }
-            .nav-cta {
-                 display: none; 
-                }
+            .hamburger { display: flex; z-index: 1001; }
+            .nav-cta { display: none; }
 
             .nav-menu {
                 position: fixed;
@@ -290,14 +282,11 @@
                 align-items: center;
                 gap: 35px;
                 transition: left 0.4s ease;
-    transform: none;
                 z-index: 999;
             }
-
             .nav-menu.active { left: 0; }
         }
 
-        /* Hamburger Animation */
         .hamburger.active span:nth-child(1) {
             transform: rotate(45deg) translate(7px, 7px);
         }
@@ -343,9 +332,8 @@
     <section class="gallery-section">
         <div class="filters">
             <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="nature">Nature</button>
+            <button class="filter-btn" data-filter="nature">Landscapes & Plantations</button>
             <button class="filter-btn" data-filter="nurseries">Nurseries</button>
-            <button class="filter-btn" data-filter="people">People</button>
         </div>
 
         <div class="gallery-grid" id="galleryGrid"></div>
@@ -369,105 +357,127 @@
             id: 1, 
             src: "ASSETS/Malia-vonski.webp", 
             category: "nature", 
-            title: "Young Plantation", 
-            desc: "Rows of young trees in the field" 
+            title: "Young Melia volkensii Plantation", 
+            desc: "Thriving rows of young trees at Koromi" 
         },
         { 
             id: 2, 
-            src: "ASSETS/seedlings.jpeg.webp", 
+            src: "ASSETS/NURSERY3.jpeg", 
             category: "nurseries", 
-            title: "Seedling Nursery", 
-            desc: "Watering young plants in containers" 
-        },
-        { 
-            id: 3, 
-            src: "ASSETS/students.webp", 
-            category: "people", 
-            title: "Community Education", 
-            desc: "Students and community members at the farm" 
-        },
-        { 
-            id: 4, 
-            src: "ASSETS/student.webp", 
-            category: "people", 
-            title: "Harvest Learning", 
-            desc: "Students examining fresh produce" 
+            title: "Healthy Seedlings", 
+            desc: "Ready seedlings for planting" 
+ 
         },
         { 
             id: 5, 
-            src: "ASSETS/mathilde-09.webp", 
+            src: "ASSETS/NURSERY1.jpeg", 
             category: "nurseries", 
-            title: "Nursery Work", 
-            desc: "Women working with planting materials" 
+            title: "Seedling Growth", 
+            desc: "Healthy seedlings thriving in the nursery" 
+            
         },
         { 
             id: 6, 
             src: "ASSETS/RiverKoromi.webp", 
             category: "nature", 
             title: "River Koromi", 
-            desc: "Nearby water source for the farm" 
+            desc: "Natural water source supporting the landscape" 
+        
+        },
+        { 
+            id: 8, 
+            src: "ASSETSS/landscape1.jpeg", 
+            category: "nature", 
+            title: "River Koromi", 
+            desc: "Natural water source supporting the landscape" 
+        },
+
+        { 
+            id: 9, 
+            src: "ASSETS/landscape2.jpeg", 
+            category: "nature", 
+            title: "River Koromi", 
+            desc: "Natural water source supporting the landscape" 
+        },
+
+        { 
+            id: 6, 
+            src: "ASSETS/landscape3.jpeg", 
+            category: "nature", 
+            title: "River Koromi", 
+            desc: "Natural water source supporting the landscape" 
+        },
+
+        {
+                
+                id: 10, 
+                src: "ASSETS/landscape4.jpeg", 
+                category: "nature", 
+                title: "River Koromi", 
+                desc: "Natural water source supporting the landscape"
         },
         { 
             id: 7, 
             src: "ASSETS/Nursery.jpeg", 
             category: "nurseries", 
-            title: "Organized Nursery", 
-            desc: "Hundreds of healthy seedlings ready for planting" 
-        },
-        { 
-            id: 8, 
-            src: "ASSETS/Willy.webp", 
-            category: "people", 
-            title: "Willy at Koromi Farm", 
-            desc: "Local team member with a friendly cat" 
-        },
-        { 
-            id: 9, 
-            src: "ASSETS/mathilde-08.webp", 
-            category: "people", 
-            title: "Field Team", 
-            desc: "International and local volunteers working together" 
-        },
-        { 
-            id: 10, 
-            src: "ASSETS/grouppic.webp", 
-            category: "people", 
-            title: "The Full Team", 
-            desc: "Group photo with the farm dog" 
+            title: "Organized Nursery Beds", 
+            desc: "Healthy seedlings prepared for large-scale restoration" 
         },
         { 
             id: 11, 
             src: "ASSETS/Working-10.webp", 
             category: "nurseries", 
-            title: "Nursery Discussion", 
-            desc: "Team planning in the nursery" 
+            title: "Nursery Operations", 
+            desc: "Team planning and managing production" 
         },
         { 
             id: 12, 
             src: "ASSETS/NurseryDroneView.webp", 
             category: "nurseries", 
-            title: "Mtwapa Nursery", 
-            desc: "Aerial view of the nursery layout" 
+            title: "Mtwapa Nursery Aerial View", 
+            desc: "Overview of our large-scale nursery facility" 
         },
         { 
             id: 13, 
             src: "ASSETS/nurseryatnight.webp", 
             category: "nurseries", 
-            title: "Mtwapa Nursery at Night", 
-            desc: "Preparing to transport young trees" 
+            title: "Nursery at Night", 
+            desc: "Late hours preparing seedlings for transport" 
         },
-         { 
+        { 
             id: 14, 
             src: "ASSETS/nurseryvisit.webp", 
             category: "nurseries", 
-            title: "Nursery Visit", 
-            desc: "Team visiting a local nursery to learn best practices" 
+            title: "Nursery Knowledge Exchange", 
+            desc: "Learning and sharing best practices" 
+        },
+        { 
+            id: 15, 
+            src: "ASSETS/mathilde-09.webp", 
+            category: "nurseries", 
+            title: "Nursery Propagation", 
+            desc: "Hands-on work with planting materials" 
+        },
+        { 
+            id: 16, 
+            src: "ASSETS/Nursery2.jpeg", 
+            category: "nurseries", 
+            title: "Seedling Care", 
+            desc: "Meticulous care for young plants" 
+        },
+        { 
+            id: 17, 
+            src: "ASSETS/seedlings.jpeg.webp", 
+            category: "nurseries", 
+            title: "Seedling Nursery", 
+            desc: "Carefully nurtured young plants ready for planting"
+            
         }
     ];
+    
 
     function createGallery() {
         const grid = document.getElementById('galleryGrid');
-        if (!grid) return;
         grid.innerHTML = '';
 
         images.forEach(img => {
@@ -492,15 +502,13 @@
 
     function showModal(img) {
         const modal = document.getElementById('modal');
-        const modalImg = document.getElementById('modalImage');
-        
-        modalImg.src = img.src;
+        document.getElementById('modalImage').src = img.src;
         document.getElementById('modalTitle').textContent = img.title;
         document.getElementById('modalDesc').textContent = img.desc;
         modal.style.display = 'flex';
     }
 
-    // Filter buttons
+    // Filter functionality
     document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -516,52 +524,42 @@
     });
 
     // Modal controls
-    const closeModal = document.getElementById('closeModal');
-    if (closeModal) {
-        closeModal.addEventListener('click', () => {
+    document.getElementById('closeModal').addEventListener('click', () => {
+        document.getElementById('modal').style.display = 'none';
+    });
+
+    document.getElementById('modal').addEventListener('click', (e) => {
+        if (e.target === document.getElementById('modal')) {
             document.getElementById('modal').style.display = 'none';
-        });
-    }
-
-    const modalElement = document.getElementById('modal');
-    if (modalElement) {
-        modalElement.addEventListener('click', (e) => {
-            if (e.target === modalElement) {
-                modalElement.style.display = 'none';
-            }
-        });
-    }
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === "Escape") {
-            const modal = document.getElementById('modal');
-            if (modal) modal.style.display = 'none';
         }
     });
 
-    // Initialize gallery
-        window.onload = createGallery;
-    </script>
+    document.addEventListener('keydown', (e) => {
+        if (e.key === "Escape") {
+            document.getElementById('modal').style.display = 'none';
+        }
+    });
 
-    <script>
-        // Hamburger Menu
-        const hamburger = document.getElementById('hamburger');
-        const navMenu = document.querySelector('.nav-menu');
+    // Initialize
+    window.onload = createGallery;
 
-        hamburger.addEventListener('click', () => {
-            const isActive = navMenu.classList.toggle('active');
-            hamburger.classList.toggle('active');
-            
-            document.body.style.overflow = isActive ? 'hidden' : 'visible';
+    // Hamburger Menu
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    hamburger.addEventListener('click', () => {
+        const isActive = navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+        document.body.style.overflow = isActive ? 'hidden' : 'visible';
+    });
+
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = 'visible';
         });
-
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-                document.body.style.overflow = 'visible';
-            });
-        });
+    });
     </script>
 </body>
 </html>
