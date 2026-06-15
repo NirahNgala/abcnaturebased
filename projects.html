@@ -1,153 +1,597 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Projects | Crescendo Green</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            color: #333;
-        }
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1920x600?text=Mtwapa+Nursery') center/cover no-repeat;
-            color: white;
-            text-align: center;
-            padding: 120px 20px 80px;
-        }
-        .hero h1 {
-            font-size: 3.2rem;
-            margin-bottom: 16px;
-        }
-        .section {
-            padding: 80px 5%;
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
-        }
-        .project-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        .project-card:hover {
-            transform: translateY(-10px);
-        }
-        .project-image {
-            height: 260px;
-            background-size: cover;
-            background-position: center;
-        }
-        .project-content {
-            padding: 30px;
-        }
-        .project-content h2 {
-            margin-top: 0;
-            color: #1a5f1a;
-        }
-        .tag {
-            display: inline-block;
-            background: #e8f5e8;
-            color: #1a5f1a;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            margin-bottom: 12px;
-        }
-        .btn {
-            display: inline-block;
-            background: #1a5f1a;
-            color: white;
-            padding: 12px 28px;
-            border-radius: 6px;
-            text-decoration: none;
-            margin-top: 20px;
-            font-weight: 600;
-        }
-        .btn:hover {
-            background: #134a13;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects | Crescendo Green</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    color:#333;
+    line-height:1.7;
+    background:#fff;
+}
+
+/* HERO */
+.projects-hero{
+    height:60vh;
+    min-height:450px;
+    background:
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+    url('ASSETS/projects-hero.jpg') center/cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#fff;
+    padding:20px;
+}
+
+.projects-hero-content{
+    max-width:800px;
+}
+
+.projects-tag{
+    display:inline-block;
+    padding:8px 18px;
+    border:1px solid rgba(255,255,255,.4);
+    border-radius:50px;
+    margin-bottom:20px;
+    font-size:.9rem;
+    backdrop-filter:blur(10px);
+}
+
+.projects-hero h1{
+    font-size:clamp(2.5rem,5vw,4.5rem);
+    margin-bottom:20px;
+}
+
+.projects-hero p{
+    font-size:1.1rem;
+    max-width:700px;
+    margin:auto;
+}
+
+/* INTRO */
+.projects-intro{
+    max-width:1200px;
+    margin:auto;
+    padding:90px 20px;
+    text-align:center;
+}
+
+.projects-intro h2{
+    font-size:2.5rem;
+    color:#1f4b34;
+    margin-bottom:20px;
+}
+
+.projects-intro p{
+    max-width:850px;
+    margin:auto;
+    color:#666;
+}
+
+/* PROJECTS */
+.project-section{
+    padding:90px 20px;
+}
+
+.project-container{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.project-section:nth-child(even){
+    background:#f8faf8;
+}
+
+.project-image img{
+    width:100%;
+    height:600px;
+    object-fit:cover;
+    border-radius:20px;
+    display:block;
+}
+.project-content span{
+    color:#2e7d32;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.project-content h2{
+    font-size:2.3rem;
+    margin:15px 0 20px;
+    color:#1f4b34;
+}
+
+.project-content p{
+    color:#555;
+    margin-bottom:18px;
+}
+
+.project-features{
+    list-style:none;
+    margin-top:25px;
+}
+
+.project-features li{
+    margin-bottom:12px;
+    padding-left:28px;
+    position:relative;
+}
+
+.project-features li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    color:#2e7d32;
+    font-weight:bold;
+}
+
+/* CTA */
+.projects-cta{
+    background:#1f4b34;
+    color:#fff;
+    text-align:center;
+    padding:100px 20px;
+}
+
+.projects-cta h2{
+    font-size:2.5rem;
+    margin-bottom:20px;
+}
+
+.projects-cta p{
+    max-width:700px;
+    margin:auto;
+    margin-bottom:35px;
+}
+
+.projects-btn{
+    display:inline-block;
+    padding:15px 32px;
+    background:#fff;
+    color:#1f4b34;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:600;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+.project-container{
+    grid-template-columns:1fr;
+}
+
+.project-image img{
+    height:350px;
+}
+
+.project-content h2{
+    font-size:2rem;
+}
+
+.projects-hero{
+    height:50vh;
+}
+html{
+  scroll-behavior:smooth;
+}
+
+:root{
+  --primary:#18392b;
+  --accent:#4CAF50;
+  --light:#f8faf8;
+  --text:#555;
+}
+
+body{
+  overflow-x:hidden;
+}
+
+/* PARALLAX HERO */
+
+.projects-hero{
+  background:
+  linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+  url("ASSETS/nurserypic.jpeg");
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+}
+
+/* ANIMATED TAG */
+
+.projects-tag{
+  animation:fadeDown 1s ease;
+}
+
+/* HERO TEXT */
+
+.projects-hero h1{
+  animation:fadeUp 1s ease .2s both;
+}
+
+.projects-hero p{
+  animation:fadeUp 1s ease .4s both;
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes fadeDown{
+  from{
+    opacity:0;
+    transform:translateY(-20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* STATS */
+
+.stats{
+  max-width:1200px;
+  margin:-90px auto 80px;
+  position:relative;
+  z-index:10;
+}
+
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.stat-card{
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(12px);
+  padding:35px 20px;
+  border-radius:18px;
+  text-align:center;
+  box-shadow:0 10px 40px rgba(0,0,0,.08);
+}
+
+.stat-card h3{
+  font-size:2.2rem;
+  color:var(--primary);
+}
+
+.stat-card p{
+  color:#666;
+}
+
+/* PROJECT CARDS */
+
+.project-container{
+  background:white;
+  padding:30px;
+  border-radius:24px;
+  box-shadow:0 10px 40px rgba(0,0,0,.06);
+}
+
+.project-image{
+  overflow:hidden;
+  border-radius:18px;
+}
+
+.project-image img{
+  transition:.8s;
+}
+
+.project-container:hover img{
+  transform:scale(1.08);
+}
+
+.project-content span{
+  display:inline-block;
+  margin-bottom:10px;
+  color:var(--accent);
+  font-weight:700;
+}
+
+.project-content h2{
+  line-height:1.2;
+}
+
+/* REVEAL ANIMATION */
+
+.reveal{
+  opacity:0;
+  transform:translateY(60px);
+  transition:1s;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* CTA */
+
+.projects-cta{
+  background:
+  linear-gradient(rgba(24,57,43,.88),
+  rgba(24,57,43,.88)),
+  url("ASSETS/forest-bg.jpg");
+  background-size:cover;
+  background-position:center;
+}
+
+.projects-btn{
+  transition:.3s;
+}
+
+.projects-btn:hover{
+  transform:translateY(-4px);
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+.project-container{
+    grid-template-columns:1fr;
+}
+
+.project-section:nth-child(even) .project-content{
+    order:2;
+}
+
+.project-section:nth-child(even) .project-image{
+    order:1;
+}
+
+}
+@media(max-width:900px){
+
+.project-container{
+    grid-template-columns:1fr;
+}
+
+.project-image img{
+    height:350px;
+}
+
+.project-content h2{
+    font-size:2rem;
+}
+
+.projects-hero{
+    height:50vh;
+}
+
+}
+
+@media(max-width:600px){
+
+.stats-grid{
+  grid-template-columns:1fr;
+}
+
+.stats{
+  margin-top:-40px;
+}
+
+}
+
+}
+</style>
 </head>
 <body>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Our Projects</h1>
-        <p style="font-size: 1.4rem; max-width: 800px; margin: 0 auto;">
-            Transforming landscapes through innovation, restoration, and sustainable tree production across Kilifi County and beyond.
+<!-- HERO -->
+<section class="projects-hero">
+    <div class="projects-hero-content">
+        <div class="projects-tag">Our Projects</div>
+        <h1>Restoring Landscapes. Growing Opportunities.</h1>
+        <p>
+            From large-scale nursery development to landscape restoration and climate-smart agriculture,
+            our projects create lasting environmental and economic impact across Kenya.
         </p>
-    </section>
+    </div>
+</section>
+<section class="stats">
+  <div class="stats-grid">
 
-    <!-- Projects Grid -->
-    <section class="section" style="background: #f8f9fa;">
-        <div class="project-grid">
+    <div class="stat-card">
+      <h3>7,500m²</h3>
+      <p>Nursery Shadehouse</p>
+    </div>
 
-            <!-- Mtwapa Nursery -->
-            <div class="project-card">
-                <div class="project-image" style="background-image: url('https://via.placeholder.com/800x400?text=Mtwapa+Nursery+%26+Innovation+Hub');"></div>
-                <div class="project-content">
-                    <span class="tag">Nursery &amp; Innovation Hub</span>
-                    <h2>Mtwapa Nursery and Innovation Hub</h2>
-                    <p><strong>Location:</strong> Mtwapa Agricultural Training Centre (ATC), Kilifi County</p>
-                    <p>The Crescendo Green Nursery and Innovation Hub is one of Kenya’s leading centres for large-scale propagation of natural trees and high-value tree crops. Featuring a 7,500 m² shadehouse, the facility produces millions of high-quality seedlings annually for reforestation, agroforestry, and commercial plantations across East Africa.</p>
-                    <p>Current focus species include cashew and moringa. Ongoing research covers improved planting material, advanced substrates, biochar, compost, biological soil amendments, and climate-resilient techniques. Technical partner: <strong>Growpact Global (Netherlands)</strong>.</p>
-                    <a href="#" class="btn">Learn More</a>
-                </div>
-            </div>
+    <div class="stat-card">
+      <h3>200 Ha</h3>
+      <p>Landscape Restoration</p>
+    </div>
 
-            <!-- Koromi Project -->
-            <div class="project-card">
-                <div class="project-image" style="background-image: url('https://via.placeholder.com/800x400?text=Koromi+Landscape+Restoration');"></div>
-                <div class="project-content">
-                    <span class="tag">Flagship Restoration Project</span>
-                    <h2>Koromi Landscape Restoration and Agroforestry Project</h2>
-                    <p><strong>Location:</strong> Near Baricho, Kilifi County • <strong>Size:</strong> 200 hectares</p>
-                    <p>Crescendo Green’s flagship demonstration site for integrated landscape restoration and climate-smart land management in Kenya’s drylands. The project combines commercial forestry, regenerative agriculture, and ecosystem restoration.</p>
-                    <p>Key species: <strong>Melia volkensii</strong> (improved varieties, planting densities, and soil amendment trials). Additional focus on agroforestry systems, rainwater harvesting, swales, carbon sequestration, and biodiversity enhancement under 600–700 mm annual rainfall.</p>
-                    <p><strong>Partners:</strong> JICA, KFS, KEFRI, Keystone Forestry Partners, Nature Kenya, ERC, and Capital Africa Agribusiness Ventures.</p>
-                    <a href="#" class="btn">Learn More</a>
-                </div>
-            </div>
+    <div class="stat-card">
+      <h3>60+</h3>
+      <p>Tree Species Propagated</p>
+    </div>
 
-            <!-- Arabuko Farm -->
-            <div class="project-card">
-                <div class="project-image" style="background-image: url('https://via.placeholder.com/800x400?text=Arabuko+Farm');"></div>
-                <div class="project-content">
-                    <span class="tag">Experimental &amp; Demonstration Site</span>
-                    <h2>Arabuko Farm</h2>
-                    <p><strong>Location:</strong> Kakuyuni, near Arabuko-Sokoke ecosystem, Kilifi County • <strong>Size:</strong> 4 hectares</p>
-                    <p>The original innovation hub of Crescendo Green. This experimental farm and demonstration nursery tested propagation techniques, water-efficient systems (drip irrigation), and cultivation of over 60 different tree species, including drought-tolerant hardwoods and more than 10 fruit tree species.</p>
-                    <p>Arabuko Farm continues to sell indigenous tree seedlings and grafted fruit tree seedlings (retail &amp; B2B) while serving as a knowledge base for the company’s larger operations.</p>
-                    <a href="#" class="btn">Visit the Nursery</a>
-                </div>
-            </div>
+    <div class="stat-card">
+      <h3>Millions</h3>
+      <p>Seedlings Capacity</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="projects-intro">
+    <h2>Transforming Landscapes Through Innovation</h2>
+    <p>
+        Crescendo Green develops practical, science-driven solutions that combine
+        reforestation, agroforestry, climate resilience, and sustainable value chains.
+        Our projects serve as living laboratories where innovation meets implementation.
+    </p>
+</section>
+
+<!-- PROJECT 1 -->
+<section class="project-section">
+    <div class="project-container reveal">
+
+        <div class="project-image">
+            <img src="ASSETS/nurserygood.jpeg" alt="Mtwapa Nursery">
+        </div>
+
+        <div class="project-content">
+            <span>Mtwapa Nursery & Innovation Hub</span>
+            <h2>Large-Scale Propagation & Research Centre</h2>
+
+            <p>
+                Located at Mtwapa Agricultural Training Centre, this flagship facility
+                combines commercial seedling production, applied research, training,
+                and technology development.
+            </p>
+
+            <p>
+                Designed with a 7,500m² shadehouse, the nursery will produce millions
+                of high-quality seedlings annually for restoration, agroforestry,
+                and commercial plantation projects.
+            </p>
+
+            <ul class="project-features">
+                <li>7,500m² shadehouse facility</li>
+                <li>Millions of seedlings annually</li>
+                <li>Cashew and moringa production</li>
+                <li>Biochar and substrate research</li>
+                <li>Climate-smart propagation systems</li>
+            </ul>
 
         </div>
-    </section>
 
-    <!-- Vision Section -->
-    <section class="section" style="background: #1a5f1a; color: white; text-align: center;">
-        <h2 style="font-size: 2.4rem;">Our Vision</h2>
-        <p style="max-width: 800px; margin: 20px auto; font-size: 1.2rem;">
-            By combining scientific research with commercial operations, Crescendo Green strengthens agricultural productivity, increases carbon sequestration, and builds resilient value chains that deliver lasting economic and environmental benefits across Kenya and East Africa.
-        </p>
-    </section>
+    </div>
+</section>
 
-    <footer style="background: #111; color: #ccc; text-align: center; padding: 40px 20px;">
-        <p><strong>Crescendo Green</strong> — Growing Tomorrow’s Forests Today</p>
-        <p style="margin-top: 10px;">Kilifi County, Kenya</p>
-    </footer>
+<!-- PROJECT 2 -->
+<section class="project-section">
+    <div class="project-container reveal">
 
+        <div class="project-content">
+            <span>Koromi Restoration Project</span>
+            <h2>200 Hectares of Landscape Restoration</h2>
+
+            <p>
+                The Koromi Project near Baricho serves as Crescendo Green's flagship
+                demonstration site for integrated landscape restoration, commercial
+                forestry, and regenerative agriculture.
+            </p>
+
+            <p>
+                Through partnerships with local and international organizations,
+                the site demonstrates how productive landscapes can support both
+                economic development and ecosystem recovery.
+            </p>
+
+            <ul class="project-features">
+                <li>200-hectare restoration landscape</li>
+                <li>Melia volkensii trials</li>
+                <li>Carbon sequestration initiatives</li>
+                <li>Water harvesting systems</li>
+                <li>Dryland forestry research</li>
+            </ul>
+
+        </div>
+
+        <div class="project-image">
+            <img src="ASSETS/nurserypic3.jpeg" alt="Koromi Project">
+        </div>
+
+    </div>
+</section>
+
+<!-- PROJECT 3 -->
+<section class="project-section">
+    <div class="project-container reveal">
+
+        <div class="project-image">
+            <img src="ASSETS/nurserypic1.jpeg" alt="Arabuko Farm">
+        </div>
+
+        <div class="project-content">
+            <span>Arabuko Farm</span>
+            <h2>Experimental Nursery & Demonstration Site</h2>
+
+            <p>
+                Arabuko Farm was the original innovation hub of Crescendo Green and
+                remains an important demonstration site for sustainable propagation,
+                water-efficient farming systems, and climate-smart agriculture.
+            </p>
+
+            <p>
+                The farm helped establish the techniques and systems that now support
+                the company's larger restoration and nursery operations.
+            </p>
+
+            <ul class="project-features">
+                <li>Over 60 tree species propagated</li>
+                <li>Indigenous tree production</li>
+                <li>Grafted fruit tree seedlings</li>
+                <li>Drip irrigation demonstrations</li>
+                <li>Retail and B2B sales</li>
+            </ul>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="projects-cta">
+    <h2>Partner With Us</h2>
+    <p>
+        We collaborate with governments, NGOs, researchers, investors,
+        and private sector partners to scale landscape restoration and
+        climate-smart agricultural solutions.
+    </p>
+
+    <a href="contact.html" class="projects-btn">
+        Get In Touch
+    </a>
+</section>
+<script>
+const reveals = document.querySelectorAll('.reveal');
+
+window.addEventListener('scroll', () => {
+
+  reveals.forEach(section => {
+
+    const top = section.getBoundingClientRect().top;
+
+    if(top < window.innerHeight - 100){
+      section.classList.add('active');
+    }
+
+  });
+
+});
+</script>
 </body>
 </html>
