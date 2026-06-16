@@ -38,13 +38,13 @@
   background-attachment: fixed;
 }
 
-  /* HERO */
- .about-hero {
-  background: linear-gradient(
-      rgba(15, 44, 34, 0.65), 
-      rgba(15, 44, 34, 0.75)
-    ), 
-    url('ASSETS/Girl with moringa seedlings.webp') center/cover no-repeat;
+  /* HERO - More Alive */
+  .about-hero {
+    background: linear-gradient(
+        rgba(15, 44, 34, 0.68), 
+        rgba(15, 44, 34, 0.78)
+      ), 
+      url('ASSETS/Girl with moringa seedlings.webp') center/cover no-repeat;
   
   min-height: 460px;
     display: flex;
@@ -52,14 +52,14 @@
     justify-content: center;
     text-align: center;
     color: white;
-  position: relative;
-  overflow: hidden;
-}
+    position: relative;
+    overflow: hidden;
+  }
 
 /* Subtle animated leaves */
 .about-hero::before {
   content: '';
-  position: absolute;
+    position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -67,9 +67,18 @@
   background: url('https://assets.crescendo.green/leaves-floating.png') repeat;
   opacity: 0.08;
   animation: floatLeaves 35s linear infinite;
-  pointer-events: none;
-}
+    pointer-events: none;
+    z-index: 2;
+  }
 
+   .leaf {
+    position: absolute;
+    bottom: -50px;
+    font-size: 2.5rem;
+    opacity: 0.22;
+    animation: floatLeaf 28s linear infinite;
+    user-select: none;
+  }
 @keyframes floatLeaves {
   0%   { background-position: 0 0; }
   100% { background-position: 300px 600px; }
@@ -79,7 +88,7 @@
     position: absolute;
     top: 20px;
     right: 25px;
-    background: rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.18);
     backdrop-filter: blur(10px);
     color: white;
     border: none;
@@ -124,81 +133,80 @@
 @keyframes float {
   0%   { transform: translateY(100vh) rotate(0deg); }
   100% { transform: translateY(-100px) rotate(360deg); }
-}
+  }
   /* EXPERTISE CARDS - Single Column Only */
   .expertise-card {
-  transition: all 0.4s ease;
-  display: flex;
-  flex-direction: column;
-}
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+  }
 
-.expertise-card .content {
-  max-height: 180px;
-  overflow: hidden;
-  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  flex: 1;
-}
+  .expertise-card .content {
+    max-height: 180px;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    flex: 1;
+  }
 
-.expertise-card.expanded .content {
-  max-height: 1600px;
-}
+  .expertise-card.expanded .content {
+    max-height: 1600px;
+  }
 
-/* Fade effect */
-.expertise-card .content::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 70px;
-  background: linear-gradient(transparent, white);
-  pointer-events: none;
-  opacity: 1;
-  transition: opacity 0.3s ease;
-}
+  .expertise-card .content::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: linear-gradient(transparent, white);
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
 
-.expertise-card.expanded .content::after {
-  opacity: 0;
-}
+  .expertise-card.expanded .content::after {
+    opacity: 0;
+  }
 
-.expertise-card .content p {
-  margin-bottom: 1.1em;
-  line-height: 1.75;
-}
+  .expertise-card .content p {
+    margin-bottom: 1.1em;
+    line-height: 1.75;
+  }
 
 .expertise-card .content p:last-child {
   margin-bottom: 0;
 }
 
-.read-more-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  color: #10b981;
-  font-weight: 700;
-  margin-top: auto;
-  padding: 14px 0;
-  border-top: 1px solid #f1f5f9;
-  cursor: pointer;
-  user-select: none;
-  transition: all 0.3s ease;
-}
+  .read-more-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #10b981;
+    font-weight: 700;
+    margin-top: auto;
+    padding: 14px 0;
+    border-top: 1px solid #f1f5f9;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
 
-.read-more-btn:hover {
-  color: #059669;
-  background: #f8fafc;
-  border-radius: 9999px;
-}
+  .read-more-btn:hover {
+    color: #059669;
+    background: #f8fafc;
+    border-radius: 9999px;
+  }
 
-.read-more-btn span {
-  transition: transform 0.3s ease;
-}
+  .read-more-btn span {
+    transition: transform 0.3s ease;
+  }
 
-.expertise-card.expanded .read-more-btn span {
-  transform: rotate(180deg);
-}
+  .expertise-card.expanded .read-more-btn span {
+    transform: rotate(180deg);
+  }
+
   .stat-number {
     font-size: 2.8rem;
     font-weight: 800;
@@ -211,12 +219,9 @@
 <!-- HERO -->
 <section class="about-hero">
   <button class="close-btn" onclick="goBack()" title="Close">×</button>
-  <div class="floating-elements">
-  <span class="leaf">🌿</span>
-  <span class="leaf">🍃</span>
-  <span class="leaf">🌱</span>
-  <span class="leaf">🪴</span>
-</div>
+  
+  <!-- Floating Leaves -->
+
   <div class="relative z-10 text-center px-6 max-w-3xl">
     <h1 class="text-5xl md:text-6xl font-bold tracking-tight">Our Story</h1>
     <p class="mt-4 text-lg md:text-xl text-white/90">
@@ -278,6 +283,13 @@
 
 <!-- OUR EXPERTISE -->
 <section class="py-20 md:py-24 bg-white">
+   <div class="floating-elements">
+    <span class="leaf">🌿</span>
+    <span class="leaf">🍃</span>
+    <span class="leaf">🌱</span>
+    <span class="leaf">🪴</span>
+    <span class="leaf">🌳</span>
+  </div>
   <div class="max-w-7xl mx-auto px-6">
     <div class="text-center mb-16">
       <h2 class="text-4xl md:text-5xl font-bold text-emerald-900 mb-4">Our Expertise</h2>
@@ -526,9 +538,7 @@
 <script>
 fetch('footer.html')
   .then(response => response.text())
-  .then(data => {
-    document.getElementById('footer').innerHTML = data;
-  });
+  .then(data => document.getElementById('footer').innerHTML = data);
 </script>
 
 <script>
