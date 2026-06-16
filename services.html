@@ -143,6 +143,7 @@
       margin: 0 auto;
     }
 
+    /* ====================== SERVICE ROWS ====================== */
     .service-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -213,104 +214,91 @@
       color: white;
     }
 
-    /* ==================== PROJECTS ==================== */
-    .projects-section {
-      background: #f5f7f6;
-      padding: 110px 0;
-    }
+/* ==================== PROJECTS ==================== */
+.projects-section {
+  background: #f5f7f6;
+  padding: 110px 0;
+}
 
-    .projects-section h2 {
-      text-align: center;
-      font-size: 2.65rem;
-      margin-bottom: 20px;
-      color: var(--dark);
-    }
+.projects-section h2 {
+  text-align: center;
+  font-size: 2.65rem;
+  margin-bottom: 20px;
+  color: var(--dark);
+}
 
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 32px;
-    }
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 32px;
+}
 
-    .project-card {
-      position: relative;
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      transition: all 0.4s ease;
-      height: 420px;
-      cursor: pointer;
-    }
+.project-card {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: all 0.4s ease;
+  height: 420px;
+  cursor: pointer;
+}
 
-    .project-card:hover {
-      transform: translateY(-15px);
-      box-shadow: 0 25px 50px rgba(0,0,0,0.18);
-    }
+.project-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.18);
+}
 
-    .project-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.7s ease;
-    }
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
 
-    .project-card:hover img {
-      transform: scale(1.08);
-    }
+.project-card:hover img {
+  transform: scale(1.08);
+}
 
-    .project-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 45px 30px 30px;
-      background: linear-gradient(transparent, rgba(0,0,0,0.85));
-      color: white;
-    }
+.project-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 45px 30px 30px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.85));
+  color: white;
+}
 
-    /* ==================== MODALS ==================== */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.8);
-      z-index: 3000;
-      align-items: center;
-      justify-content: center;
-      padding: 15px;
-    }
+.project-overlay h3 {
+  font-size: 1.55rem;
+  margin-bottom: 10px;
+}
 
-    .modal-content {
-      background: white;
-      max-width: 780px;
-      width: 100%;
-      border-radius: 24px;
-      padding: 50px 45px;
-      position: relative;
-      max-height: 92vh;
-      overflow-y: auto;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.3);
-    }
+.project-overlay p {
+  font-size: 0.97rem;
+  line-height: 1.5;
+  opacity: 0.95;
+}
 
-    .modal-close {
-      position: absolute;
-      top: 18px;
-      right: 25px;
-      font-size: 2.2rem;
-      cursor: pointer;
-      color: #666;
-      line-height: 1;
-      z-index: 10;
-    }
-
-    .modal h3 {
-      font-size: 2.1rem;
-      color: var(--dark);
-      margin-bottom: 25px;
-      line-height: 1.2;
-    }
-
-    /* Floating CTA */
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .project-card {
+    height: 360px;
+  }
+  
+  .project-overlay {
+    padding: 35px 25px 25px;
+  }
+  
+  .project-overlay h3 {
+    font-size: 1.45rem;
+  }
+  
+  .project-overlay p {
+    font-size: 0.95rem;
+  }
+}
+    /* ==================== FLOATING CTA ==================== */
     .floating-cta {
       position: fixed;
       bottom: 25px;
@@ -336,26 +324,207 @@
       box-shadow: 0 15px 35px rgba(38, 96, 41, 0.4);
     }
 
-    /* Mobile Adjustments */
+   /* ==================== PROJECT MODAL ==================== */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 3000;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+
+.modal-content {
+  background: white;
+  max-width: 780px;
+  width: 100%;
+  border-radius: 24px;
+  padding: 50px 45px;
+  position: relative;
+  max-height: 92vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+}
+
+.modal-close {
+  position: absolute;
+  top: 18px;
+  right: 25px;
+  font-size: 2.2rem;
+  cursor: pointer;
+  color: #666;
+  line-height: 1;
+  z-index: 10;
+}
+
+.modal-close:hover {
+  color: #000;
+}
+
+.modal h3 {
+  font-size: 2.1rem;
+  color: var(--dark);
+  margin-bottom: 25px;
+  line-height: 1.2;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 40px 25px;
+    border-radius: 20px;
+    max-height: 95vh;
+  }
+  
+  .modal h3 {
+    font-size: 1.75rem;
+  }
+  
+  .modal p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+}
+/* ==================== MOBILE ==================== */
+@media (max-width: 768px) {
+
+  /* Mobile Menu */
+  .nav-menu {
+    position: fixed;
+    top: 90px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 90px);
+    background: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    transition: left 0.4s ease;
+    z-index: 999;
+    transform: none;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .hamburger {
+    display: flex;
+    z-index: 1001;
+  }
+
+  .nav-cta {
+    display: none;
+  }
+
+  /* Services */
+  .service-row,
+  .service-row.reverse {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    margin-bottom: 60px;
+  }
+
+  .service-image {
+    height: 320px;
+  }
+
+  .service-content {
+    padding: 50px 24px;
+  }
+
+  .service-content h3 {
+    font-size: 2rem;
+  }
+
+  /* Projects */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .project-card img {
+    height: 260px;
+  }
+
+  /* Floating CTA */
+  .floating-cta {
+    padding: 10px 16px;
+    font-size: 0.95rem;
+    bottom: 16px;
+    right: 16px;
+  }
+
+  /* Footer */
+  #footer {
+    margin-top: 40px;
+  }
+
+  footer {
+    padding: 40px 20px 25px !important;
+  }
+}
+
     @media (max-width: 768px) {
-      .service-row, .service-row.reverse {
-        grid-template-columns: 1fr;
-        min-height: auto;
-        margin-bottom: 60px;
+      .service-image {
+        height: 320px;
       }
-      .service-image { height: 320px; }
-      .service-content { padding: 50px 24px; }
-      .service-content h3 { font-size: 2rem; }
-      
-      .project-card { height: 360px; }
-      .projects-grid { grid-template-columns: 1fr; gap: 20px; }
-      
+
+      .service-content {
+        padding: 50px 24px;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .project-card img {
+        height: 360px;
+      }
+
+      /* Floating CTA - Smaller on Mobile */
       .floating-cta {
         padding: 10px 16px;
         font-size: 0.95rem;
         bottom: 16px;
         right: 16px;
+        gap: 6px;
       }
+
+      /* Footer - Compact on Mobile */
+      #footer {
+        margin-top: 40px;
+      }
+
+      footer {
+        padding: 40px 20px 25px !important;
+        font-size: 0.95rem;
+      }
+
+      footer h3, 
+      footer h4 {
+        font-size: 1.15rem;
+        margin-bottom: 15px;
+      }
+
+      footer img {
+        height: 48px;
+      }
+    }
+
+    /* Hamburger Animation */
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
     }
   </style>
 </head>
@@ -390,10 +559,10 @@
     </div>
   </nav>
 
-  <!-- SERVICES -->
+ <!-- SERVICES -->
   <section class="services-hero">
     <div class="container">
-      <!-- Your 4 service rows remain unchanged -->
+      
       <div class="service-row" id="High-quality-seedlings">
         <div class="service-image">
           <img src="ASSETS/Moringa seedlings packed in crates.webp" alt="Tree nursery">
@@ -411,6 +580,7 @@
         </div>
       </div>
 
+      <!-- Service 2 -->
       <div class="service-row reverse" id="consultancy">
         <div class="service-image">
           <img src="ASSETS/Consultancy.jpeg" alt="Consultancy">
@@ -428,6 +598,7 @@
         </div>
       </div>
 
+      <!-- Service 3 -->
       <div class="service-row" id="monitoring-operations">
         <div class="service-image">
           <img src="ASSETS/Monitoring&Operations.jpeg" alt="Monitoring and Operations">
@@ -446,6 +617,7 @@
         </div>
       </div>
 
+      <!-- Service 4 -->
       <div class="service-row reverse" id="research">
         <div class="service-image">
           <img src="ASSETS/research.webp" alt="Research and Innovation">
@@ -464,72 +636,71 @@
       </div>
     </div>
   </section>
+ <!-- PROJECT SHOWCASE -->
+<section class="projects-section">
+  <div class="container">
+    <h2>Project Highlights</h2>
+    
+    <p style="text-align: center; max-width: 760px; margin: 0 auto 70px; font-size: 1.12rem; color: #555; line-height: 1.7;">
+      Discover our key programmes driving innovation in Kenya’s agriculture and forestry sectors. 
+      Click on any project below to learn more.
+    </p>
 
-  <!-- PROJECT SHOWCASE -->
-  <section class="projects-section">
-    <div class="container">
-      <h2>Project Highlights</h2>
-      <p style="text-align: center; max-width: 760px; margin: 0 auto 70px; font-size: 1.12rem; color: #555; line-height: 1.7;">
-        Discover our key programmes driving innovation in Kenya’s agriculture and forestry sectors. 
-        Click on any project below to learn more.
-      </p>
-
-      <div class="projects-grid">
-        <div class="project-card" onclick="showProjectModal(0)">
-          <img src="ASSETS/sarangib-cashew-633921_1920.jpg" alt="Cashew Innovations">
-          <div class="project-overlay">
-            <h3>Cashew Innovations</h3>
-            <p>High-density planting • Dwarf varieties • Advanced nursery &amp; soil technologies</p>
-          </div>
+    <div class="projects-grid">
+      <div class="project-card" onclick="showProjectModal(0)">
+        <img src="ASSETS/sarangib-cashew-633921_1920.jpg" alt="Cashew Innovations">
+        <div class="project-overlay">
+          <h3>Cashew Innovations</h3>
+          <p>High-density planting • Dwarf varieties • Advanced nursery &amp; soil technologies</p>
         </div>
+      </div>
 
-        <div class="project-card" onclick="showProjectModal(1)">
-          <img src="ASSETS/mangoes.jpg" alt="Value Chain Development">
-          <div class="project-overlay">
-            <h3>Value Chain Development</h3>
-            <p>Freeze-dried mango • Moringa oil • Bixa annatto • Market &amp; processing focus</p>
-          </div>
+      <div class="project-card" onclick="showProjectModal(1)">
+        <img src="ASSETS/mangoes.jpg" alt="Value Chain Development">
+        <div class="project-overlay">
+          <h3>Value Chain Development</h3>
+          <p>Freeze-dried mango • Moringa oil • Bixa annatto • Market &amp; processing focus</p>
         </div>
+      </div>
 
-        <div class="project-card" onclick="showProjectModal(2)">
-          <img src="ASSETS/inside-nursery.webp" alt="Sustainable Production Inputs">
-          <div class="project-overlay">
-            <h3>Sustainable Production Inputs</h3>
-            <p>Biochar • Large-scale composting • Regenerative soil amendments</p>
-          </div>
+      <div class="project-card" onclick="showProjectModal(2)">
+        <img src="ASSETS/inside-nursery.webp" alt="Sustainable Production Inputs">
+        <div class="project-overlay">
+          <h3>Sustainable Production Inputs</h3>
+          <p>Biochar • Large-scale composting • Regenerative soil amendments</p>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- PROJECT MODAL -->
-  <div class="modal" id="projectModal">
-    <div class="modal-content">
-      <span class="modal-close" onclick="closeProjectModal()">×</span>
-      <div id="modal-body"></div>
-    </div>
   </div>
+</section>
 
-  <!-- FLOATING CTA -->
-  <div class="floating-cta" onclick="openContactModal()">
-    <span>Start Your Project</span>
-    <span style="font-size: 1.4rem;">→</span>
+<!-- PROJECT MODAL -->
+<div class="modal" id="projectModal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeProjectModal()">×</span>
+    <div id="modal-body"></div>
   </div>
+</div>
 
-  <!-- CONTACT MODAL -->
-  <div class="modal" id="contactModal">
-    <div class="modal-content">
-      <span class="modal-close" onclick="closeContactModal()">×</span>
-      <h2>Ready to Grow?</h2>
-      <p>Let’s discuss your project goals. Our team is ready to support you from planning to successful execution.</p>
-      <a href="contact.html" class="nav-cta-btn" style="display: inline-block; margin-top: 25px;">
-        Book a Consultation
-      </a>
-    </div>
+<!-- FLOATING CTA -->
+<div class="floating-cta" onclick="openContactModal()">
+  <span>Start Your Project</span>
+  <span style="font-size: 1.4rem;">→</span>
+</div>
+
+<!-- CONTACT MODAL -->
+<div class="modal" id="contactModal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeContactModal()">×</span>
+    <h2>Ready to Grow?</h2>
+    <p>Let’s discuss your project goals. Our team is ready to support you from planning to successful execution.</p>
+    <a href="contact.html" class="nav-cta-btn" style="display: inline-block; margin-top: 20px;">
+      Book a Consultation
+    </a>
   </div>
+</div>
 
-  <div id="footer"></div>
-
+<div id="footer"></div>
   <script>
     // Load Footer
     fetch('footer.html')
@@ -547,32 +718,40 @@
 
     document.querySelectorAll('.service-row, .project-card').forEach(el => observer.observe(el));
 
-    // Navbar Scroll
+    // Navbar Scroll Effect
     window.addEventListener('scroll', () => {
       document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 80);
     });
+  </script>
+  <script>
+// Hamburger Menu - Full Screen Fix
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
 
-    // Hamburger Menu
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
+hamburger.addEventListener('click', () => {
+  const isActive = navMenu.classList.toggle('active');
+  hamburger.classList.toggle('active');
+  
+  if (isActive) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = 'visible';
+  }
+});
 
-    hamburger.addEventListener('click', () => {
-      const isActive = navMenu.classList.toggle('active');
-      hamburger.classList.toggle('active');
-      document.body.style.overflow = isActive ? 'hidden' : 'visible';
-    });
-
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-        document.body.style.overflow = 'visible';
-      });
-    });
-
-    // ==================== PROJECTS DATA & MODAL ====================
-    const projects = [
-      {
+// Close menu when clicking a link
+document.querySelectorAll('.nav-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
+    document.body.style.overflow = 'visible';
+  });
+});
+</script>
+<script>
+// Project Data
+const projects = [
+  {
     title: "Cashew Innovations",
     content: `
       <p>Kenya's cashew sector has enormous untapped potential, yet average yields remain far below those achieved in leading producing countries such as Brazil and Vietnam.</p>
@@ -580,11 +759,9 @@
       <p>Our programme focuses on the evaluation of <strong>dwarf and semi-dwarf cashew varieties</strong> that enable higher planting densities, easier harvesting and greater yields per hectare. In parallel, we are testing improved nursery techniques and advanced planting inputs including biochar, compost, and microbial technologies.</p>
     `
   },
-
-
-      {
-        title: "Value Chain Development",
-        content: `
+  {
+    title: "Value Chain Development",
+    content: `
       <p>Increasing agricultural production only creates lasting impact when farmers have access to profitable markets and local value addition.</p>
       <p>Current initiatives include research into freeze-dried mango products, cold-pressed moringa oil, and the development of the Bixa annatto value chain in partnership with KALRO.</p>
       <p>Our long-term vision is to help transform Kenya from an exporter of raw commodities into a producer of high-value processed products.</p>
@@ -600,44 +777,34 @@
       <p>By integrating circular economy principles with regenerative agriculture, we aim to create scalable solutions for sustainable landscape restoration.</p>
     `
   }
+];
 
-    ];
+function showProjectModal(index) {
+  const modal = document.getElementById('projectModal');
+  const body = document.getElementById('modal-body');
+  
+  body.innerHTML = `
+    <h3>${projects[index].title}</h3>
+    ${projects[index].content}
+    <div style="margin-top: 40px; text-align: center;">
+      <a href="contact.html" class="nav-cta-btn" 
+         style="display: inline-block; width: 100%; max-width: 320px; padding: 18px 30px; font-size: 1.08rem; text-align: center;">
+        Discuss This Project With Us →
+      </a>
+    </div>
+  `;
+  
+  modal.style.display = "flex";
+}
 
-    function showProjectModal(index) {
-      const modal = document.getElementById('projectModal');
-      const body = document.getElementById('modal-body');
-      
-      body.innerHTML = `
-        <h3>${projects[index].title}</h3>
-        ${projects[index].content}
-        <div style="margin-top: 40px; text-align: center;">
-          <a href="contact.html" class="nav-cta-btn" style="display: inline-block; width: 100%; max-width: 320px; padding: 18px 30px;">
-            Discuss This Project With Us →
-          </a>
-        </div>
-      `;
-      modal.style.display = "flex";
-    }
+function closeProjectModal() {
+  document.getElementById('projectModal').style.display = "none";
+}
 
-    function closeProjectModal() {
-      document.getElementById('projectModal').style.display = "none";
-    }
-
-    // ==================== CONTACT MODAL ====================
-    function openContactModal() {
-      document.getElementById('contactModal').style.display = "flex";
-    }
-
-    function closeContactModal() {
-      document.getElementById('contactModal').style.display = "none";
-    }
-
-    // Close modals when clicking outside
-    document.querySelectorAll('.modal').forEach(modal => {
-      modal.addEventListener('click', function(e) {
-        if (e.target === this) this.style.display = "none";
-      });
-    });
-  </script>
+// Close modal when clicking outside
+document.getElementById('projectModal').addEventListener('click', function(e) {
+  if (e.target === this) closeProjectModal();
+});
+</script>
 </body>
 </html>
