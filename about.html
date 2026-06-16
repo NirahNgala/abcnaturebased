@@ -22,169 +22,136 @@
     }
   </script>
 
-  <style>
-    :root {
-      --primary: #0f2c22;
-      --accent: #4ade80;
-    }
-
-    body {
-      font-family: 'Satoshi', system-ui, sans-serif;
-    }
-
-    /* HERO */
-    .about-hero {
-      background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), 
-                  url('ASSETS/Girl with moringa seedlings.webp') center/cover;
-      min-height: 460px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-image {
-      position: absolute;
-      bottom: -30px;
-      right: 8%;
-      width: 320px;
-      filter: drop-shadow(0 25px 30px rgba(0,0,0,0.35));
-      z-index: 10;
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 20px;
-      right: 25px;
-      background: rgba(255,255,255,0.15);
-      backdrop-filter: blur(10px);
-      color: white;
-      border: none;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      font-weight: 300;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      z-index: 20;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
-
-    .close-btn:hover {
-      background: rgba(255,255,255,0.3);
-      transform: scale(1.1);
-    }
-
-    @media (max-width: 768px) {
-      .hero-image { width: 220px; right: 5%; bottom: -15px; }
-      .close-btn { width: 44px; height: 44px; font-size: 24px; }
-    }
-
-    .expertise-card {
-  transition: all 0.4s ease;
-}
-.expertise-card .content {
-  max-height: 185px;           
-  overflow: hidden;
-  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  
-  /* New: Multi-column layout */
-  column-count: 1;           /* Mobile: single column */
-  column-gap: 2.5rem;
-  column-rule: 1px solid #e2e8f0;
-}
-
-.expertise-card.expanded .content {
-  max-height: 1200px;
-}
-
-/* Fade at bottom when collapsed */
-.expertise-card .content::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 80px;
-  background: linear-gradient(transparent, white);
-  pointer-events: none;
-  opacity: 1;
-  transition: opacity 0.3s ease;
-}
-
-.expertise-card.expanded .content::after {
-  opacity: 0;
-}
-
-/* Better paragraph spacing in columns */
-.expertise-card .content p {
-  margin-bottom: 1.1em;
-  line-height: 1.75;
-  break-inside: avoid-column;   /* Prevents awkward breaks */
-}
-
-.expertise-card .content p:last-child {
-  margin-bottom: 0;
-}
-
-/* Responsive columns */
-@media (min-width: 768px) {
-  .expertise-card .content {
-    column-count: 2;           /* 2 columns on tablets and up */
+<style>
+  :root {
+    --primary: #0f2c22;
+    --accent: #4ade80;
   }
-}
 
-@media (min-width: 1280px) {
-  .expertise-card .content {
-    column-count: 3;           /* 3 columns on very large screens */
+  body {
+    font-family: 'Satoshi', system-ui, sans-serif;
   }
-}
 
-/* Improved Read More button */
-.read-more-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  color: #10b981;
-  font-weight: 700;
-  margin-top: 20px;
-  padding: 12px 0;
-  border-top: 1px solid #f1f5f9;
-  cursor: pointer;
-  user-select: none;
-  transition: all 0.3s ease;
-}
+  /* HERO */
+  .about-hero {
+    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), 
+                url('ASSETS/Girl with moringa seedlings.webp') center/cover;
+    min-height: 460px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
 
-.read-more-btn:hover {
-  color: #059669;
-  background: #f8fafc;
-  border-radius: 9999px;
-}
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 20;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  }
 
+  .close-btn:hover {
+    background: rgba(255,255,255,0.3);
+    transform: scale(1.1);
+  }
 
-    .read-more-btn span {
-      transition: transform 0.3s ease;
-    }
+  /* EXPERTISE CARDS - Single Column Only */
+  .expertise-card {
+    transition: all 0.4s ease;
+  }
 
-    .expertise-card.expanded .read-more-btn span {
-      transform: rotate(180deg);
-    }
+  .expertise-card .content {
+    max-height: 185px;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+  }
 
-    .stat-number {
-      font-size: 2.8rem;
-      font-weight: 800;
-      color: var(--primary);
-    }
-  </style>
+  .expertise-card.expanded .content {
+    max-height: 1400px;
+  }
+
+  /* Fade at bottom when collapsed */
+  .expertise-card .content::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(transparent, white);
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+
+  .expertise-card.expanded .content::after {
+    opacity: 0;
+  }
+
+  .expertise-card .content p {
+    margin-bottom: 1.1em;
+    line-height: 1.75;
+  }
+
+  .expertise-card .content p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Read More Button */
+  .read-more-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #10b981;
+    font-weight: 700;
+    margin-top: 20px;
+    padding: 12px 0;
+    border-top: 1px solid #f1f5f9;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s ease;
+  }
+
+  .read-more-btn:hover {
+    color: #059669;
+    background: #f8fafc;
+    border-radius: 9999px;
+  }
+
+  .read-more-btn span {
+    transition: transform 0.3s ease;
+  }
+
+  .expertise-card.expanded .read-more-btn span {
+    transform: rotate(180deg);
+  }
+
+  .stat-number {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--primary);
+  }
+</style>
 </head>
 <body class="font-sans">
 
@@ -505,23 +472,22 @@ fetch('footer.html')
 </script>
 
 <script>
-  // Close Button Function
   function goBack() {
     window.history.back();
   }
 
   function toggleReadMore(btn) {
-  const card = btn.closest('.expertise-card');
-  const isExpanding = !card.classList.contains('expanded');
-  
-  card.classList.toggle('expanded');
-  
-  if (isExpanding) {
-    btn.innerHTML = `Read Less <span class="text-xl">↑</span>`;
-  } else {
-    btn.innerHTML = `Read More <span class="text-xl">↓</span>`;
+    const card = btn.closest('.expertise-card');
+    const isExpanding = !card.classList.contains('expanded');
+    
+    card.classList.toggle('expanded');
+    
+    if (isExpanding) {
+      btn.innerHTML = `Read Less <span class="text-xl">↑</span>`;
+    } else {
+      btn.innerHTML = `Read More <span class="text-xl">↓</span>`;
+    }
   }
-}
 
   // Counter Animation
   function animateValue(id, start, end, duration, suffix = '') {
@@ -536,11 +502,10 @@ fetch('footer.html')
       obj.textContent = value + suffix;
       if (progress < 1) window.requestAnimationFrame(step);
       else obj.textContent = end + suffix;
-    }
     };
     window.requestAnimationFrame(step);
-  
-  // Start counters after page load
+  }
+
   window.onload = function() {
     setTimeout(() => {
       animateValue("hectares", 0, 200, 1800);
