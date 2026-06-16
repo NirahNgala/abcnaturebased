@@ -5,23 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us - Crescendo Green</title>
   
-  <!-- Satoshi Font -->
   <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="about.css">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  
+
   <script>
     tailwind.config = {
       content: ["./**/*.{html,js}"],
       theme: {
         extend: {
-          fontFamily: {
-            sans: ['Satoshi', 'system-ui', 'sans-serif'],
-          }
+          fontFamily: { sans: ['Satoshi', 'system-ui', 'sans-serif'] }
         }
       }
     }
@@ -37,10 +32,10 @@
       font-family: 'Satoshi', system-ui, sans-serif;
     }
 
-  /* ====================== HERO ====================== */
+    /* HERO */
     .about-hero {
       background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), 
-                  url('ASSETS/Girl\ with\ moringa\ seedlings.webp') center/cover;
+                  url('ASSETS/Girl with moringa seedlings.webp') center/cover;
       min-height: 460px;
       display: flex;
       align-items: center;
@@ -62,7 +57,7 @@
 
     .close-btn {
       position: absolute;
-      top:0px;
+      top: 20px;
       right: 25px;
       background: rgba(255,255,255,0.15);
       backdrop-filter: blur(10px);
@@ -87,79 +82,107 @@
       transform: scale(1.1);
     }
 
+    @media (max-width: 768px) {
+      .hero-image { width: 220px; right: 5%; bottom: -15px; }
+      .close-btn { width: 44px; height: 44px; font-size: 24px; }
+    }
+
+    .expertise-card {
+  transition: all 0.4s ease;
+}
+.expertise-card .content {
+  max-height: 185px;           
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  
+  /* New: Multi-column layout */
+  column-count: 1;           /* Mobile: single column */
+  column-gap: 2.5rem;
+  column-rule: 1px solid #e2e8f0;
+}
+
+.expertise-card.expanded .content {
+  max-height: 1200px;
+}
+
+/* Fade at bottom when collapsed */
+.expertise-card .content::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(transparent, white);
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.expertise-card.expanded .content::after {
+  opacity: 0;
+}
+
+/* Better paragraph spacing in columns */
+.expertise-card .content p {
+  margin-bottom: 1.1em;
+  line-height: 1.75;
+  break-inside: avoid-column;   /* Prevents awkward breaks */
+}
+
+.expertise-card .content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive columns */
+@media (min-width: 768px) {
+  .expertise-card .content {
+    column-count: 2;           /* 2 columns on tablets and up */
+  }
+}
+
+@media (min-width: 1280px) {
+  .expertise-card .content {
+    column-count: 3;           /* 3 columns on very large screens */
+  }
+}
+
+/* Improved Read More button */
+.read-more-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #10b981;
+  font-weight: 700;
+  margin-top: 20px;
+  padding: 12px 0;
+  border-top: 1px solid #f1f5f9;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s ease;
+}
+
+.read-more-btn:hover {
+  color: #059669;
+  background: #f8fafc;
+  border-radius: 9999px;
+}
+
+
+    .read-more-btn span {
+      transition: transform 0.3s ease;
+    }
+
+    .expertise-card.expanded .read-more-btn span {
+      transform: rotate(180deg);
+    }
+
     .stat-number {
-      font-size: 3rem;
+      font-size: 2.8rem;
       font-weight: 800;
       color: var(--primary);
-    }
-
-    .team-member {
-      transition: all 0.4s ease;
-    }
-    
-    .team-member:hover {
-      transform: translateY(-8px);
-    }
-    @media (max-width: 768px) {
-      .hero-image {
-        width: 220px;
-        right: 5%;
-        bottom: -15px;
-      }
-      .close-btn {
-        width: 44px;
-        height: 44px;
-        font-size: 24px;
-        top: 20px;
-        right: 20px;
-      }
-    }
-
-    body {
-      font-family: 'Satoshi', system-ui, sans-serif;
-    }
-
-    /* Stats Numbers */
-    .stat-number {
-      font-size: 2.5rem;
-      line-height: 1;
-      font-weight: 800;
-      font-variant-numeric: tabular-nums;
-    }
-
-    @media (min-width: 768px) {
-      .stat-number {
-        font-size: 2.8rem;
-      }
-    }
-
-    /* CTA */
-    .services-cta {
-      background: linear-gradient(135deg, #10b981, #047857);
-      color: white;
-      padding: 4rem 2rem;
-      text-align: center;
-      margin: 3rem 0;
-      border-radius: 20px;
-    }
-
-    .cta-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      background: white;
-      color: #10b981;
-      padding: 16px 32px;
-      border-radius: 9999px;
-      font-weight: 700;
-      margin-top: 1.5rem;
-      transition: all 0.3s;
-      text-decoration: none;
-    }
-
-    .cta-link:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     }
   </style>
 </head>
@@ -167,14 +190,12 @@
 
 <!-- HERO -->
 <section class="about-hero">
-    <button class="close-btn" onclick="goBack()" title="Close">×</button>
-
-    <div class="relative z-10 text-center px-6 max-w-3xl">
-        <h1 class="text-5xl md:text-6xl font-bold tracking-tight">Our Story</h1>
-        <p class="mt-4 text-lg md:text-xl text-white/90">
-        One seedling, one forest, and one community at a time.
+  <button class="close-btn" onclick="goBack()" title="Close">×</button>
+  <div class="relative z-10 text-center px-6 max-w-3xl">
+    <h1 class="text-5xl md:text-6xl font-bold tracking-tight">Our Story</h1>
+    <p class="mt-4 text-lg md:text-xl text-white/90">
+      One seedling, one forest, and one community at a time.
     </p>
-        </p>
   </div>
 </section>
 
@@ -182,7 +203,7 @@
 <section class="py-24 bg-white">
   <div class="max-w-6xl mx-auto px-6">
     <div class="text-center mb-16">
-      <h2 class="text-4xl md:text-5xl font-bold text-emerald-900"></h2>
+      <h2 class="text-4xl md:text-5xl font-bold text-emerald-900">Our Journey</h2>
       <div class="w-24 h-1 bg-emerald-600 mx-auto mt-6"></div>
     </div>
 
@@ -221,152 +242,111 @@
 <section id="stats" class="py-20 bg-emerald-50">
   <div class="max-w-7xl mx-auto px-6">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
-      <div>
-        <h3 id="hectares" class="stat-number text-emerald-700 mb-2">0</h3>
-        <p class="text-xl font-medium">Hectares Restored</p>
-      </div>
-      <div>
-        <h3 id="shadehouse" class="stat-number text-emerald-700 mb-2">0</h3>
-        <p class="text-xl font-medium">Shadehouse</p>
-      </div>
-      <div>
-        <h3 id="seedlings" class="stat-number text-emerald-700 mb-2">0</h3>
-        <p class="text-xl font-medium"> Million Seedlings/Year</p>
-      </div>
-      <div>
-        <h3 id="systems" class="stat-number text-emerald-700 mb-2">0</h3>
-        <p class="text-xl font-medium">Tree Species</p>
-      </div>
+      <div><h3 id="hectares" class="stat-number text-emerald-700 mb-2">0</h3><p class="text-xl font-medium">Hectares Restored</p></div>
+      <div><h3 id="shadehouse" class="stat-number text-emerald-700 mb-2">0</h3><p class="text-xl font-medium">Shadehouse</p></div>
+      <div><h3 id="seedlings" class="stat-number text-emerald-700 mb-2">0</h3><p class="text-xl font-medium">Million Seedlings/Year</p></div>
+      <div><h3 id="systems" class="stat-number text-emerald-700 mb-2">0</h3><p class="text-xl font-medium">Tree Species</p></div>
     </div>
   </div>
 </section>
 
 <!-- OUR EXPERTISE -->
-<!-- OUR EXPERTISE -->
 <section class="py-20 md:py-24 bg-white">
   <div class="max-w-7xl mx-auto px-6">
-    
     <div class="text-center mb-16">
       <h2 class="text-4xl md:text-5xl font-bold text-emerald-900 mb-4">Our Expertise</h2>
       <div class="w-20 h-1 bg-emerald-600 mx-auto mb-8"></div>
       <p class="max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed">
         Crescendo Green combines large-scale propagation with technical expertise in commercial forestry, ecosystem restoration and agroforestry.
-         This integrated approach enables us to support carbon developers, governments,
-         NGOs and agribusiness investors in delivering resilient, nature-based projects across Africa.
       </p>
     </div>
 
     <div class="grid md:grid-cols-3 gap-8">
 
       <!-- Card 1 -->
-      <div class="expertise-card group">
-        <div class="relative bg-white rounded-3xl p-8 md:p-10 hover:shadow-2xl transition-all h-full border border-emerald-500">
-          
-          <!-- Shiny Ring - Always Visible -->
-          <div class="absolute -inset-[3px] rounded-[26px] bg-gradient-to-br from-emerald-300 via-white to-emerald-400 opacity-30 -z-10"></div>
-          <div class="absolute -inset-[1px] rounded-[25px] border border-emerald-200"></div>
+      <div class="expertise-card bg-white rounded-3xl p-8 md:p-10 border border-emerald-100 hover:shadow-2xl transition-all">
+        <div class="text-5xl mb-6">🌳</div>
+        <h3 class="text-2xl font-semibold text-emerald-900 mb-3">Commercial Forestry</h3>
+        <h4 class="text-emerald-700 font-medium mb-5">Building Climate-Resilient Timber Landscapes</h4>
+        
+        <div class="content text-gray-600 text-[15.2px] leading-relaxed">
+         <p>
+          Crescendo Green supports the development of sustainable commercial forestry projects with a strong focus on drought-resilient and indigenous tree species suitable for Africa's drylands and semi-arid regions. Across much of the continent, water scarcity, land degradation and climate variability demand forestry systems that are both economically viable and ecologically adapted.
+         </p>
+        <p>
+          Our flagship species is Melia volkensii, an exceptional indigenous hardwood native to East Africa that combines excellent timber characteristics with strong adaptation to arid and semi-arid environments. Unlike many exotic plantation species, Melia volkensii can perform well under relatively low rainfall conditions when established using appropriate site preparation and management techniques, making it an attractive option for climate-smart forestry investments.
+        </p>
+        <p>
+          Our approach goes beyond supplying seedlings. We assist project developers with species selection, propagation planning, plantation design, planting protocols, water management, and long-term operational strategies. Through field experience and applied research, we continuously evaluate planting densities, mixed-species systems, soil improvement measures and establishment techniques to maximise survival rates and long-term productivity.
+        </p>
+        <p>
+          Commercial forestry can also deliver significant environmental co-benefits. By integrating indigenous species, restoring degraded land and improving landscape connectivity, well-designed plantations can contribute to biodiversity conservation while generating sustainable timber resources. This integrated approach is increasingly attractive for investors and developers seeking to combine commercial returns with measurable climate and restoration outcomes.
+        </p>
+        <p>
+          Crescendo Green is committed to providing high-quality planting material and technical expertise that enable forestry projects to succeed under challenging conditions across Africa's drylands.
+        </p>
+        </div>
 
-          <div class="relative z-10">
-            <div class="text-5xl mb-6">🌳</div>
-            <h3 class="text-2xl font-semibold text-emerald-900 mb-3">Commercial Forestry</h3>
-            <h4 class="text-emerald-700 font-medium mb-5">Building Climate-Resilient Timber Landscapes</h4>
-            
-            <!-- Desktop: Full Content -->
-            <div class="expertise-content hidden md:block text-gray-600 text-[15.2px] leading-relaxed">
-              <p>Crescendo Green supports the development of sustainable commercial forestry projects with a strong focus on drought-resilient and indigenous tree species suitable for Africa's drylands and semi-arid regions.</p>
-              <p>Our flagship species is <strong>Melia volkensii</strong>, an exceptional indigenous hardwood that combines excellent timber characteristics with strong adaptation to low rainfall conditions.</p>
-              <p>We provide end-to-end support — from species selection and plantation design to water management and long-term operational strategies.</p>
-                <p>Crescendo Green is committed to providing high-quality planting material and technical expertise that enable forestry projects to succeed under challenging conditions across Africa's drylands.</p>
-            </div>
-
-            <!-- Mobile: Short Preview -->
-            <div class="expertise-content md:hidden text-gray-600 text-[15.2px] leading-relaxed">
-              <p>We specialize in sustainable commercial forestry using drought-resilient indigenous species, particularly our flagship <strong>Melia volkensii</strong>.</p>
-            </div>
-
-            <!-- Full Content for Mobile Accordion -->
-            <div class="expertise-full hidden md:hidden mt-4 text-gray-600 text-[15.2px] leading-relaxed">
-              <p>
-                Crescendo Green is committed to
-                 providing high-quality planting material and technical expertise that enable forestry projects to succeed under challenging conditions across Africa's drylands.
-              </p>
-
-            </div>
-
-            <button class="mt-6 text-emerald-700 font-medium flex items-center gap-2 md:hidden w-full justify-center">
-              Read More <span class="text-xl transition-transform duration-300">↓</span>
-            </button>
-          </div>
+        <div class="read-more-btn text-emerald-700" onclick="toggleReadMore(this)">
+          Read More <span class="text-xl">↓</span>
         </div>
       </div>
 
       <!-- Card 2 -->
-      <div class="expertise-card group">
-        <div class="relative bg-white rounded-3xl p-8 md:p-10 hover:shadow-2xl transition-all h-full border border-emerald-100">
-          <div class="shiny-ring"></div>
-          <div class="relative z-10">
-            <div class="text-5xl mb-6">🌍</div>
-            <h3 class="text-2xl font-semibold text-emerald-900 mb-3">Ecosystem Restoration</h3>
-            <h4 class="text-emerald-700 font-medium mb-5">Restoring Landscapes Through Indigenous Trees</h4>
-            
-            <div class="expertise-content hidden md:block text-gray-600 text-[15.2px] leading-relaxed">
-              <p>
-                 <p>
-               Healthy ecosystems depend on diversity. At Crescendo Green, ecosystem restoration is centred on the
-                propagation and establishment of indigenous tree species that rebuild ecological function while supporting local communities and long-term climate resilience.
-              </p>
-                  <p>
-                Our practical experience is demonstrated through restoration activities at our sister company's Koromi Forestry Project,
-                 where more than sixty indigenous tree species have been propagated and established as part of a broader effort to recover coastal woodland ecosystems 
-                 and enhance biodiversity. These activities provide valuable insights into species performance, propagation techniques and restoration methodologies under
-                  semi-arid conditions.
-              </p>
-              <p>
-                We actively collaborate with organisations committed to landscape restoration and biodiversity conservation, including Nature Kenya and the Ecosystem Restoration Communities (ERC) network. These partnerships strengthen our understanding of ecological restoration and reinforce our commitment to science-based, locally appropriate interventions.
-              </p>
-              <p>
-                For clients implementing large-scale restoration or carbon initiatives, we offer professional propagation systems capable of producing substantial quantities of indigenous planting material while maintaining species diversity and quality standards. Our experience extends from seed sourcing and nursery management to planting support and restoration planning.
-              </p>
-            </div>
+      <div class="expertise-card bg-white rounded-3xl p-8 md:p-10 border border-emerald-100 hover:shadow-2xl transition-all">
+        <div class="text-5xl mb-6">🌍</div>
+        <h3 class="text-2xl font-semibold text-emerald-900 mb-3">Ecosystem Restoration</h3>
+        <h4 class="text-emerald-700 font-medium mb-5">Restoring Landscapes Through Indigenous Trees</h4>
+        
+        <div class="content text-gray-600 text-[15.2px] leading-relaxed">
+          <p>
+            Healthy ecosystems depend on diversity. At Crescendo Green, ecosystem restoration is centred on the propagation and establishment of indigenous tree species that rebuild ecological function while supporting local communities and long-term climate resilience.
+          </p>
+          <p>
+           Our practical experience is demonstrated through restoration activities at our sister company's Koromi Forestry Project, where more than sixty indigenous tree species have been propagated and established as part of a broader effort to recover coastal woodland ecosystems and enhance biodiversity. These activities provide valuable insights into species performance, propagation techniques and restoration methodologies under semi-arid conditions.
+            </p>
+          <p>
+           We actively collaborate with organisations committed to landscape restoration and biodiversity conservation, including Nature Kenya and the Ecosystem Restoration Communities (ERC) network. These partnerships strengthen our understanding of ecological restoration and reinforce our commitment to science-based, locally appropriate interventions.
+          </p>
+          <p>
+            For clients implementing large-scale restoration or carbon initiatives, we offer professional propagation systems capable of producing substantial quantities of indigenous planting material while maintaining species diversity and quality standards. Our experience extends from seed sourcing and nursery management to planting support and restoration planning.
+          </p>
+          <p>
+            We believe that successful restoration should create multiple benefits: recovering degraded ecosystems, enhancing biodiversity, strengthening climate resilience and supporting sustainable livelihoods. By combining operational capability with practical field knowledge, Crescendo Green helps transform restoration ambitions into measurable outcomes on the ground.
+          </p>
+        </div>
 
-            <div class="expertise-full hidden md:hidden mt-4 text-gray-600 text-[15.2px] leading-relaxed">
-              <p>
-                We believe that successful restoration should create multiple benefits: recovering degraded ecosystems, enhancing biodiversity, strengthening climate resilience and supporting sustainable livelihoods. By combining operational capability with practical field knowledge, Crescendo Green helps transform restoration ambitions into measurable outcomes on the ground.
-              </p>
-            </div>
-
-            <button class="mt-6 text-emerald-700 font-medium flex items-center gap-2 md:hidden w-full justify-center">
-              Read More <span class="text-xl transition-transform duration-300">↓</span>
-            </button>
-          </div>
+        <div class="read-more-btn text-emerald-700" onclick="toggleReadMore(this)">
+          Read More <span class="text-xl">↓</span>
         </div>
       </div>
 
       <!-- Card 3 -->
-      <div class="expertise-card group">
-        <div class="relative bg-white rounded-3xl p-8 md:p-10 hover:shadow-2xl transition-all h-full border border-emerald-100">
-          <div class="shiny-ring"></div>
-          <div class="relative z-10">
-            <div class="text-5xl mb-6">🌱</div>
-            <h3 class="text-2xl font-semibold text-emerald-900 mb-3">Agroforestry</h3>
-            <h4 class="text-emerald-700 font-medium mb-5">Integrating Trees, Agriculture and Climate Solutions</h4>
-            
-            <div class="expertise-content hidden md:block text-gray-600 text-[15.2px] leading-relaxed">
-              <p>We design integrated systems combining commercial trees, indigenous species and agricultural crops for maximum resilience and income diversification.</p>
-            </div>
+      <div class="expertise-card bg-white rounded-3xl p-8 md:p-10 border border-emerald-100 hover:shadow-2xl transition-all">
+        <div class="text-5xl mb-6">🌱</div>
+        <h3 class="text-2xl font-semibold text-emerald-900 mb-3">Agroforestry</h3>
+        <h4 class="text-emerald-700 font-medium mb-5">Integrating Trees, Agriculture and Climate Solutions</h4>
+        
+       <div class="content text-gray-600 text-[15.2px] leading-relaxed">
+          <p>
+            Agroforestry offers one of the most effective pathways to improve rural livelihoods while restoring degraded landscapes and increasing climate resilience. Crescendo Green promotes integrated production systems that combine commercial trees, indigenous species and agricultural crops to deliver long-term economic and environmental benefits.
+          </p>
+          <p>
+            A key component of our approach is the strategic integration of Melia volkensii and other tree species into farming systems. Rather than establishing monocultures, we encourage designs that combine high-value timber trees with agricultural production, allowing landowners to diversify income streams while improving landscape resilience. Depending on local conditions, Melia can be combined with food crops, legumes or other compatible species during different stages of plantation development.     
+            </p>
+          <p>
+          Beyond tree integration, we advocate complementary practices such as the use of cover crops, organic soil improvement, mulching and water conservation measures. These techniques help maintain soil fertility, reduce erosion, improve moisture retention and support healthier tree establishment, particularly in Africa's arid and semi-arid regions.
+          </p>
+          <p>
+            Well-designed agroforestry systems can also contribute to climate mitigation by increasing above- and below-ground carbon storage while enhancing biodiversity and reducing pressure on natural forests. As carbon markets increasingly recognise the value of nature-based solutions, integrated agroforestry landscapes present attractive opportunities for projects seeking both environmental and financial returns.
+          </p>
+          <p>
+            By combining practical nursery expertise, field experience and systems thinking, Crescendo Green supports clients in designing agroforestry models that are productive, resilient and suitable for long-term landscape restoration and carbon initiatives.
+          </p>
+        </div>
 
-            <div class="expertise-content md:hidden text-gray-600 text-[15.2px] leading-relaxed">
-              <p>We integrate trees with crops to improve livelihoods while restoring land and increasing climate resilience.</p>
-            </div>
-
-            <div class="expertise-full hidden md:hidden mt-4 text-gray-600 text-[15.2px] leading-relaxed">
-              <p>A key focus is strategic integration of <strong>Melia volkensii</strong> into farming systems along with cover crops, mulching and water conservation techniques.</p>
-            </div>
-
-            <button class="mt-6 text-emerald-700 font-medium flex items-center gap-2 md:hidden w-full justify-center">
-              Read More <span class="text-xl transition-transform duration-300">↓</span>
-            </button>
-          </div>
+        <div class="read-more-btn text-emerald-700" onclick="toggleReadMore(this)">
+          Read More <span class="text-xl">↓</span>
         </div>
       </div>
 
@@ -374,7 +354,7 @@
   </div>
 </section>
 
-<!-- TEAM SECTION -->
+<!-- TEAM SECTION (unchanged) -->
 <section class="team-section" id="team">
   <div class="team-container">
 
@@ -530,6 +510,19 @@ fetch('footer.html')
     window.history.back();
   }
 
+  function toggleReadMore(btn) {
+  const card = btn.closest('.expertise-card');
+  const isExpanding = !card.classList.contains('expanded');
+  
+  card.classList.toggle('expanded');
+  
+  if (isExpanding) {
+    btn.innerHTML = `Read Less <span class="text-xl">↑</span>`;
+  } else {
+    btn.innerHTML = `Read More <span class="text-xl">↓</span>`;
+  }
+}
+
   // Counter Animation
   function animateValue(id, start, end, duration, suffix = '') {
     const obj = document.getElementById(id);
@@ -541,15 +534,12 @@ fetch('footer.html')
       const progress = Math.min((timestamp - startTimestamp) / duration, 1);
       const value = Math.floor(progress * range + start);
       obj.textContent = value + suffix;
-      if (progress < 1) {
-        window.requestAnimationFrame(step);
-      } else {
-        obj.textContent = end + suffix;
-      }
+      if (progress < 1) window.requestAnimationFrame(step);
+      else obj.textContent = end + suffix;
+    }
     };
     window.requestAnimationFrame(step);
-  }
-
+  
   // Start counters after page load
   window.onload = function() {
     setTimeout(() => {
@@ -560,6 +550,7 @@ fetch('footer.html')
     }, 600);
   };
 </script>
+
 <script>
 // Mobile Accordion - Only one open at a time
 document.querySelectorAll('.expertise-card button').forEach(button => {
@@ -570,7 +561,7 @@ document.querySelectorAll('.expertise-card button').forEach(button => {
     const isCurrentlyOpen = !fullContent.classList.contains('hidden');
 
     // Close all cards
-    document.querySelectorAll('.expertise-full').forEach(content => {
+    document.querySelectorAll('.expertise-afull').forEach(content => {
       content.classList.add('hidden');
     });
     document.querySelectorAll('.expertise-card button span').forEach(a => {
@@ -583,7 +574,7 @@ document.querySelectorAll('.expertise-card button').forEach(button => {
       arrow.style.transform = 'rotate(180deg)';
     }
   });
-});
+  });
 </script>
 </body>
-</html> put read more for both desktop and mobilea
+</html>
