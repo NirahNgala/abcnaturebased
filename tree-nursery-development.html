@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tree Nursery Development - Crescendo Green</title>
+  
+  <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .hero-bg {
+      background: linear-gradient(rgba(15,44,34,0.75), rgba(15,44,34,0.75)), 
+                  url('ASSETS/nursery-development.webp') center/cover no-repeat;
+      min-height: 500px;
+    }
+  </style>
+</head>
+<body class="font-sans">
+
+  <!-- Hero -->
+  <section class="hero-bg py-28 flex items-center text-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <span class="inline-block px-5 py-2 bg-white/20 backdrop-blur-md rounded-full text-sm font-medium mb-6">
+        OUR SERVICES
+      </span>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+        Tree Nursery Development
+      </h1>
+      <p class="mt-6 text-xl max-w-2xl">
+        End-to-end support for professional, scalable tree nurseries across Africa
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-6 prose prose-lg text-gray-700 leading-relaxed">
+
+      <p>Crescendo Green provides end-to-end support for the planning, construction and operation of professional tree nurseries across Africa. Whether you require a turnkey solution or targeted technical assistance, we help clients establish efficient, scalable and cost-effective propagation facilities tailored to their objectives.</p>
+
+      <p>Our services include nursery design, procurement of high-quality materials and equipment, irrigation systems, shade structures, logistics, integrated pest and disease management, substrate development and operational workflows. We also train nursery staff and management teams, ensuring long-term capacity through structured knowledge transfer.</p>
+
+      <p>Through our partnership with Growpact Global and our own practical experience in large-scale propagation, we bring proven expertise to every project. Beyond nursery operations, we advise on species selection, seed sourcing, production planning, value chains, processing and market opportunities, enabling clients to build resilient and commercially viable forestry, restoration and agroforestry programmes.</p>
+
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-emerald-900 text-white py-16">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-semibold mb-4">Ready to Build a Professional Nursery?</h2>
+      <p class="text-emerald-100 mb-8">Let us help you design and develop a high-performance propagation facility tailored to your goals.</p>
+      <a href="contact.html" 
+         class="inline-block bg-emerald-500 hover:bg-emerald-600 transition px-10 py-4 rounded-full text-lg font-semibold">
+        Discuss Your Nursery Project
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <script>
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('footer').innerHTML = data);
+  </script>
+</body>
+</html>
