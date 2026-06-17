@@ -218,9 +218,21 @@
 
 <!-- HERO -->
 <section class="about-hero">
-  <button class="close-btn" onclick="goBack()" title="Close">×</button>
   
+  <!-- Back Button -->
+  <button onclick="goBack()" 
+          class="absolute top-6 right-6 z-20 bg-white/90 hover:bg-white text-emerald-800 w-11 h-11 flex items-center justify-center rounded-2xl shadow-lg transition-all hover:scale-110">
+    <i class="fas fa-arrow-left text-2xl"></i>
+  </button>
+
   <!-- Floating Leaves -->
+  <div class="floating-elements">
+    <span class="leaf">🌿</span>
+    <span class="leaf">🍃</span>
+    <span class="leaf">🌱</span>
+    <span class="leaf">🪴</span>
+    <span class="leaf">🌳</span>
+  </div>
 
   <div class="relative z-10 text-center px-6 max-w-3xl">
     <h1 class="text-5xl md:text-6xl font-bold tracking-tight">Our Story</h1>
@@ -390,6 +402,80 @@
       </div>
 
     </div>
+  </div>
+</section>
+<!-- FAQ Teaser Section -->
+<section class="bg-white py-20">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-semibold text-emerald-900 mb-4">Frequently Asked Questions</h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Quick answers to the most common questions about Crescendo Green
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 mb-12">
+      <!-- Teaser Item 1 -->
+      <div class="bg-gray-50 border border-gray-100 rounded-3xl p-8 hover:shadow-md transition-all">
+        <h4 class="font-semibold text-emerald-900 mb-3">What is Crescendo Green?</h4>
+        <p class="text-gray-600 line-clamp-3">
+          Crescendo Green is a Kenya-based specialist in large-scale plant propagation, commercial forestry, agroforestry, and ecosystem restoration across Africa.
+        </p>
+      </div>
+
+      <!-- Teaser Item 2 -->
+      <div class="bg-gray-50 border border-gray-100 rounded-3xl p-8 hover:shadow-md transition-all">
+        <h4 class="font-semibold text-emerald-900 mb-3">Do you sell seedlings to individuals?</h4>
+        <p class="text-gray-600 line-clamp-3">
+          We primarily focus on wholesale and contract production for medium to large-scale projects. Retail sales are limited.
+        </p>
+      </div>
+
+      <!-- Teaser Item 3 -->
+      <div class="bg-gray-50 border border-gray-100 rounded-3xl p-8 hover:shadow-md transition-all">
+        <h4 class="font-semibold text-emerald-900 mb-3">Which species do you propagate?</h4>
+        <p class="text-gray-600 line-clamp-3">
+          We specialize in indigenous species including <strong>Melia volkensii</strong>, Moringa, cashew, and many other timber and restoration species.
+        </p>
+      </div>
+
+      <!-- Teaser Item 4 -->
+      <div class="bg-gray-50 border border-gray-100 rounded-3xl p-8 hover:shadow-md transition-all">
+        <h4 class="font-semibold text-emerald-900 mb-3">Can you support large carbon & restoration projects?</h4>
+        <p class="text-gray-600 line-clamp-3">
+          Yes. Our systems are built for projects ranging from hundreds of thousands to millions of seedlings.
+        </p>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <a href="faq.html" 
+         class="inline-flex items-center gap-3 bg-emerald-700 hover:bg-emerald-800 text-white px-8 py-4 rounded-2xl font-medium transition-all duration-300 text-lg">
+        View All Frequently Asked Questions
+        <span class="text-2xl">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+<!-- Sustainability Commitment Section (for About Us page) -->
+<section class="bg-emerald-50 py-20">
+  <div class="max-w-4xl mx-auto px-6">
+    
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-semibold text-emerald-900 mb-4">Our Sustainability Commitment</h2>
+      <p class="text-emerald-700 text-lg">Sustainability is at the heart of everything we do</p>
+    </div>
+
+    <div class="bg-white rounded-3xl shadow-sm p-10 md:p-16 prose prose-lg text-gray-700">
+      <p>Sustainability is at the heart of Crescendo Green's mission. We believe that successful forestry, agroforestry and restoration projects must deliver long-term environmental, social and economic benefits.</p>
+
+      <p>Our work focuses on promoting resilient landscapes through high-quality planting material, responsible land management and the integration of indigenous and climate-adapted species. We support approaches that enhance biodiversity, improve soil health, strengthen climate resilience and create sustainable livelihood opportunities for local communities.</p>
+
+      <p>Wherever possible, we prioritise resource-efficient nursery operations, knowledge transfer, local capacity building and partnerships that contribute to lasting impact. We also recognise the importance of transparency, continuous learning and science-based decision-making in achieving meaningful restoration outcomes.</p>
+
+      <p>By combining practical experience with innovation and collaboration, Crescendo Green aims to contribute to healthier ecosystems, productive landscapes and a more sustainable future for Africa.</p>
+    </div>
+
   </div>
 </section>
 
