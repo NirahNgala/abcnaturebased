@@ -478,7 +478,7 @@ window.addEventListener('scroll', handleReveal);
 // Run once on load in case some are already visible
 window.addEventListener('load', handleReveal);
 
-// Optional: Simple parallax (lighter version)
+        // Parallax (with mobile safety)
 let ticking = false;
 window.addEventListener('scroll', () => {
   if (!ticking) {
