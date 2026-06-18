@@ -609,11 +609,12 @@ fetch('navbar.html')
   </div>
 </div>
 
-<div id="footer"></div>
-  <script>
-    // Load Footer
-    fetch('footer.html')
-      .then(response => response.text())
+    <div id="footer"></div>
+
+    <script>
+        // Load Footer
+        fetch('footer.html')
+            .then(response => response.text())
       .then(data => {
         document.getElementById('footer').innerHTML = data;
       });
@@ -626,9 +627,9 @@ fetch('navbar.html')
     }, { threshold: 0.15 });
 
     document.querySelectorAll('.service-row, .project-card').forEach(el => observer.observe(el));
-
-    // Navbar Scroll Effect
-    window.addEventListener('scroll', () => {
+            
+            // Navbar scroll effect
+            window.addEventListener('scroll', () => {
       document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 80);
     });
   </script>
@@ -643,20 +644,20 @@ hamburger.addEventListener('click', () => {
   
   if (isActive) {
     document.body.style.overflow = 'hidden';
-  } else {
+                } else {
     document.body.style.overflow = 'visible';
-  }
-});
+            }
+        });
 
 // Close menu when clicking a link
-document.querySelectorAll('.nav-menu a').forEach(link => {
+                document.querySelectorAll('.nav-menu a').forEach(link => {
   link.addEventListener('click', () => {
     hamburger.classList.remove('active');
     navMenu.classList.remove('active');
     document.body.style.overflow = 'visible';
-  });
-});
-</script>
+            });
+        });
+    </script>
 <script>
 // Project Data
 const projects = [
