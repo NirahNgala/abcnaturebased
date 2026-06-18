@@ -55,13 +55,14 @@
           <div class="bg-white shadow-xl rounded-2xl py-4 w-56 border border-emerald-100">
             <a href="about.html" class="block px-6 py-3 hover:bg-emerald-50">Our Story</a>
             <a href="about.html#team" class="block px-6 py-3 hover:bg-emerald-50">Our Team</a>
+			<a href="FAQ.html" class="block px-6 py-3 hover:bg-emerald-50">FAQs</a>
             <a href="#kenya-operations" class="block px-6 py-3 hover:bg-emerald-50">Operations in Kenya</a>
             <a href="#partners" class="block px-6 py-3 hover:bg-emerald-50">Partners</a>
           </div>
         </div>
       </div>
 
-      <a href="services.html" class="nav-link">Services</a>
+       <a href="services.html" class="nav-link">Services</a>
       <a href="gallery.html" class="nav-link">Gallery</a>
       <a href="projects.html" class="nav-link">Projects</a>
       <a href="blog.html" class="nav-link">Blog</a>
@@ -116,6 +117,7 @@
         <div class="mobile-dropdown-content hidden pl-6 space-y-3 text-base font-medium text-emerald-800">
           <a href="about.html#our-story" class="block py-2">- Our Story</a>
           <a href="about.html#team" class="block py-2">- Our Team</a>
+			<a href="FAQ.html" class="block px-6 py-3 hover:bg-emerald-50">FAQs</a>
           <a href="#kenya-operations" class="block py-2">- Operations in Kenya</a>
           <a href="#partners" class="block py-2">- Partners</a>
         </div>
@@ -123,6 +125,7 @@
 
       <a href="services.html" class="block py-3">Services</a>
       <a href="gallery.html" class="block py-3">Gallery</a>
+      <a href="projects.html" class="block py-3">Projects</a>
       <a href="blog.html" class="block py-3">Blog</a>
 
       <!-- Impact Dropdown -->
@@ -132,7 +135,7 @@
           <i class="fa-solid fa-chevron-down text-sm transition-transform"></i>
         </button>
         <div class="mobile-dropdown-content hidden pl-6 space-y-3 text-base font-medium text-emerald-800">
-          <a href="impact.html" class="block py-2">- Our Impact</a>
+          <a href="about.html#stats" class="block py-2">- Our Impact</a>
           <a href="projects.html" class="block py-2">- Featured Projects</a>
           <a href="sustainability.html" class="block py-2">- Sustainability Reports</a>
         </div>
@@ -160,7 +163,6 @@
     poster="ASSETS/NurseryDroneView.webp">
 
     <source src="ASSETS/NurseryDroneView.webm" type="video/webm">
-    <source src="ASSETS/NurseryDroneView.mp4" type="video/mp4">
   </video>
 
 
@@ -202,7 +204,7 @@
       </p>
     </div>
 
-    <!-- SERVICES GRID -->
+      <!-- SERVICES GRID -->
     <div class="services-grid">
       
       <a href="services.html#High-quality-seedlings" class="service-card">
@@ -221,12 +223,13 @@
 
       <a href="services.html#monitoring-operations" class="service-card">
         <div class="image-wrapper">
-          <img src="ASSETS/Qualityseedlings (1).webp" alt="Monitoring & Operations">
+          <img src="ASSETS/Monitoring&Operations.jpeg" alt="Monitoring & Operations">
         </div>
         <h3>Monitoring & Operations</h3>
       </a>
 
     </div>
+
 
     <!-- CTA -->
     <div class="cta-inline mt-16 flex justify-center md:justify-end">
@@ -261,26 +264,18 @@
             preload="none"
             aria-label="Drone view of ATC Mtwapa Nursery">
             <source src="ASSETS/NurseryDroneView.webm" type="video/webm">
-            <source src="ASSETS/NurseryDroneView.mp4" type="video/mp4">
+            
           </video>
         </div>
       </div>
 
       <!-- Photo Slides -->
+      
       <div class="slide" data-type="image">
+        <img src="ASSETS/nursery (2).jpeg" alt="ATC Mtwapa Nursery - Propagation area">
+      </div>
+		<div class="slide" data-type="image">
         <img src="ASSETS/nurseryatnight.webp" alt="ATC Mtwapa Nursery - Seedling trays">
-      </div>
-      <div class="slide" data-type="image">
-        <img src="ASSETS/inside-nursery.webp" alt="ATC Mtwapa Nursery - Young plants">
-      </div>
-      <div class="slide" data-type="image">
-        <img src="ASSETS/Qualityseedlings.webp" alt="ATC Mtwapa Nursery - Greenhouse interior">
-      </div>
-      <div class="slide" data-type="image">
-        <img src="ASSETS/Moringa-assembled.webp" alt="ATC Mtwapa Nursery - Propagation area">
-      </div>
-      <div class="slide" data-type="image">
-        <img src="ASSETS/loading.jpg" alt="ATC Mtwapa Nursery - Mature seedlings">
       </div>
 
     </div>
@@ -674,7 +669,7 @@ document.addEventListener("DOMContentLoaded", () => {
   slider.addEventListener('scroll', () => {
     const scrollPosition = slider.scrollLeft + slider.offsetWidth / 2;
     slides.forEach((slide, index) => {
-      if (slide.offsetLeft <= scrollPosition) {
+      if (slidej.offsetLeft <= scrollPosition) {
         if (currentIndex !== index) {
           currentIndex = index;
           updateDots();
