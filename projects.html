@@ -114,17 +114,17 @@
         }
 
         .project-container {
-    max-width: 1200px;
-    margin: 0 auto 80px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto 80px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
     align-items: start;           /* Changed from center */
-    background: rgba(255,255,255,0.97);
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-}
+            background: rgba(255,255,255,0.97);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
 
         .project-container:nth-child(even) {
             background: rgba(248,255,249,0.97);
@@ -137,25 +137,25 @@
     position: relative;
 }
 
-.project-image img {
-    width: 100%;
-    height: 100%;
+        .project-image img {
+            width: 100%;
+            height: 100%;
     object-fit: contain;             /* ← This is the key change: no cropping */
     background: #f8f9f8;             /* Clean background for any empty space */
     padding: 20px;                   /* Optional: breathing room around image */
     box-sizing: border-box;
-}
+        }
 
 /* Hover effect - gentler now */
-.project-container:hover img {
+        .project-container:hover img {
     transform: scale(1.04);
-}
+        }
         /* Make sure both sides are same height */
-.project-content {
-    padding: 45px;
+        .project-content {
+            padding: 45px;
     display: flex;
     flex-direction: column;
-}
+        }
 
         .project-content span {
             color: var(--accent);
@@ -168,7 +168,7 @@
         /* Optional: Make the text side stretch nicely */
 .project-features {
     margin-top: auto;
-}
+        }
 
         .project-content h2 {
             font-size: clamp(1.8rem, 4vw, 2.4rem);
@@ -434,7 +434,7 @@ fruit tree seedlings and young plants (retail and B2B).
 
     <div id="footer"></div>
 
-   <script>
+    <script>
 // Load Navbar
 fetch('navbar.html')
   .then(response => response.text())
@@ -444,13 +444,13 @@ fetch('navbar.html')
     // Now that navbar is loaded, initialize everything that depends on it
     const navbar = document.getElementById('navbar'); // Make sure navbar.html has id="navbar"
     if (navbar) {
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 80) {
-          navbar.classList.add('scrolled');
-        } else {
-          navbar.classList.remove('scrolled');
-        }
-      });
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 80) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
     }
 
     initializeMobileMenu(); // your function
@@ -458,42 +458,42 @@ fetch('navbar.html')
   .catch(error => console.error('Error loading navbar:', error));
 
 // Load Footer
-fetch('footer.html')
-  .then(response => response.text())
+        fetch('footer.html')
+            .then(response => response.text())
   .then(data => {
     document.getElementById('footer').innerHTML = data;
   })
   .catch(error => console.error('Error loading footer:', error));
 
-// Reveal Animation
+        // Reveal Animation
 function handleReveal() {
-  const reveals = document.querySelectorAll('.reveal');
-  reveals.forEach(section => {
-    if (section.getBoundingClientRect().top < window.innerHeight - 100) {
-      section.classList.add('active');
-    }
-  });
+        const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(section => {
+                if (section.getBoundingClientRect().top < window.innerHeight - 100) {
+                    section.classList.add('active');
+                }
+            });
 }
 window.addEventListener('scroll', handleReveal);
 // Run once on load in case some are already visible
 window.addEventListener('load', handleReveal);
 
         // Parallax (with mobile safety)
-let ticking = false;
-window.addEventListener('scroll', () => {
-  if (!ticking) {
-    requestAnimationFrame(() => {
-      const scroll = window.scrollY;
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    const scroll = window.scrollY;
       document.querySelectorAll('.parallax').forEach(section => {
         const speed = 0.25;
-        section.style.backgroundPositionY = `${scroll * speed}px`;
-      });
-      ticking = false;
-    });
-    ticking = true;
-  }
-});
-</script>
+                        section.style.backgroundPositionY = `${scroll * speed}px`;
+                    });
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+    </script>
 <script>document.documentElement.style.opacity = "1";</script>
 </body>
 </html>
