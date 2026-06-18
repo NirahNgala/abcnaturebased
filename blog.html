@@ -7,6 +7,7 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css">
   
   <style>
     *{
@@ -32,126 +33,6 @@
       border-radius: 24px;
     }
 
-    /* ================= NAVBAR ================= */
-    nav{
-      position:fixed;
-      top:0;
-      left:0;
-      width:100%;
-      z-index:3000;
-      padding: 18px 7%;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      background:rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-      transition: all 0.4s;
-    }
-
-    .nav-logo img {
-      height: 72px;
-      width: auto;
-      object-fit: contain;
-      transition: transform 0.3s;
-    }
-
-    .nav-logo:hover img {
-      transform: scale(1.08) rotate(4deg);
-    }
-
-    .nav-links{
-      display:flex;
-      gap:42px;
-      align-items:center;
-    }
-
-    .nav-links a{
-      font-size:1.05rem;
-      color:#2c3e1e;
-      font-weight:500;
-      position: relative;
-    }
-
-    .nav-links a:after{
-      content:'';
-      position:absolute;
-      width:0;
-      height:2px;
-      bottom:-4px;
-      left:0;
-      background:#8fae45;
-      transition:0.3s;
-    }
-
-    .nav-links a:hover:after{
-      width:100%;
-    }
-
-    /* Hamburger */
-    .hamburger {
-      display: none;
-      font-size: 1.9rem;
-      cursor: pointer;
-      color: #2c3e1e;
-      z-index: 5000;
-      transition: all 0.3s;
-}
-
-.hamburger:hover {
-  color: #b5d66f;
-    }
-
-    /* Mobile Menu */
-    .mobile-menu {
-      position: fixed;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100vh;
-      background: #f8fff4;
-      z-index: 4500;
-      transition: 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 32px;
-      padding-top: 80px;
-    }
-
-    .mobile-menu.active {
-      left: 0;
-    }
-
-.mobile-menu-links {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-  text-align: center;
-}
-
-.mobile-menu-links a {
-  font-size: 1.4rem;
-  color: #000;
-  font-weight: 500;
-  transition: 0.3s;
-}
-
-.mobile-menu-links a:hover,
-.mobile-menu-links a.active {
-  color: #8fae45;
-}
-
-.mobile-cta {
-  padding: 16px 36px;
-  border-radius: 50px;
-  border: 2px solid #000;
-  color: #000;
-  font-weight: 600;
-  font-size: 1.1rem;
-  margin-top: 20px;
-}
     /* ================= HERO ================= */
     .hero{
       min-height: 420px;
@@ -477,24 +358,7 @@
     }
   </style>
 </head>
-<body>
-
-<!-- NAVBAR -->
-<nav>
-  <div class="nav-logo">
-    <a href="index.html">
-      <img src="ASSETS/Crescendologo.png" alt="Crescendo Green Logo">
-    </a>
-  </div>
-
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="services.html">Services</a>
-  </div>
-  <div class="hamburger" id="hamburger">☰</div>
-</nav>
+<body></body>
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
@@ -605,7 +469,30 @@
 </section>
 
 <div id="footer"></div>
+<!-- Put this just before the closing </body> tag -->
+<div id="navbar-container"></div>
 
+<script>
+// Load Navbar
+fetch('navbar.html')
+  .then(response => {
+    if (!response.ok) throw new Error('Navbar not found');
+    return response.text();
+  })
+  .then(data => {
+    document.getElementById('navbar-container').innerHTML = data;
+    
+    // Important: Initialize scripts AFTER navbar is loaded
+    initializeMobileMenu();
+    initializeDropdowns();     // if needed
+  })
+  .catch(err => {
+    console.error('Error loading navbar:', err);
+  });
+</script>
+
+<!-- Your main.js or other scripts -->
+<script src="js/main.js"></script>
 <script>
   // Load Footer
   fetch('footer.html')
