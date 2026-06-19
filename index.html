@@ -547,31 +547,7 @@ fetch('footer.html')
     document.getElementById('footer').innerHTML = data;
   });
 </script>
-<script>
-  // Hamburger Menu
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const closeMenu = document.getElementById('close-menu');
 
-  hamburger.addEventListener('click', () => {
-    mobileMenu.classList.remove('translate-x-full');
-  });
-
-  closeMenu.addEventListener('click', () => {
-    mobileMenu.classList.add('translate-x-full');
-  });
-
-  // Mobile Dropdowns
-  document.querySelectorAll('.mobile-dropdown button').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const content = btn.parentElement.querySelector('.mobile-dropdown-content');
-      const icon = btn.querySelector('i');
-
-      content.classList.toggle('hidden');
-      icon.classList.toggle('rotate-180');
-    });
-  });
-</script>
 <script>
 // Highlight target section when coming from another page
 document.addEventListener("DOMContentLoaded", () => {

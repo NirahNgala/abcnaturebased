@@ -638,16 +638,19 @@ fetch('navbar.html')
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
-hamburger.addEventListener('click', () => {
-  const isActive = navMenu.classList.toggle('active');
-  hamburger.classList.toggle('active');
-  
-  if (isActive) {
-    document.body.style.overflow = 'hidden';
-                } else {
-    document.body.style.overflow = 'visible';
-            }
-        });
+if (hamburger) {
+  hamburger.addEventListener('click', () => {
+    // Toggle menu active state and page scroll
+    const isActive = navMenu.classList.toggle('active');
+    hamburger.classList.toggle('active');
+
+    if (isActive) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'visible';
+    }
+  });
+}
 
 // Close menu when clicking a link
                 document.querySelectorAll('.nav-menu a').forEach(link => {

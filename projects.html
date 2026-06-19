@@ -276,19 +276,7 @@
 <body>
 
 <div id="navbar-container"></div>
-  
-<script>
-// Load navbar
-fetch('navbar.html')
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById('navbar-container').innerHTML = data;
-    
-    // Re-initialize mobile menu after loading
-    initializeMobileMenu();
-  })
-  .catch(error => console.error('Error loading navbar:', error));
-</script>
+
 
     <!-- HERO -->
     <section class="hero parallax">
@@ -494,6 +482,7 @@ window.addEventListener('load', handleReveal);
             }
         });
     </script>
+  
 <script>document.documentElement.style.opacity = "1";</script>
 </body>
 </html>
