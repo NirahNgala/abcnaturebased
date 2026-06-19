@@ -677,6 +677,56 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 </script>
+<script>
+// Mobile Menu Toggle
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMenu = document.getElementById('close-menu');
+    const mobileDropdowns = document.querySelectorAll('.mobile-dropdown');
 
+    // Open menu
+    if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+            mobileMenu.classList.add('translate-x-0');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        });
+    }
+
+    // Close menu
+    if (closeMenu && mobileMenu) {
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+            mobileMenu.classList.remove('translate-x-0');
+            document.body.style.overflow = 'visible';
+        });
+    }
+
+    // Close menu when clicking a link
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+            mobileMenu.classList.remove('translate-x-0');
+            document.body.style.overflow = 'visible';
+        });
+    });
+
+    // Mobile Dropdowns (About & Impact)
+    mobileDropdowns.forEach(dropdown => {
+        const button = dropdown.querySelector('button');
+        const content = dropdown.querySelector('.mobile-dropdown-content');
+
+        if (button && content) {
+            button.addEventListener('click', () => {
+                content.classList.toggle('hidden');
+                const icon = button.querySelector('i');
+                if (icon) icon.classList.toggle('rotate-180');
+            });
+        }
+    });
+});
+</script>
 </body>
 </html>
