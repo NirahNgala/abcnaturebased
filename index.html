@@ -729,5 +729,45 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 </script>
+<script>
+// ==================== AUTO ACTIVE NAVIGATION ====================
+document.addEventListener('DOMContentLoaded', () => {
+    
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+    
+    // Desktop Navigation
+    const desktopLinks = document.querySelectorAll('.hidden.md\\:flex a.nav-link, .hidden.md\\:flex .nav-link');
+    
+    desktopLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href) {
+            const linkPage = href.split("/").pop();
+            
+            if (linkPage === currentPage || 
+                (currentPage === "" && linkPage === "index.html") ||
+                (currentPage === "index.html" && linkPage === "")) {
+                link.classList.add('active');
+            }
+        }
+    });
+
+    // Mobile Navigation
+    const mobileLinks = document.querySelectorAll('#mobile-menu a');
+    
+    mobileLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href) {
+            const linkPage = href.split("/").pop();
+            
+            if (linkPage === currentPage || 
+                (currentPage === "" && linkPage === "index.html") ||
+                (currentPage === "index.html" && linkPage === "")) {
+                link.classList.add('active');
+            }
+        }
+    });
+
+});
+</script>
 </body>
 </html>
