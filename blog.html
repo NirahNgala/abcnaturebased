@@ -301,41 +301,7 @@
       gap:14px;
     }
 
-    /* ================= MOBILE MENU & OTHER STYLES ================= */
-    .mobile-menu {
-      position: fixed;
-      top: 80px;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: rgba(255,255,255,0.98);
-      backdrop-filter: blur(18px);
-      z-index: 2000;
-      transition: 0.35s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .mobile-menu.active {
-      left: 0;
-    }
-
-    .mobile-menu-links a {
-      font-size: 1.25rem;
-      color: #000;
-      font-weight: 500;
-    }
-
-    .mobile-cta {
-      padding: 14px 28px;
-      border-radius: 50px;
-      border: 1px solid #000;
-      color: #000;
-      font-weight: 600;
-    }
+   
 
     @media(max-width: 992px){
       .nav-links{ display: none; }
@@ -358,20 +324,7 @@
     }
   </style>
 </head>
-<body></body>
-
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <div class="mobile-menu-links">
-    <a href="index.html">Home</a>
-    <a href="blog.html" class="active">Blog</a>
-    <a href="about.html">About</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="services.html">Services</a>
-  </div>
-  <a href="contact.html" class="mobile-cta">Contact Us</a>
-</div>
-
+<body>
 <!-- HERO -->
 <section class="hero">
   <img src="ASSETS/Moringa-assembled.webp" alt="Crescendo Green Hero" class="hero-bg">
@@ -501,38 +454,7 @@ fetch('navbar.html')
       document.getElementById('footer').innerHTML = data;
     });
 
- // Mobile Menu
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobileMenu');
 
-function toggleMenu() {
-  mobileMenu.classList.toggle('active');
-  
-  if (mobileMenu.classList.contains('active')) {
-    hamburger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-    document.body.style.overflow = 'hidden';        // Prevent scrolling
-  } else {
-    hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
-    document.body.style.overflow = 'visible';
-  }
-}
-
-hamburger.addEventListener('click', toggleMenu);
-
-// Close menu when clicking a link
-document.querySelectorAll('.mobile-menu a').forEach(link => {
-  link.addEventListener('click', () => {
-    mobileMenu.classList.remove('active');
-    hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
-    document.body.style.overflow = 'visible';
-  });
-});
-
-  // Navbar scroll
-  window.addEventListener("scroll", () => {
-    const nav = document.querySelector("nav");
-    nav.style.background = window.scrollY > 50 ? "#ffff" : "#fff";
-  });
 
   // ================= BLOG INTERACTIVITY =================
   const cards = document.querySelectorAll('.blog-card');
