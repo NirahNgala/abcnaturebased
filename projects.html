@@ -8,8 +8,6 @@
     <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <script>document.documentElement.style.opacity = "0";</script>
-
 
     <style>
         :root {
@@ -26,6 +24,67 @@
             overflow-x: hidden;
         }
 
+        /* ==================== NAVBAR ==================== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: all 0.4s ease;
+            background: transparent;
+        }
+
+        nav.scrolled {
+            background: rgba(251, 253, 252, 0.713);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+
+        .logo img {
+            height: 52px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover img {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: rgb(12, 0, 0);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: rgb(0, 0, 0);
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
 
         /* Hero */
         .hero {
@@ -119,7 +178,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 50px;
-    align-items: start;           /* Changed from center */
+            align-items: center;
             background: rgba(255,255,255,0.97);
             border-radius: 24px;
             overflow: hidden;
@@ -130,31 +189,19 @@
             background: rgba(248,255,249,0.97);
         }
 
-       
-.project-image {
-    height: 100%;                    /* Take full height of the container */
-    min-height: 520px;               /* Minimum height for good proportions */
-    position: relative;
-}
-
         .project-image img {
             width: 100%;
             height: 100%;
-    object-fit: contain;             /* ← This is the key change: no cropping */
-    background: #f8f9f8;             /* Clean background for any empty space */
-    padding: 20px;                   /* Optional: breathing room around image */
-    box-sizing: border-box;
+            object-fit: cover;
+            transition: transform 0.8s ease;
         }
 
-/* Hover effect - gentler now */
         .project-container:hover img {
-    transform: scale(1.04);
+            transform: scale(1.08);
         }
-        /* Make sure both sides are same height */
+
         .project-content {
             padding: 45px;
-    display: flex;
-    flex-direction: column;
         }
 
         .project-content span {
@@ -163,11 +210,6 @@
             text-transform: uppercase;
             letter-spacing: 1.5px;
             font-size: 0.95rem;
-        }
-        
-        /* Optional: Make the text side stretch nicely */
-.project-features {
-    margin-top: auto;
         }
 
         .project-content h2 {
@@ -236,14 +278,7 @@
                 grid-template-columns: 1fr;
                 margin-bottom: 60px;
             }
-             .project-image {
-        min-height: 380px;           /* Good height on mobile */
-        height: auto;
-    }
-            .project-image img {
-        padding: 15px;
-        max-height: 420px;           /* Prevents overly tall images on mobile */
-    }
+            .project-image img { height: 380px; }
             .project-content { padding: 35px; }
             
             /* Disable heavy parallax on mobile */
@@ -275,8 +310,26 @@
 </head>
 <body>
 
-<div id="navbar-container"></div>
+    <!-- NAVBAR -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="ASSETS/Crescendologo.png" alt="Crescendo Green Logo">
+            </a>
+            
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="projects.html" class="text-emerald-400 font-semibold">Projects</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </div>
 
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
 
     <!-- HERO -->
     <section class="hero parallax">
@@ -423,15 +476,8 @@ fruit tree seedlings and young plants (retail and B2B).
     <div id="footer"></div>
 
     <script>
-// Load Navbar
-fetch('navbar.html')
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById('navbar-container').innerHTML = data;
-    
-    // Now that navbar is loaded, initialize everything that depends on it
-    const navbar = document.getElementById('navbar'); // Make sure navbar.html has id="navbar"
-    if (navbar) {
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 80) {
                 navbar.classList.add('scrolled');
@@ -439,32 +485,32 @@ fetch('navbar.html')
                 navbar.classList.remove('scrolled');
             }
         });
-    }
 
-    initializeMobileMenu(); // your function
-  })
-  .catch(error => console.error('Error loading navbar:', error));
+        // Mobile Menu
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
 
-// Load Footer
+        mobileBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Footer & Other Scripts
         fetch('footer.html')
             .then(response => response.text())
-  .then(data => {
-    document.getElementById('footer').innerHTML = data;
-  })
-  .catch(error => console.error('Error loading footer:', error));
+            .then(data => document.getElementById('footer').innerHTML = data);
 
         // Reveal Animation
-function handleReveal() {
         const reveals = document.querySelectorAll('.reveal');
+        window.addEventListener('scroll', () => {
             reveals.forEach(section => {
                 if (section.getBoundingClientRect().top < window.innerHeight - 100) {
                     section.classList.add('active');
                 }
             });
-}
-window.addEventListener('scroll', handleReveal);
-// Run once on load in case some are already visible
-window.addEventListener('load', handleReveal);
+        });
 
         // Parallax (with mobile safety)
         let ticking = false;
@@ -472,8 +518,8 @@ window.addEventListener('load', handleReveal);
             if (!ticking) {
                 requestAnimationFrame(() => {
                     const scroll = window.scrollY;
-      document.querySelectorAll('.parallax').forEach(section => {
-        const speed = 0.25;
+                    document.querySelectorAll('.parallax').forEach((section, i) => {
+                        const speed = 0.3 + (i * 0.07);
                         section.style.backgroundPositionY = `${scroll * speed}px`;
                     });
                     ticking = false;
@@ -482,7 +528,5 @@ window.addEventListener('load', handleReveal);
             }
         });
     </script>
-  
-<script>document.documentElement.style.opacity = "1";</script>
 </body>
 </html>
