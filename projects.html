@@ -9,81 +9,157 @@
 <link rel="stylesheet" href="style.css">
 
 <style>
-    :root {
-        --primary: #0f2c22;
-        --accent: #4ade80;
-    }
+            :root {
+            --primary: #0f2c22;
+            --accent: #4ade80;
+        }
 
-    * { margin:0; padding:0; box-sizing:border-box; }
+        * { margin:0; padding:0; box-sizing:border-box; }
 
-    body {
-        font-family: 'Satoshi', system-ui, sans-serif;
-        color: #222;
-        line-height: 1.7;
-        overflow-x: hidden;
-    }
+        body {
+            font-family: 'Satoshi', system-ui, sans-serif;
+            color: #222;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
 
-    /* ==================== NAVBAR ==================== */
-    nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000;
-        transition: all 0.4s ease;
-        background: transparent;
-    }
+        /* ==================== NAVBAR ==================== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: all 0.4s ease;
+            background: transparent;
+        }
 
-    nav.scrolled {
-        background: rgba(251, 253, 252, 0.713);
-        backdrop-filter: blur(12px);
-        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
+        nav.scrolled {
+            background: rgba(251, 253, 252, 0.95);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
 
-    .nav-container {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 20px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 80px;
-    }
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
 
-    .logo img {
-        height: 52px;
-        width: auto;
-        transition: transform 0.3s ease;
-    }
+        .logo img {
+            height: 52px;
+            width: auto;
+        }
 
-    .logo:hover img {
-        transform: scale(1.05);
-    }
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
 
-    .nav-links {
-        display: flex;
-        gap: 32px;
-    }
+        .nav-links a {
+            color: rgb(12, 0, 0);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
 
-    .nav-links a {
-        color: rgb(12, 0, 0);
-        text-decoration: none;
-        font-weight: 500;
-        transition: color 0.3s;
-    }
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent);
+        }
 
-    .nav-links a:hover {
-        color: var(--accent);
-    }
+        /* ==================== MOBILE MENU (New) ==================== */
+        #mobileMenu {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 70%;                    /* Half screen width */
+            height: 100vh;
+            background: white;
+            box-shadow: 4px 0 25px rgba(0,0,0,0.15);
+            transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1100;
+            padding: 80px 30px 30px;
+            overflow-y: auto;
+        }
+	.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.9rem;
+    color: #111;
+    cursor: pointer;
+    padding: 5px;
+    transition: all 0.3s ease;
+}
 
-    .mobile-menu-btn {
-        display: none;
-        background: none;
-        border: none;
-        color: rgb(0, 0, 0);
-        font-size: 1.8rem;
-        cursor: pointer;
-    }
+#menuIcon {
+    transition: transform 0.4s ease;
+}
+
+/* When menu is open */
+#mobileMenuBtn.active #menuIcon {
+    transform: rotate(180deg);
+}
+
+/* Optional: You can also change color when active */
+#mobileMenuBtn.active {
+    color: var(--accent);
+}
+
+@media (max-width: 900px) {
+    .nav-links { display: none; }
+    .mobile-menu-btn { display: block; }
+}
+
+        #mobileMenu.open {
+            left: 0;
+        }
+
+        #mobileMenu a {
+            display: block;
+            padding: 14px 0;
+            font-size: 1.1rem;
+            color: #222;
+            text-decoration: none;
+       
+        }
+
+        #mobileMenu a:hover {
+            color: var(--accent);
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0,0,0,0.4);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            z-index: 1050;
+        }
+
+        .mobile-menu-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.9rem;
+            color: #111;
+            cursor: pointer;
+        }
+
 
     /* Hero */
     .hero {
@@ -321,15 +397,30 @@
             <a href="about.html">About Us</a>
             <a href="services.html">Services</a>
             <a href="blog.html">Blog</a>
-			<a href="gallery.html">Gallery</a>
+            <a href="gallery.html">Gallery</a>
         </div>
 
+        <!-- Better Hamburger Button -->
         <button class="mobile-menu-btn" id="mobileMenuBtn">
-            <i class="fas fa-bars"></i>
+            <i class="fas fa-bars" id="menuIcon"></i>
         </button>
     </div>
 </nav>
 
+<!-- MOBILE MENU -->
+<div class="mobile-menu-overlay" id="menuOverlay"></div>
+
+<div id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About Us</a>
+    <a href="services.html">Services</a>
+    <a href="blog.html">Blog</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html" style="margin-top: 30px; color: var(--accent); font-weight: 700;">
+        Start a Project With Us →
+    </a>
+</div>
 <!-- HERO -->
 <section class="hero parallax">
     <div class="hero-content">
@@ -468,45 +559,17 @@ fruit tree seedlings and young plants (retail and B2B).
 </section>
 
 <div id="footer"></div>
-
 <script>
-    // Navbar Scroll Effect
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 80) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
-
-    // Mobile Menu
-    const mobileBtn = document.getElementById('mobileMenuBtn');
-    const navLinks = document.getElementById('navLinks');
-
-    mobileBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        const icon = mobileBtn.querySelector('i');
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-times');
-    });
-
-    // Footer & Other Scripts
-    fetch('footer.html')
-        .then(response => response.text())
-        .then(data => document.getElementById('footer').innerHTML = data);
-
-    // Reveal Animation
-    const reveals = document.querySelectorAll('.reveal');
-    window.addEventListener('scroll', () => {
-        reveals.forEach(section => {
-            if (section.getBoundingClientRect().top < window.innerHeight - 100) {
-                section.classList.add('active');
+	 // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 80) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
             }
         });
-    });
-
-    // Parallax (with mobile safety)
+	// Parallax (with mobile safety)
     let ticking = false;
     window.addEventListener('scroll', () => {
         if (!ticking) {
@@ -521,4 +584,44 @@ fruit tree seedlings and young plants (retail and B2B).
             ticking = true;
         }
     });
-</script></body>
+
+
+ // Mobile Menu with Icon Transformation
+const mobileBtn = document.getElementById('mobileMenuBtn');
+const menuIcon = document.getElementById('menuIcon');
+const mobileMenu = document.getElementById('mobileMenu');
+const menuOverlay = document.getElementById('menuOverlay');
+
+function toggleMenu() {
+    const isOpen = mobileMenu.classList.toggle('open');
+    menuOverlay.classList.toggle('show');
+    mobileBtn.classList.toggle('active');
+
+    if (isOpen) {
+        menuIcon.classList.remove('fa-bars');
+        menuIcon.classList.add('fa-times');
+    } else {
+        menuIcon.classList.remove('fa-times');
+        menuIcon.classList.add('fa-bars');
+    }
+
+    document.body.style.overflow = isOpen ? 'hidden' : 'visible';
+}
+
+mobileBtn.addEventListener('click', toggleMenu);
+menuOverlay.addEventListener('click', toggleMenu);
+
+// Close when clicking menu links
+document.querySelectorAll('#mobileMenu a').forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuOverlay.classList.remove('show');
+        mobileBtn.classList.remove('active');
+        menuIcon.classList.remove('fa-times');
+        menuIcon.classList.add('fa-bars');
+        document.body.style.overflow = 'visible';
+    });
+});
+	</script>
+</body>
+</html>
