@@ -5,7 +5,7 @@ async function loadNavbar() {
 
   if (!container) return;
 
-  const res = await fetch('/components/navbar.html');
+  const res = await fetch('navbar.html');
   const html = await res.text();
 
   container.innerHTML = html;
